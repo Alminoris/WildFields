@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tamarisk_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:tamarisk_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tamarisk_button_from_tamarisk_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tamarisk_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tamarisk_button_from_tamarisk_planks"
+    ]
+  }
+}

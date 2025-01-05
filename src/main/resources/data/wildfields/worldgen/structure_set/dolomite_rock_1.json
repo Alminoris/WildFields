@@ -1,0 +1,16 @@
+{
+  "structures":
+  [
+    {
+      "structure": "wildfields:dolomite_rock_1",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "salt": 1843132984,
+    "spacing": 10,
+    "separation": 5,
+    "type": "minecraft:random_spread"
+  }
+}

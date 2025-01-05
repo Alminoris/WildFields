@@ -1,0 +1,102 @@
+{
+  "sound_marmot_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_marmot_ambient",
+    "sounds": [ "wildfields:sound_marmot_ambient" ]
+  },
+  "sound_marmot_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_marmot_hurt",
+    "sounds": [ "wildfields:sound_marmot_hurt" ]
+  },
+  "sound_marmot_death":
+  {
+    "subtitle": "sounds.wildfields.sound_marmot_death",
+    "sounds": [ "wildfields:sound_marmot_death" ]
+  },
+  "sound_steppe_eagle_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_eagle_ambient",
+    "sounds": [ "wildfields:sound_steppe_eagle_ambient" ]
+  },
+  "sound_steppe_eagle_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_eagle_hurt",
+    "sounds": [ "wildfields:sound_steppe_eagle_hurt" ]
+  },
+  "sound_steppe_eagle_death":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_eagle_death",
+    "sounds": [ "wildfields:sound_steppe_eagle_death" ]
+  },
+  "sound_darkling_beetle_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_darkling_beetle_ambient",
+    "sounds": [ "wildfields:sound_darkling_beetle_ambient" ]
+  },
+  "sound_darkling_beetle_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_darkling_beetle_hurt",
+    "sounds": [ "wildfields:sound_darkling_beetle_hurt" ]
+  },
+  "sound_darkling_beetle_death":
+  {
+    "subtitle": "sounds.wildfields.sound_darkling_beetle_death",
+    "sounds": [ "wildfields:sound_darkling_beetle_death" ]
+  },
+  "sound_steppe_viper_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_viper_ambient",
+    "sounds": [ "wildfields:sound_steppe_viper_ambient" ]
+  },
+  "sound_steppe_viper_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_viper_hurt",
+    "sounds": [ "wildfields:sound_steppe_viper_hurt" ]
+  },
+  "sound_steppe_viper_death":
+  {
+    "subtitle": "sounds.wildfields.sound_steppe_viper_death",
+    "sounds": [ "wildfields:sound_steppe_viper_death" ]
+  },
+  "sound_saiga_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_saiga_ambient",
+    "sounds": [ "wildfields:sound_saiga_ambient" ]
+  },
+  "sound_saiga_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_saiga_hurt",
+    "sounds": [ "wildfields:sound_saiga_hurt" ]
+  },
+  "sound_saiga_death":
+  {
+    "subtitle": "sounds.wildfields.sound_saiga_death",
+    "sounds": [ "wildfields:sound_saiga_death" ]
+  },
+  "sound_serval_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_serval_ambient",
+    "sounds": [ "wildfields:sound_serval_ambient" ]
+  },
+  "sound_serval_growl":
+  {
+    "subtitle": "sounds.wildfields.sound_serval_growl",
+    "sounds": [ "wildfields:sound_serval_growl" ]
+  },
+  "sound_serval_whine":
+  {
+    "subtitle": "sounds.wildfields.sound_serval_whine",
+    "sounds": [ "wildfields:sound_serval_whine" ]
+  },
+  "sound_serval_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_serval_hurt",
+    "sounds": [ "wildfields:sound_serval_hurt" ]
+  },
+  "sound_serval_death":
+  {
+    "subtitle": "sounds.wildfields.sound_serval_death",
+    "sounds": [ "wildfields:sound_serval_death" ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "wildfields:saltmarsh_wall",
+    "wildfields:saltmarsh_cobbled_wall",
+    "wildfields:saltmarsh_bricks_wall",
+    "wildfields:dolomite_wall",
+    "wildfields:dolomite_cobbled_wall",
+    "wildfields:dolomite_bricks_wall"
+  ]
+}

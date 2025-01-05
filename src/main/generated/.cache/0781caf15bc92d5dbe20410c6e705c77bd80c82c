@@ -1,0 +1,25 @@
+// 1.21.1	2025-01-05T18:28:09.3313189	Wild Fields/Tags for minecraft:block
+651c9974da0e4a686affa62495214d84fa7d872c data\minecraft\tags\block\wooden_doors.json
+eeb8474e2695474c9c376bf2971cceaabb9a20bd data\minecraft\tags\block\wooden_slabs.json
+5c77bd892a2f23f3ceccc6db9e4212f14a513a91 data\minecraft\tags\block\flowers.json
+fa0398b67c0912b4629581e397240486bd00c1db data\minecraft\tags\block\standing_signs.json
+6a5c665eb8da15efbbb1470f5ef4f0318b10cd9a data\minecraft\tags\block\slabs.json
+c50595170b19a1054f347f99153e676095c21025 data\minecraft\tags\block\planks.json
+1646c0b61f6aa792ee5237ac2d366fc4f9adf71c data\minecraft\tags\block\wooden_stairs.json
+b83321054e5cf2e648c2f6b0e141ba6d92ec8466 data\minecraft\tags\block\wooden_buttons.json
+7cb5365a0f7418a19d2493511cebb356f99f8991 data\minecraft\tags\block\ceiling_hanging_signs.json
+e2b62848eabbdbfef2626d46ec610f220a7c2424 data\minecraft\tags\block\logs_that_burn.json
+2f1633cc6af996e58bc1c9348e18a178a92cc9f0 data\minecraft\tags\block\wooden_trapdoors.json
+d9dfcabafe788dc2850033434d4ab6e2496486a0 data\minecraft\tags\block\stairs.json
+62da9a2602283d6b824f1d895c5bf28860b38bc6 data\minecraft\tags\block\wooden_fences.json
+690574ffba81e4b14175c2c439f8f0497a24d3b5 data\wildfields\tags\block\saiga_spawnable_on.json
+0410c4e7e21eae7dfa41763354632342de85cfdb data\minecraft\tags\block\saplings.json
+b3437cd62967055bffe30d6cd3ebfcb9348eee5f data\minecraft\tags\block\sword_efficient.json
+6bc146b2961ab564569e62dfc2da04f531d71a21 data\minecraft\tags\block\flower_pots.json
+612cfa02df7d873cc8488ef2dea38531f566a710 data\wildfields\tags\block\steppe_viper_plants.json
+15e4fe57383093ac628d4b19a34d433743397891 data\minecraft\tags\block\walls.json
+d61f14b3a16d30c14ef90e21d3b48629a6455dd7 data\minecraft\tags\block\wall_signs.json
+40c986fe707c7fd1a2979c23c6263deddbae4026 data\minecraft\tags\block\mineable\pickaxe.json
+a0efd959fc80a87de6d192deb042847a9102dc5e data\minecraft\tags\block\wooden_pressure_plates.json
+b3437cd62967055bffe30d6cd3ebfcb9348eee5f data\minecraft\tags\block\mineable\axe.json
+9cf1a987058ba48fbd30226059c9d19ef96909e3 data\minecraft\tags\block\wall_hanging_signs.json

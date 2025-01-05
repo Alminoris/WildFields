@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "wildfields:block/tamarisk_log_top",
+    "side": "wildfields:block/tamarisk_log"
+  }
+}

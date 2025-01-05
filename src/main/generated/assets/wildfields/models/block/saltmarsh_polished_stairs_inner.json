@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "wildfields:block/saltmarsh_polished",
+    "side": "wildfields:block/saltmarsh_polished",
+    "top": "wildfields:block/saltmarsh_polished"
+  }
+}

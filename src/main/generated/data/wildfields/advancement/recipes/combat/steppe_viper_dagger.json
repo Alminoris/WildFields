@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steppe_viper_fang": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:steppe_viper_fang"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:steppe_viper_dagger"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steppe_viper_fang",
+      "has_stick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:steppe_viper_dagger"
+    ]
+  }
+}

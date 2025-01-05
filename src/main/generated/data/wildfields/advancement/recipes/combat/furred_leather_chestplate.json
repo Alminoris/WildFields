@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leather_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:leather_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_marmot_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:marmot_fur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:furred_leather_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_marmot_fur",
+      "has_leather_chestplate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:furred_leather_chestplate"
+    ]
+  }
+}

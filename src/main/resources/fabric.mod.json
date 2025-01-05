@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "wildfields",
+	"version": "${version}",
+	"name": "Wild Fields",
+	"description": "Amazing new mod about steppes, prairies, pampasas and their flora, fauna, etc.",
+	"authors": [
+		"Almiris (Alminoris)"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/wildfields/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.alminoris.wildfields.WildFields"
+		],
+		"client": [
+			"net.alminoris.wildfields.WildFieldsClient"
+		],
+		"fabric-datagen": [
+			"net.alminoris.wildfields.WildFieldsDataGenerator"
+		],
+		"terrablender":
+		[
+			"net.alminoris.wildfields.world.biome.ModTerrablenderAPI"
+		]
+	},
+	"mixins": [
+		"wildfields.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "MISC",
+  "ingredients": [
+    {
+      "item": "wildfields:tamarisk_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "wildfields:tamarisk_planks"
+  }
+}

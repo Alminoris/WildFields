@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "wildfields:block/olive_planks",
+    "side": "wildfields:block/olive_planks",
+    "top": "wildfields:block/olive_planks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/tamarisk_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/tamarisk_planks"
+    },
+    "type=top": {
+      "model": "wildfields:block/tamarisk_slab_top"
+    }
+  }
+}

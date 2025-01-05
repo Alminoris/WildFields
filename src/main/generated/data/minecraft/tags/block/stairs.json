@@ -1,0 +1,12 @@
+{
+  "values": [
+    "wildfields:saltmarsh_stairs",
+    "wildfields:dolomite_stairs",
+    "wildfields:saltmarsh_cobbled_stairs",
+    "wildfields:dolomite_cobbled_stairs",
+    "wildfields:saltmarsh_bricks_stairs",
+    "wildfields:dolomite_bricks_stairs",
+    "wildfields:saltmarsh_polished_stairs",
+    "wildfields:dolomite_polished_stairs"
+  ]
+}

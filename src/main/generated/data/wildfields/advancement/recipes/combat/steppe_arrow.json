@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steppe_eagle_beak": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:steppe_eagle_beak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steppe_eagle_feather": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:steppe_eagle_feather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:steppe_arrow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steppe_eagle_beak",
+      "has_steppe_eagle_feather",
+      "has_stick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:steppe_arrow"
+    ]
+  }
+}

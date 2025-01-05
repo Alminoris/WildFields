@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/olive_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/olive_planks"
+    },
+    "type=top": {
+      "model": "wildfields:block/olive_slab_top"
+    }
+  }
+}

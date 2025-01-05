@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_saltmarsh_bricks_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:saltmarsh_bricks_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:saltmarsh_chiseled"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_saltmarsh_bricks_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:saltmarsh_chiseled"
+    ]
+  }
+}

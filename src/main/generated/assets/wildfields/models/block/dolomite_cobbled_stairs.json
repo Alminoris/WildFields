@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "wildfields:block/dolomite_cobbled",
+    "side": "wildfields:block/dolomite_cobbled",
+    "top": "wildfields:block/dolomite_cobbled"
+  }
+}
