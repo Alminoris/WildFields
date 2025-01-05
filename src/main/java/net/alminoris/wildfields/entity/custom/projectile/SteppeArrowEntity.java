@@ -2,6 +2,7 @@ package net.alminoris.wildfields.entity.custom.projectile;
 
 import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.item.ModItems;
+import net.alminoris.wildfields.sound.ModSounds;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -48,7 +49,9 @@ public class SteppeArrowEntity extends PersistentProjectileEntity
 
         if (this.getOwner() instanceof LivingEntity shooter)
         {
-
+            playSound(ModSounds.SOUND_STEPPE_EAGLE_DEATH, 1.5f, 1.0f);
+            StatusEffectInstance statusEffectInstance = new StatusEffectInstance(StatusEffects.SLOWNESS, 200, 3);
+            target.addStatusEffect(statusEffectInstance);
         }
     }
 
