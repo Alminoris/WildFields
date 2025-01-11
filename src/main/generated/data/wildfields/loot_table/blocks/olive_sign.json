@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "wildfields:olive_sign"
+          "name": "wildfields:olive_sign_item"
         }
       ],
       "rolls": 1.0

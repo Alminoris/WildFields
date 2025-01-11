@@ -106,7 +106,7 @@ public class ModItems
 
     public static Item registerBerryItem(String name, int nutrition, float saturation, Block block)
     {
-        return registerItem(name, new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
+        return registerItem(name+"_item", new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
     }
 
     public static Item registerBoatItem(Identifier boatID,  RegistryKey<TerraformBoatType> boatKey)
@@ -117,5 +117,15 @@ public class ModItems
     public static Item registerChestBoatItem(Identifier chestBoatID,  RegistryKey<TerraformBoatType> boatKey)
     {
         return TerraformBoatItemHelper.registerBoatItem(chestBoatID, boatKey, true);
+    }
+
+    public static Item registerSignItem(String name, Block signBlock, Block wallSignBlock)
+    {
+        return registerItem(name+"_sign_item", new SignItem(new Item.Settings().maxCount(16), signBlock, wallSignBlock));
+    }
+
+    public static Item registerHangingSignItem(String name, Block hangingSignBlock, Block wallHangingSignBlock)
+    {
+        return registerItem(name+"_hanging_sign_item", new HangingSignItem(hangingSignBlock, wallHangingSignBlock, new Item.Settings().maxCount(16)));
     }
 }

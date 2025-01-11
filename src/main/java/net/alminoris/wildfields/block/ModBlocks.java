@@ -1,11 +1,16 @@
 package net.alminoris.wildfields.block;
 
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.custom.AnimalHideBlock;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
 import net.alminoris.wildfields.block.custom.BushLeavesBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -245,5 +250,39 @@ public class ModBlocks
     {
         return registerBlock(name+"_sapling",
                 new SaplingBlock(saplingGenerator, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    }
+
+    public static Block registerSignBlock(String name)
+    {
+        return registerBlock(name+"_sign",
+                new TerraformSignBlock(Identifier.of(WildFields.MOD_ID, "entity/signs/"+name), AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    }
+
+    public static Block registerWallSignBlock(String name)
+    {
+        return registerBlock(name+"_wall_sign",
+                new TerraformWallSignBlock(Identifier.of(WildFields.MOD_ID, "entity/signs/"+name), AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    }
+
+    public static Block registerHangingSignBlock(String name)
+    {
+        return registerBlock(name+"_hanging_sign",
+                new TerraformHangingSignBlock(Identifier.of(WildFields.MOD_ID, "entity/signs/hanging/"+name),
+                        Identifier.of(WildFields.MOD_ID, "textures/gui/hanging_signs/"+name), AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    }
+
+    public static Block registerWallHangingSignBlock(String name)
+    {
+        return registerBlock(name+"_wall_hanging_sign",
+                new TerraformWallHangingSignBlock(Identifier.of(WildFields.MOD_ID, "entity/signs/hanging/"+name),
+                        Identifier.of(WildFields.MOD_ID, "textures/gui/hanging_signs/"+name), AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+    }
+
+    public static BlockFamily registerBlockFamily(Block planks, Block sign, Block wallSign)
+    {
+        return new BlockFamily.Builder(planks)
+                .sign(sign, wallSign)
+                .group("wooden")
+                .unlockCriterionName("has_planks").build();
     }
 }

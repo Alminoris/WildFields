@@ -8,14 +8,8 @@ import net.minecraft.util.Identifier;
 
 public class ModParticles
 {
-    public static final SimpleParticleType BAUHINIA_LEAVES = FabricParticleTypes.simple();
-
     public static void registerParticles()
     {
-        Registry.register(
-                Registries.PARTICLE_TYPE,
-                Identifier.of("arborealnature", "bauhinia_leaves"),
-                BAUHINIA_LEAVES
-        );
+
     }
 }

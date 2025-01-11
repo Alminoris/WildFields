@@ -10,7 +10,6 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import static net.alminoris.wildfields.block.ModBlocks.*;
-import static net.alminoris.wildfields.block.ModSigns.*;
 import static net.alminoris.wildfields.item.ModItems.*;
 
 public class ModBlockSetsHelper

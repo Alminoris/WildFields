@@ -2,7 +2,6 @@ package net.alminoris.wildfields;
 
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.alminoris.wildfields.block.ModBlocks;
-import net.alminoris.wildfields.block.ModSigns;
 import net.alminoris.wildfields.entity.ModBoats;
 import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.entity.client.*;
@@ -10,18 +9,11 @@ import net.alminoris.wildfields.entity.client.projectile.SteppeArrowRenderer;
 import net.alminoris.wildfields.item.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.color.block.BlockColorProvider;
-import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.component.type.DyedColorComponent;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Items;
-import net.minecraft.world.biome.FoliageColors;
 import net.minecraft.world.biome.GrassColors;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
@@ -31,8 +23,6 @@ public class WildFieldsClient implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
-        ModSigns.registerModSigns();
-
         for (String name : WOOD_NAMES)
         {
             BlockRenderLayerMap.INSTANCE.putBlock(LEAVES.get(name), RenderLayer.getCutout());

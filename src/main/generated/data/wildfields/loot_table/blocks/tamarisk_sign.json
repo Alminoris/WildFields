@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "wildfields:tamarisk_sign"
+          "name": "wildfields:tamarisk_sign_item"
         }
       ],
       "rolls": 1.0
