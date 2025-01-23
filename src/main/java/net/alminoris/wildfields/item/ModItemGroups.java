@@ -5,8 +5,6 @@ import net.alminoris.wildfields.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -14,9 +12,8 @@ import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModItemGroups
 {
-    public static final ItemGroup WILDFIELDS_TAB = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(WildFields.MOD_ID, "wildfieldstab"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wildfieldstab"))
+    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(Identifier.of(WildFields.MOD_ID, "wildfieldstab"))
+            .displayName(Text.translatable("itemgroup.wildfieldstab"))
                     .icon(() -> new ItemStack(ModBlocks.FEATHER_GRASS)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.FEATHER_GRASS);
@@ -110,7 +107,7 @@ public class ModItemGroups
                         entries.add(ModItems.STEPPE_EAGLE_SPAWN_EGG);
                         entries.add(ModItems.SAIGA_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_VIPER_SPAWN_EGG);
-                    }).build());
+                    }).build();
 
     public static void registerItemGroups()
     {

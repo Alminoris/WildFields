@@ -11,7 +11,6 @@ import net.alminoris.wildfields.block.custom.BushLeavesBlock;
 import net.alminoris.wildfields.block.custom.FallingLeavesBlock;
 import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
@@ -27,9 +26,8 @@ public class ModBlocks
     public static final Block FEATHER_GRASS = registerBlock("feather_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
 
     public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
-            new FallingBlock(AbstractBlock.Settings.create()
+            new FallingBlock(AbstractBlock.Settings.of(Material.AGGREGATE)
                     .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
-                    .instrument(Instrument.BANJO)
                     .strength(0.6F, 0.5F)
                     .sounds(BlockSoundGroup.GRAVEL)
             ));

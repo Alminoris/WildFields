@@ -78,9 +78,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.FEATHER_GRASS)
                 .add(ModBlocks.TINY_GRASS);
-        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
-                .add(ModBlocks.FEATHER_GRASS)
-                .add(ModBlocks.TINY_GRASS);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.SALTMARSH_BLOCK)
                 .add(ModBlocks.SALTMARSH_POLISHED)
