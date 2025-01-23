@@ -132,7 +132,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(ModTags.Blocks.STEPPE_VIPER_PLANTS)
                 .add(ModBlocks.FEATHER_GRASS)
                 .add(ModBlocks.THYME)
-                .add(Blocks.SHORT_GRASS);
+                .add(Blocks.GRASS);
 
         getOrCreateTagBuilder(ModTags.Blocks.SAIGA_SPAWNABLE_ON)
                 .add(Blocks.GRASS_BLOCK)

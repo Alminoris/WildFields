@@ -4,32 +4,26 @@ import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.StonecuttingRecipeJsonBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
-
-import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModRecipeProvider extends FabricRecipeProvider
 {
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture)
+    public ModRecipeProvider(FabricDataOutput output)
     {
-        super(output, registriesFuture);
+        super(output);
     }
 
     @Override
-    public void generate(RecipeExporter recipeExporter)
+    public void generate(Consumer<RecipeJsonProvider> recipeExporter)
     {
         for(String name : WOOD_NAMES)
         {
@@ -355,10 +349,10 @@ public class ModRecipeProvider extends FabricRecipeProvider
         offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_STAIRS, ModBlocks.DOLOMITE_BLOCK);
         offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_WALL, ModBlocks.DOLOMITE_BLOCK);
 
-        offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING, SmokingRecipe::new,
+        offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING,
                 100, ModItems.SAIGA, ModItems.COOKED_SAIGA, 0.35f);
 
-        offerFoodCookingRecipe(recipeExporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
+        offerFoodCookingRecipe(recipeExporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,
                 600, ModItems.SAIGA, ModItems.COOKED_SAIGA, 0.35f);
 
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.SAIGA), RecipeCategory.FOOD,

@@ -15,9 +15,9 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.component.type.DyedColorComponent;
-import net.minecraft.world.biome.GrassColors;
+import net.minecraft.item.DyeableItem;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
@@ -58,7 +58,7 @@ public class WildFieldsClient implements ClientModInitializer
         );
 
         ColorProviderRegistry.ITEM.register(
-                (stack, tintIndex) -> tintIndex > 0 ? -1 : DyedColorComponent.getColor(stack, -6265536),
+                (stack, tintIndex) -> tintIndex > 0 ? -1 : ((DyeableItem)stack.getItem()).getColor(stack),
                 ModItems.FURRED_LEATHER_HELMET,
                 ModItems.FURRED_LEATHER_CHESTPLATE,
                 ModItems.FURRED_LEATHER_LEGGINGS,

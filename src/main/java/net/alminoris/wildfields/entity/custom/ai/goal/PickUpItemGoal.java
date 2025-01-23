@@ -36,7 +36,7 @@ public class PickUpItemGoal extends Goal
 
         if (!nearbyItems.isEmpty())
         {
-            this.targetItem = nearbyItems.getFirst();
+            this.targetItem = nearbyItems.stream().findFirst().get();
             return true;
         }
 

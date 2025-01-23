@@ -9,9 +9,9 @@ import net.minecraft.item.ToolMaterial;
 
 public class SteppeViperDagger extends SwordItem
 {
-    public SteppeViperDagger(ToolMaterial material, Settings settings)
+    public SteppeViperDagger(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
     {
-        super(material, settings);
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override

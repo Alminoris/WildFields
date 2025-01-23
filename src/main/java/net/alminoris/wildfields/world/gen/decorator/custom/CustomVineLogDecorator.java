@@ -16,7 +16,7 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 
 public class CustomVineLogDecorator extends TreeDecorator
 {
-    public static final MapCodec<CustomVineLogDecorator> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+    public static final Codec<CustomVineLogDecorator> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.floatRange(0.0F, 1.0F).fieldOf("probability").forGetter(decorator -> decorator.probability),
             Registries.BLOCK.getCodec().fieldOf("block").forGetter(decorator -> decorator.block)
     ).apply(instance, CustomVineLogDecorator::new));

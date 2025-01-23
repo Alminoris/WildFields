@@ -21,14 +21,9 @@ public class SteppeArrowEntity extends PersistentProjectileEntity
         super(entityType, world);
     }
 
-    public SteppeArrowEntity(World world, LivingEntity owner, ItemStack stack, @Nullable ItemStack shotFrom)
+    public SteppeArrowEntity(World world, LivingEntity owner)
     {
-        super(ModEntities.STEPPE_ARROW, owner, world, stack, shotFrom);
-    }
-
-    public SteppeArrowEntity(World world, double x, double y, double z, ItemStack stack, @Nullable ItemStack shotFrom)
-    {
-        super(ModEntities.STEPPE_ARROW, x, y, z, world, stack, shotFrom);
+        super(ModEntities.STEPPE_ARROW, owner, world);
     }
 
     @Override
@@ -56,7 +51,8 @@ public class SteppeArrowEntity extends PersistentProjectileEntity
     }
 
     @Override
-    protected ItemStack getDefaultItemStack() {
+    protected ItemStack asItemStack()
+    {
         return new ItemStack(ModItems.STEPPE_ARROW);
     }
 }

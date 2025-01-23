@@ -1,9 +1,9 @@
 package net.alminoris.wildfields.block;
 
-import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.custom.AnimalHideBlock;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
@@ -11,7 +11,8 @@ import net.alminoris.wildfields.block.custom.BushLeavesBlock;
 import net.alminoris.wildfields.block.custom.FallingLeavesBlock;
 import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -19,17 +20,16 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.ColorCode;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks
 {
-    public static final Block FEATHER_GRASS = registerBlock("feather_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block FEATHER_GRASS = registerBlock("feather_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
 
     public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
-            new ColoredFallingBlock(new ColorCode(13684792), AbstractBlock.Settings.create()
+            new FallingBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
-                    .instrument(NoteBlockInstrument.BANJO)
+                    .instrument(Instrument.BANJO)
                     .strength(0.6F, 0.5F)
                     .sounds(BlockSoundGroup.GRAVEL)
             ));
@@ -127,10 +127,10 @@ public class ModBlocks
     public static final Block DOLOMITE_BRICKS_WALL = registerBlock("dolomite_bricks_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
 
-    public static final Block TINY_GRASS = registerBlock("tiny_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block TINY_GRASS = registerBlock("tiny_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
 
     public static final Block THYME = registerBlock("thyme",
-            new FlowerBlock(StatusEffects.ABSORPTION, 0.35F, AbstractBlock.Settings.copy(Blocks.PEONY)));
+            new FlowerBlock(StatusEffects.ABSORPTION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));
 
     public static final Block POTTED_THYME = registerBlock("potted_thyme",
             new FlowerPotBlock(THYME, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
@@ -225,31 +225,31 @@ public class ModBlocks
     public static Block registerFenceGateBlock(String name)
     {
         return registerBlock(name+"_fence_gate",
-                new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
+                new FenceGateBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE), WoodType.OAK));
     }
 
     public static Block registerDoorBlock(String name)
     {
         return registerBlock(name+"_door",
-                new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
+                new DoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
     }
 
     public static Block registerTrapdoorBlock(String name)
     {
         return registerBlock(name+"_trapdoor",
-                new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
+                new TrapdoorBlock(AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     }
 
     public static Block registerButtonBlock(String name)
     {
         return registerBlock(name+"_button",
-                new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
+                new ButtonBlock(AbstractBlock.Settings.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
     }
 
     public static Block registerPressurePlateBlock(String name)
     {
         return registerBlock(name+"_pressure_plate",
-                new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+                new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
     }
 
     public static Block registerSaplingBlock(String name, SaplingGenerator saplingGenerator)

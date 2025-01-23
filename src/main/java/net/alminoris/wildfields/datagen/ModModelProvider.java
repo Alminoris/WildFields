@@ -12,7 +12,6 @@ import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
@@ -218,45 +217,38 @@ public class ModModelProvider extends FabricModelProvider
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_LEGGINGS);
     }
 
-    public final void registerArmor(ItemModelGenerator itemModelGenerator, ArmorItem armor)
+    private void registerArmor(ItemModelGenerator itemModelGenerator, ArmorItem armor)
     {
-        if (armor.getType().isTrimmable())
+        Identifier identifier = ModelIds.getItemModelId(armor);
+        Identifier identifier2 = TextureMap.getId(armor);
+        Identifier identifier3 = TextureMap.getSubId(armor, "_overlay");
+        if (armor.getMaterial() == ModArmorMaterials.FURRED_LEATHER)
         {
-            Identifier identifier = ModelIds.getItemModelId(armor);
-            Identifier identifier2 = TextureMap.getId(armor);
-            Identifier identifier3 = TextureMap.getSubId(armor, "_overlay");
-            if (armor.getMaterial().matches(ModArmorMaterials.FURRED_LEATHER))
-            {
-                Models.GENERATED_TWO_LAYERS
-                        .upload(identifier, TextureMap.layered(identifier2, identifier3), itemModelGenerator.writer, (id, textures) -> itemModelGenerator.createArmorJson(id, textures, armor.getMaterial()));
-            }
-            else
-            {
-                Models.GENERATED.upload(identifier, TextureMap.layer0(identifier2), itemModelGenerator.writer, (id, textures) -> itemModelGenerator.createArmorJson(id, textures, armor.getMaterial()));
-            }
+            Models.GENERATED_TWO_LAYERS
+                    .upload(identifier, TextureMap.layered(identifier2, identifier3), itemModelGenerator.writer, (id, textures) -> itemModelGenerator.createArmorJson(id, textures, armor.getMaterial()));
+        }
+        else
+        {
+            Models.GENERATED.upload(identifier, TextureMap.layer0(identifier2), itemModelGenerator.writer, (id, textures) -> itemModelGenerator.createArmorJson(id, textures, armor.getMaterial()));
+        }
 
-            for (TrimMaterial trimMaterial : TRIM_MATERIALS)
-            {
-                String string = trimMaterial.getAppliedName(armor.getMaterial());
-                Identifier identifier4 = itemModelGenerator.suffixTrim(identifier, string);
-                String string2 = armor.getType().getName() + "_trim_" + string;
-                Identifier identifier5 = Identifier.ofVanilla(string2).withPrefixedPath("trims/items/");
-                if (armor.getMaterial().matches(ModArmorMaterials.FURRED_LEATHER))
-                {
-                    itemModelGenerator.uploadArmor(identifier4, identifier2, identifier3, identifier5);
-                }
-                else
-                {
-                    itemModelGenerator.uploadArmor(identifier4, identifier2, identifier5);
-                }
+        for (TrimMaterial trimMaterial : TRIM_MATERIALS) {
+
+            String string = trimMaterial.getAppliedName(armor.getMaterial());
+            Identifier identifier4 = itemModelGenerator.suffixTrim(identifier, string);
+            String string2 = armor.getType().getName() + "_trim_" + string;
+            Identifier identifier5 = new Identifier(string2).withPrefixedPath("trims/items/");
+            if (armor.getMaterial() == ArmorMaterials.LEATHER) {
+                itemModelGenerator.uploadArmor(identifier4, identifier2, identifier3, identifier5);
+            } else {
+                itemModelGenerator.uploadArmor(identifier4, identifier2, identifier5);
             }
         }
     }
 
-    record TrimMaterial(String name, float itemModelIndex, Map<RegistryEntry<ArmorMaterial>, String> overrideArmorMaterials)
+    record TrimMaterial(String name, float itemModelIndex, Map<ArmorMaterial, String> overrideArmorMaterials)
     {
-        public String getAppliedName(RegistryEntry<ArmorMaterial> armorMaterial)
-        {
+        public String getAppliedName(ArmorMaterial armorMaterial) {
             return (String)this.overrideArmorMaterials.getOrDefault(armorMaterial, this.name);
         }
     }

@@ -1,12 +1,8 @@
-// 1.21.1	2025-01-11T12:13:41.2422084	Wild Fields/Tags for minecraft:item
-dc38d719c8880906b1c4998039f8b0bb56e08caa data\minecraft\tags\item\hanging_signs.json
-36264656bcee697005d6d5004f4461f098b30c58 data\minecraft\tags\item\chest_armor.json
-c5e7e2194aded0b92c42c3b3558a02a40d243d38 data\minecraft\tags\item\foot_armor.json
-b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\dyeable.json
-1c70842d60b20fcd66c50b40e8b9be399a0403af data\minecraft\tags\item\signs.json
-c79f7198688e48def082b43047ea144e912b48b3 data\minecraft\tags\item\leg_armor.json
-df1fdc4487afe44d907b5f93b34d28c41962c1e3 data\wildfields\tags\item\marmot_food.json
-74a3d9bcd16571a0b763fe6c9f704df5e6a6537a data\minecraft\tags\item\arrows.json
-20f64412360146bc587d7013023fa6d296f20af3 data\minecraft\tags\item\head_armor.json
-b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\freeze_immune_wearables.json
-df6a9ad2b6022bb2919000e4a09101908061646b data\wildfields\tags\item\saiga_food.json
+// 1.20.1	2025-01-23T22:04:13.0028179	Wild Fields/Tags for minecraft:item
+b89c03e5e27cbceacef03fe51d7c57fd8593cab6 data\minecraft\tags\items\signs.json
+0526b57ea9e76ae2f5bf7b4e892677f7975427db data\wildfields\tags\items\marmot_food.json
+02f341ae1555ab27130607dd99455c75a8db9ffa data\minecraft\tags\items\trimmable_armor.json
+05584ec14a14916f1831cb9cfceb5a59ae91c319 data\minecraft\tags\items\hanging_signs.json
+e4c974286c2c35ca966eb37149e172cd29f698c0 data\minecraft\tags\items\freeze_immune_wearables.json
+d301d34ba776529e2cc275e57bacf6bed3cbe0b6 data\wildfields\tags\items\saiga_food.json
+70880522c2842b3fee18633717402feb6671bf86 data\minecraft\tags\items\arrows.json

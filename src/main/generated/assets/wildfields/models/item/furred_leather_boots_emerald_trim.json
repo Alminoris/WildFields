@@ -2,7 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "wildfields:item/furred_leather_boots",
-    "layer1": "wildfields:item/furred_leather_boots_overlay",
-    "layer2": "minecraft:trims/items/boots_trim_emerald"
+    "layer1": "minecraft:trims/items/boots_trim_emerald"
   }
 }

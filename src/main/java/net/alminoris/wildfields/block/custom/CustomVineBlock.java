@@ -16,7 +16,7 @@ public class CustomVineBlock extends VineBlock
 
 
     @Override
-    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
     {
 
     }

@@ -3,7 +3,6 @@ package net.alminoris.wildfields.item;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;

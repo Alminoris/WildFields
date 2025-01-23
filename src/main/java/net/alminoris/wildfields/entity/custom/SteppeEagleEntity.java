@@ -19,6 +19,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -28,12 +29,12 @@ import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.Animation;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.Animation;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.RawAnimation;
 
 public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutterer
 {
@@ -132,7 +133,7 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.RABBIT_FOOT), true));
+        this.goalSelector.add(3, new TemptGoal(this, 1.05, Ingredient.ofItems(Items.RABBIT_FOOT), true));
         this.goalSelector.add(4, new FollowParentGoal(this, 1.0D));
         this.goalSelector.add(5, new EscapeDangerGoal(this, 1.2D));
         this.goalSelector.add(6, new WanderAroundGoal(this, 1.0D));

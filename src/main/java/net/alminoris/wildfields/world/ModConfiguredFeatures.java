@@ -3,20 +3,17 @@ package net.alminoris.wildfields.world;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
-import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
@@ -87,7 +84,7 @@ public class ModConfiguredFeatures
         register(context, STEPPES_GRASS_2_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.SHORT_GRASS)), List.of(Blocks.GRASS_BLOCK),1024));
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.GRASS)), List.of(Blocks.GRASS_BLOCK),1024));
 
         context.register(
                 SALTMARSH_WATER_KEY,

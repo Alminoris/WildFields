@@ -8,7 +8,6 @@ import net.alminoris.wildfields.item.custom.SaigaSickle;
 import net.alminoris.wildfields.item.custom.SteppeArrowItem;
 import net.alminoris.wildfields.item.custom.SteppeViperDagger;
 import net.minecraft.block.Block;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -61,35 +60,34 @@ public class ModItems
             new ArmorItem(
                     ModArmorMaterials.DARKLING_BEETLE_SHELL,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
+                    new Item.Settings().maxDamage(25)));
 
     public static final Item FURRED_LEATHER_HELMET = registerItem("furred_leather_helmet",
-            new ArmorItem(
+            new DyeableArmorItem(
                     ModArmorMaterials.FURRED_LEATHER,
                     ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(10))));
+                    new Item.Settings().maxDamage(10)));
 
     public static final Item FURRED_LEATHER_CHESTPLATE = registerItem("furred_leather_chestplate",
-            new ArmorItem(
+            new DyeableArmorItem(
                     ModArmorMaterials.FURRED_LEATHER,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(10))));
+                    new Item.Settings().maxDamage(10)));
 
     public static final Item FURRED_LEATHER_LEGGINGS = registerItem("furred_leather_leggings",
-            new ArmorItem(
+            new DyeableArmorItem(
                     ModArmorMaterials.FURRED_LEATHER,
                     ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(10))));
+                    new Item.Settings().maxDamage(10)));
 
     public static final Item FURRED_LEATHER_BOOTS = registerItem("furred_leather_boots",
-            new ArmorItem(
+            new DyeableArmorItem(
                     ModArmorMaterials.FURRED_LEATHER,
                     ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(10))));
+                    new Item.Settings().maxDamage(10)));
 
     public static final Item STEPPE_VIPER_DAGGER = registerItem("steppe_viper_dagger", new SteppeViperDagger(
-            ToolMaterials.STONE, new Item.Settings().maxCount(1)
-            .attributeModifiers(SteppeViperDagger.createAttributeModifiers(ToolMaterials.STONE, 2, -1f))));
+            ToolMaterials.STONE, 2, -1f, new Item.Settings().maxCount(1)));
 
     public static final Item SAIGA_SICKLE = registerItem("saiga_sickle", new SaigaSickle(
             ToolMaterials.STONE, new Item.Settings().maxCount(1)));

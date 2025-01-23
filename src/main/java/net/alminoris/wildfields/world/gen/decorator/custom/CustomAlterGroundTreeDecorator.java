@@ -2,7 +2,6 @@ package net.alminoris.wildfields.world.gen.decorator.custom;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.alminoris.wildfields.world.gen.decorator.ModTreeDecorators;
 import net.minecraft.block.Blocks;
@@ -23,7 +22,7 @@ public class CustomAlterGroundTreeDecorator extends TreeDecorator
 
     private float probability = 0.05f;
 
-    public static final MapCodec<CustomAlterGroundTreeDecorator> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+    public static final Codec<CustomAlterGroundTreeDecorator> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.floatRange(0.0F, 1.0F).fieldOf("probability").forGetter(decorator -> decorator.probability),
             BlockStateProvider.TYPE_CODEC.fieldOf("block").forGetter(decorator -> decorator.provider)
     ).apply(instance, CustomAlterGroundTreeDecorator::new));

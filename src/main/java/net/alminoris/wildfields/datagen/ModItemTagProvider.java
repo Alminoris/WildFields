@@ -33,10 +33,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
         }
 
         getOrCreateTagBuilder(ModTags.Items.MARMOT_FOOD)
-                .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.SWEET_BERRIES, Items.WHEAT_SEEDS);
+                .add(ModBlocks.TINY_GRASS.asItem(), Items.GRASS, Items.SWEET_BERRIES, Items.WHEAT_SEEDS);
 
         getOrCreateTagBuilder(ModTags.Items.SAIGA_FOOD)
-                .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.WHEAT);
+                .add(ModBlocks.TINY_GRASS.asItem(), Items.GRASS, Items.WHEAT);
 
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.DARKLING_BEETLE_CHESTPLATE)
@@ -45,23 +45,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.FURRED_LEATHER_LEGGINGS)
                 .add(ModItems.FURRED_LEATHER_BOOTS);
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(ModItems.FURRED_LEATHER_HELMET);
-
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
-                .add(ModItems.FURRED_LEATHER_CHESTPLATE, ModItems.DARKLING_BEETLE_CHESTPLATE);
-
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(ModItems.FURRED_LEATHER_LEGGINGS);
-
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(ModItems.FURRED_LEATHER_BOOTS);
-
         getOrCreateTagBuilder(ItemTags.ARROWS)
                 .add(ModItems.STEPPE_ARROW);
-
-        getOrCreateTagBuilder(ItemTags.DYEABLE)
-                .add(ModItems.FURRED_LEATHER_HELMET, ModItems.FURRED_LEATHER_CHESTPLATE, ModItems.FURRED_LEATHER_LEGGINGS, ModItems.FURRED_LEATHER_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.FREEZE_IMMUNE_WEARABLES)
                 .add(ModItems.FURRED_LEATHER_HELMET, ModItems.FURRED_LEATHER_CHESTPLATE, ModItems.FURRED_LEATHER_LEGGINGS, ModItems.FURRED_LEATHER_BOOTS);

@@ -7,8 +7,6 @@ import net.alminoris.wildfields.entity.custom.ai.goal.PickUpItemGoal;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
 import net.alminoris.wildfields.util.ModTags;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -21,23 +19,25 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.registry.tag.DamageTypeTags;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.Animation;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.Animation;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.RawAnimation;
 
 public class MarmotEntity extends TameableEntity implements GeoEntity
 {
@@ -54,6 +54,7 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     public MarmotEntity(EntityType<? extends TameableEntity> entityType, World world)
     {
         super(entityType, world);
+        this.setTamed(false);
     }
 
     @Override
@@ -90,9 +91,9 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     protected void initGoals()
     {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new TameableEscapeDangerGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
+        this.goalSelector.add(1, new MarmotEscapeDangerGoal(1.5));
         this.goalSelector.add(2, new SitGoal(this));
-        this.goalSelector.add(3, new PickUpItemGoal(this, 1.0D, ModItems.OLIVES, Items.SWEET_BERRIES, ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.WHEAT_SEEDS)
+        this.goalSelector.add(3, new PickUpItemGoal(this, 1.0D, ModItems.OLIVES, Items.SWEET_BERRIES, ModBlocks.TINY_GRASS.asItem(), Items.GRASS, Items.WHEAT_SEEDS)
         {
             @Override
             public boolean canStart()
@@ -100,7 +101,7 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
                 return !MarmotEntity.this.isExploring() && super.canStart();
             }
         });
-        this.goalSelector.add(4, new EatHeldItemGoal(this, ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.WHEAT_SEEDS)
+        this.goalSelector.add(4, new EatHeldItemGoal(this, ModBlocks.TINY_GRASS.asItem(), Items.GRASS, Items.WHEAT_SEEDS)
         {
             @Override
             public boolean canStart()
@@ -108,9 +109,9 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
                 return !MarmotEntity.this.isExploring() && super.canStart();
             }
         });
-        this.goalSelector.add(5, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
+        this.goalSelector.add(5, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F, false));
         this.goalSelector.add(6, new AnimalMateGoal(this, 0.85D));
-        this.goalSelector.add(7, new TemptGoal(this, 0.8, stack -> stack.isIn(ModTags.Items.MARMOT_FOOD), false));
+        this.goalSelector.add(7, new TemptGoal(this, 0.8, Ingredient.fromTag(ModTags.Items.MARMOT_FOOD), false));
         this.goalSelector.add(8, new FollowParentGoal(this, 0.75));
         this.goalSelector.add(9, new EscapeDangerGoal(this, 1.1D));
         this.goalSelector.add(0, new WanderAroundGoal(this, 0.75D));
@@ -146,14 +147,23 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     @Override
     public @Nullable MarmotEntity createChild(ServerWorld world, PassiveEntity entity)
     {
-        return ModEntities.MARMOT.create(world);
+        MarmotEntity marmotEntity = ModEntities.MARMOT.create(world);
+        if (marmotEntity != null && entity instanceof MarmotEntity marmotEntity2)
+        {
+            if (this.isTamed())
+            {
+                marmotEntity.setOwnerUuid(this.getOwnerUuid());
+                marmotEntity.setTamed(true);
+            }
+        }
+        return marmotEntity;
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder)
+    protected void initDataTracker()
     {
-        super.initDataTracker(builder);
-        builder.add(IS_EXPLORE, false);
+        super.initDataTracker();
+        this.dataTracker.startTracking(IS_EXPLORE, false);
     }
 
     public boolean isExploring()
@@ -270,12 +280,11 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     }
 
     @Override
-    public EntityDimensions getBaseDimensions(EntityPose pose)
+    public EntityDimensions getDimensions(EntityPose pose)
     {
         if (pose == EntityPose.ROARING)
             return EntityDimensions.changing(this.getType().getWidth(), this.getType().getHeight() - 0.5F);
-
-        return super.getBaseDimensions(pose);
+        return super.getDimensions(pose);
     }
 
     @Override
@@ -303,66 +312,66 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     public ActionResult interactMob(PlayerEntity player, Hand hand)
     {
         ItemStack itemStack = player.getStackInHand(hand);
-        if (!this.getWorld().isClient || this.isBaby() && this.isBreedingItem(itemStack))
-        {
-            if (this.isTamed())
-            {
-                if (this.isBreedingItem(itemStack) && this.getHealth() < this.getMaxHealth())
-                {
-                    itemStack.decrementUnlessCreative(1, player);
-                    FoodComponent foodComponent = itemStack.get(DataComponentTypes.FOOD);
-                    float f = foodComponent != null ? (float)foodComponent.nutrition() : 1.0F;
-                    this.heal(2.0F * f);
-                    return ActionResult.success(this.getWorld().isClient());
-                }
-                else
-                {
-                    ActionResult actionResult = super.interactMob(player, hand);
-                    if (!actionResult.isAccepted() && this.isOwner(player))
-                    {
-                        this.setSitting(!this.isSitting());
-                        this.jumping = false;
-                        this.navigation.stop();
-                        this.setTarget(null);
-                        return ActionResult.SUCCESS_NO_ITEM_USED;
-                    }
-                    else
-                    {
-                        return actionResult;
-                    }
-                }
-            }
-            else if (itemStack.isOf(Items.WHEAT_SEEDS) && !this.isExploring())
-            {
-                itemStack.decrementUnlessCreative(1, player);
-                this.tryTame(player);
-                return ActionResult.SUCCESS;
-            }
-            else
-            {
-                return super.interactMob(player, hand);
-            }
-        }
-        else
+        Item item = itemStack.getItem();
+        if (this.getWorld().isClient)
         {
             boolean bl = this.isOwner(player) || this.isTamed() || itemStack.isOf(Items.WHEAT_SEEDS) && !this.isTamed();
             return bl ? ActionResult.CONSUME : ActionResult.PASS;
         }
-    }
-
-    private void tryTame(PlayerEntity player)
-    {
-        if (this.random.nextInt(3) == 0)
+        else if (this.isTamed())
         {
-            this.setOwner(player);
-            this.navigation.stop();
-            this.setTarget(null);
-            this.setSitting(true);
-            this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_POSITIVE_PLAYER_REACTION_PARTICLES);
+            if (this.isBreedingItem(itemStack) && this.getHealth() < this.getMaxHealth())
+            {
+                if (!player.getAbilities().creativeMode)
+                {
+                    itemStack.decrement(1);
+                }
+
+                this.heal((float)item.getFoodComponent().getHunger());
+                return ActionResult.SUCCESS;
+            }
+            else
+            {
+                ActionResult actionResult = super.interactMob(player, hand);
+                if ((!actionResult.isAccepted() || this.isBaby()) && this.isOwner(player))
+                {
+                    this.setSitting(!this.isSitting());
+                    this.jumping = false;
+                    this.navigation.stop();
+                    this.setTarget(null);
+                    return ActionResult.SUCCESS;
+                }
+                else
+                {
+                    return actionResult;
+                }
+            }
+        }
+        else if (itemStack.isOf(Items.WHEAT_SEEDS))
+        {
+            if (!player.getAbilities().creativeMode)
+            {
+                itemStack.decrement(1);
+            }
+
+            if (this.random.nextInt(3) == 0)
+            {
+                this.setOwner(player);
+                this.navigation.stop();
+                this.setTarget(null);
+                this.setSitting(true);
+                this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_POSITIVE_PLAYER_REACTION_PARTICLES);
+            }
+            else
+            {
+                this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_NEGATIVE_PLAYER_REACTION_PARTICLES);
+            }
+
+            return ActionResult.SUCCESS;
         }
         else
         {
-            this.getWorld().sendEntityStatus(this, EntityStatuses.ADD_NEGATIVE_PLAYER_REACTION_PARTICLES);
+            return super.interactMob(player, hand);
         }
     }
 
@@ -370,5 +379,23 @@ public class MarmotEntity extends TameableEntity implements GeoEntity
     public int getLimitPerChunk()
     {
         return 15;
+    }
+
+    @Override
+    public EntityView method_48926()
+    {
+        return this.getWorld();
+    }
+
+    class MarmotEscapeDangerGoal extends EscapeDangerGoal
+    {
+        public MarmotEscapeDangerGoal(double speed) {
+            super(MarmotEntity.this, speed);
+        }
+
+        @Override
+        protected boolean isInDanger() {
+            return this.mob.shouldEscapePowderSnow() || this.mob.isOnFire();
+        }
     }
 }

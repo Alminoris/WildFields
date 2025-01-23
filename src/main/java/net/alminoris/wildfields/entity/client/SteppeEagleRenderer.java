@@ -25,11 +25,13 @@ public class SteppeEagleRenderer extends GeoEntityRenderer<SteppeEagleEntity>
     }
 
     @Override
-    public void preRender(MatrixStack poseStack, SteppeEagleEntity entity, BakedGeoModel model, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour)
+    public void preRender(MatrixStack poseStack, SteppeEagleEntity entity, BakedGeoModel model, VertexConsumerProvider bufferSource,
+                          VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay,
+                          float red, float green, float blue, float alpha)
     {
         if (entity.isBaby())
             poseStack.scale(0.6f, 0.6f, 0.6f);
         else { poseStack.scale(1.0F, 1.0F, 1.0F); }
-        super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

@@ -25,7 +25,9 @@ public class SaigaRenderer extends GeoEntityRenderer<SaigaEntity>
     }
 
     @Override
-    public void preRender(MatrixStack poseStack, SaigaEntity entity, BakedGeoModel model, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour)
+    public void preRender(MatrixStack poseStack, SaigaEntity entity, BakedGeoModel model, VertexConsumerProvider bufferSource,
+                          VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay,
+                          float red, float green, float blue, float alpha)
     {
         if (entity.isBaby())
         {
@@ -39,7 +41,6 @@ public class SaigaRenderer extends GeoEntityRenderer<SaigaEntity>
             model.getBone("horn1").get().setHidden(false);
             model.getBone("horn2").get().setHidden(false);
         }
-
-        super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

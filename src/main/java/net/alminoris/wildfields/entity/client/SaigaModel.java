@@ -4,9 +4,9 @@ import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.entity.custom.SaigaEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import software.bernie.geckolib.animation.AnimationState;
-import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
@@ -33,7 +33,7 @@ public class SaigaModel extends GeoModel<SaigaEntity>
     @Override
     public void setCustomAnimations(SaigaEntity entity, long instanceId, AnimationState<SaigaEntity> animationState)
     {
-        GeoBone head = getAnimationProcessor().getBone("head");
+        CoreGeoBone head = getAnimationProcessor().getBone("head");
 
         if (head != null && !entity.isEating())
         {
