@@ -38,11 +38,18 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(ModTags.Items.SAIGA_FOOD)
                 .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.WHEAT);
 
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.DARKLING_BEETLE_CHESTPLATE)
+                .add(ModItems.FURRED_LEATHER_HELMET)
+                .add(ModItems.FURRED_LEATHER_CHESTPLATE)
+                .add(ModItems.FURRED_LEATHER_LEGGINGS)
+                .add(ModItems.FURRED_LEATHER_BOOTS);
+
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
                 .add(ModItems.FURRED_LEATHER_HELMET);
 
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
-                .add(ModItems.FURRED_LEATHER_CHESTPLATE);
+                .add(ModItems.FURRED_LEATHER_CHESTPLATE, ModItems.DARKLING_BEETLE_CHESTPLATE);
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
                 .add(ModItems.FURRED_LEATHER_LEGGINGS);

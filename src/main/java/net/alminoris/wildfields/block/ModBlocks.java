@@ -8,6 +8,8 @@ import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.custom.AnimalHideBlock;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
 import net.alminoris.wildfields.block.custom.BushLeavesBlock;
+import net.alminoris.wildfields.block.custom.FallingLeavesBlock;
+import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.data.family.BlockFamily;
@@ -163,6 +165,10 @@ public class ModBlocks
         if (name.equals("tamarisk"))
             return registerBlock(name+"_leaves",
                     new BushLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).noCollision()));
+
+        if (name.equals("olive"))
+            return registerBlock(name+"_leaves",
+                    new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.OLIVE_LEAVES, 30));
 
         return registerBlock(name+"_leaves",
                 new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));

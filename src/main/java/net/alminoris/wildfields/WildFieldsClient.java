@@ -7,8 +7,11 @@ import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.entity.client.*;
 import net.alminoris.wildfields.entity.client.projectile.SteppeArrowRenderer;
 import net.alminoris.wildfields.item.ModItems;
+import net.alminoris.wildfields.particle.LeavesParticle;
+import net.alminoris.wildfields.particle.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.color.world.BiomeColors;
@@ -61,6 +64,10 @@ public class WildFieldsClient implements ClientModInitializer
                 ModItems.FURRED_LEATHER_LEGGINGS,
                 ModItems.FURRED_LEATHER_BOOTS
         );
+
+        ParticleFactoryRegistry.getInstance().register(ModParticles.OLIVE_LEAVES,
+                spriteProvider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) ->
+                        new LeavesParticle(world, x, y, z, spriteProvider, 12));
 
         EntityRendererRegistry.register(ModEntities.MARMOT, MarmotRenderer::new);
         EntityRendererRegistry.register(ModEntities.STEPPE_VIPER, SteppeViperRenderer::new);

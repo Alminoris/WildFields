@@ -18,7 +18,7 @@
 				{
 					"name": "head",
 					"parent": "darkling_beetle",
-					"pivot": [0, 2.725, -5.35],
+					"pivot": [0, 2.225, -3.6],
 					"cubes": [
 						{
 							"origin": [-1.25, 1.75, -5.75],
