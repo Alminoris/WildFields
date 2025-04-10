@@ -1,0 +1,26 @@
+{
+  "name": "wildfields:village_steppes/town_centers",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/town_centers/steppes_center",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 50
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/town_centers/steppe_center1",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 50
+    }
+  ]
+}
