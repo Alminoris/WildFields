@@ -1,0 +1,26 @@
+{
+  "name": "wildfields:village_steppes/buildings",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/villagers/unemployed",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 5
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/villagers/empty",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    }
+  ]
+}
