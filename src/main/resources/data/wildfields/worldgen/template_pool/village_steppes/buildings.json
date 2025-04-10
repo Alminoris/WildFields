@@ -1,0 +1,106 @@
+{
+  "name": "wildfields:village_steppes/buildings",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/house_1",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 10
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/house_2",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/house_3",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 8
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/house_4",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 8
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/saiga",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 4
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/wheat_field",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 6
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/leatherworking",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/smithing",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/butchery",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    },
+    {
+      "element":
+      {
+        "location": "wildfields:village/steppes/buildings/fletching",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      },
+      "weight": 1
+    }
+  ]
+}
