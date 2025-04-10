@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:feather_grass",
+    "wildfields:thyme",
+    "minecraft:grass"
+  ]
+}

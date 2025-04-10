@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "wildfields:saltmarsh_block"
+  },
+  "result": "wildfields:saltmarsh_bricks_wall"
+}
