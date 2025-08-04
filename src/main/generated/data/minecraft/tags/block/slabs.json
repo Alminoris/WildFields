@@ -1,12 +1,24 @@
 {
   "values": [
     "wildfields:saltmarsh_slab",
-    "wildfields:dolomite_slab",
     "wildfields:saltmarsh_cobbled_slab",
-    "wildfields:dolomite_cobbled_slab",
     "wildfields:saltmarsh_bricks_slab",
-    "wildfields:dolomite_bricks_slab",
     "wildfields:saltmarsh_polished_slab",
-    "wildfields:dolomite_polished_slab"
+    "wildfields:dolomite_slab",
+    "wildfields:dolomite_bricks_slab",
+    "wildfields:dolomite_cobbled_slab",
+    "wildfields:dolomite_polished_slab",
+    "wildfields:loessic_marl_slab",
+    "wildfields:loessic_marl_bricks_slab",
+    "wildfields:loessic_marl_cobbled_slab",
+    "wildfields:loessic_marl_polished_slab",
+    "wildfields:loamy_marl_slab",
+    "wildfields:loamy_marl_bricks_slab",
+    "wildfields:loamy_marl_cobbled_slab",
+    "wildfields:loamy_marl_polished_slab",
+    "wildfields:fossil_marlstone_slab",
+    "wildfields:fossil_marlstone_bricks_slab",
+    "wildfields:fossil_marlstone_cobbled_slab",
+    "wildfields:fossil_marlstone_polished_slab"
   ]
 }

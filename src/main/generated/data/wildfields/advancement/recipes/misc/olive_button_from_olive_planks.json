@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:olive_button_from_olive_planks"
+        "recipe": "wildfields:olive_button_from_olive_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:olive_button_from_olive_planks"
+      "wildfields:olive_button_from_olive_planks"
     ]
   }
 }

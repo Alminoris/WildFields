@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:yellow_dye_from_wormwood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wormwood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:wormwood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wormwood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:yellow_dye_from_wormwood"
+    ]
+  }
+}

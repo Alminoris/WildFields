@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dolomite_polished_stairs_from_dolomite_block_stonecutting"
+        "recipe": "wildfields:dolomite_polished_stairs_from_dolomite_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dolomite_polished_stairs_from_dolomite_block_stonecutting"
+      "wildfields:dolomite_polished_stairs_from_dolomite_block_stonecutting"
     ]
   }
 }

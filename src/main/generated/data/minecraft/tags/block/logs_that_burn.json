@@ -7,6 +7,10 @@
     "wildfields:tamarisk_log",
     "wildfields:stripped_tamarisk_log",
     "wildfields:tamarisk_wood",
-    "wildfields:stripped_tamarisk_wood"
+    "wildfields:stripped_tamarisk_wood",
+    "wildfields:western_serviceberry_log",
+    "wildfields:stripped_western_serviceberry_log",
+    "wildfields:western_serviceberry_wood",
+    "wildfields:stripped_western_serviceberry_wood"
   ]
 }

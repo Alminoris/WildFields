@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dolomite_cobbled_slab_from_dolomite_cobbled_stonecutting"
+        "recipe": "wildfields:dolomite_cobbled_slab_from_dolomite_cobbled_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dolomite_cobbled_slab_from_dolomite_cobbled_stonecutting"
+      "wildfields:dolomite_cobbled_slab_from_dolomite_cobbled_stonecutting"
     ]
   }
 }

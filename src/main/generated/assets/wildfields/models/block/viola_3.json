@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_3",
+  "textures": {
+    "flowerbed": "wildfields:block/viola",
+    "stem": "wildfields:block/viola_stem"
+  }
+}

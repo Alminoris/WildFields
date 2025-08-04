@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "wildfields:tiny_grass",
-    "minecraft:grass",
-    "minecraft:wheat"
-  ]
-}

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:light_gray_dye_from_feather_grass"
+        "recipe": "wildfields:light_gray_dye_from_feather_grass"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:light_gray_dye_from_feather_grass"
+      "wildfields:light_gray_dye_from_feather_grass"
     ]
   }
 }

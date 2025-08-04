@@ -1,6 +1,5 @@
 package net.alminoris.wildfields.world;
 
-import com.google.common.collect.ImmutableList;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.minecraft.fluid.Fluids;
@@ -16,6 +15,7 @@ import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
@@ -24,6 +24,8 @@ public class ModPlacedFeatures
     public static final RegistryKey<PlacedFeature> OLIVE_PLACED_KEY = registerKey("olive_placed");
 
     public static final RegistryKey<PlacedFeature> TAMARISK_PLACED_KEY = registerKey("tamarisk_placed");
+
+    public static final RegistryKey<PlacedFeature> WESTERN_SERVICEBERRY_PLACED_KEY = registerKey("western_serviceberry_placed");
 
     public static final RegistryKey<PlacedFeature> STEPPES_GRASS_PLACED_KEY = registerKey("steppes_grass_placed");
 
@@ -37,11 +39,29 @@ public class ModPlacedFeatures
 
     public static RegistryKey<PlacedFeature> THYME_PLACED_KEY = registerKey("thyme_placed");
 
+    public static RegistryKey<PlacedFeature> SPIDER_MILKWEED_PLACED_KEY = registerKey("spider_milkweed_placed");
+
+    public static RegistryKey<PlacedFeature> WORMWOOD_PLACED_KEY = registerKey("wormwood_placed");
+
     public static RegistryKey<PlacedFeature> DOLOMITE_PLACED_KEY = registerKey("dolomite_placed");
+
+    public static RegistryKey<PlacedFeature> MARL_PLACED_KEY = registerKey("marl_placed");
+
+    public static RegistryKey<PlacedFeature> LOESSIC_MARL_PLACED_KEY = registerKey("loessic_marl_placed");
+
+    public static RegistryKey<PlacedFeature> VIOLA_PLACED_KEY = registerKey("viola_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
-        var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);;
+        var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+        register(context, MARL_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MARL_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(30))));
+
+        register(context, LOESSIC_MARL_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LOESSIC_MARL_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(50), YOffset.fixed(80))));
 
         register(context, OLIVE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OLIVE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 1),
@@ -50,6 +70,10 @@ public class ModPlacedFeatures
         register(context, TAMARISK_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TAMARISK_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.1f, 1),
                         ModBlockSetsHelper.WOODEN_SAPLINGS.get("tamarisk")));
+
+        register(context, WESTERN_SERVICEBERRY_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WESTERN_SERVICEBERRY_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.1f, 1),
+                        ModBlockSetsHelper.WOODEN_SAPLINGS.get("western_serviceberry")));
 
         register(context, STEPPES_GRASS_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STEPPES_GRASS_KEY),
@@ -118,6 +142,24 @@ public class ModPlacedFeatures
 
         register(context, THYME_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.THYME_KEY),
                 List.of(RarityFilterPlacementModifier.of(48),
+                        SquarePlacementModifier.of(),
+                        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                        BiomePlacementModifier.of()));
+
+        register(context, SPIDER_MILKWEED_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SPIDER_MILKWEED_KEY),
+                List.of(RarityFilterPlacementModifier.of(32),
+                        SquarePlacementModifier.of(),
+                        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                        BiomePlacementModifier.of()));
+
+        register(context, WORMWOOD_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WORMWOOD_KEY),
+                List.of(RarityFilterPlacementModifier.of(24),
+                        SquarePlacementModifier.of(),
+                        PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                        BiomePlacementModifier.of()));
+
+        register(context, VIOLA_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VIOLA_KEY),
+                List.of(NoiseThresholdCountPlacementModifier.of(-0.5, 2, 5),
                         SquarePlacementModifier.of(),
                         PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                         BiomePlacementModifier.of()));

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "wildfields:block/western_serviceberry_log",
+    "side": "wildfields:block/western_serviceberry_log"
+  }
+}

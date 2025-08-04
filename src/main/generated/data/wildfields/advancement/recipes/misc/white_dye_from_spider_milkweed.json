@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spider_milkweed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:spider_milkweed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:white_dye_from_spider_milkweed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_spider_milkweed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:white_dye_from_spider_milkweed"
+    ]
+  }
+}

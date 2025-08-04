@@ -5,6 +5,15 @@
     "wildfields:saltmarsh_bricks_wall",
     "wildfields:dolomite_wall",
     "wildfields:dolomite_cobbled_wall",
-    "wildfields:dolomite_bricks_wall"
+    "wildfields:dolomite_bricks_wall",
+    "wildfields:loessic_marl_wall",
+    "wildfields:loessic_marl_cobbled_wall",
+    "wildfields:loessic_marl_bricks_wall",
+    "wildfields:loamy_marl_wall",
+    "wildfields:loamy_marl_cobbled_wall",
+    "wildfields:loamy_marl_bricks_wall",
+    "wildfields:fossil_marlstone_wall",
+    "wildfields:fossil_marlstone_cobbled_wall",
+    "wildfields:fossil_marlstone_bricks_wall"
   ]
 }

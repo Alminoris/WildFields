@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "wildfields:fossil_marlstone_cobbled"
+  },
+  "result": {
+    "id": "wildfields:fossil_marlstone_block"
+  }
+}

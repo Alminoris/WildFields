@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "wildfields:block/loamy_marl_bricks",
+    "side": "wildfields:block/loamy_marl_bricks",
+    "top": "wildfields:block/loamy_marl_bricks"
+  }
+}

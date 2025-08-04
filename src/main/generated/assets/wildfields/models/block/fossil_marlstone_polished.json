@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "wildfields:block/fossil_marlstone_polished"
+  }
+}

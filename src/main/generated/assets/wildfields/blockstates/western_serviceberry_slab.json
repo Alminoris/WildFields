@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/western_serviceberry_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/western_serviceberry_planks"
+    },
+    "type=top": {
+      "model": "wildfields:block/western_serviceberry_slab_top"
+    }
+  }
+}

@@ -40,8 +40,12 @@ public class WildFieldsClient implements ClientModInitializer
             BlockRenderLayerMap.INSTANCE.putBlock(BUSHES.get(name), RenderLayer.getCutout());
         }
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_LICHEN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FEATHER_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.THYME, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SPIDER_MILKWEED, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WORMWOOD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SERVAL_HIDE, RenderLayer.getCutout());
 
@@ -75,6 +79,7 @@ public class WildFieldsClient implements ClientModInitializer
         EntityRendererRegistry.register(ModEntities.STEPPE_EAGLE, SteppeEagleRenderer::new);
         EntityRendererRegistry.register(ModEntities.SAIGA, SaigaRenderer::new);
         EntityRendererRegistry.register(ModEntities.SERVAL, ServalRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MOLE, MoleRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.STEPPE_ARROW, SteppeArrowRenderer::new);
     }

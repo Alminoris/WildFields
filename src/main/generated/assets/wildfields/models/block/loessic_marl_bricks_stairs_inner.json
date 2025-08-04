@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "wildfields:block/loessic_marl_bricks",
+    "side": "wildfields:block/loessic_marl_bricks",
+    "top": "wildfields:block/loessic_marl_bricks"
+  }
+}

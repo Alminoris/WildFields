@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:loamy_marl_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:loamy_marl_polished"
+  }
+}

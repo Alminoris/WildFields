@@ -1,12 +1,24 @@
 {
   "values": [
-    "wildfields:saltmarsh_stairs",
-    "wildfields:dolomite_stairs",
-    "wildfields:saltmarsh_cobbled_stairs",
     "wildfields:dolomite_cobbled_stairs",
-    "wildfields:saltmarsh_bricks_stairs",
+    "wildfields:dolomite_stairs",
     "wildfields:dolomite_bricks_stairs",
+    "wildfields:dolomite_polished_stairs",
+    "wildfields:saltmarsh_stairs",
+    "wildfields:saltmarsh_cobbled_stairs",
+    "wildfields:saltmarsh_bricks_stairs",
     "wildfields:saltmarsh_polished_stairs",
-    "wildfields:dolomite_polished_stairs"
+    "wildfields:loessic_marl_cobbled_stairs",
+    "wildfields:loessic_marl_stairs",
+    "wildfields:loessic_marl_bricks_stairs",
+    "wildfields:loessic_marl_polished_stairs",
+    "wildfields:loamy_marl_cobbled_stairs",
+    "wildfields:loamy_marl_stairs",
+    "wildfields:loamy_marl_bricks_stairs",
+    "wildfields:loamy_marl_polished_stairs",
+    "wildfields:fossil_marlstone_cobbled_stairs",
+    "wildfields:fossil_marlstone_stairs",
+    "wildfields:fossil_marlstone_bricks_stairs",
+    "wildfields:fossil_marlstone_polished_stairs"
   ]
 }

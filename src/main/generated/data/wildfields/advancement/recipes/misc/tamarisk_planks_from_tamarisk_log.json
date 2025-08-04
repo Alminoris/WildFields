@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tamarisk_planks_from_tamarisk_log"
+        "recipe": "wildfields:tamarisk_planks_from_tamarisk_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tamarisk_planks_from_tamarisk_log"
+      "wildfields:tamarisk_planks_from_tamarisk_log"
     ]
   }
 }
