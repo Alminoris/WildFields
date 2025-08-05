@@ -91,19 +91,19 @@ public class MoleEntity extends TameableEntity implements GeoEntity
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return ModSounds.SOUND_MARMOT_AMBIENT;
+        return ModSounds.SOUND_MOLE_AMBIENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source)
     {
-        return ModSounds.SOUND_MARMOT_HURT;
+        return ModSounds.SOUND_MOLE_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return ModSounds.SOUND_MARMOT_DEATH;
+        return ModSounds.SOUND_MOLE_DEATH;
     }
 
     @Override
