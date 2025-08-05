@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_loamy_marl_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:loamy_marl_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:loamy_marl_bricks_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_loamy_marl_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:loamy_marl_bricks_stairs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

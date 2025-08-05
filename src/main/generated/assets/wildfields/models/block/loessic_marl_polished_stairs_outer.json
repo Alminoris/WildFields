@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "wildfields:block/loessic_marl_polished",
+    "side": "wildfields:block/loessic_marl_polished",
+    "top": "wildfields:block/loessic_marl_polished"
+  }
+}

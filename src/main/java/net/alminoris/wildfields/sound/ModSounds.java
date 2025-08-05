@@ -34,6 +34,10 @@ public class ModSounds
     public static final SoundEvent SOUND_SERVAL_HURT = registerSoundEvent("sound_serval_hurt");
     public static final SoundEvent SOUND_SERVAL_DEATH = registerSoundEvent("sound_serval_death");
 
+    public static final SoundEvent SOUND_MOLE_AMBIENT = registerSoundEvent("sound_mole_ambient");
+    public static final SoundEvent SOUND_MOLE_HURT = registerSoundEvent("sound_mole_hurt");
+    public static final SoundEvent SOUND_MOLE_DEATH = registerSoundEvent("sound_mole_death");
+
     private static SoundEvent registerSoundEvent(String name)
     {
         Identifier id = Identifier.of(WildFields.MOD_ID, name);

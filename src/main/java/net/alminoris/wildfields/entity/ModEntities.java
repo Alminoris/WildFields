@@ -13,6 +13,11 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities
 {
+    public static final EntityType<MoleEntity> MOLE = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "mole"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MoleEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.7f, 0.5f)).build());
+
     public static final EntityType<MarmotEntity> MARMOT = Registry.register(
             Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "marmot"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MarmotEntity::new)

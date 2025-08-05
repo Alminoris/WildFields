@@ -4,6 +4,7 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.entity.ModEntities;
+import net.alminoris.wildfields.item.custom.EarthwormItem;
 import net.alminoris.wildfields.item.custom.SaigaSickle;
 import net.alminoris.wildfields.item.custom.SteppeArrowItem;
 import net.alminoris.wildfields.item.custom.SteppeViperDagger;
@@ -28,11 +29,16 @@ public class ModItems
     public static final Item STEPPE_EAGLE_SPAWN_EGG = registerItem("steppe_eagle_spawn_egg", new SpawnEggItem(
             ModEntities.STEPPE_EAGLE, 0x694e3e, 0X9c7c5f, new Item.Settings()));
 
+    public static final Item MOLE_SPAWN_EGG = registerItem("mole_spawn_egg", new SpawnEggItem(
+            ModEntities.MOLE, 0x131112, 0Xa28081, new Item.Settings()));
+
     public static final Item SAIGA_SPAWN_EGG = registerItem("saiga_spawn_egg", new SpawnEggItem(
             ModEntities.SAIGA, 0xf4b765, 0Xdba96f, new Item.Settings()));
 
     public static final Item SERVAL_SPAWN_EGG = registerItem("serval_spawn_egg", new SpawnEggItem(
             ModEntities.SERVAL, 0xd39c51, 0X55351d, new Item.Settings()));
+
+    public static final Item EARTHWORM = registerItem("earthworm", new EarthwormItem(new Item.Settings()));
 
     public static final Item OLIVES = registerItem("olives", new Item(new Item.Settings().maxCount(16).food(ModFoodComponents.OLIVES)));
 

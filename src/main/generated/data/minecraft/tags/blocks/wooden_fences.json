@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:olive_fence",
+    "wildfields:tamarisk_fence",
+    "wildfields:western_serviceberry_fence"
+  ]
+}

@@ -4,6 +4,7 @@ public class ModWorldGeneration
 {
     public static void generateModWorldGen()
     {
+        ModOreGeneration.generateOres();
         ModBiomeModifications.addTreesAndHugeMushrooms();
         ModEntityGeneration.addSpawns();
     }

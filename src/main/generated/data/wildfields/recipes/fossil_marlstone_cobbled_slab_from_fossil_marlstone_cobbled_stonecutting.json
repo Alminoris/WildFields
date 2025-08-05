@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "wildfields:fossil_marlstone_cobbled"
+  },
+  "result": "wildfields:fossil_marlstone_cobbled_slab"
+}

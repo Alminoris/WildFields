@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "wildfields:block/western_serviceberry_door_bottom",
+    "top": "wildfields:block/western_serviceberry_door_top"
+  }
+}

@@ -76,5 +76,6 @@ public class WildFields implements ModInitializer
 		FabricDefaultAttributeRegistry.register(ModEntities.STEPPE_VIPER, SteppeViperEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.SAIGA, SaigaEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.SERVAL, ServalEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.MOLE, MoleEntity.setAttributes());
 	}
 }
