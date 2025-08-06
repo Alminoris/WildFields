@@ -98,5 +98,20 @@
   {
     "subtitle": "sounds.wildfields.sound_serval_death",
     "sounds": [ "wildfields:sound_serval_death" ]
+  },
+  "sound_mole_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_mole_ambient",
+    "sounds": [ "wildfields:sound_mole_ambient" ]
+  },
+  "sound_mole_hurt":
+  {
+  "subtitle": "sounds.wildfields.sound_mole_hurt",
+  "sounds": [ "wildfields:sound_mole_hurt" ]
+  },
+  "sound_mole_death":
+  {
+  "subtitle": "sounds.wildfields.sound_mole_death",
+  "sounds": [ "wildfields:sound_mole_death" ]
   }
 }
