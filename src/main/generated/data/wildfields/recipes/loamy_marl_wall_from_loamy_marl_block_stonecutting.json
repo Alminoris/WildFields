@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "wildfields:loamy_marl_block"
+  },
+  "result": "wildfields:loamy_marl_wall"
+}

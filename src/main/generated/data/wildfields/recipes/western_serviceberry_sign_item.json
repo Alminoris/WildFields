@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "wildfields:western_serviceberry_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    " / "
+  ],
+  "result": {
+    "count": 3,
+    "item": "wildfields:western_serviceberry_sign_item"
+  },
+  "show_notification": true
+}

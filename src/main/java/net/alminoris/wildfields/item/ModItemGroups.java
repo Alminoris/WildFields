@@ -12,13 +12,17 @@ import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModItemGroups
 {
-    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(Identifier.of(WildFields.MOD_ID, "wildfieldstab"))
+    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(new Identifier(WildFields.MOD_ID, "wildfieldstab"))
             .displayName(Text.translatable("itemgroup.wildfieldstab"))
                     .icon(() -> new ItemStack(ModBlocks.FEATHER_GRASS)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.FEATHER_GRASS);
                         entries.add(ModBlocks.TINY_GRASS);
                         entries.add(ModBlocks.THYME);
+                        entries.add(ModBlocks.SPIDER_MILKWEED);
+                        entries.add(ModBlocks.WORMWOOD);
+                        entries.add(ModBlocks.VIOLA);
+                        entries.add(ModBlocks.GREEN_LICHEN);
                         entries.add(ModBlocks.SALTMARSH_BLOCK);
                         entries.add(ModBlocks.SALTMARSH_STAIRS);
                         entries.add(ModBlocks.SALTMARSH_SLAB);
@@ -51,6 +55,54 @@ public class ModItemGroups
                         entries.add(ModBlocks.DOLOMITE_BRICKS_WALL);
                         entries.add(ModBlocks.DOLOMITE_BRICKS_STAIRS);
                         entries.add(ModBlocks.DOLOMITE_BRICKS_SLAB);
+                        entries.add(ModBlocks.LOESSIC_MARL_BLOCK);
+                        entries.add(ModBlocks.LOESSIC_MARL_STAIRS);
+                        entries.add(ModBlocks.LOESSIC_MARL_SLAB);
+                        entries.add(ModBlocks.LOESSIC_MARL_WALL);
+                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED);
+                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS);
+                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_SLAB);
+                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_WALL);
+                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED);
+                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS);
+                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED_SLAB);
+                        entries.add(ModBlocks.LOESSIC_MARL_CHISELED);
+                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS);
+                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_WALL);
+                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS);
+                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_SLAB);
+                        entries.add(ModBlocks.LOAMY_MARL_BLOCK);
+                        entries.add(ModBlocks.LOAMY_MARL_STAIRS);
+                        entries.add(ModBlocks.LOAMY_MARL_SLAB);
+                        entries.add(ModBlocks.LOAMY_MARL_WALL);
+                        entries.add(ModBlocks.LOAMY_MARL_COBBLED);
+                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_STAIRS);
+                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_SLAB);
+                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_WALL);
+                        entries.add(ModBlocks.LOAMY_MARL_POLISHED);
+                        entries.add(ModBlocks.LOAMY_MARL_POLISHED_STAIRS);
+                        entries.add(ModBlocks.LOAMY_MARL_POLISHED_SLAB);
+                        entries.add(ModBlocks.LOAMY_MARL_CHISELED);
+                        entries.add(ModBlocks.LOAMY_MARL_BRICKS);
+                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_WALL);
+                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_STAIRS);
+                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_SLAB);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BLOCK);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_STAIRS);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_SLAB);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_WALL);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_CHISELED);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
                         for (String name : WOOD_NAMES)
                         {
                             entries.add(WOODEN_SAPLINGS.get(name));
@@ -98,6 +150,7 @@ public class ModItemGroups
                         entries.add(ModItems.STEPPE_EAGLE_BEAK);
                         entries.add(ModItems.STEPPE_EAGLE_FEATHER);
                         entries.add(ModItems.SAIGA_HORN);
+                        entries.add(ModItems.EARTHWORM);
                         entries.add(ModItems.STEPPE_VIPER_FANG);
                         entries.add(ModItems.SAIGA);
                         entries.add(ModItems.COOKED_SAIGA);
@@ -106,6 +159,7 @@ public class ModItemGroups
                         entries.add(ModItems.SERVAL_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_EAGLE_SPAWN_EGG);
                         entries.add(ModItems.SAIGA_SPAWN_EGG);
+                        entries.add(ModItems.MOLE_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_VIPER_SPAWN_EGG);
                     }).build();
 

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:thyme",
+    "wildfields:wormwood",
+    "wildfields:spider_milkweed",
+    "wildfields:viola"
+  ]
+}

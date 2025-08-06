@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "wildfields:saiga_horn"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " #",
+    "/ "
+  ],
+  "result": {
+    "item": "wildfields:saiga_sickle"
+  },
+  "show_notification": true
+}

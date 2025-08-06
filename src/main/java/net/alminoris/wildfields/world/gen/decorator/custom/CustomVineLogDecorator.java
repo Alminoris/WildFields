@@ -1,7 +1,6 @@
 package net.alminoris.wildfields.world.gen.decorator.custom;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.alminoris.wildfields.world.gen.decorator.ModTreeDecorators;
 import net.minecraft.block.Block;
@@ -22,7 +21,7 @@ public class CustomVineLogDecorator extends TreeDecorator
     ).apply(instance, CustomVineLogDecorator::new));
 
     private final float probability;
-    private static Block block;
+    private final Block block;
 
     public CustomVineLogDecorator(float probability, Block block)
     {
@@ -41,38 +40,42 @@ public class CustomVineLogDecorator extends TreeDecorator
     {
         Random random = generator.getRandom();
 
-        BlockPos pos = generator.getLogPositions().get(2 + random.nextInt((generator.getLogPositions().size() - 4) + 2));
+        for (BlockPos pos : generator.getLogPositions())
+        {
+            if (random.nextFloat() < this.probability)
+            {
+                BlockPos blockPos = pos.west();
+                if (generator.isAir(blockPos))
+                {
+                    placeVines(blockPos, VineBlock.EAST, generator);
+                }
+            }
 
-        if (random.nextFloat() < this.probability)
-        {
-            BlockPos blockPos = pos.west();
-            if (generator.isAir(blockPos))
+            if (random.nextFloat() < this.probability)
             {
-                placeVines(blockPos, VineBlock.EAST, generator);
+                BlockPos blockPos = pos.east();
+                if (generator.isAir(blockPos))
+                {
+                    placeVines(blockPos, VineBlock.WEST, generator);
+                }
             }
-        }
-        else if (random.nextFloat() < this.probability)
-        {
-            BlockPos blockPos = pos.east();
-            if (generator.isAir(blockPos))
+
+            if (random.nextFloat() < this.probability)
             {
-                placeVines(blockPos, VineBlock.WEST, generator);
+                BlockPos blockPos = pos.north();
+                if (generator.isAir(blockPos))
+                {
+                    placeVines(blockPos, VineBlock.SOUTH, generator);
+                }
             }
-        }
-        else if (random.nextFloat() < this.probability)
-        {
-            BlockPos blockPos = pos.north();
-            if (generator.isAir(blockPos))
+
+            if (random.nextFloat() < this.probability)
             {
-                placeVines(blockPos, VineBlock.SOUTH, generator);
-            }
-        }
-        else if (random.nextFloat() < this.probability)
-        {
-            BlockPos blockPos = pos.south();
-            if (generator.isAir(blockPos))
-            {
-                placeVines(blockPos, VineBlock.NORTH, generator);
+                BlockPos blockPos = pos.south();
+                if (generator.isAir(blockPos))
+                {
+                    placeVines(blockPos, VineBlock.NORTH, generator);
+                }
             }
         }
     }
@@ -80,7 +83,7 @@ public class CustomVineLogDecorator extends TreeDecorator
     /**
      * Places a vine at a given position and then up to 4 more vines going downwards.
      */
-    private static void placeVines(BlockPos pos, BooleanProperty faceProperty, Generator generator)
+    private void placeVines(BlockPos pos, BooleanProperty faceProperty, Generator generator)
     {
         generator.replace(pos, block.getDefaultState().with(faceProperty, Boolean.valueOf(true)));
     }

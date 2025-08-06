@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "wildfields:block/loessic_marl_cobbled",
+    "side": "wildfields:block/loessic_marl_cobbled",
+    "top": "wildfields:block/loessic_marl_cobbled"
+  }
+}

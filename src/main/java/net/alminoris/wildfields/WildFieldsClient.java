@@ -75,6 +75,7 @@ public class WildFieldsClient implements ClientModInitializer
         EntityRendererRegistry.register(ModEntities.STEPPE_EAGLE, SteppeEagleRenderer::new);
         EntityRendererRegistry.register(ModEntities.SAIGA, SaigaRenderer::new);
         EntityRendererRegistry.register(ModEntities.SERVAL, ServalRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MOLE, MoleRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.STEPPE_ARROW, SteppeArrowRenderer::new);
     }

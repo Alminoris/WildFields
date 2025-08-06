@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "wildfields:saltmarsh_cobbled"
+  },
+  "result": "wildfields:saltmarsh_cobbled_wall"
+}

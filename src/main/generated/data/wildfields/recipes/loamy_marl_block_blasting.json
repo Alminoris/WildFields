@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "wildfields:loamy_marl_cobbled"
+  },
+  "result": "wildfields:loamy_marl_block"
+}

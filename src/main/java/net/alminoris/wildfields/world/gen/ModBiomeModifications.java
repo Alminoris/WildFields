@@ -11,7 +11,16 @@ public class ModBiomeModifications
 {
     public static void addTreesAndHugeMushrooms()
     {
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WESTERN_SERVICEBERRY_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SPIDER_MILKWEED_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WORMWOOD_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.VIOLA_PLACED_KEY);
     }
 }

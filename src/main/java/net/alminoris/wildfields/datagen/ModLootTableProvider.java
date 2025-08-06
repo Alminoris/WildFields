@@ -91,10 +91,17 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlockSetsHelper.LEAVES.get("tamarisk"), leavesDrops(ModBlockSetsHelper.LEAVES.get("tamarisk"),
                 ModBlockSetsHelper.WOODEN_SAPLINGS.get("tamarisk"), 0.0025f));
 
+        addDrop(ModBlockSetsHelper.LEAVES.get("western_serviceberry"), leavesDrops(ModBlockSetsHelper.LEAVES.get("western_serviceberry"),
+                ModBlockSetsHelper.WOODEN_SAPLINGS.get("western_serviceberry"), 0.0025f));
+
         addDrop(ModBlocks.FEATHER_GRASS, this::grassDrops);
         addDrop(ModBlocks.TINY_GRASS, this::tinyPlantDrops);
         addDrop(ModBlocks.THYME);
+        addDrop(ModBlocks.SPIDER_MILKWEED);
+        addDrop(ModBlocks.WORMWOOD);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));
+
+        addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));
 
         addDrop(ModBlocks.SALTMARSH_BLOCK, drops(ModBlocks.SALTMARSH_COBBLED));
         addDrop(ModBlocks.SALTMARSH_WALL);
@@ -128,6 +135,56 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.DOLOMITE_BRICKS_SLAB);
         addDrop(ModBlocks.DOLOMITE_POLISHED_STAIRS);
         addDrop(ModBlocks.DOLOMITE_POLISHED_SLAB);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_BLOCK, drops(ModBlocks.FOSSIL_MARLSTONE_COBBLED));
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_WALL);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_CHISELED);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_STAIRS);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_SLAB);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
+        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
+        addDrop(ModBlocks.LOAMY_MARL_BLOCK, drops(ModBlocks.LOAMY_MARL_COBBLED));
+        addDrop(ModBlocks.LOAMY_MARL_WALL);
+        addDrop(ModBlocks.LOAMY_MARL_COBBLED);
+        addDrop(ModBlocks.LOAMY_MARL_COBBLED_WALL);
+        addDrop(ModBlocks.LOAMY_MARL_POLISHED);
+        addDrop(ModBlocks.LOAMY_MARL_CHISELED);
+        addDrop(ModBlocks.LOAMY_MARL_BRICKS);
+        addDrop(ModBlocks.LOAMY_MARL_BRICKS_WALL);
+        addDrop(ModBlocks.LOAMY_MARL_STAIRS);
+        addDrop(ModBlocks.LOAMY_MARL_SLAB);
+        addDrop(ModBlocks.LOAMY_MARL_COBBLED_STAIRS);
+        addDrop(ModBlocks.LOAMY_MARL_COBBLED_SLAB);
+        addDrop(ModBlocks.LOAMY_MARL_POLISHED_STAIRS);
+        addDrop(ModBlocks.LOAMY_MARL_POLISHED_SLAB);
+        addDrop(ModBlocks.LOAMY_MARL_BRICKS_STAIRS);
+        addDrop(ModBlocks.LOAMY_MARL_BRICKS_SLAB);
+        addDrop(ModBlocks.LOESSIC_MARL_BLOCK, drops(ModBlocks.LOESSIC_MARL_COBBLED));
+        addDrop(ModBlocks.LOESSIC_MARL_WALL);
+        addDrop(ModBlocks.LOESSIC_MARL_COBBLED);
+        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_WALL);
+        addDrop(ModBlocks.LOESSIC_MARL_POLISHED);
+        addDrop(ModBlocks.LOESSIC_MARL_CHISELED);
+        addDrop(ModBlocks.LOESSIC_MARL_BRICKS);
+        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_WALL);
+        addDrop(ModBlocks.LOESSIC_MARL_STAIRS);
+        addDrop(ModBlocks.LOESSIC_MARL_SLAB);
+        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS);
+        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_SLAB);
+        addDrop(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS);
+        addDrop(ModBlocks.LOESSIC_MARL_POLISHED_SLAB);
+        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS);
+        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_SLAB);
+
+        addDrop(ModBlocks.VIOLA);
 
         addDrop(ModBlockSetsHelper.LEAVES.get("olive"), leavesItemDrops(ModBlockSetsHelper.LEAVES.get("olive"),
                 ModBlockSetsHelper.WOODEN_SAPLINGS.get("olive"), ModItems.OLIVES, 0.0025f));

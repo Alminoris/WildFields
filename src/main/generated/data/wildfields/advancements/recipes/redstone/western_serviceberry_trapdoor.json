@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:western_serviceberry_trapdoor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_western_serviceberry_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:western_serviceberry_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_western_serviceberry_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:western_serviceberry_trapdoor"
+    ]
+  }
+}
