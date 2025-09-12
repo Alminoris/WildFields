@@ -39,7 +39,7 @@ public class ModBiomes
 
         context.register(STEPPES, steppesBiome(placedFeatures, configuredCarvers));
 
-        //context.register(PRAIRIES, prairiesBiome(placedFeatures, configuredCarvers));
+        context.register(PRAIRIES, prairiesBiome(placedFeatures, configuredCarvers));
 
         //context.register(PAMPASAS, pampasasBiome(placedFeatures, configuredCarvers));
     }
@@ -57,8 +57,7 @@ public class ModBiomes
         GenerationSettings.LookupBackedBuilder biomeBuilder = new GenerationSettings.LookupBackedBuilder(placedFeatures, configuredCarvers);
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 6, 2, 5));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 4, 4, 4));
+        // ---------- SPAWNS ----------
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.MARMOT, 5, 6, 10));
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.SAIGA, 7, 4, 4));
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.SERVAL, 7, 1, 2));
@@ -66,28 +65,22 @@ public class ModBiomes
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.STEPPE_VIPER, 15, 1, 2));
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.STEPPE_EAGLE, 10, 1, 1));
 
+        // Vanilla mobs
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 6, 2, 5));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 4, 4, 4));
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
+        // ---------- FEATURES ----------
         globalOverworldGeneration(biomeBuilder);
-
         biomeBuilder.feature(GenerationStep.Feature.FLUID_SPRINGS, MiscPlacedFeatures.SPRING_WATER);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.DOLOMITE_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SALTMARSH_WATER_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SAND_WATER_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.OLIVE_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TAMARISK_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STEPPES_GRASS_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STEPPES_GRASS_1_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STEPPES_GRASS_2_PLACED_KEY);
-
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.THYME_PLACED_KEY);
 
         return new Biome.Builder()
@@ -103,38 +96,53 @@ public class ModBiomes
                         .grassColor(0xe4d362)
                         .foliageColor(0xa9a42e)
                         .fogColor(0Xe5e8bb)
+                        .music(null)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .build();
     }
 
     public static Biome prairiesBiome(RegistryEntryLookup<PlacedFeature> placedFeatures, RegistryEntryLookup<ConfiguredCarver<?>> configuredCarvers)
     {
-        GenerationSettings.LookupBackedBuilder biomeBuilder = new GenerationSettings.LookupBackedBuilder(placedFeatures, configuredCarvers);
+        GenerationSettings.LookupBackedBuilder biomeBuilder =
+                new GenerationSettings.LookupBackedBuilder(placedFeatures, configuredCarvers);
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
-
+        // ---------- SPAWNS ----------
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BISON, 10, 6, 12));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WESTERN_MEADOWLARK, 9, 2, 4));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.COYOTE, 5, 1, 3));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.FERRUGINOUS_HAWK, 2, 1, 1));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.PALLIDWINGED_GRASSHOPPER, 6, 2, 4));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WHITETAIL_JACKRABBIT, 8, 2, 4));
+        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLACKBILLED_MAGPIE, 9, 2, 3));
 
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
         globalOverworldGeneration(biomeBuilder);
-
         biomeBuilder.feature(GenerationStep.Feature.FLUID_SPRINGS, MiscPlacedFeatures.SPRING_WATER);
 
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PRAIRIE_GRASS_PLACED_KEY);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PRAIRIE_FLOWERS_PLACED_KEY);
 
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TREMBLING_ASPEN_PLACED_KEY);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.COTTONWOOD_PLACED_KEY);
+
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LIMESTONE_PLACED_KEY);
 
         return new Biome.Builder()
                 .precipitation(true)
-                .downfall(0.4f)
-                .temperature(0.8f)
+                .downfall(0.5f)
+                .temperature(0.75f)
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
-                        .waterColor(0x4d9b87)
-                        .waterFogColor(0x176c5a)
-                        .skyColor(0X78b3e7)
-                        .grassColor(0x94bb62)
-                        .foliageColor(0x5b8922)
-                        .fogColor(0Xc9d1c2)
+                        .waterColor(0x46b1a0)
+                        .waterFogColor(0x2a7666)
+                        .skyColor(0x86cfe3)
+                        .grassColor(0x9ecb6c)
+                        .foliageColor(0x7fa34d)
+                        .fogColor(0xdfe8d4)
+                        .music(null)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .build();
     }

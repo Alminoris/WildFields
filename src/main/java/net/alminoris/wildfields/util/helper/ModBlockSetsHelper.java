@@ -15,7 +15,7 @@ import static net.alminoris.wildfields.item.ModItems.*;
 public class ModBlockSetsHelper
 {
     //"platanus", "pink_lapacho"
-    public static final String[] WOOD_NAMES = new String[] { "olive", "tamarisk", "western_serviceberry" };
+    public static final String[] WOOD_NAMES = new String[] { "olive", "tamarisk", "western_serviceberry", "trembling_aspen", "cottonwood" };
 
     public static final String[] BUSHES_NAMES = new String[] {  };
 
