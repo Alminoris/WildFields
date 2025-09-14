@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "wildfields:block/prickly_pear_cactus_stage3"
+  }
+}

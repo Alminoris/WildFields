@@ -98,10 +98,18 @@ public class ModModelProvider extends FabricModelProvider
                     BlockStateModelGenerator.TintType.NOT_TINTED, Properties.AGE_3, 0, 1, 2, 3);
         }
 
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.PRICKLY_PEAR_CACTUS,
+                BlockStateModelGenerator.TintType.NOT_TINTED, Properties.AGE_3, 0, 1, 2, 3);
+
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.BLUE_GRAMA_GRASS, BlockStateModelGenerator.TintType.TINTED);
+
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.THYME, ModBlocks.POTTED_THYME, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SPIDER_MILKWEED, ModBlocks.POTTED_SPIDER_MILKWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WORMWOOD, ModBlocks.POTTED_WORMWOOD, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PRAIRIE_ROSE, ModBlocks.POTTED_PRAIRIE_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SMOOTH_ASTER, ModBlocks.POTTED_SMOOTH_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         blockStateModelGenerator.registerTintableCross(ModBlocks.FEATHER_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.THYME, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.SPIDER_MILKWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.WORMWOOD, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SALTMARSH_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE_CHISELED);
@@ -271,6 +279,7 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.SAIGA_HORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_SAIGA, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAIGA_SICKLE, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
 
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.DARKLING_BEETLE_CHESTPLATE);
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_HELMET);

@@ -57,6 +57,8 @@ public class WildFields implements ModInitializer
 		}
 
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.TINY_GRASS, 20, 90);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_GRAMA_GRASS, 20, 90);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PRAIRIE_SAGE, 20, 90);
 
 		ModBoats.registerBoats();
 

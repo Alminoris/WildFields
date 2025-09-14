@@ -1,6 +1,8 @@
 {
   "values": [
     "wildfields:feather_grass",
-    "wildfields:tiny_grass"
+    "wildfields:tiny_grass",
+    "wildfields:prairie_sage",
+    "wildfields:blue_grama_grass"
   ]
 }

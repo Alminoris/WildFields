@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "wildfields:block/blue_grama_grass_bottom"
+    },
+    "half=upper": {
+      "model": "wildfields:block/blue_grama_grass_top"
+    }
+  }
+}

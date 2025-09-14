@@ -17,8 +17,8 @@ public class ModSaplingGenerators
         put("olive", ModConfiguredFeatures.OLIVE_KEY);
         put("tamarisk", ModConfiguredFeatures.TAMARISK_KEY);
         put("western_serviceberry", ModConfiguredFeatures.WESTERN_SERVICEBERRY_KEY);
-        put("platanus", ModConfiguredFeatures.PLATANUS_KEY);
-        put("pink_lapacho", ModConfiguredFeatures.PINK_LAPACHO_KEY);
+        put("trembling_aspen", ModConfiguredFeatures.TREMBLING_ASPEN_KEY);
+        put("cottonwood", ModConfiguredFeatures.COTTONWOOD_KEY);
     }};
 
     public static final Dictionary<String, SaplingGenerator> saplingGenerators = new Hashtable<>()

@@ -33,6 +33,42 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                     .add(WOODEN_SIGN_ITEMS.get(name));
         }
 
+        for (String name : WOOD_NAMES)
+        {
+            getOrCreateTagBuilder(ItemTags.SAPLINGS)
+                    .add(WOODEN_SAPLINGS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
+                    .add(LOGS.get(name).asItem())
+                    .add(STRIPPED_LOGS.get(name).asItem())
+                    .add(WOODS.get(name).asItem())
+                    .add(STRIPPED_WOODS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.PLANKS)
+                    .add(WOODEN_PLANKS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_FENCES)
+                    .add(WOODEN_FENCES.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_SLABS)
+                    .add(WOODEN_SLABS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_STAIRS)
+                    .add(WOODEN_STAIRS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_BUTTONS)
+                    .add(WOODEN_BUTTONS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_PRESSURE_PLATES)
+                    .add(WOODEN_PRESSURE_PLATES.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_TRAPDOORS)
+                    .add(WOODEN_TRAPDOORS.get(name).asItem());
+
+            getOrCreateTagBuilder(ItemTags.WOODEN_DOORS)
+                    .add(WOODEN_DOORS.get(name).asItem());
+        }
+
         getOrCreateTagBuilder(ModTags.Items.MARMOT_FOOD)
                 .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.SWEET_BERRIES, Items.WHEAT_SEEDS);
 

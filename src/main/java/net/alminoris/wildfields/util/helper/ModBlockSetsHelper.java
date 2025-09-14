@@ -14,10 +14,10 @@ import static net.alminoris.wildfields.item.ModItems.*;
 
 public class ModBlockSetsHelper
 {
-    //"platanus", "pink_lapacho"
+    //"trembling_aspen", "cottonwood"
     public static final String[] WOOD_NAMES = new String[] { "olive", "tamarisk", "western_serviceberry", "trembling_aspen", "cottonwood" };
 
-    public static final String[] BUSHES_NAMES = new String[] {  };
+    public static final String[] BUSHES_NAMES = new String[] { "western_snowberry" };
 
     public static final Dictionary<String, Block> BUSHES = new Hashtable<>();
     public static final Dictionary<String, Item> BERRIES = new Hashtable<>();

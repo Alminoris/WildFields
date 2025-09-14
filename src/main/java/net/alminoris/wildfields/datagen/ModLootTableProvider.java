@@ -2,11 +2,14 @@ package net.alminoris.wildfields.datagen;
 
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
+import net.alminoris.wildfields.block.custom.TripleTallPlantBlock;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.TallPlantBlock;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -81,6 +84,22 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                                     .apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))))));
         }
 
+        addDrop(
+                ModBlocks.PRICKLY_PEAR_CACTUS,
+                block -> this.applyExplosionDecay(block, LootTable.builder()
+                        .pool(LootPool.builder()
+                                .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS)
+                                        .properties(StatePredicate.Builder.create().exactMatch(BerryBushBlock.AGE, 3)))
+                                .with(ItemEntry.builder(ModItems.PRICKLY_PEAR))
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F)))
+                                .apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))))
+                        .pool(LootPool.builder()
+                                .conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS)
+                                        .properties(StatePredicate.Builder.create().exactMatch(BerryBushBlock.AGE, 2)))
+                                .with(ItemEntry.builder((ModItems.PRICKLY_PEAR)))
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)))
+                                .apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))))));
+
 
         addDrop(ModBlockSetsHelper.LEAVES.get("olive"), leavesDrops(ModBlockSetsHelper.LEAVES.get("olive"),
                 ModBlockSetsHelper.WOODEN_SAPLINGS.get("olive"), 0.0025f));
@@ -93,9 +112,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
 
         addDrop(ModBlocks.FEATHER_GRASS, this::shortPlantDrops);
         addDrop(ModBlocks.TINY_GRASS, this::tinyPlantDrops);
+        addDrop(ModBlocks.BLUE_GRAMA_GRASS, block -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
+        addDrop(ModBlocks.PRAIRIE_SAGE, block -> this.dropsWithProperty(block, TripleTallPlantBlock.PART, TripleTallPlantBlock.PlantPart.LOWER));
         addDrop(ModBlocks.THYME);
         addDrop(ModBlocks.SPIDER_MILKWEED);
         addDrop(ModBlocks.WORMWOOD);
+        addDrop(ModBlocks.PRAIRIE_ROSE);
+        addDrop(ModBlocks.SMOOTH_ASTER);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));
 
         addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));

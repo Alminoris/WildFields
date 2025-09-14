@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "wildfields:block/blue_grama_grass_bottom"
+  }
+}

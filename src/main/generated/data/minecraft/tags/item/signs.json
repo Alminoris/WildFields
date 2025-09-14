@@ -2,6 +2,8 @@
   "values": [
     "wildfields:olive_sign_item",
     "wildfields:tamarisk_sign_item",
-    "wildfields:western_serviceberry_sign_item"
+    "wildfields:western_serviceberry_sign_item",
+    "wildfields:trembling_aspen_sign_item",
+    "wildfields:cottonwood_sign_item"
   ]
 }

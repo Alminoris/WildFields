@@ -2,8 +2,11 @@ package net.alminoris.wildfields.world;
 
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
+import net.alminoris.wildfields.block.custom.BerryBushBlock;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.alminoris.wildfields.world.gen.decorator.custom.CustomVineLogDecorator;
+import net.alminoris.wildfields.world.gen.feature.ModFeatures;
+import net.alminoris.wildfields.world.gen.feature.custom.TripleTallPlantConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerbedBlock;
@@ -37,9 +40,9 @@ public class ModConfiguredFeatures
 
     public static RegistryKey<ConfiguredFeature<?, ?>> WESTERN_SERVICEBERRY_KEY = registerKey("western_serviceberry");
 
-    public static RegistryKey<ConfiguredFeature<?, ?>> PLATANUS_KEY = registerKey("platanus");
+    public static RegistryKey<ConfiguredFeature<?, ?>> TREMBLING_ASPEN_KEY = registerKey("trembling_aspen");
 
-    public static RegistryKey<ConfiguredFeature<?, ?>> PINK_LAPACHO_KEY = registerKey("pink_lapacho");
+    public static RegistryKey<ConfiguredFeature<?, ?>> COTTONWOOD_KEY = registerKey("cottonwood");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> STEPPES_GRASS_KEY = registerKey("steppes_grass");
 
@@ -47,7 +50,17 @@ public class ModConfiguredFeatures
 
     public static RegistryKey<ConfiguredFeature<?, ?>> STEPPES_GRASS_2_KEY = registerKey("steppes_grass_2");
 
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_GRASS_KEY = registerKey("prairies_grass");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_GRASS_1_KEY = registerKey("prairies_grass_1");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_GRASS_2_KEY = registerKey("prairies_grass_2");
+
     public static RegistryKey<ConfiguredFeature<?, ?>> THYME_KEY = registerKey("thyme");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRICKLY_PEAR_CACTUS_KEY = registerKey("prickly_pear_cactus");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> WESTERN_SNOWBERRY_KEY = registerKey("western_snowberry");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> SPIDER_MILKWEED_KEY = registerKey("spider_milkweed");
 
@@ -57,6 +70,8 @@ public class ModConfiguredFeatures
 
     public static RegistryKey<ConfiguredFeature<?, ?>> SAND_WATER_KEY = registerKey("sand_water");
 
+    public static RegistryKey<ConfiguredFeature<?, ?>> SAND_1_WATER_KEY = registerKey("sand_1_water");
+
     public static RegistryKey<ConfiguredFeature<?, ?>> DOLOMITE_KEY = registerKey("dolomite");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> MARL_KEY = registerKey("marl");
@@ -64,6 +79,12 @@ public class ModConfiguredFeatures
     public static RegistryKey<ConfiguredFeature<?, ?>> LOESSIC_MARL_KEY = registerKey("loessic_marl");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> VIOLA_KEY = registerKey("viola");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIE_SAGE_KEY = registerKey("prairie_sage");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_FLOWERS_1_KEY = registerKey("prairies_flowers_1");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_FLOWERS_2_KEY = registerKey("prairies_flowers_2");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
     {
@@ -111,6 +132,34 @@ public class ModConfiguredFeatures
                 new TwoLayersFeatureSize(1, 0, 2)
         ).decorators(List.of(new CustomVineLogDecorator(0.85f, ModBlocks.GREEN_LICHEN))).build());
 
+        register(context, TREMBLING_ASPEN_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("trembling_aspen")),
+                new BendingTrunkPlacer(
+                        4,
+                        2,
+                        1,
+                        5,
+                        ConstantIntProvider.create(2)
+                ),
+                BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("trembling_aspen")),
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(1, 0, 2)
+        ).build());
+
+        register(context, COTTONWOOD_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("cottonwood")),
+                new BendingTrunkPlacer(
+                        4,
+                        2,
+                        1,
+                        5,
+                        ConstantIntProvider.create(2)
+                ),
+                BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("cottonwood")),
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+                new TwoLayersFeatureSize(1, 0, 2)
+        ).build());
+
         register(context, STEPPES_GRASS_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
@@ -129,6 +178,47 @@ public class ModConfiguredFeatures
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.SHORT_GRASS)), List.of(Blocks.GRASS_BLOCK),1024));
+
+        context.register(PRAIRIE_SAGE_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(
+                        ModFeatures.TRIPLE_TALL_PLANT,
+                        new TripleTallPlantConfig(BlockStateProvider.of(ModBlocks.PRAIRIE_SAGE)),
+                        List.of(Blocks.GRASS_BLOCK),
+                        1024
+                )
+        ));
+
+        register(context, PRAIRIES_FLOWERS_1_KEY, Feature.RANDOM_PATCH,
+                createRandomPatchFeatureConfig(
+                        new WeightedBlockStateProvider(DataPool.<BlockState>builder()
+                                .add(ModBlocks.PRAIRIE_ROSE.getDefaultState(), 35)
+                                .add(Blocks.AZURE_BLUET.getDefaultState(), 15)
+                        ), 4096
+                ));
+
+        register(context, PRAIRIES_FLOWERS_2_KEY, Feature.RANDOM_PATCH,
+                createRandomPatchFeatureConfig(
+                        new WeightedBlockStateProvider(DataPool.<BlockState>builder()
+                                .add(ModBlocks.SMOOTH_ASTER.getDefaultState(), 35)
+                                .add(Blocks.ALLIUM.getDefaultState(), 15)
+                        ), 4096
+                ));
+
+        register(context, PRAIRIES_GRASS_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.SHORT_GRASS)), List.of(Blocks.GRASS_BLOCK), 8024));
+
+        register(context, PRAIRIES_GRASS_1_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BLUE_GRAMA_GRASS)), List.of(Blocks.GRASS_BLOCK),4096));
+
+        register(context, PRAIRIES_GRASS_2_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.TALL_GRASS)), List.of(Blocks.GRASS_BLOCK),1024));
 
         context.register(
                 SALTMARSH_WATER_KEY,
@@ -164,9 +254,36 @@ public class ModConfiguredFeatures
                 )
         );
 
+        context.register(
+                SAND_1_WATER_KEY,
+                new ConfiguredFeature<>(
+                        Feature.ORE,
+                        new OreFeatureConfig(
+                                List.of(OreFeatureConfig.createTarget(
+                                        new BlockMatchRuleTest(Blocks.GRASS_BLOCK),
+                                        Blocks.SAND.getDefaultState()
+                                ),OreFeatureConfig.createTarget(
+                                        new BlockMatchRuleTest(Blocks.DIRT),
+                                        Blocks.SAND.getDefaultState()
+                                )),
+                                64
+                        )
+                )
+        );
+
         register(context, THYME_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.THYME)), List.of(Blocks.GRASS_BLOCK)));
+
+        register(context, WESTERN_SNOWBERRY_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlockSetsHelper.BUSHES.get("western_snowberry")
+                                .getDefaultState().with(BerryBushBlock.AGE, Integer.valueOf(3)))), List.of(Blocks.GRASS_BLOCK)));
+
+        register(context, PRICKLY_PEAR_CACTUS_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PRICKLY_PEAR_CACTUS
+                                .getDefaultState().with(BerryBushBlock.AGE, Integer.valueOf(3)))), List.of(Blocks.SAND)));
 
         register(context, SPIDER_MILKWEED_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,

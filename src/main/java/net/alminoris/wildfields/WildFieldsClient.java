@@ -40,11 +40,17 @@ public class WildFieldsClient implements ClientModInitializer
             BlockRenderLayerMap.INSTANCE.putBlock(BUSHES.get(name), RenderLayer.getCutout());
         }
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRICKLY_PEAR_CACTUS, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_LICHEN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FEATHER_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.THYME, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SPIDER_MILKWEED, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WORMWOOD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_GRAMA_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRAIRIE_SAGE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRAIRIE_ROSE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMOOTH_ASTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SERVAL_HIDE, RenderLayer.getCutout());
@@ -59,6 +65,18 @@ public class WildFieldsClient implements ClientModInitializer
         ColorProviderRegistry.ITEM.register(
                 (stack, tintIndex) -> GrassColors.getColor(0.5D, 1.0D),
                 ModBlocks.TINY_GRASS.asItem()
+        );
+
+        ColorProviderRegistry.BLOCK.register(
+                (state, world, pos, tintIndex) -> world != null && pos != null
+                        ? BiomeColors.getGrassColor(world, pos)
+                        : GrassColors.getColor(0.5D, 1.0D),
+                ModBlocks.BLUE_GRAMA_GRASS
+        );
+
+        ColorProviderRegistry.ITEM.register(
+                (stack, tintIndex) -> GrassColors.getColor(0.5D, 1.0D),
+                ModBlocks.BLUE_GRAMA_GRASS.asItem()
         );
 
         ColorProviderRegistry.ITEM.register(

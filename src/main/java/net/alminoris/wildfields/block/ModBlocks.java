@@ -290,11 +290,31 @@ public class ModBlocks
     public static final Block POTTED_WORMWOOD = registerBlock("potted_wormwood",
             new FlowerPotBlock(WORMWOOD, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
 
+    public static final Block PRAIRIE_ROSE = registerBlock("prairie_rose",
+            new FlowerBlock(StatusEffects.REGENERATION, 0.35F, AbstractBlock.Settings.copy(Blocks.PEONY)));
+
+    public static final Block POTTED_PRAIRIE_ROSE = registerBlock("potted_prairie_rose",
+            new FlowerPotBlock(PRAIRIE_ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
+
+    public static final Block SMOOTH_ASTER = registerBlock("smooth_aster",
+            new FlowerBlock(StatusEffects.REGENERATION, 0.35F, AbstractBlock.Settings.copy(Blocks.PEONY)));
+
+    public static final Block POTTED_SMOOTH_ASTER = registerBlock("potted_smooth_aster",
+            new FlowerPotBlock(SMOOTH_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
+
+    public static final Block BLUE_GRAMA_GRASS = registerBlock("blue_grama_grass",
+            new TallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
+
+    public static final Block PRAIRIE_SAGE = registerBlock("prairie_sage",
+            new TripleTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
+
     public static final Block SERVAL_HIDE = registerBlock("serval_hide",
             new AnimalHideBlock(AbstractBlock.Settings.copy(Blocks.YELLOW_WOOL)));
 
     public static final Block VIOLA = registerBlock("viola",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
+
+    public static final Block PRICKLY_PEAR_CACTUS = registerBlock("prickly_pear_cactus", new PricklyPearCactusBlock());
 
     private static Block registerBlock(String name, Block block)
     {

@@ -77,10 +77,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.FEATHER_GRASS)
-                .add(ModBlocks.TINY_GRASS);
+                .add(ModBlocks.TINY_GRASS)
+                .add(ModBlocks.PRAIRIE_SAGE)
+                .add(ModBlocks.BLUE_GRAMA_GRASS);
         getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(ModBlocks.FEATHER_GRASS)
-                .add(ModBlocks.TINY_GRASS);
+                .add(ModBlocks.TINY_GRASS)
+                .add(ModBlocks.PRAIRIE_SAGE)
+                .add(ModBlocks.BLUE_GRAMA_GRASS);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.FOSSIL_MARLSTONE_BLOCK)
                 .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED)
@@ -178,12 +182,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.THYME)
                 .add(ModBlocks.WORMWOOD)
                 .add(ModBlocks.SPIDER_MILKWEED)
-                .add(ModBlocks.VIOLA);
+                .add(ModBlocks.VIOLA)
+                .add(ModBlocks.PRAIRIE_ROSE)
+                .add(ModBlocks.SMOOTH_ASTER);
 
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
                 .add(ModBlocks.POTTED_THYME)
                 .add(ModBlocks.POTTED_SPIDER_MILKWEED)
-                .add(ModBlocks.POTTED_WORMWOOD);
+                .add(ModBlocks.POTTED_WORMWOOD)
+                .add(ModBlocks.POTTED_PRAIRIE_ROSE)
+                .add(ModBlocks.POTTED_SMOOTH_ASTER);
 
         getOrCreateTagBuilder(ModTags.Blocks.STEPPE_VIPER_PLANTS)
                 .add(ModBlocks.FEATHER_GRASS)

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wildfields:block/blue_grama_grass_top"
+  }
+}

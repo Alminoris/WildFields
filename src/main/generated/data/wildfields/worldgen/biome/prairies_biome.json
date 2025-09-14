@@ -60,7 +60,16 @@
       "minecraft:spring_water"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "wildfields:sand_1_water_placed",
+      "wildfields:prairies_grass_placed",
+      "wildfields:prairies_grass_1_placed",
+      "wildfields:prairies_grass_2_placed",
+      "wildfields:prairie_sage_placed",
+      "wildfields:prairies_flowers_1_placed",
+      "wildfields:prairies_flowers_2_placed",
+      "wildfields:prickly_pear_cactus_placed",
+      "wildfields:western_snowberry_placed"
     ]
   ],
   "has_precipitation": true,
@@ -75,26 +84,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:horse",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:rabbit",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 4
-      },
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {

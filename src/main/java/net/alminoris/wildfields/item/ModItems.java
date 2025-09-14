@@ -3,6 +3,7 @@ package net.alminoris.wildfields.item;
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.alminoris.wildfields.WildFields;
+import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.item.custom.EarthwormItem;
 import net.alminoris.wildfields.item.custom.SaigaSickle;
@@ -99,6 +100,9 @@ public class ModItems
 
     public static final Item SAIGA_SICKLE = registerItem("saiga_sickle", new SaigaSickle(
             ToolMaterials.STONE, new Item.Settings().maxCount(1)));
+
+    public static final Item PRICKLY_PEAR = registerItem("prickly_pear",
+            new AliasedBlockItem(ModBlocks.PRICKLY_PEAR_CACTUS, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(3, 5f))));
 
     private static Item registerItem(String name, Item item)
     {

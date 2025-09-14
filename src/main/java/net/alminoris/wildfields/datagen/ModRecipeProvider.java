@@ -107,6 +107,8 @@ public class ModRecipeProvider extends FabricRecipeProvider
                     .offerTo(recipeExporter);
         }
 
+        offerSingleOutputShapelessRecipe(recipeExporter, Items.PINK_DYE, ModBlocks.PRAIRIE_ROSE, String.valueOf(RecipeCategory.MISC));
+        offerSingleOutputShapelessRecipe(recipeExporter, Items.MAGENTA_DYE, ModBlocks.SMOOTH_ASTER, String.valueOf(RecipeCategory.MISC));
         offerSingleOutputShapelessRecipe(recipeExporter, Items.MAGENTA_DYE, ModBlocks.THYME, String.valueOf(RecipeCategory.MISC));
         offerSingleOutputShapelessRecipe(recipeExporter, Items.YELLOW_DYE, ModBlocks.WORMWOOD, String.valueOf(RecipeCategory.MISC));
         offerSingleOutputShapelessRecipe(recipeExporter, Items.WHITE_DYE, ModBlocks.SPIDER_MILKWEED, String.valueOf(RecipeCategory.MISC));

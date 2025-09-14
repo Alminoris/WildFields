@@ -24,6 +24,10 @@ public class ModItemGroups
                         entries.add(ModBlocks.THYME);
                         entries.add(ModBlocks.SPIDER_MILKWEED);
                         entries.add(ModBlocks.WORMWOOD);
+                        entries.add(ModBlocks.PRAIRIE_ROSE);
+                        entries.add(ModBlocks.SMOOTH_ASTER);
+                        entries.add(ModBlocks.BLUE_GRAMA_GRASS);
+                        entries.add(ModBlocks.PRAIRIE_SAGE);
                         entries.add(ModBlocks.VIOLA);
                         entries.add(ModBlocks.GREEN_LICHEN);
                         entries.add(ModBlocks.SALTMARSH_BLOCK);
@@ -139,6 +143,7 @@ public class ModItemGroups
                         {
                             entries.add(BERRIES.get(name));
                         }
+                        entries.add(ModItems.PRICKLY_PEAR);
                         entries.add(ModItems.FURRED_LEATHER_HELMET);
                         entries.add(ModItems.FURRED_LEATHER_CHESTPLATE);
                         entries.add(ModItems.FURRED_LEATHER_LEGGINGS);
