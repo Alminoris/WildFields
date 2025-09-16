@@ -111,6 +111,22 @@ public class ModItemGroups
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_BLOCK);
+                        entries.add(ModBlocks.LIMESTONE_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_WALL);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_WALL);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_CHISELED);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_WALL);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_SLAB);
                         for (String name : WOOD_NAMES)
                         {
                             entries.add(WOODEN_SAPLINGS.get(name));

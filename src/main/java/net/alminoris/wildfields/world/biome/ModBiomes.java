@@ -119,6 +119,9 @@ public class ModBiomes
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
         globalOverworldGeneration(biomeBuilder);
+
+        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.LIMESTONE_PLACED_KEY);
+
         biomeBuilder.feature(GenerationStep.Feature.FLUID_SPRINGS, MiscPlacedFeatures.SPRING_WATER);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SAND_1_WATER_PLACED_KEY);

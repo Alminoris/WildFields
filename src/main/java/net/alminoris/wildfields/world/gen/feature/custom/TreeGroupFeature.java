@@ -122,8 +122,8 @@ public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
 
         success |= generateTree(world, random, origin, config);
 
-        int count = 4 + random.nextInt(3);
-        int radius = 7 + random.nextInt(5);
+        int count = 5 + random.nextInt(3);
+        int radius = 8 + random.nextInt(5);
 
         for (int i = 0; i < count; i++)
         {

@@ -29,6 +29,12 @@
     "wildfields:dolomite_chiseled",
     "wildfields:dolomite_bricks",
     "wildfields:dolomite_bricks_stairs",
-    "wildfields:dolomite_bricks_slab"
+    "wildfields:dolomite_bricks_slab",
+    "wildfields:limestone_block",
+    "wildfields:limestone_polished",
+    "wildfields:limestone_chiseled",
+    "wildfields:limestone_bricks",
+    "wildfields:limestone_bricks_stairs",
+    "wildfields:limestone_bricks_slab"
   ]
 }

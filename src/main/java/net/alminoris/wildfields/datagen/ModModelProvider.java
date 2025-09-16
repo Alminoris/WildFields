@@ -111,6 +111,7 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.FEATHER_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIMESTONE_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SALTMARSH_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOESSIC_MARL_CHISELED);
@@ -119,12 +120,16 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerWallPlant(ModBlocks.GREEN_LICHEN);
 
+        BlockStateModelGenerator.BlockTexturePool limestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BLOCK);
         BlockStateModelGenerator.BlockTexturePool saltmarshPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BLOCK);
         BlockStateModelGenerator.BlockTexturePool dolomitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BLOCK);
+        BlockStateModelGenerator.BlockTexturePool limestoneBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool saltmarshBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BRICKS);
         BlockStateModelGenerator.BlockTexturePool dolomiteBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BRICKS);
+        BlockStateModelGenerator.BlockTexturePool limestonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_POLISHED);
         BlockStateModelGenerator.BlockTexturePool saltmarshPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_POLISHED);
         BlockStateModelGenerator.BlockTexturePool dolomitePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_POLISHED);
+        BlockStateModelGenerator.BlockTexturePool limestoneCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_COBBLED);
         BlockStateModelGenerator.BlockTexturePool saltmarshCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_COBBLED);
         BlockStateModelGenerator.BlockTexturePool dolomiteCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_COBBLED);
 
@@ -142,6 +147,18 @@ public class ModModelProvider extends FabricModelProvider
         BlockStateModelGenerator.BlockTexturePool loamyMarlPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_POLISHED);
         BlockStateModelGenerator.BlockTexturePool fossilMarlstonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
 
+        limestonePool.slab(ModBlocks.LIMESTONE_SLAB);
+        limestonePool.stairs(ModBlocks.LIMESTONE_STAIRS);
+        limestoneCobbledPool.slab(ModBlocks.LIMESTONE_COBBLED_SLAB);
+        limestoneCobbledPool.stairs(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+        limestoneBricksPool.slab(ModBlocks.LIMESTONE_BRICKS_SLAB);
+        limestoneBricksPool.stairs(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+        limestonePolishedPool.slab(ModBlocks.LIMESTONE_POLISHED_SLAB);
+        limestonePolishedPool.stairs(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+        limestonePool.wall(ModBlocks.LIMESTONE_WALL);
+        limestoneCobbledPool.wall(ModBlocks.LIMESTONE_COBBLED_WALL);
+        limestoneBricksPool.wall(ModBlocks.LIMESTONE_BRICKS_WALL);
+        
         saltmarshPool.slab(ModBlocks.SALTMARSH_SLAB);
         saltmarshPool.stairs(ModBlocks.SALTMARSH_STAIRS);
         saltmarshCobbledPool.slab(ModBlocks.SALTMARSH_COBBLED_SLAB);

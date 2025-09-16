@@ -2,12 +2,15 @@ package net.alminoris.wildfields.world;
 
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.YOffset;
@@ -66,6 +69,8 @@ public class ModPlacedFeatures
 
     public static RegistryKey<PlacedFeature> LOESSIC_MARL_PLACED_KEY = registerKey("loessic_marl_placed");
 
+    public static RegistryKey<PlacedFeature> LIMESTONE_PLACED_KEY = registerKey("limestone_placed");
+
     public static RegistryKey<PlacedFeature> VIOLA_PLACED_KEY = registerKey("viola_placed");
 
     public static RegistryKey<PlacedFeature> PRAIRIE_SAGE_PLACED_KEY = registerKey("prairie_sage_placed");
@@ -85,6 +90,10 @@ public class ModPlacedFeatures
         register(context, LOESSIC_MARL_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LOESSIC_MARL_KEY),
                 ModOrePlacement.modifiersWithCount(10,
                         HeightRangePlacementModifier.trapezoid(YOffset.fixed(50), YOffset.fixed(80))));
+
+        register(context, LIMESTONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LIMESTONE_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(30))));
 
         register(context, OLIVE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OLIVE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 1),
@@ -161,21 +170,24 @@ public class ModPlacedFeatures
                 List.of(
                         SquarePlacementModifier.of(),
                         PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(),Blocks.GRASS_BLOCK))));
 
         register(context, PRAIRIES_GRASS_1_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PRAIRIES_GRASS_1_KEY),
                 List.of(
                         SquarePlacementModifier.of(),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
 
         register(context, PRAIRIES_GRASS_2_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PRAIRIES_GRASS_2_KEY),
                 List.of(
                         SquarePlacementModifier.of(),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
 
         context.register(
                 SALTMARSH_WATER_PLACED_KEY,

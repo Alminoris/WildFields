@@ -124,6 +124,22 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
 
         addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));
 
+        addDrop(ModBlocks.LIMESTONE_BLOCK, drops(ModBlocks.LIMESTONE_COBBLED));
+        addDrop(ModBlocks.LIMESTONE_WALL);
+        addDrop(ModBlocks.LIMESTONE_COBBLED);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_WALL);
+        addDrop(ModBlocks.LIMESTONE_POLISHED);
+        addDrop(ModBlocks.LIMESTONE_CHISELED);
+        addDrop(ModBlocks.LIMESTONE_BRICKS);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_WALL);
+        addDrop(ModBlocks.LIMESTONE_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_SLAB);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_SLAB);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_SLAB);
+        addDrop(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_POLISHED_SLAB);
         addDrop(ModBlocks.SALTMARSH_BLOCK, drops(ModBlocks.SALTMARSH_COBBLED));
         addDrop(ModBlocks.SALTMARSH_WALL);
         addDrop(ModBlocks.SALTMARSH_COBBLED);

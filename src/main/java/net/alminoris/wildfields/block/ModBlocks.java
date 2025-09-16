@@ -23,6 +23,54 @@ public class ModBlocks
 {
     public static final Block FEATHER_GRASS = registerBlock("feather_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
 
+    public static final Block LIMESTONE_BLOCK = registerBlock("limestone_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_COBBLED = registerBlock("limestone_cobbled",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_POLISHED = registerBlock("limestone_polished",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_CHISELED = registerBlock("limestone_chiseled",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS = registerBlock("limestone_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS_SLAB = registerBlock("limestone_bricks_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_BRICKS_STAIRS = registerBlock("limestone_bricks_stairs",
+            new StairsBlock(LIMESTONE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_SLAB = registerBlock("limestone_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_STAIRS = registerBlock("limestone_stairs",
+            new StairsBlock(LIMESTONE_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_COBBLED_SLAB = registerBlock("limestone_cobbled_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_COBBLED_STAIRS = registerBlock("limestone_cobbled_stairs",
+            new StairsBlock(LIMESTONE_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_POLISHED_SLAB = registerBlock("limestone_polished_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_POLISHED_STAIRS = registerBlock("limestone_polished_stairs",
+            new StairsBlock(LIMESTONE_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_WALL = registerBlock("limestone_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_COBBLED_WALL = registerBlock("limestone_cobbled_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS_WALL = registerBlock("limestone_bricks_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+    
     public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
             new ColoredFallingBlock(new ColorCode(13684792), AbstractBlock.Settings.create()
                     .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)

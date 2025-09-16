@@ -1,5 +1,8 @@
 {
   "values": [
+    "wildfields:limestone_wall",
+    "wildfields:limestone_cobbled_wall",
+    "wildfields:limestone_bricks_wall",
     "wildfields:saltmarsh_wall",
     "wildfields:saltmarsh_cobbled_wall",
     "wildfields:saltmarsh_bricks_wall",

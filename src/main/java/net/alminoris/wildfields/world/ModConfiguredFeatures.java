@@ -89,6 +89,8 @@ public class ModConfiguredFeatures
 
     public static RegistryKey<ConfiguredFeature<?, ?>> LOESSIC_MARL_KEY = registerKey("loessic_marl");
 
+    public static RegistryKey<ConfiguredFeature<?, ?>> LIMESTONE_KEY = registerKey("limestone");
+
     public static RegistryKey<ConfiguredFeature<?, ?>> VIOLA_KEY = registerKey("viola");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIE_SAGE_KEY = registerKey("prairie_sage");
@@ -109,9 +111,14 @@ public class ModConfiguredFeatures
         List<OreFeatureConfig.Target> overworldLoessicMarls =
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.LOESSIC_MARL_BLOCK.getDefaultState()));
 
+        List<OreFeatureConfig.Target> overworldLimestone =
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.LIMESTONE_BLOCK.getDefaultState()));
+
         register(context, MARL_KEY, Feature.ORE, new OreFeatureConfig(overworldMarls, 64));
 
         register(context, LOESSIC_MARL_KEY, Feature.ORE, new OreFeatureConfig(overworldLoessicMarls, 48));
+
+        register(context, LIMESTONE_KEY, Feature.ORE, new OreFeatureConfig(overworldLimestone, 48));
 
         register(context, OLIVE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("olive")),
