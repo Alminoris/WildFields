@@ -117,6 +117,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.THYME);
         addDrop(ModBlocks.SPIDER_MILKWEED);
         addDrop(ModBlocks.WORMWOOD);
+        addDrop(ModBlocks.COTTONWOOD_FLUFF);
         addDrop(ModBlocks.PRAIRIE_ROSE);
         addDrop(ModBlocks.SMOOTH_ASTER);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));

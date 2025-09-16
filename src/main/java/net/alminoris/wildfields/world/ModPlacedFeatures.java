@@ -17,6 +17,7 @@ import net.minecraft.world.gen.placementmodifier.*;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModPlacedFeatures
@@ -97,12 +98,12 @@ public class ModPlacedFeatures
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.1f, 1),
                         ModBlockSetsHelper.WOODEN_SAPLINGS.get("western_serviceberry")));
 
-        register(context, TREMBLING_ASPEN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TREMBLING_ASPEN_KEY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 15),
+        register(context, TREMBLING_ASPEN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GROUP_TREMBLING_ASPEN_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.01f, 1),
                         ModBlockSetsHelper.WOODEN_SAPLINGS.get("trembling_aspen")));
 
-        register(context, COTTONWOOD_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COTTONWOOD_KEY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.005f, 5),
+        register(context, COTTONWOOD_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.GROUP_COTTONWOOD_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.01f, 1),
                         ModBlockSetsHelper.WOODEN_SAPLINGS.get("cottonwood")));
 
         register(context, STEPPES_GRASS_PLACED_KEY,
@@ -315,3 +316,4 @@ public class ModPlacedFeatures
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }
+

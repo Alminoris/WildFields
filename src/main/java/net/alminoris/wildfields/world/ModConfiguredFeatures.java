@@ -1,8 +1,10 @@
 package net.alminoris.wildfields.world;
 
+import com.google.common.collect.ImmutableList;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
+import net.alminoris.wildfields.block.custom.CottonwoodFluffBlock;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.alminoris.wildfields.world.gen.decorator.custom.CustomVineLogDecorator;
 import net.alminoris.wildfields.world.gen.feature.ModFeatures;
@@ -10,6 +12,7 @@ import net.alminoris.wildfields.world.gen.feature.custom.TripleTallPlantConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerbedBlock;
+import net.minecraft.block.PropaguleBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -21,13 +24,17 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.RandomizedIntBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.treedecorator.AttachedToLeavesTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
+import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
@@ -43,6 +50,10 @@ public class ModConfiguredFeatures
     public static RegistryKey<ConfiguredFeature<?, ?>> TREMBLING_ASPEN_KEY = registerKey("trembling_aspen");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> COTTONWOOD_KEY = registerKey("cottonwood");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> GROUP_TREMBLING_ASPEN_KEY = registerKey("group_trembling_aspen");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> GROUP_COTTONWOOD_KEY = registerKey("group_cottonwood");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> STEPPES_GRASS_KEY = registerKey("steppes_grass");
 
@@ -132,42 +143,74 @@ public class ModConfiguredFeatures
                 new TwoLayersFeatureSize(1, 0, 2)
         ).decorators(List.of(new CustomVineLogDecorator(0.85f, ModBlocks.GREEN_LICHEN))).build());
 
-        register(context, TREMBLING_ASPEN_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("trembling_aspen")),
-                new BendingTrunkPlacer(
-                        4,
-                        2,
-                        1,
-                        5,
-                        ConstantIntProvider.create(2)
-                ),
-                BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("trembling_aspen")),
-                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
-                new TwoLayersFeatureSize(1, 0, 2)
-        ).build());
+        register(context, COTTONWOOD_KEY, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("cottonwood")),
+                        new GiantTrunkPlacer(6, 3, 1),
+                        BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("cottonwood")),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).decorators(ImmutableList.of(
+                    new AttachedToLeavesTreeDecorator(
+                            0.35F,
+                            1,
+                            0,
+                            new RandomizedIntBlockStateProvider(
+                                    BlockStateProvider.of(ModBlocks.COTTONWOOD_FLUFF.getDefaultState()),
+                                    CottonwoodFluffBlock.AGE,
+                                    UniformIntProvider.create(0, 4)
+                            ),
+                            2,
+                            List.of(Direction.DOWN)
+                    )
+                )).ignoreVines().build());
 
-        register(context, COTTONWOOD_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("cottonwood")),
-                new BendingTrunkPlacer(
-                        4,
-                        2,
-                        1,
-                        5,
-                        ConstantIntProvider.create(2)
-                ),
-                BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("cottonwood")),
-                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
-                new TwoLayersFeatureSize(1, 0, 2)
-        ).build());
+        register(context, TREMBLING_ASPEN_KEY, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("trembling_aspen")),
+                        new StraightTrunkPlacer(10, 2, 0),
+                        BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("trembling_aspen")),
+                        new RandomSpreadFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(5), 100),
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).ignoreVines().build());
+
+        register(context, GROUP_COTTONWOOD_KEY, ModFeatures.TREE_GROUP,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("cottonwood")),
+                        new GiantTrunkPlacer(6, 3, 1),
+                        BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("cottonwood")),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).decorators(ImmutableList.of(
+                        new AttachedToLeavesTreeDecorator(
+                                0.35F,
+                                1,
+                                0,
+                                new RandomizedIntBlockStateProvider(
+                                        BlockStateProvider.of(ModBlocks.COTTONWOOD_FLUFF.getDefaultState()),
+                                        CottonwoodFluffBlock.AGE,
+                                        UniformIntProvider.create(0, 4)
+                                ),
+                                2,
+                                List.of(Direction.DOWN)
+                        )
+                )).ignoreVines().build());
+
+        register(context, GROUP_TREMBLING_ASPEN_KEY, ModFeatures.TREE_GROUP,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlockSetsHelper.LOGS.get("trembling_aspen")),
+                        new StraightTrunkPlacer(10, 2, 0),
+                        BlockStateProvider.of(ModBlockSetsHelper.LEAVES.get("trembling_aspen")),
+                        new RandomSpreadFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), ConstantIntProvider.create(5), 100),
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).ignoreVines().build());
 
         register(context, STEPPES_GRASS_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FEATHER_GRASS)),
                         List.of(Blocks.GRASS_BLOCK),
-                        4096
-                )
-        );
+                        4096));
 
         register(context, STEPPES_GRASS_1_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
@@ -185,9 +228,7 @@ public class ModConfiguredFeatures
                         ModFeatures.TRIPLE_TALL_PLANT,
                         new TripleTallPlantConfig(BlockStateProvider.of(ModBlocks.PRAIRIE_SAGE)),
                         List.of(Blocks.GRASS_BLOCK),
-                        1024
-                )
-        ));
+                        1024)));
 
         register(context, PRAIRIES_FLOWERS_1_KEY, Feature.RANDOM_PATCH,
                 createRandomPatchFeatureConfig(

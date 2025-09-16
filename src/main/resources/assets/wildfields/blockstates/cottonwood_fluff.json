@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "age=0": { "model": "wildfields:block/cottonwood_fluff_0" },
+    "age=1": { "model": "wildfields:block/cottonwood_fluff_1" },
+    "age=2": { "model": "wildfields:block/cottonwood_fluff_2" },
+    "age=3": { "model": "wildfields:block/cottonwood_fluff_3" },
+    "age=4": { "model": "wildfields:block/cottonwood_fluff_4" }
+  }
+}

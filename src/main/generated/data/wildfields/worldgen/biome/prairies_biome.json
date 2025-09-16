@@ -62,6 +62,8 @@
     [
       "minecraft:glow_lichen",
       "wildfields:sand_1_water_placed",
+      "wildfields:trembling_aspen_placed",
+      "wildfields:cottonwood_placed",
       "wildfields:prairies_grass_placed",
       "wildfields:prairies_grass_1_placed",
       "wildfields:prairies_grass_2_placed",

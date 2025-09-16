@@ -316,6 +316,8 @@ public class ModBlocks
 
     public static final Block PRICKLY_PEAR_CACTUS = registerBlock("prickly_pear_cactus", new PricklyPearCactusBlock());
 
+    public static final Block COTTONWOOD_FLUFF = registerBlock("cottonwood_fluff", new CottonwoodFluffBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).noCollision()));
+
     private static Block registerBlock(String name, Block block)
     {
         registerBlockItem(name, block);

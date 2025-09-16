@@ -30,6 +30,7 @@ public class ModItemGroups
                         entries.add(ModBlocks.PRAIRIE_SAGE);
                         entries.add(ModBlocks.VIOLA);
                         entries.add(ModBlocks.GREEN_LICHEN);
+                        entries.add(ModBlocks.COTTONWOOD_FLUFF);
                         entries.add(ModBlocks.SALTMARSH_BLOCK);
                         entries.add(ModBlocks.SALTMARSH_STAIRS);
                         entries.add(ModBlocks.SALTMARSH_SLAB);

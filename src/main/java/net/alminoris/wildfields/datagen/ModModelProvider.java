@@ -280,6 +280,7 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.COOKED_SAIGA, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAIGA_SICKLE, Models.GENERATED);
         itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.COTTONWOOD_FLUFF.asItem(), Models.GENERATED);
 
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.DARKLING_BEETLE_CHESTPLATE);
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_HELMET);

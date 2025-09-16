@@ -25,12 +25,24 @@ public class ModSaplingGenerators
     {{
         for(String name : ModBlockSetsHelper.WOOD_NAMES)
         {
-            put(name, new SaplingGenerator(name, 0f, Optional.empty(),
-                    Optional.empty(),
-                    Optional.of(keys.get(name)),
-                    Optional.empty(),
-                    Optional.empty(),
-                    Optional.empty()));
+            if (name.equals("cottonwood"))
+            {
+                put(name, new SaplingGenerator(name, 0f, Optional.of(keys.get(name)),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty()));
+            }
+            else
+            {
+                put(name, new SaplingGenerator(name, 0f, Optional.empty(),
+                        Optional.empty(),
+                        Optional.of(keys.get(name)),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty()));
+            }
         }
     }};
 }

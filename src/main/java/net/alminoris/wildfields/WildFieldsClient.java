@@ -53,6 +53,8 @@ public class WildFieldsClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMOOTH_ASTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TINY_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COTTONWOOD_FLUFF, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COTTONWOOD_FLUFF, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SERVAL_HIDE, RenderLayer.getCutout());
 
         ColorProviderRegistry.BLOCK.register(
@@ -77,6 +79,18 @@ public class WildFieldsClient implements ClientModInitializer
         ColorProviderRegistry.ITEM.register(
                 (stack, tintIndex) -> GrassColors.getColor(0.5D, 1.0D),
                 ModBlocks.BLUE_GRAMA_GRASS.asItem()
+        );
+
+        ColorProviderRegistry.BLOCK.register(
+                (state, world, pos, tintIndex) -> world != null && pos != null
+                        ? BiomeColors.getFoliageColor(world, pos)
+                        : GrassColors.getColor(0.5D, 1.0D),
+                LEAVES.get("cottonwood")
+        );
+
+        ColorProviderRegistry.ITEM.register(
+                (stack, tintIndex) -> GrassColors.getColor(0.5D, 1.0D),
+                LEAVES.get("cottonwood").asItem()
         );
 
         ColorProviderRegistry.ITEM.register(
