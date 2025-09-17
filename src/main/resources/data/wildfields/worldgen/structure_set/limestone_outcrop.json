@@ -1,0 +1,16 @@
+{
+  "structures":
+  [
+    {
+      "structure": "wildfields:limestone_outcrop",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "type": "minecraft:random_spread",
+    "salt": 181020221,
+    "spacing": 12,
+    "separation": 4
+  }
+}

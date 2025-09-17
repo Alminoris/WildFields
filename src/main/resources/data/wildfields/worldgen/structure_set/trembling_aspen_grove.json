@@ -1,0 +1,16 @@
+{
+  "structures":
+  [
+    {
+      "structure": "wildfields:trembling_aspen_grove",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "type": "minecraft:random_spread",
+    "salt": 123304081,
+    "spacing": 12,
+    "separation": 4
+  }
+}

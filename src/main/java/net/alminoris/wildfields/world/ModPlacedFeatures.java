@@ -93,7 +93,7 @@ public class ModPlacedFeatures
 
         register(context, LIMESTONE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.LIMESTONE_KEY),
                 ModOrePlacement.modifiersWithCount(10,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(30))));
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-50), YOffset.fixed(50))));
 
         register(context, OLIVE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.OLIVE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.05f, 1),
