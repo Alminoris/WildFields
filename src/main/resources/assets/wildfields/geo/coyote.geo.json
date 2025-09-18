@@ -18,7 +18,7 @@
 				{
 					"name": "head",
 					"parent": "coyote",
-					"pivot": [0, 11, -8],
+					"pivot": [0, 11, -7],
 					"cubes": [
 						{"origin": [-2.5, 8.5, -10], "size": [5, 5, 4], "uv": [26, 14]}
 					]
