@@ -1,7 +1,6 @@
 package net.alminoris.wildfields.entity.custom;
 
 import net.alminoris.wildfields.entity.ModEntities;
-import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
@@ -16,7 +15,6 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
@@ -35,13 +33,13 @@ import software.bernie.geckolib.animation.Animation;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutterer
+public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, Flutterer
 {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     private int featherDropCooldown = 1200;
 
-    public SteppeEagleEntity(EntityType<? extends AnimalEntity> entityType, World world)
+    public BlackBilledMagpieEntity(EntityType<? extends AnimalEntity> entityType, World world)
     {
         super(entityType, world);
         this.moveControl = new FlightMoveControl(this, 10, false);
@@ -79,14 +77,9 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     {
         super.dropLoot(damageSource, causedByPlayer);
 
-        if (this.random.nextFloat() < 0.05F)
-        {
-            this.dropStack(new ItemStack(ModItems.STEPPE_EAGLE_BEAK, 1));
-        }
-
         if (this.random.nextFloat() < 0.25F)
         {
-            this.dropStack(new ItemStack(ModItems.STEPPE_EAGLE_FEATHER, 1));
+            this.dropStack(new ItemStack(Items.FEATHER, 1));
         }
     }
 
@@ -111,7 +104,7 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
                     this.getX(),
                     this.getY(),
                     this.getZ(),
-                    new ItemStack(ModItems.STEPPE_EAGLE_FEATHER)
+                    new ItemStack(Items.FEATHER)
             ));
         }
     }
@@ -119,56 +112,49 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     public static DefaultAttributeContainer.Builder setAttributes()
     {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
-                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6F)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2F)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 5.0)
+                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.4F)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.0F);
     }
 
     @Override
     protected void initGoals()
     {
-
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
-        this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.RABBIT_FOOT), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.2D));
-        this.goalSelector.add(6, new WanderAroundGoal(this, 1.0D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
-
-        this.targetSelector.add(1, new ActiveTargetGoal<>(this, MarmotEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, RabbitEntity.class, true));
-        this.targetSelector.add(3, (new RevengeGoal(this)));
+        this.goalSelector.add(1, new AnimalMateGoal(this, 1.0D));
+        this.goalSelector.add(2, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.WHEAT_SEEDS), true));
+        this.goalSelector.add(3, new FollowParentGoal(this, 1.0D));
+        this.goalSelector.add(4, new EscapeDangerGoal(this, 1.2D));
+        this.goalSelector.add(5, new WanderAroundGoal(this, 1.0D));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
 
         super.initGoals();
     }
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return ModSounds.SOUND_STEPPE_EAGLE_AMBIENT;
+        return ModSounds.SOUND_BLACK_BILLED_MAGPIE_AMBIENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return ModSounds.SOUND_STEPPE_EAGLE_HURT;
+        return ModSounds.SOUND_BLACK_BILLED_MAGPIE_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSounds.SOUND_STEPPE_EAGLE_DEATH;
+        return ModSounds.SOUND_BLACK_BILLED_MAGPIE_DEATH;
     }
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.RABBIT_FOOT);
+        return stack.isOf(Items.WHEAT_SEEDS);
     }
 
     @Override
-    public @Nullable SteppeEagleEntity createChild(ServerWorld world, PassiveEntity entity)
+    public @Nullable BlackBilledMagpieEntity createChild(ServerWorld world, PassiveEntity entity)
     {
-        return ModEntities.STEPPE_EAGLE.create(world);
+        return ModEntities.BLACK_BILLED_MAGPIE.create(world);
     }
 
     @Override
@@ -176,9 +162,6 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, state ->
         {
-            if (this.isAttacking())
-                return state.setAndContinue(RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE));
-
             if (this.isInAir())
                 return state.setAndContinue(RawAnimation.begin().then("flying", Animation.LoopType.LOOP));
 

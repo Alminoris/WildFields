@@ -114,5 +114,13 @@ public class WildFieldsClient implements ClientModInitializer
         EntityRendererRegistry.register(ModEntities.MOLE, MoleRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.STEPPE_ARROW, SteppeArrowRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.COYOTE, CoyoteRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FERRUGINOUS_HAWK, FerruginousHawkRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BISON, BisonRenderer::new);
+        EntityRendererRegistry.register(ModEntities.WHITE_TAILED_JACKRABBIT, WhiteTailedJackrabbitRenderer::new);
+        EntityRendererRegistry.register(ModEntities.PALLID_WINGED_GRASSHOPPER, PallidWingedGrasshopperRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BLACK_BILLED_MAGPIE, BlackBilledMagpieRenderer::new);
+        EntityRendererRegistry.register(ModEntities.WESTERN_MEADOWLARK, WesternMeadowlarkRenderer::new);
     }
 }

@@ -32,5 +32,27 @@ public class ModEntityGeneration
 
         SpawnRestriction.register(ModEntities.SERVAL, SpawnLocationTypes.ON_GROUND,
                 Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ServalEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.COYOTE, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, CoyoteEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.FERRUGINOUS_HAWK, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, FerruginousHawkEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.WHITE_TAILED_JACKRABBIT, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, WhiteTailedJackrabbitEntity::canSpawn);
+
+        SpawnRestriction.register(ModEntities.BISON, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, BisonEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.PALLID_WINGED_GRASSHOPPER, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PallidWingedGrasshopperEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.BLACK_BILLED_MAGPIE, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, BlackBilledMagpieEntity::isValidNaturalSpawn);
+
+        SpawnRestriction.register(ModEntities.WESTERN_MEADOWLARK, SpawnLocationTypes.ON_GROUND,
+                Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, WesternMeadowlarkEntity::isValidNaturalSpawn);
+
     }
 }

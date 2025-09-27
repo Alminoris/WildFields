@@ -52,4 +52,39 @@ public class ModEntities
             Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "silent_arrow"),
             FabricEntityTypeBuilder.<SteppeArrowEntity>create(SpawnGroup.MISC, SteppeArrowEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+
+    public static final EntityType<CoyoteEntity> COYOTE = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "coyote"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CoyoteEntity::new)
+                    .dimensions(EntityDimensions.fixed(1.5f, 0.75f)).build());
+
+    public static final EntityType<WhiteTailedJackrabbitEntity> WHITE_TAILED_JACKRABBIT = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "white_tailed_jackrabbit"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WhiteTailedJackrabbitEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build());
+
+    public static final EntityType<BisonEntity> BISON = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "bison"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BisonEntity::new)
+                    .dimensions(EntityDimensions.fixed(2.3f, 1.75f)).build());
+
+    public static final EntityType<PallidWingedGrasshopperEntity> PALLID_WINGED_GRASSHOPPER = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "pallid_winged_grasshopper"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PallidWingedGrasshopperEntity::new)
+                    .dimensions(EntityDimensions.fixed(1f, 0.5f)).build());
+
+    public static final EntityType<FerruginousHawkEntity> FERRUGINOUS_HAWK = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "ferruginous_hawk"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, FerruginousHawkEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.8f, 1.75f)).build());
+
+    public static final EntityType<BlackBilledMagpieEntity> BLACK_BILLED_MAGPIE = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "black_billed_magpie"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BlackBilledMagpieEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build());
+
+    public static final EntityType<WesternMeadowlarkEntity> WESTERN_MEADOWLARK = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "western_meadowlark"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, WesternMeadowlarkEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build());
 }

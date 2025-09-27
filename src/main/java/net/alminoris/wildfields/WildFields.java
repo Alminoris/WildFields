@@ -79,5 +79,12 @@ public class WildFields implements ModInitializer
 		FabricDefaultAttributeRegistry.register(ModEntities.SAIGA, SaigaEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.SERVAL, ServalEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.MOLE, MoleEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.COYOTE, CoyoteEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.FERRUGINOUS_HAWK, FerruginousHawkEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.WHITE_TAILED_JACKRABBIT, WhiteTailedJackrabbitEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.PALLID_WINGED_GRASSHOPPER, PallidWingedGrasshopperEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BLACK_BILLED_MAGPIE, BlackBilledMagpieEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.WESTERN_MEADOWLARK, WesternMeadowlarkEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BISON, BisonEntity.setAttributes());
 	}
 }

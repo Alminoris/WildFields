@@ -35,13 +35,13 @@ import software.bernie.geckolib.animation.Animation;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutterer
+public class FerruginousHawkEntity extends AnimalEntity implements GeoEntity, Flutterer
 {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     private int featherDropCooldown = 1200;
 
-    public SteppeEagleEntity(EntityType<? extends AnimalEntity> entityType, World world)
+    public FerruginousHawkEntity(EntityType<? extends AnimalEntity> entityType, World world)
     {
         super(entityType, world);
         this.moveControl = new FlightMoveControl(this, 10, false);
@@ -81,12 +81,12 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
 
         if (this.random.nextFloat() < 0.05F)
         {
-            this.dropStack(new ItemStack(ModItems.STEPPE_EAGLE_BEAK, 1));
+            this.dropStack(new ItemStack(ModItems.FERRUGINOUS_HAWK_BEAK, 1));
         }
 
         if (this.random.nextFloat() < 0.25F)
         {
-            this.dropStack(new ItemStack(ModItems.STEPPE_EAGLE_FEATHER, 1));
+            this.dropStack(new ItemStack(ModItems.FERRUGINOUS_HAWK_FEATHER, 1));
         }
     }
 
@@ -111,24 +111,29 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
                     this.getX(),
                     this.getY(),
                     this.getZ(),
-                    new ItemStack(ModItems.STEPPE_EAGLE_FEATHER)
+                    new ItemStack(ModItems.FERRUGINOUS_HAWK_FEATHER)
             ));
         }
+    }
+
+    @Override
+    public @Nullable FerruginousHawkEntity createChild(ServerWorld world, PassiveEntity entity)
+    {
+        return ModEntities.FERRUGINOUS_HAWK.create(world);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes()
     {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
-                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6F)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2F)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0);
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0)
+                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.45F)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.0F)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0);
     }
 
     @Override
     protected void initGoals()
     {
-
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
@@ -147,28 +152,22 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return ModSounds.SOUND_STEPPE_EAGLE_AMBIENT;
+        return ModSounds.SOUND_FERRUGINOUS_HAWK_AMBIENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return ModSounds.SOUND_STEPPE_EAGLE_HURT;
+        return ModSounds.SOUND_FERRUGINOUS_HAWK_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return ModSounds.SOUND_STEPPE_EAGLE_DEATH;
+        return ModSounds.SOUND_FERRUGINOUS_HAWK_DEATH;
     }
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
         return stack.isOf(Items.RABBIT_FOOT);
-    }
-
-    @Override
-    public @Nullable SteppeEagleEntity createChild(ServerWorld world, PassiveEntity entity)
-    {
-        return ModEntities.STEPPE_EAGLE.create(world);
     }
 
     @Override
