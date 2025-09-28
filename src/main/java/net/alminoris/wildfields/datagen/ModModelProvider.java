@@ -299,6 +299,22 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.COTTONWOOD_FLUFF.asItem(), Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.JACKRABBIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_JACKRABBIT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BISON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_BISON, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FERRUGINOUS_HAWK_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PALLID_WINGED_GRASSHOPPER_LEG, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BLACK_BILLED_MAGPIE_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.WESTERN_MEADOWLARK_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PRAIRIES_TALISMAN, Models.GENERATED);
+
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.DARKLING_BEETLE_CHESTPLATE);
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_HELMET);
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_BOOTS);

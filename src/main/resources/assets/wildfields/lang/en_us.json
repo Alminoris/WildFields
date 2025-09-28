@@ -285,5 +285,15 @@
   "item.wildfields.prickly_pear": "Prickly Pear",
   "block.wildfields.prickly_pear_cactus": "Prickly Pear Cactus",
   "block.wildfields.blue_grama_grass": "Blue Grama Grass",
-  "item.wildfields.earthworm": "Earthworm"
+  "item.wildfields.earthworm": "Earthworm",
+  "item.wildfields.bison": "Bison",
+  "item.wildfields.cooked_bison": "Cooked Bison",
+  "item.wildfields.bison_horn": "Bison Horn",
+  "item.wildfields.jackrabbit": "Jackrabbit",
+  "item.wildfields.cooked_jackrabbit": "Cooked Jackrabbit",
+  "item.wildfields.pallid_winged_grasshopper_leg": "Pallid Winged Grasshopper Leg",
+  "item.wildfields.ferruginous_hawk_feather": "Ferruginous Hawk Feather",
+  "item.wildfields.black_billed_magpie_feather": "Black Billed Magpie Feather",
+  "item.wildfields.western_meadowlark_feather": "Western Meadowlark Feather",
+  "item.wildfields.prairies_talisman": "Prairies Talisman"
 }

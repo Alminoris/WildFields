@@ -10,7 +10,6 @@ import net.alminoris.wildfields.item.custom.SaigaSickle;
 import net.alminoris.wildfields.item.custom.SteppeArrowItem;
 import net.alminoris.wildfields.item.custom.SteppeViperDagger;
 import net.minecraft.block.Block;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -40,7 +39,30 @@ public class ModItems
     public static final Item MOLE_SPAWN_EGG = registerItem("mole_spawn_egg", new SpawnEggItem(
             ModEntities.MOLE, 0x131112, 0Xa28081, new Item.Settings()));
 
+    public static final Item COYOTE_SPAWN_EGG = registerItem("coyote_spawn_egg", new SpawnEggItem(
+            ModEntities.COYOTE, 0xa69f95, 0Xb9a583, new Item.Settings()));
+
+    public static final Item BISON_SPAWN_EGG = registerItem("bison_spawn_egg", new SpawnEggItem(
+            ModEntities.BISON, 0x383028, 0X261f1f, new Item.Settings()));
+
+    public static final Item FERRUGINOUS_HAWK_SPAWN_EGG = registerItem("ferruginous_hawk_spawn_egg", new SpawnEggItem(
+            ModEntities.FERRUGINOUS_HAWK, 0x8c5b4d, 0Xdfdce5, new Item.Settings()));
+
+    public static final Item WHITE_TAILED_JACKRABBIT_SPAWN_EGG = registerItem("white_tailed_jackrabbit_spawn_egg", new SpawnEggItem(
+            ModEntities.WHITE_TAILED_JACKRABBIT, 0xb3b1b0, 0Xf6f6f4, new Item.Settings()));
+
+    public static final Item PALLID_WINGED_GRASSHOPPER_SPAWN_EGG = registerItem("pallid_winged_grasshopper_spawn_egg", new SpawnEggItem(
+            ModEntities.PALLID_WINGED_GRASSHOPPER, 0x797163, 0X5b5850, new Item.Settings()));
+
+    public static final Item BLACK_BILLED_MAGPIE_SPAWN_EGG = registerItem("black_billed_magpie_spawn_egg", new SpawnEggItem(
+            ModEntities.BLACK_BILLED_MAGPIE, 0x16151a, 0Xfaf7fc, new Item.Settings()));
+
+    public static final Item WESTERN_MEADOWLARK_SPAWN_EGG = registerItem("western_meadowlark_spawn_egg", new SpawnEggItem(
+            ModEntities.WESTERN_MEADOWLARK, 0x8d7e5e, 0Xecbf04, new Item.Settings()));
+
     public static final Item EARTHWORM = registerItem("earthworm", new EarthwormItem(new Item.Settings()));
+
+    public static final Item PRAIRIES_TALISMAN = registerItem("prairies_talisman", new Item(new Item.Settings()));
 
     public static final Item OLIVES = registerItem("olives", new Item(new Item.Settings().maxCount(16).food(ModFoodComponents.OLIVES)));
 
@@ -50,15 +72,37 @@ public class ModItems
     public static final Item COOKED_SAIGA = registerItem("cooked_saiga",
             new Item(new Item.Settings().food(ModFoodComponents.COOKED_SAIGA)));
 
+    public static final Item BISON = registerItem("bison",
+            new Item(new Item.Settings().food(ModFoodComponents.BISON)));
+
+    public static final Item COOKED_BISON = registerItem("cooked_bison",
+            new Item(new Item.Settings().food(ModFoodComponents.COOKED_BISON)));
+
+    public static final Item JACKRABBIT = registerItem("jackrabbit",
+            new Item(new Item.Settings().food(ModFoodComponents.JACKRABBIT)));
+
+    public static final Item COOKED_JACKRABBIT = registerItem("cooked_bison",
+            new Item(new Item.Settings().food(ModFoodComponents.COOKED_JACKRABBIT)));
+
     public static final Item STEPPE_VIPER_FANG = registerItem("steppe_viper_fang", new Item(new Item.Settings()));
 
     public static final Item STEPPE_EAGLE_BEAK = registerItem("steppe_eagle_beak", new Item(new Item.Settings()));
 
     public static final Item STEPPE_EAGLE_FEATHER = registerItem("steppe_eagle_feather", new Item(new Item.Settings()));
 
+    public static final Item FERRUGINOUS_HAWK_FEATHER = registerItem("ferruginous_hawk_feather", new Item(new Item.Settings()));
+
+    public static final Item BLACK_BILLED_MAGPIE_FEATHER = registerItem("black_billed_magpie_feather", new Item(new Item.Settings()));
+
+    public static final Item WESTERN_MEADOWLARK_FEATHER = registerItem("western_meadowlark_feather", new Item(new Item.Settings()));
+
+    public static final Item PALLID_WINGED_GRASSHOPPER_LEG = registerItem("pallid_winged_grasshopper_leg", new Item(new Item.Settings()));
+
     public static final Item MARMOT_FUR = registerItem("marmot_fur", new Item(new Item.Settings()));
 
     public static final Item SAIGA_HORN = registerItem("saiga_horn", new Item(new Item.Settings()));
+
+    public static final Item BISON_HORN = registerItem("bison_horn", new Item(new Item.Settings()));
 
     public static final Item DARKLING_BEETLE_SHELL = registerItem("darkling_beetle_shell", new Item(new Item.Settings()));
 

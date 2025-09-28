@@ -15,9 +15,17 @@ import net.alminoris.wildfields.world.tree.ModFoliagePlacerTypes;
 import net.alminoris.wildfields.world.tree.ModTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.biome.Biome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,5 +94,31 @@ public class WildFields implements ModInitializer
 		FabricDefaultAttributeRegistry.register(ModEntities.BLACK_BILLED_MAGPIE, BlackBilledMagpieEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.WESTERN_MEADOWLARK, WesternMeadowlarkEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BISON, BisonEntity.setAttributes());
+
+		ServerTickEvents.END_SERVER_TICK.register(server ->
+		{
+			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList())
+			{
+				boolean hasTalisman = false;
+
+				for (ItemStack stack : player.getInventory().main)
+				{
+					if (stack.isOf(ModItems.PRAIRIES_TALISMAN))
+					{
+						hasTalisman = true;
+						break;
+					}
+				}
+
+				if (hasTalisman) {
+					RegistryEntry<Biome> biome = player.getWorld().getBiome(player.getBlockPos());
+					if (biome.matchesId(Identifier.of(WildFields.MOD_ID, "prairies_biome")))
+					{
+						player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 40, 0, true, false, false));
+						player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, true, false, false));
+					}
+				}
+			}
+		});
 	}
 }

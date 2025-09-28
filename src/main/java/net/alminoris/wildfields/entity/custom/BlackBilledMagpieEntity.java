@@ -1,6 +1,7 @@
 package net.alminoris.wildfields.entity.custom;
 
 import net.alminoris.wildfields.entity.ModEntities;
+import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
@@ -79,7 +80,7 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
 
         if (this.random.nextFloat() < 0.25F)
         {
-            this.dropStack(new ItemStack(Items.FEATHER, 1));
+            this.dropStack(new ItemStack(ModItems.BLACK_BILLED_MAGPIE_FEATHER, 1));
         }
     }
 

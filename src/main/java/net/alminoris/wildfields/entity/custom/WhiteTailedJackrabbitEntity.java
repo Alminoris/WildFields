@@ -67,10 +67,7 @@ public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEn
     {
         super.dropLoot(damageSource, causedByPlayer);
 
-        if (this.random.nextFloat() < 0.2F)
-        {
-            this.dropStack(new ItemStack(ModItems.EARTHWORM, 2));
-        }
+        this.dropStack(new ItemStack(ModItems.JACKRABBIT, 1));
     }
 
     public static DefaultAttributeContainer.Builder setAttributes()

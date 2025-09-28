@@ -17,6 +17,8 @@ public class ModTags
 
         public static final TagKey<Block> SAIGA_SPAWNABLE_ON = createTag("saiga_spawnable_on");
 
+        public static final TagKey<Block> BISON_SPAWNABLE_ON = createTag("bison_spawnable_on");
+
         private static TagKey<Block> createTag(String name)
         {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(WildFields.MOD_ID, name));
@@ -28,6 +30,8 @@ public class ModTags
         public static final TagKey<Item> MARMOT_FOOD = createTag("marmot_food");
 
         public static final TagKey<Item> SAIGA_FOOD = createTag("saiga_food");
+
+        public static final TagKey<Item> BISON_FOOD = createTag("bison_food");
 
         private static TagKey<Item> createTag(String name)
         {

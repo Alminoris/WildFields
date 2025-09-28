@@ -4,11 +4,9 @@ import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.StonecuttingRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.Ingredient;
@@ -191,6 +189,19 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(ModItems.STEPPE_EAGLE_BEAK), conditionsFromItem(ModItems.STEPPE_EAGLE_BEAK))
                 .criterion(hasItem(ModItems.STEPPE_EAGLE_FEATHER), conditionsFromItem(ModItems.STEPPE_EAGLE_FEATHER))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.PRAIRIES_TALISMAN, 1)
+                .pattern("ABC")
+                .pattern(" S ")
+                .input('A', ModItems.FERRUGINOUS_HAWK_FEATHER)
+                .input('B', ModItems.BLACK_BILLED_MAGPIE_FEATHER)
+                .input('C', ModItems.WESTERN_MEADOWLARK_FEATHER)
+                .input('S', Items.STRING)
+                .criterion(hasItem(ModItems.FERRUGINOUS_HAWK_FEATHER), conditionsFromItem(ModItems.FERRUGINOUS_HAWK_FEATHER))
+                .criterion(hasItem(ModItems.BLACK_BILLED_MAGPIE_FEATHER), conditionsFromItem(ModItems.BLACK_BILLED_MAGPIE_FEATHER))
+                .criterion(hasItem(ModItems.WESTERN_MEADOWLARK_FEATHER), conditionsFromItem(ModItems.WESTERN_MEADOWLARK_FEATHER))
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.DARKLING_BEETLE_CHESTPLATE, 1)
@@ -708,6 +719,28 @@ public class ModRecipeProvider extends FabricRecipeProvider
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.SAIGA), RecipeCategory.FOOD,
                         ModItems.COOKED_SAIGA, 0.35F, 200)
                 .criterion("has_saiga", conditionsFromItem(ModItems.SAIGA))
+                .offerTo(recipeExporter);
+
+        offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING, SmokingRecipe::new,
+                100, ModItems.BISON, ModItems.COOKED_BISON, 0.35f);
+
+        offerFoodCookingRecipe(recipeExporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
+                600, ModItems.BISON, ModItems.COOKED_BISON, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.BISON), RecipeCategory.FOOD,
+                        ModItems.COOKED_BISON, 0.35F, 200)
+                .criterion("has_bison", conditionsFromItem(ModItems.BISON))
+                .offerTo(recipeExporter);
+
+        offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING, SmokingRecipe::new,
+                100, ModItems.JACKRABBIT, ModItems.COOKED_JACKRABBIT, 0.35f);
+
+        offerFoodCookingRecipe(recipeExporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
+                600, ModItems.JACKRABBIT, ModItems.COOKED_JACKRABBIT, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.JACKRABBIT), RecipeCategory.FOOD,
+                        ModItems.COOKED_JACKRABBIT, 0.35F, 200)
+                .criterion("has_jackrabbit", conditionsFromItem(ModItems.JACKRABBIT))
                 .offerTo(recipeExporter);
     }
 }

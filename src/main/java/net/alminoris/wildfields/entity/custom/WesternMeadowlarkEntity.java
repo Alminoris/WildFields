@@ -1,11 +1,13 @@
 package net.alminoris.wildfields.entity.custom;
 
 import net.alminoris.wildfields.entity.ModEntities;
+import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
@@ -22,6 +24,15 @@ public class WesternMeadowlarkEntity extends BlackBilledMagpieEntity
     public @Nullable WesternMeadowlarkEntity createChild(ServerWorld world, PassiveEntity entity)
     {
         return ModEntities.WESTERN_MEADOWLARK.create(world);
+    }
+
+    @Override
+    protected void dropLoot(DamageSource damageSource, boolean causedByPlayer)
+    {
+        if (this.random.nextFloat() < 0.25F)
+        {
+            this.dropStack(new ItemStack(ModItems.WESTERN_MEADOWLARK_FEATHER, 1));
+        }
     }
 
     @Override

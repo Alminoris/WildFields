@@ -174,18 +174,35 @@ public class ModItemGroups
                         entries.add(ModItems.DARKLING_BEETLE_SHELL);
                         entries.add(ModItems.STEPPE_EAGLE_BEAK);
                         entries.add(ModItems.STEPPE_EAGLE_FEATHER);
+                        entries.add(ModItems.FERRUGINOUS_HAWK_FEATHER);
+                        entries.add(ModItems.BLACK_BILLED_MAGPIE_FEATHER);
+                        entries.add(ModItems.WESTERN_MEADOWLARK_FEATHER);
                         entries.add(ModItems.SAIGA_HORN);
+                        entries.add(ModItems.BISON_HORN);
                         entries.add(ModItems.EARTHWORM);
+                        entries.add(ModItems.PRAIRIES_TALISMAN);
+                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_LEG);
                         entries.add(ModItems.STEPPE_VIPER_FANG);
                         entries.add(ModItems.SAIGA);
                         entries.add(ModItems.COOKED_SAIGA);
+                        entries.add(ModItems.BISON);
+                        entries.add(ModItems.COOKED_BISON);
+                        entries.add(ModItems.JACKRABBIT);
+                        entries.add(ModItems.COOKED_JACKRABBIT);
                         entries.add(ModItems.MARMOT_SPAWN_EGG);
                         entries.add(ModItems.DARKLING_BEETLE_SPAWN_EGG);
                         entries.add(ModItems.SERVAL_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_EAGLE_SPAWN_EGG);
                         entries.add(ModItems.SAIGA_SPAWN_EGG);
-                        entries.add(ModItems.MOLE_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_VIPER_SPAWN_EGG);
+                        entries.add(ModItems.MOLE_SPAWN_EGG);
+                        entries.add(ModItems.COYOTE_SPAWN_EGG);
+                        entries.add(ModItems.BISON_SPAWN_EGG);
+                        entries.add(ModItems.FERRUGINOUS_HAWK_SPAWN_EGG);
+                        entries.add(ModItems.WHITE_TAILED_JACKRABBIT_SPAWN_EGG);
+                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_SPAWN_EGG);
+                        entries.add(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG);
+                        entries.add(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG);
                     }).build());
 
     public static void registerItemGroups()
