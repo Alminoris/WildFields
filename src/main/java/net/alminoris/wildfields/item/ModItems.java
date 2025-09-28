@@ -81,7 +81,7 @@ public class ModItems
     public static final Item JACKRABBIT = registerItem("jackrabbit",
             new Item(new Item.Settings().food(ModFoodComponents.JACKRABBIT)));
 
-    public static final Item COOKED_JACKRABBIT = registerItem("cooked_bison",
+    public static final Item COOKED_JACKRABBIT = registerItem("cooked_jackrabbit",
             new Item(new Item.Settings().food(ModFoodComponents.COOKED_JACKRABBIT)));
 
     public static final Item STEPPE_VIPER_FANG = registerItem("steppe_viper_fang", new Item(new Item.Settings()));
