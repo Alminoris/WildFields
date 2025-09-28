@@ -79,11 +79,6 @@ public class FerruginousHawkEntity extends AnimalEntity implements GeoEntity, Fl
     {
         super.dropLoot(damageSource, causedByPlayer);
 
-        if (this.random.nextFloat() < 0.05F)
-        {
-            this.dropStack(new ItemStack(ModItems.FERRUGINOUS_HAWK_BEAK, 1));
-        }
-
         if (this.random.nextFloat() < 0.25F)
         {
             this.dropStack(new ItemStack(ModItems.FERRUGINOUS_HAWK_FEATHER, 1));
