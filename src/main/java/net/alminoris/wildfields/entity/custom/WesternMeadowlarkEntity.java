@@ -7,9 +7,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +35,29 @@ public class WesternMeadowlarkEntity extends BlackBilledMagpieEntity
         {
             this.dropStack(new ItemStack(ModItems.WESTERN_MEADOWLARK_FEATHER, 1));
         }
+    }
+
+    @Override
+    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            this.setVelocity(Vec3d.ZERO);
+        }
+        else
+        {
+            super.tickControlled(controllingPlayer, movementInput);
+        }
+    }
+
+    @Override
+    public void travel(Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            return;
+        }
+        super.travel(movementInput);
     }
 
     @Override

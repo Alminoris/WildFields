@@ -28,8 +28,8 @@ public class PallidWingedGrasshopperRenderer extends GeoEntityRenderer<PallidWin
     public void preRender(MatrixStack poseStack, PallidWingedGrasshopperEntity entity, BakedGeoModel model, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour)
     {
         if (entity.isBaby())
-            poseStack.scale(0.6f, 0.6f, 0.6f);
-        else { poseStack.scale(1.0F, 1.0F, 1.0F); }
+            poseStack.scale(0.35f, 0.35f, 0.35f);
+        else { poseStack.scale(0.6F, 0.6F, 0.6F); }
         super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
     }
 }

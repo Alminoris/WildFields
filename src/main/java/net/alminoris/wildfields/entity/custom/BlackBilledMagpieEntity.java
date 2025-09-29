@@ -16,6 +16,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
@@ -96,6 +97,29 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
         }
     }
 
+    @Override
+    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            this.setVelocity(Vec3d.ZERO);
+        }
+        else
+        {
+            super.tickControlled(controllingPlayer, movementInput);
+        }
+    }
+
+    @Override
+    public void travel(Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            return;
+        }
+        super.travel(movementInput);
+    }
+
     private void dropFeather()
     {
         if (this.isAlive() && !this.isInsideWaterOrBubbleColumn())
@@ -114,8 +138,7 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
     {
         return AnimalEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 5.0)
-                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.4F)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.0F);
+                .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.4F);
     }
 
     @Override
@@ -123,11 +146,8 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
     {
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(2, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.WHEAT_SEEDS), true));
-        this.goalSelector.add(3, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(4, new EscapeDangerGoal(this, 1.2D));
-        this.goalSelector.add(5, new WanderAroundGoal(this, 1.0D));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
+        this.goalSelector.add(2, new EscapeDangerGoal(this, 1.2D));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
 
         super.initGoals();
     }

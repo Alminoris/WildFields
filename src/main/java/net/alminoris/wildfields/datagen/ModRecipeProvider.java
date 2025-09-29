@@ -742,5 +742,16 @@ public class ModRecipeProvider extends FabricRecipeProvider
                         ModItems.COOKED_JACKRABBIT, 0.35F, 200)
                 .criterion("has_jackrabbit", conditionsFromItem(ModItems.JACKRABBIT))
                 .offerTo(recipeExporter);
+
+        offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING, SmokingRecipe::new,
+                100, ModItems.PALLID_WINGED_GRASSHOPPER_LEG, ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, 0.35f);
+
+        offerFoodCookingRecipe(recipeExporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new,
+                600, ModItems.PALLID_WINGED_GRASSHOPPER_LEG, ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.PALLID_WINGED_GRASSHOPPER_LEG), RecipeCategory.FOOD,
+                        ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, 0.35F, 200)
+                .criterion("has_pallid_winged_grasshopper_leg", conditionsFromItem(ModItems.PALLID_WINGED_GRASSHOPPER_LEG))
+                .offerTo(recipeExporter);
     }
 }

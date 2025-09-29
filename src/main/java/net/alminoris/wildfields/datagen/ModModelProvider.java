@@ -309,12 +309,14 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.JACKRABBIT, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_JACKRABBIT, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.BISON_HORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.BISON, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_BISON, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.FERRUGINOUS_HAWK_FEATHER, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.PALLID_WINGED_GRASSHOPPER_LEG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.BLACK_BILLED_MAGPIE_FEATHER, Models.GENERATED);
 

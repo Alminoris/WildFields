@@ -108,16 +108,17 @@ public class ModBiomes
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
         // ---------- SPAWNS ----------
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BISON, 10, 6, 12));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WESTERN_MEADOWLARK, 9, 2, 4));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.COYOTE, 5, 1, 3));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.FERRUGINOUS_HAWK, 2, 1, 1));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.PALLIDWINGED_GRASSHOPPER, 6, 2, 4));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WHITETAIL_JACKRABBIT, 8, 2, 4));
-        //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLACKBILLED_MAGPIE, 9, 2, 3));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BISON, 150, 6, 12));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WESTERN_MEADOWLARK, 65, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.COYOTE, 50, 1, 3));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.FERRUGINOUS_HAWK, 60, 1, 1));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.PALLID_WINGED_GRASSHOPPER, 60, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WHITE_TAILED_JACKRABBIT, 80, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLACK_BILLED_MAGPIE, 65, 2, 3));
 
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
+        // ---------- FEATURES ----------
         globalOverworldGeneration(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.LIMESTONE_PLACED_KEY);
@@ -137,10 +138,6 @@ public class ModBiomes
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PRICKLY_PEAR_CACTUS_PLACED_KEY);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WESTERN_SNOWBERRY_PLACED_KEY);
-
-
-
-        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LIMESTONE_PLACED_KEY);
 
         return new Biome.Builder()
                 .precipitation(true)

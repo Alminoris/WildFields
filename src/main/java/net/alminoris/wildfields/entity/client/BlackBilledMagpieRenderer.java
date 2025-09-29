@@ -28,8 +28,8 @@ public class BlackBilledMagpieRenderer extends GeoEntityRenderer<BlackBilledMagp
     public void preRender(MatrixStack poseStack, BlackBilledMagpieEntity entity, BakedGeoModel model, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour)
     {
         if (entity.isBaby())
-            poseStack.scale(0.6f, 0.6f, 0.6f);
-        else { poseStack.scale(1.0F, 1.0F, 1.0F); }
+            poseStack.scale(0.45f, 0.45f, 0.45f);
+        else { poseStack.scale(0.8F, 0.8F, 0.8F); }
         super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
     }
 }

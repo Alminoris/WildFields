@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-28T21:59:38.9123755	Wild Fields/Tags for minecraft:block
+// 1.21.1	2025-09-29T13:42:07.6738584	Wild Fields/Tags for minecraft:block
 d7a59d8ec443d97c26edb31bbae3b9c2dac180c2 data\minecraft\tags\block\wooden_doors.json
 6a80cd3a2e2eb6d491a1886dba7e937a1c25aa31 data\minecraft\tags\block\wooden_slabs.json
 17f0e7f3194c2e0144da9417bdf50071cf28e49e data\minecraft\tags\block\flowers.json
@@ -13,6 +13,7 @@ a80a47d2310be431dcefa987bd06bdc4260eefa1 data\minecraft\tags\block\logs_that_bur
 3718096c5dd03d20854fe8eb894b0981cb9362ff data\minecraft\tags\block\stairs.json
 eef452208e3428d30cbc30ab633a217cfe1d7091 data\minecraft\tags\block\wooden_fences.json
 690574ffba81e4b14175c2c439f8f0497a24d3b5 data\wildfields\tags\block\saiga_spawnable_on.json
+f9fa0ceea3fd6092870128831f337aafc7d4d4bb data\wildfields\tags\block\bison_spawnable_on.json
 a8e0873517af70481f5c1c99a50fa18fa061aca9 data\minecraft\tags\block\saplings.json
 c5fca42458dc33e32126d49f940e0722e1ab888f data\minecraft\tags\block\sword_efficient.json
 347de8bd3ac6ae80674502026a8d0464c04a8461 data\minecraft\tags\block\flower_pots.json

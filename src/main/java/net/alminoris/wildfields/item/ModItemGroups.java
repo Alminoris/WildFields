@@ -181,7 +181,6 @@ public class ModItemGroups
                         entries.add(ModItems.BISON_HORN);
                         entries.add(ModItems.EARTHWORM);
                         entries.add(ModItems.PRAIRIES_TALISMAN);
-                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_LEG);
                         entries.add(ModItems.STEPPE_VIPER_FANG);
                         entries.add(ModItems.SAIGA);
                         entries.add(ModItems.COOKED_SAIGA);
@@ -189,6 +188,8 @@ public class ModItemGroups
                         entries.add(ModItems.COOKED_BISON);
                         entries.add(ModItems.JACKRABBIT);
                         entries.add(ModItems.COOKED_JACKRABBIT);
+                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_LEG);
+                        entries.add(ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG);
                         entries.add(ModItems.MARMOT_SPAWN_EGG);
                         entries.add(ModItems.DARKLING_BEETLE_SPAWN_EGG);
                         entries.add(ModItems.SERVAL_SPAWN_EGG);

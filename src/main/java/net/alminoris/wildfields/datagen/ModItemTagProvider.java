@@ -75,6 +75,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(ModTags.Items.SAIGA_FOOD)
                 .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.WHEAT);
 
+        getOrCreateTagBuilder(ModTags.Items.BISON_FOOD)
+                .add(Items.TALL_GRASS, Items.SHORT_GRASS, Items.WHEAT, ModBlocks.BLUE_GRAMA_GRASS.asItem());
+
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.DARKLING_BEETLE_CHESTPLATE)
                 .add(ModItems.FURRED_LEATHER_HELMET)
@@ -102,5 +105,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
 
         getOrCreateTagBuilder(ItemTags.FREEZE_IMMUNE_WEARABLES)
                 .add(ModItems.FURRED_LEATHER_HELMET, ModItems.FURRED_LEATHER_CHESTPLATE, ModItems.FURRED_LEATHER_LEGGINGS, ModItems.FURRED_LEATHER_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.MEAT)
+                .add(ModItems.SAIGA, ModItems.COOKED_SAIGA, ModItems.BISON, ModItems.COOKED_BISON, ModItems.JACKRABBIT, ModItems.COOKED_JACKRABBIT,
+                        ModItems.PALLID_WINGED_GRASSHOPPER_LEG, ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG);
     }
 }

@@ -59,7 +59,7 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
     public static final Predicate<LivingEntity> FOLLOW_TAMED_PREDICATE = entity ->
     {
         EntityType<?> entityType = entity.getType();
-        return entityType == ModEntities.MARMOT || entityType == EntityType.RABBIT || entityType == ModEntities.STEPPE_EAGLE || entityType == EntityType.SHEEP;
+        return entityType == ModEntities.WHITE_TAILED_JACKRABBIT || entityType == EntityType.RABBIT || entityType == ModEntities.PALLID_WINGED_GRASSHOPPER;
     };
 
     private static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);
@@ -118,8 +118,6 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
         this.targetSelector.add(3, new RevengeGoal(this).setGroupRevenge());
         this.targetSelector.add(4, new ActiveTargetGoal<>(this, PlayerEntity.class, 10, true, false, this::shouldAngerAt));
         this.targetSelector.add(5, new UntamedActiveTargetGoal<>(this, AnimalEntity.class, false, FOLLOW_TAMED_PREDICATE));
-        this.targetSelector.add(6, new UntamedActiveTargetGoal<>(this, TurtleEntity.class, false, TurtleEntity.BABY_TURTLE_ON_LAND_FILTER));
-        this.targetSelector.add(7, new UntamedActiveTargetGoal<>(this, SaigaEntity.class, false, BisonEntity.BABY_BISON));
         this.targetSelector.add(8, new UniversalAngerGoal<>(this, true));
 
         super.initGoals();
@@ -199,7 +197,7 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
             for (int dz = -3; dz <= 3; dz++)
             {
                 mutablePos.set(pos.getX() + dx, pos.getY() - 1, pos.getZ() + dz);
-                if (world.getBlockState(mutablePos.up()).isOf(Blocks.SHORT_GRASS))
+                if (world.getBlockState(mutablePos.up()).isOf(Blocks.TALL_GRASS) || world.getBlockState(mutablePos.up()).isOf(ModBlocks.BLUE_GRAMA_GRASS))
                 {
                     hasPlantsNearby = true;
                     break;
@@ -289,7 +287,7 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
                     }
                 }
             }
-            else if (itemStack.isOf(ModItems.SAIGA) && !this.hasAngerTime())
+            else if (itemStack.isOf(ModItems.JACKRABBIT) && !this.hasAngerTime())
             {
                 itemStack.decrementUnlessCreative(1, player);
                 this.tryTame(player);
@@ -302,7 +300,7 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
         }
         else
         {
-            boolean bl = this.isOwner(player) || this.isTamed() || itemStack.isOf(ModItems.SAIGA) && !this.isTamed() && !this.hasAngerTime();
+            boolean bl = this.isOwner(player) || this.isTamed() || itemStack.isOf(ModItems.JACKRABBIT) && !this.isTamed() && !this.hasAngerTime();
             return bl ? ActionResult.CONSUME : ActionResult.PASS;
         }
     }

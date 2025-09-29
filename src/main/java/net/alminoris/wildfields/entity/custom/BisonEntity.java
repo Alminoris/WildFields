@@ -94,12 +94,15 @@ public class BisonEntity extends AnimalEntity implements GeoEntity
     protected void initGoals()
     {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new AnimalMateGoal(this, 0.85D));
-        this.goalSelector.add(2, new TemptGoal(this, 0.8, stack -> stack.isIn(ModTags.Items.BISON_FOOD), false));
-        this.goalSelector.add(3, new FollowParentGoal(this, 0.75D));
-        this.goalSelector.add(4, new EscapeDangerGoal(this, 1.0D));
-        this.goalSelector.add(5, new WanderAroundGoal(this, 0.75D));
-        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 7.0F));
+        this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 0.85D));
+        this.goalSelector.add(3, new TemptGoal(this, 0.8, stack -> stack.isIn(ModTags.Items.BISON_FOOD), false));
+        this.goalSelector.add(4, new FollowParentGoal(this, 0.75D));
+        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.0D));
+        this.goalSelector.add(6, new WanderAroundGoal(this, 0.75D));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 7.0F));
+
+        this.targetSelector.add(1, (new RevengeGoal(this)));
 
         super.initGoals();
     }

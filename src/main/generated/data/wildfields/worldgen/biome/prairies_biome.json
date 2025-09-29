@@ -86,7 +86,50 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "wildfields:bison",
+        "maxCount": 12,
+        "minCount": 6,
+        "weight": 150
+      },
+      {
+        "type": "wildfields:western_meadowlark",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 65
+      },
+      {
+        "type": "wildfields:coyote",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 50
+      },
+      {
+        "type": "wildfields:ferruginous_hawk",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 60
+      },
+      {
+        "type": "wildfields:pallid_winged_grasshopper",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 60
+      },
+      {
+        "type": "wildfields:white_tailed_jackrabbit",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 80
+      },
+      {
+        "type": "wildfields:black_billed_magpie",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 65
+      }
+    ],
     "misc": [],
     "monster": [
       {

@@ -16,9 +16,8 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.RabbitEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -127,20 +126,40 @@ public class FerruginousHawkEntity extends AnimalEntity implements GeoEntity, Fl
     }
 
     @Override
+    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            this.setVelocity(Vec3d.ZERO);
+        }
+        else
+        {
+            super.tickControlled(controllingPlayer, movementInput);
+        }
+    }
+
+    @Override
+    public void travel(Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            return;
+        }
+        super.travel(movementInput);
+    }
+
+    @Override
     protected void initGoals()
     {
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.RABBIT_FOOT), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.2D));
-        this.goalSelector.add(6, new WanderAroundGoal(this, 1.0D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
 
-        this.targetSelector.add(1, new ActiveTargetGoal<>(this, MarmotEntity.class, true));
-        this.targetSelector.add(2, new ActiveTargetGoal<>(this, RabbitEntity.class, true));
-        this.targetSelector.add(3, (new RevengeGoal(this)));
+        this.targetSelector.add(1, new ActiveTargetGoal<>(this, WesternMeadowlarkEntity.class, true));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, BlackBilledMagpieEntity.class, true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, WhiteTailedJackrabbitEntity.class, true));
+        this.targetSelector.add(4, new RevengeGoal(this));
 
         super.initGoals();
     }
@@ -162,7 +181,7 @@ public class FerruginousHawkEntity extends AnimalEntity implements GeoEntity, Fl
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.RABBIT_FOOT);
+        return stack.isOf(ModItems.JACKRABBIT);
     }
 
     @Override

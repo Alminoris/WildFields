@@ -18,6 +18,10 @@ public class ModFoodComponents
 
     public static final FoodComponent COOKED_JACKRABBIT = new FoodComponent.Builder().nutrition(6).saturationModifier(0.75f).build();
 
+    public static final FoodComponent PALLID_WINGED_GRASSHOPPER_LEG = new FoodComponent.Builder().nutrition(1).saturationModifier(0.25f).build();
+
+    public static final FoodComponent COOKED_PALLID_WINGED_GRASSHOPPER_LEG = new FoodComponent.Builder().nutrition(4).saturationModifier(0.55f).build();
+
     public static FoodComponent registerFood(int nutrition, float saturation)
     {
         return new FoodComponent.Builder().nutrition(nutrition).saturationModifier(saturation).build();

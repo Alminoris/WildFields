@@ -1,23 +1,25 @@
-// 1.21.1	2025-09-28T21:59:38.9189561	Wild Fields/Tags for minecraft:item
+// 1.21.1	2025-09-29T13:42:07.6880713	Wild Fields/Tags for minecraft:item
 97eac6439b29b4f7af0959d09056f4172df3c761 data\minecraft\tags\item\hanging_signs.json
 634893f59b7919b7734f6bcf50ef3c87fd4739ef data\minecraft\tags\item\wooden_pressure_plates.json
+13e696364f8b979774fc4eebb695eef2b132094e data\minecraft\tags\item\meat.json
+eef452208e3428d30cbc30ab633a217cfe1d7091 data\minecraft\tags\item\wooden_fences.json
+df1fdc4487afe44d907b5f93b34d28c41962c1e3 data\wildfields\tags\item\marmot_food.json
+946c27939c41ed4671e1806eb345a18c788aeb00 data\wildfields\tags\item\bison_food.json
+0430f88920d753ab8b019192a018f1e46f229fb8 data\minecraft\tags\item\trimmable_armor.json
+b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\dyeable.json
+c79f7198688e48def082b43047ea144e912b48b3 data\minecraft\tags\item\leg_armor.json
+d7a59d8ec443d97c26edb31bbae3b9c2dac180c2 data\minecraft\tags\item\wooden_doors.json
+b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\freeze_immune_wearables.json
 f3d6fe4eb1c33e3965386df3867aa8ccf2b62d7f data\minecraft\tags\item\chest_armor.json
 c5e7e2194aded0b92c42c3b3558a02a40d243d38 data\minecraft\tags\item\foot_armor.json
 72824610359aa88939c29953cc1d5e31c5f25064 data\minecraft\tags\item\wooden_stairs.json
-eef452208e3428d30cbc30ab633a217cfe1d7091 data\minecraft\tags\item\wooden_fences.json
-df1fdc4487afe44d907b5f93b34d28c41962c1e3 data\wildfields\tags\item\marmot_food.json
 74a3d9bcd16571a0b763fe6c9f704df5e6a6537a data\minecraft\tags\item\arrows.json
-0430f88920d753ab8b019192a018f1e46f229fb8 data\minecraft\tags\item\trimmable_armor.json
 a8e0873517af70481f5c1c99a50fa18fa061aca9 data\minecraft\tags\item\saplings.json
 a80a47d2310be431dcefa987bd06bdc4260eefa1 data\minecraft\tags\item\logs_that_burn.json
-b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\dyeable.json
-684df286543d4bfc09bd76a180e636b9ebb1b5cd data\minecraft\tags\item\signs.json
 72d18e6815942803b1ecd1b986433be092d7a104 data\minecraft\tags\item\wooden_trapdoors.json
-c79f7198688e48def082b43047ea144e912b48b3 data\minecraft\tags\item\leg_armor.json
+684df286543d4bfc09bd76a180e636b9ebb1b5cd data\minecraft\tags\item\signs.json
 6a80cd3a2e2eb6d491a1886dba7e937a1c25aa31 data\minecraft\tags\item\wooden_slabs.json
-d7a59d8ec443d97c26edb31bbae3b9c2dac180c2 data\minecraft\tags\item\wooden_doors.json
 20f64412360146bc587d7013023fa6d296f20af3 data\minecraft\tags\item\head_armor.json
-b075a20cfe8fcbbacc75397e77931b0efd6250ce data\minecraft\tags\item\freeze_immune_wearables.json
 eb1f218b00e5f04868b38545cd52d0927a3605a2 data\minecraft\tags\item\planks.json
 bd5fae3cee4e49b9158e08f78f8d3136398cfcd3 data\minecraft\tags\item\wooden_buttons.json
 df6a9ad2b6022bb2919000e4a09101908061646b data\wildfields\tags\item\saiga_food.json

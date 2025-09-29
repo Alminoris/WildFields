@@ -19,15 +19,22 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
@@ -95,30 +102,74 @@ public class WildFields implements ModInitializer
 		FabricDefaultAttributeRegistry.register(ModEntities.WESTERN_MEADOWLARK, WesternMeadowlarkEntity.setAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BISON, BisonEntity.setAttributes());
 
+
+		Map<UUID, Vec3d> LAST_POS = new ConcurrentHashMap<>();
+
 		ServerTickEvents.END_SERVER_TICK.register(server ->
 		{
 			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList())
 			{
-				boolean hasTalisman = false;
+				Vec3d currPos = player.getPos();
+				Vec3d prevPos = LAST_POS.get(player.getUuid());
 
-				for (ItemStack stack : player.getInventory().main)
-				{
-					if (stack.isOf(ModItems.PRAIRIES_TALISMAN))
-					{
-						hasTalisman = true;
+				if (prevPos == null) {
+					LAST_POS.put(player.getUuid(), currPos);
+					continue;
+				}
+
+				double dx = currPos.x - prevPos.x;
+				double dy = currPos.y - prevPos.y;
+				double dz = currPos.z - prevPos.z;
+
+				double horizSq = dx * dx + dz * dz;
+
+				boolean isMoving = horizSq > 1e-6;
+				boolean isSprinting = player.isSprinting();
+				boolean isFalling = !player.isOnGround() && dy < -0.08;
+
+				ItemStack talismanStack = null;
+				int talismanSlot = -1;
+				for (int i = 0; i < player.getInventory().main.size(); i++) {
+					ItemStack stack = player.getInventory().main.get(i);
+					if (stack.isOf(ModItems.PRAIRIES_TALISMAN)) {
+						talismanStack = stack;
+						talismanSlot = i;
 						break;
 					}
 				}
 
-				if (hasTalisman) {
-					RegistryEntry<Biome> biome = player.getWorld().getBiome(player.getBlockPos());
-					if (biome.matchesId(Identifier.of(WildFields.MOD_ID, "prairies_biome")))
-					{
-						player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 40, 0, true, false, false));
-						player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, true, false, false));
+				if (talismanStack != null) {
+					if (talismanStack.getDamage() >= talismanStack.getMaxDamage()) {
+
+					} else {
+						RegistryEntry<Biome> biome = player.getWorld().getBiome(player.getBlockPos());
+						if (biome.matchesId(Identifier.of(WildFields.MOD_ID, "prairies_biome"))) {
+							player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 40, 0, true, false, false));
+							player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 40, 0, true, false, false));
+
+							int damage = 0;
+							if (isFalling) {
+								damage = 10;
+							} else if (isSprinting) {
+								damage = 5;
+							} else if (isMoving) {
+								damage = 2;
+							}
+
+							if (damage > 0 && player.getWorld().getTime() % 20 == 0) {
+								talismanStack.damage(damage, player, EquipmentSlot.MAINHAND);
+
+								if (talismanStack.getDamage() >= talismanStack.getMaxDamage()) {
+									player.getInventory().removeStack(talismanSlot);
+								}
+							}
+						}
 					}
 				}
+
+				LAST_POS.put(player.getUuid(), currPos);
 			}
 		});
+
 	}
 }

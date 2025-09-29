@@ -17,6 +17,7 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.RabbitEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
@@ -91,6 +92,29 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     }
 
     @Override
+    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            this.setVelocity(Vec3d.ZERO);
+        }
+        else
+        {
+            super.tickControlled(controllingPlayer, movementInput);
+        }
+    }
+
+    @Override
+    public void travel(Vec3d movementInput)
+    {
+        if (this.isOnGround())
+        {
+            return;
+        }
+        super.travel(movementInput);
+    }
+
+    @Override
     public void tick()
     {
         super.tick();
@@ -121,29 +145,22 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
         return AnimalEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
                 .add(EntityAttributes.GENERIC_FLYING_SPEED, 0.6F)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2F)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0);
     }
 
     @Override
     protected void initGoals()
     {
-
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.05, stack -> stack.isOf(Items.RABBIT_FOOT), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.2D));
-        this.goalSelector.add(6, new WanderAroundGoal(this, 1.0D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
 
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, MarmotEntity.class, true));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, RabbitEntity.class, true));
-        this.targetSelector.add(3, (new RevengeGoal(this)));
-
-        super.initGoals();
+        this.targetSelector.add(3, new RevengeGoal(this));
     }
+
 
     @Override
     protected SoundEvent getAmbientSound() {

@@ -62,7 +62,7 @@ public class ModItems
 
     public static final Item EARTHWORM = registerItem("earthworm", new EarthwormItem(new Item.Settings()));
 
-    public static final Item PRAIRIES_TALISMAN = registerItem("prairies_talisman", new Item(new Item.Settings()));
+    public static final Item PRAIRIES_TALISMAN = registerItem("prairies_talisman", new Item(new Item.Settings().maxDamage(500)));
 
     public static final Item OLIVES = registerItem("olives", new Item(new Item.Settings().maxCount(16).food(ModFoodComponents.OLIVES)));
 
@@ -84,6 +84,12 @@ public class ModItems
     public static final Item COOKED_JACKRABBIT = registerItem("cooked_jackrabbit",
             new Item(new Item.Settings().food(ModFoodComponents.COOKED_JACKRABBIT)));
 
+    public static final Item PALLID_WINGED_GRASSHOPPER_LEG = registerItem("pallid_winged_grasshopper_leg",
+            new Item(new Item.Settings().food(ModFoodComponents.PALLID_WINGED_GRASSHOPPER_LEG)));
+
+    public static final Item COOKED_PALLID_WINGED_GRASSHOPPER_LEG = registerItem("cooked_pallid_winged_grasshopper_leg",
+            new Item(new Item.Settings().food(ModFoodComponents.COOKED_PALLID_WINGED_GRASSHOPPER_LEG)));
+
     public static final Item STEPPE_VIPER_FANG = registerItem("steppe_viper_fang", new Item(new Item.Settings()));
 
     public static final Item STEPPE_EAGLE_BEAK = registerItem("steppe_eagle_beak", new Item(new Item.Settings()));
@@ -95,8 +101,6 @@ public class ModItems
     public static final Item BLACK_BILLED_MAGPIE_FEATHER = registerItem("black_billed_magpie_feather", new Item(new Item.Settings()));
 
     public static final Item WESTERN_MEADOWLARK_FEATHER = registerItem("western_meadowlark_feather", new Item(new Item.Settings()));
-
-    public static final Item PALLID_WINGED_GRASSHOPPER_LEG = registerItem("pallid_winged_grasshopper_leg", new Item(new Item.Settings()));
 
     public static final Item MARMOT_FUR = registerItem("marmot_fur", new Item(new Item.Settings()));
 

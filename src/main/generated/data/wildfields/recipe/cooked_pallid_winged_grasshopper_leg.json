@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "wildfields:pallid_winged_grasshopper_leg"
+  },
+  "result": {
+    "id": "wildfields:cooked_pallid_winged_grasshopper_leg"
+  }
+}

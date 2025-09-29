@@ -218,5 +218,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(ModTags.Blocks.SAIGA_SPAWNABLE_ON)
                 .add(Blocks.GRASS_BLOCK)
                 .add(ModBlocks.SALTMARSH_BLOCK);
+
+        getOrCreateTagBuilder(ModTags.Blocks.BISON_SPAWNABLE_ON)
+                .add(Blocks.GRASS_BLOCK)
+                .add(Blocks.SAND);
     }
 }
