@@ -4,9 +4,11 @@ import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.Ingredient;
@@ -752,6 +754,19 @@ public class ModRecipeProvider extends FabricRecipeProvider
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.PALLID_WINGED_GRASSHOPPER_LEG), RecipeCategory.FOOD,
                         ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, 0.35F, 200)
                 .criterion("has_pallid_winged_grasshopper_leg", conditionsFromItem(ModItems.PALLID_WINGED_GRASSHOPPER_LEG))
+                .offerTo(recipeExporter);
+
+        offerCompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BARLEY_HAY_BLOCK, ModItems.BARLEY);
+        offerCompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OAT_HAY_BLOCK, ModItems.OAT);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.OAT, 9)
+                .input(ModBlocks.OAT_HAY_BLOCK)
+                .criterion("has_oat_hay_block", conditionsFromItem(ModBlocks.OAT_HAY_BLOCK))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BARLEY, 9)
+                .input(ModBlocks.BARLEY_HAY_BLOCK)
+                .criterion("has_barley_hay_block", conditionsFromItem(ModBlocks.BARLEY_HAY_BLOCK))
                 .offerTo(recipeExporter);
     }
 }

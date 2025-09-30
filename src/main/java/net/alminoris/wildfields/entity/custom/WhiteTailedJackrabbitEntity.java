@@ -19,6 +19,7 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -38,7 +39,7 @@ import software.bernie.geckolib.animation.Animation;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEntity
+public class WhiteTailedJackrabbitEntity extends AnimalEntity implements GeoEntity
 {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
@@ -48,7 +49,7 @@ public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEn
     private int ticksUntilJump;
     int moreBeetrootTicks;
 
-    public WhiteTailedJackrabbitEntity(EntityType<? extends TameableEntity> entityType, World world)
+    public WhiteTailedJackrabbitEntity(EntityType<? extends AnimalEntity> entityType, World world)
     {
         super(entityType, world);
         this.jumpControl = new WhiteTailedJackrabbitEntity.WhiteTailedJackrabbitJumpControl(this);
@@ -83,13 +84,12 @@ public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEn
     {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new EatBeetrootCropGoal(this));
-        this.goalSelector.add(2, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
-        this.goalSelector.add(3, new AnimalMateGoal(this, 0.85D));
-        this.goalSelector.add(4, new TemptGoal(this, 0.8, stack -> stack.isOf(ModItems.EARTHWORM), false));
-        this.goalSelector.add(5, new FollowParentGoal(this, 0.75));
-        this.goalSelector.add(6, new WhiteTailedJackrabbitEntity.EscapeDangerGoal(this, 1.5D));
-        this.goalSelector.add(7, new WanderAroundGoal(this, 0.75D));
-        this.goalSelector.add(8, new LookAtEntityGoal(this, LivingEntity.class, 8.0F));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 0.85D));
+        this.goalSelector.add(3, new TemptGoal(this, 0.8, stack -> stack.isOf(Items.BEETROOT), false));
+        this.goalSelector.add(4, new FollowParentGoal(this, 0.75));
+        this.goalSelector.add(5, new WhiteTailedJackrabbitEntity.EscapeDangerGoal(this, 1.5D));
+        this.goalSelector.add(6, new WanderAroundGoal(this, 0.75D));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 8.0F));
 
         super.initGoals();
     }
@@ -115,7 +115,7 @@ public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEn
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {
-        return stack.isOf(ModItems.EARTHWORM);
+        return stack.isOf(Items.BEETROOT);
     }
 
     @Override
@@ -465,22 +465,6 @@ public class WhiteTailedJackrabbitEntity extends TameableEntity implements GeoEn
     public AnimatableInstanceCache getAnimatableInstanceCache()
     {
         return cache;
-    }
-
-    @Override
-    public boolean damage(DamageSource source, float amount)
-    {
-        if (this.isInvulnerableTo(source))
-        {
-            return false;
-        }
-        else
-        {
-            if (!this.getWorld().isClient)
-                this.setSitting(false);
-
-            return super.damage(source, amount);
-        }
     }
 
     @Override

@@ -120,6 +120,13 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerWallPlant(ModBlocks.GREEN_LICHEN);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BARLEY_HAY_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OAT_HAY_BLOCK);
+
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_WHEAT);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_BARLEY);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_OAT);
+
         BlockStateModelGenerator.BlockTexturePool limestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BLOCK);
         BlockStateModelGenerator.BlockTexturePool saltmarshPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BLOCK);
         BlockStateModelGenerator.BlockTexturePool dolomitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BLOCK);
@@ -132,7 +139,6 @@ public class ModModelProvider extends FabricModelProvider
         BlockStateModelGenerator.BlockTexturePool limestoneCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_COBBLED);
         BlockStateModelGenerator.BlockTexturePool saltmarshCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_COBBLED);
         BlockStateModelGenerator.BlockTexturePool dolomiteCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_COBBLED);
-
 
         BlockStateModelGenerator.BlockTexturePool loessicMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_BLOCK);
         BlockStateModelGenerator.BlockTexturePool loamyMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_BLOCK);
@@ -234,6 +240,8 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerParentedItemModel(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
+        blockStateModelGenerator.registerCrop(ModBlocks.OAT, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+
         blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLA);
     }
 
@@ -305,6 +313,13 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.SAIGA_SICKLE, Models.GENERATED);
         itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.COTTONWOOD_FLUFF.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModBlocks.WILD_WHEAT.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.WILD_BARLEY.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.WILD_OAT.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BARLEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OAT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.JACKRABBIT, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_JACKRABBIT, Models.GENERATED);

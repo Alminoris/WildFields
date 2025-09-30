@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    },
+    {
+      "item": "wildfields:oat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "wildfields:oat_hay_block"
+  }
+}

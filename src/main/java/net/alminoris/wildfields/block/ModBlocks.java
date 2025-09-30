@@ -9,6 +9,7 @@ import net.alminoris.wildfields.block.custom.*;
 import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
@@ -319,6 +320,36 @@ public class ModBlocks
     public static final Block GREEN_LICHEN = registerBlock("green_lichen", new VineBlock(AbstractBlock.Settings.copy(Blocks.VINE)));
 
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+
+    public static final Block WILD_WHEAT = registerBlock("wild_wheat", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block WILD_OAT = registerBlock("wild_oat", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block WILD_BARLEY = registerBlock("wild_barley", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+
+    public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.GREEN)
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block BARLEY = registerBlock("barley", new CropBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.GREEN)
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block OAT_HAY_BLOCK = registerBlock(
+            "oat_hay_block",
+            new HayBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+
+    public static final Block BARLEY_HAY_BLOCK = registerBlock(
+            "oat_barley_block",
+            new HayBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block THYME = registerBlock("thyme",
             new FlowerBlock(StatusEffects.ABSORPTION, 0.35F, AbstractBlock.Settings.copy(Blocks.PEONY)));

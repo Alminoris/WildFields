@@ -11,8 +11,8 @@ import net.alminoris.wildfields.world.gen.feature.ModFeatures;
 import net.alminoris.wildfields.world.gen.feature.custom.TripleTallPlantConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.block.FlowerbedBlock;
-import net.minecraft.block.PropaguleBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -98,6 +98,8 @@ public class ModConfiguredFeatures
     public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_FLOWERS_1_KEY = registerKey("prairies_flowers_1");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> PRAIRIES_FLOWERS_2_KEY = registerKey("prairies_flowers_2");
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> WILD_WHEAT_KEY = registerKey("wild_wheat");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
     {
@@ -267,6 +269,12 @@ public class ModConfiguredFeatures
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.TALL_GRASS)), List.of(Blocks.GRASS_BLOCK),1024));
+
+        register(context, WILD_WHEAT_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_WHEAT)),
+                        List.of(Blocks.GRASS_BLOCK), 8024));
 
         context.register(
                 SALTMARSH_WATER_KEY,

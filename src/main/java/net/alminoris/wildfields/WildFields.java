@@ -75,6 +75,13 @@ public class WildFields implements ModInitializer
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_GRAMA_GRASS, 20, 90);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PRAIRIE_SAGE, 20, 90);
 
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.OAT_HAY_BLOCK, 60, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BARLEY_HAY_BLOCK, 60, 20);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_WHEAT, 30, 40);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_BARLEY, 30, 40);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_OAT, 30, 40);
+
 		ModBoats.registerBoats();
 
 		ModItemGroups.registerItemGroups();

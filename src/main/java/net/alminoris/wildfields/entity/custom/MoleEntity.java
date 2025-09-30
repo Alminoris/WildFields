@@ -39,11 +39,11 @@ import software.bernie.geckolib.animation.Animation;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class MoleEntity extends TameableEntity implements GeoEntity
+public class MoleEntity extends AnimalEntity implements GeoEntity
 {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public MoleEntity(EntityType<? extends TameableEntity> entityType, World world)
+    public MoleEntity(EntityType<? extends AnimalEntity> entityType, World world)
     {
         super(entityType, world);
     }
@@ -77,13 +77,12 @@ public class MoleEntity extends TameableEntity implements GeoEntity
     protected void initGoals()
     {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 0.85D));
-        this.goalSelector.add(3, new TemptGoal(this, 0.8, stack -> stack.isOf(ModItems.EARTHWORM), false));
-        this.goalSelector.add(4, new FollowParentGoal(this, 0.75));
-        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.1D));
-        this.goalSelector.add(6, new WanderAroundGoal(this, 0.75D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 8.0F));
+        this.goalSelector.add(1, new AnimalMateGoal(this, 0.85D));
+        this.goalSelector.add(2, new TemptGoal(this, 0.8, stack -> stack.isOf(ModItems.EARTHWORM), false));
+        this.goalSelector.add(3, new FollowParentGoal(this, 0.75));
+        this.goalSelector.add(4, new EscapeDangerGoal(this, 1.1D));
+        this.goalSelector.add(5, new WanderAroundGoal(this, 0.75D));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, LivingEntity.class, 8.0F));
 
         super.initGoals();
     }
@@ -134,22 +133,6 @@ public class MoleEntity extends TameableEntity implements GeoEntity
     public AnimatableInstanceCache getAnimatableInstanceCache()
     {
         return cache;
-    }
-
-    @Override
-    public boolean damage(DamageSource source, float amount)
-    {
-        if (this.isInvulnerableTo(source))
-        {
-            return false;
-        }
-        else
-        {
-            if (!this.getWorld().isClient)
-                this.setSitting(false);
-
-            return super.damage(source, amount);
-        }
     }
 
     @Override

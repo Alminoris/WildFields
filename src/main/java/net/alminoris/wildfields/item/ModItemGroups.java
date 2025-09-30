@@ -29,6 +29,15 @@ public class ModItemGroups
                         entries.add(ModBlocks.BLUE_GRAMA_GRASS);
                         entries.add(ModBlocks.PRAIRIE_SAGE);
                         entries.add(ModBlocks.VIOLA);
+                        entries.add(ModBlocks.WILD_WHEAT);
+                        entries.add(ModItems.BARLEY_SEEDS);
+                        entries.add(ModItems.BARLEY);
+                        entries.add(ModBlocks.WILD_BARLEY);
+                        entries.add(ModBlocks.BARLEY_HAY_BLOCK);
+                        entries.add(ModItems.OAT_SEEDS);
+                        entries.add(ModItems.OAT);
+                        entries.add(ModBlocks.WILD_OAT);
+                        entries.add(ModBlocks.OAT_HAY_BLOCK);
                         entries.add(ModBlocks.GREEN_LICHEN);
                         entries.add(ModBlocks.COTTONWOOD_FLUFF);
                         entries.add(ModBlocks.SALTMARSH_BLOCK);

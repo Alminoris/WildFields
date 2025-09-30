@@ -8,6 +8,8 @@ import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantment;
@@ -17,6 +19,7 @@ import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -121,6 +124,21 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.PRAIRIE_ROSE);
         addDrop(ModBlocks.SMOOTH_ASTER);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));
+
+        addDrop(ModBlocks.WILD_WHEAT);
+        addDrop(ModBlocks.WILD_BARLEY);
+        addDrop(ModBlocks.WILD_OAT);
+
+        addDrop(ModBlocks.BARLEY_HAY_BLOCK);
+        addDrop(ModBlocks.OAT_HAY_BLOCK);
+
+        LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(ModBlocks.OAT)
+                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+        this.addDrop(ModBlocks.OAT, this.cropDrops(ModBlocks.OAT, ModItems.OAT, ModItems.OAT_SEEDS, builder1));
+
+        LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.BARLEY)
+                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+        this.addDrop(ModBlocks.BARLEY, this.cropDrops(ModBlocks.BARLEY, ModItems.BARLEY, ModItems.BARLEY_SEEDS, builder2));
 
         addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));
 

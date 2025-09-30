@@ -8,7 +8,6 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
@@ -20,7 +19,6 @@ import net.minecraft.world.gen.placementmodifier.*;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ModPlacedFeatures
@@ -79,6 +77,8 @@ public class ModPlacedFeatures
 
     public static RegistryKey<PlacedFeature> PRAIRIES_FLOWERS_2_PLACED_KEY = registerKey("prairies_flowers_2_placed");
 
+    public static RegistryKey<PlacedFeature> WILD_WHEAT_PLACED_KEY = registerKey("wild_wheat_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -122,21 +122,24 @@ public class ModPlacedFeatures
                         SquarePlacementModifier.of(),
                         CountPlacementModifier.of(1),
                         PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
 
         register(context, STEPPES_GRASS_1_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STEPPES_GRASS_1_KEY),
                 List.of(
                         SquarePlacementModifier.of(),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
 
         register(context, STEPPES_GRASS_2_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.STEPPES_GRASS_2_KEY),
                 List.of(
                         SquarePlacementModifier.of(),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
-                        BiomePlacementModifier.of()));
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
 
         register(context, PRAIRIE_SAGE_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PRAIRIE_SAGE_KEY),
@@ -185,6 +188,16 @@ public class ModPlacedFeatures
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PRAIRIES_GRASS_2_KEY),
                 List.of(
                         SquarePlacementModifier.of(),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
+
+        register(context, WILD_WHEAT_PLACED_KEY,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_WHEAT_KEY),
+                List.of(
+                        RarityFilterPlacementModifier.of(64),
+                        SquarePlacementModifier.of(),
+                        CountPlacementModifier.of(1),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
                         BiomePlacementModifier.of(),
                         BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
