@@ -618,6 +618,40 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(ModBlocks.LOESSIC_MARL_BRICKS_SLAB), conditionsFromItem(ModBlocks.LOESSIC_MARL_BRICKS_SLAB))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BARLEY_BREAD)
+                .pattern("###")
+                .input('#', ModItems.BARLEY)
+                .criterion(hasItem(ModItems.BARLEY), conditionsFromItem(ModItems.BARLEY))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BARLEY_STEW)
+                .input(ModItems.BARLEY)
+                .input(Items.CARROT)
+                .input(Items.POTATO)
+                .input(Items.BOWL)
+                .criterion(hasItem(ModItems.BARLEY), conditionsFromItem(ModItems.BARLEY))
+                .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
+                .criterion(hasItem(Items.POTATO), conditionsFromItem(Items.POTATO))
+                .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.OAT_COOKIE)
+                .pattern("#X#")
+                .input('#', ModItems.OAT)
+                .input('X', Items.COCOA_BEANS)
+                .criterion(hasItem(ModItems.OAT), conditionsFromItem(ModItems.OAT))
+                .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.OATMEAL)
+                .input(ModItems.OAT, 2)
+                .input(Items.MILK_BUCKET)
+                .input(Items.BOWL)
+                .criterion(hasItem(ModItems.OAT), conditionsFromItem(ModItems.OAT))
+                .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
+                .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
+                .offerTo(recipeExporter);
+
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.LOESSIC_MARL_COBBLED), RecipeCategory.BUILDING_BLOCKS,
                         ModBlocks.LOESSIC_MARL_BLOCK.asItem(), 0.1F, 200)
                 .criterion(hasItem(ModBlocks.LOESSIC_MARL_COBBLED), conditionsFromItem(ModBlocks.LOESSIC_MARL_COBBLED))

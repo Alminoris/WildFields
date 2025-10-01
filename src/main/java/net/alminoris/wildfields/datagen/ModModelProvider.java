@@ -322,6 +322,11 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.BARLEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.OAT, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.BARLEY_BREAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BARLEY_STEW, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OAT_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OATMEAL, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.JACKRABBIT, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_JACKRABBIT, Models.GENERATED);
 

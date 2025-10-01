@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "wildfields:block/wild_oat"
+    "cross": "wildfields:block/wild_oat"
   }
 }

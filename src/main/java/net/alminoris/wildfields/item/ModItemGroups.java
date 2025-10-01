@@ -199,6 +199,10 @@ public class ModItemGroups
                         entries.add(ModItems.COOKED_JACKRABBIT);
                         entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_LEG);
                         entries.add(ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG);
+                        entries.add(ModItems.BARLEY_BREAD);
+                        entries.add(ModItems.BARLEY_STEW);
+                        entries.add(ModItems.OAT_COOKIE);
+                        entries.add(ModItems.OATMEAL);
                         entries.add(ModItems.MARMOT_SPAWN_EGG);
                         entries.add(ModItems.DARKLING_BEETLE_SPAWN_EGG);
                         entries.add(ModItems.SERVAL_SPAWN_EGG);

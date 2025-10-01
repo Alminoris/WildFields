@@ -11,6 +11,7 @@ import net.alminoris.wildfields.item.custom.SteppeArrowItem;
 import net.alminoris.wildfields.item.custom.SteppeViperDagger;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -90,6 +91,14 @@ public class ModItems
 
     public static final Item COOKED_PALLID_WINGED_GRASSHOPPER_LEG = registerItem("cooked_pallid_winged_grasshopper_leg",
             new Item(new Item.Settings().food(ModFoodComponents.COOKED_PALLID_WINGED_GRASSHOPPER_LEG)));
+
+    public static final Item BARLEY_BREAD = registerItem("barley_bread", new Item(new Item.Settings().food(ModFoodComponents.BARLEY_BREAD)));
+
+    public static final Item BARLEY_STEW = registerItem("barley_stew", new Item(new Item.Settings().maxCount(1).food(ModFoodComponents.BARLEY_STEW)));
+
+    public static final Item OAT_COOKIE = registerItem("oat_cookie", new Item(new Item.Settings().food(ModFoodComponents.OAT_COOKIE)));
+
+    public static final Item OATMEAL = registerItem("oatmeal", new Item(new Item.Settings().maxCount(1).food(ModFoodComponents.OATMEAL)));
 
     public static final Item STEPPE_VIPER_FANG = registerItem("steppe_viper_fang", new Item(new Item.Settings()));
 
