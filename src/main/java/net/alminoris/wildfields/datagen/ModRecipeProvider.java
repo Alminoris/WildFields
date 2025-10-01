@@ -194,15 +194,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.PRAIRIES_TALISMAN, 1)
+                .pattern(" R ")
                 .pattern("ABC")
                 .pattern(" S ")
                 .input('A', ModItems.FERRUGINOUS_HAWK_FEATHER)
                 .input('B', ModItems.BLACK_BILLED_MAGPIE_FEATHER)
                 .input('C', ModItems.WESTERN_MEADOWLARK_FEATHER)
+                .input('R', ModItems.BISON_HORN)
                 .input('S', Items.STRING)
                 .criterion(hasItem(ModItems.FERRUGINOUS_HAWK_FEATHER), conditionsFromItem(ModItems.FERRUGINOUS_HAWK_FEATHER))
                 .criterion(hasItem(ModItems.BLACK_BILLED_MAGPIE_FEATHER), conditionsFromItem(ModItems.BLACK_BILLED_MAGPIE_FEATHER))
                 .criterion(hasItem(ModItems.WESTERN_MEADOWLARK_FEATHER), conditionsFromItem(ModItems.WESTERN_MEADOWLARK_FEATHER))
+                .criterion(hasItem(ModItems.BISON_HORN), conditionsFromItem(ModItems.BISON_HORN))
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .offerTo(recipeExporter);
 

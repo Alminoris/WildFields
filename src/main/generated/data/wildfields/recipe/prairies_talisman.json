@@ -11,11 +11,15 @@
     "C": {
       "item": "wildfields:western_meadowlark_feather"
     },
+    "R": {
+      "item": "wildfields:bison_horn"
+    },
     "S": {
       "item": "minecraft:string"
     }
   },
   "pattern": [
+    " R ",
     "ABC",
     " S "
   ],

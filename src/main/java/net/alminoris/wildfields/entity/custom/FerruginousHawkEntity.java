@@ -126,29 +126,6 @@ public class FerruginousHawkEntity extends AnimalEntity implements GeoEntity, Fl
     }
 
     @Override
-    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            this.setVelocity(Vec3d.ZERO);
-        }
-        else
-        {
-            super.tickControlled(controllingPlayer, movementInput);
-        }
-    }
-
-    @Override
-    public void travel(Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            return;
-        }
-        super.travel(movementInput);
-    }
-
-    @Override
     protected void initGoals()
     {
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));

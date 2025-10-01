@@ -92,29 +92,6 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     }
 
     @Override
-    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            this.setVelocity(Vec3d.ZERO);
-        }
-        else
-        {
-            super.tickControlled(controllingPlayer, movementInput);
-        }
-    }
-
-    @Override
-    public void travel(Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            return;
-        }
-        super.travel(movementInput);
-    }
-
-    @Override
     public void tick()
     {
         super.tick();

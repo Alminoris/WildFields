@@ -111,12 +111,12 @@ public class ModBiomes
 
         // ---------- SPAWNS ----------
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BISON, 150, 6, 12));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WESTERN_MEADOWLARK, 65, 2, 4));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.COYOTE, 50, 1, 3));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.FERRUGINOUS_HAWK, 60, 1, 1));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WESTERN_MEADOWLARK, 95, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.COYOTE, 100, 1, 3));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.FERRUGINOUS_HAWK, 80, 1, 1));
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.PALLID_WINGED_GRASSHOPPER, 60, 2, 4));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WHITE_TAILED_JACKRABBIT, 80, 2, 4));
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLACK_BILLED_MAGPIE, 65, 2, 3));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.WHITE_TAILED_JACKRABBIT, 130, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLACK_BILLED_MAGPIE, 95, 2, 3));
 
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 

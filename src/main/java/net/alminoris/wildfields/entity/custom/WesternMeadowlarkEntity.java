@@ -3,7 +3,11 @@ package net.alminoris.wildfields.entity.custom;
 import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
+import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -11,8 +15,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class WesternMeadowlarkEntity extends BlackBilledMagpieEntity
@@ -38,26 +45,18 @@ public class WesternMeadowlarkEntity extends BlackBilledMagpieEntity
     }
 
     @Override
-    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
+    protected void dropFeather()
     {
-        if (this.isOnGround())
+        if (this.isAlive() && !this.isInsideWaterOrBubbleColumn())
         {
-            this.setVelocity(Vec3d.ZERO);
+            this.getWorld().spawnEntity(new ItemEntity(
+                    this.getWorld(),
+                    this.getX(),
+                    this.getY(),
+                    this.getZ(),
+                    new ItemStack(ModItems.WESTERN_MEADOWLARK_FEATHER)
+            ));
         }
-        else
-        {
-            super.tickControlled(controllingPlayer, movementInput);
-        }
-    }
-
-    @Override
-    public void travel(Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            return;
-        }
-        super.travel(movementInput);
     }
 
     @Override

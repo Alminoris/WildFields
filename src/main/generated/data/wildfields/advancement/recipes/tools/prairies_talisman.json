@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_bison_horn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:bison_horn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_black_billed_magpie_feather": {
       "conditions": {
         "items": [
@@ -54,6 +64,7 @@
       "has_ferruginous_hawk_feather",
       "has_black_billed_magpie_feather",
       "has_western_meadowlark_feather",
+      "has_bison_horn",
       "has_string"
     ]
   ],

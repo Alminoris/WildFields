@@ -183,32 +183,6 @@ public class CoyoteEntity extends TameableEntity implements GeoEntity, Angerable
         }
     }
 
-    public static boolean isValidNaturalSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random)
-    {
-        boolean bl = SpawnReason.isTrialSpawner(spawnReason) || isLightLevelValidForNaturalSpawn(world, pos);
-
-        boolean isSpawnableBlock = world.getBlockState(pos.down()).isIn(BlockTags.ANIMALS_SPAWNABLE_ON);
-
-        boolean hasPlantsNearby = false;
-        BlockPos.Mutable mutablePos = new BlockPos.Mutable();
-
-        for (int dx = -3; dx <= 3; dx++)
-        {
-            for (int dz = -3; dz <= 3; dz++)
-            {
-                mutablePos.set(pos.getX() + dx, pos.getY() - 1, pos.getZ() + dz);
-                if (world.getBlockState(mutablePos.up()).isOf(Blocks.TALL_GRASS) || world.getBlockState(mutablePos.up()).isOf(ModBlocks.BLUE_GRAMA_GRASS))
-                {
-                    hasPlantsNearby = true;
-                    break;
-                }
-            }
-            if (hasPlantsNearby) break;
-        }
-
-        return isSpawnableBlock && hasPlantsNearby && bl;
-    }
-
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar)
     {

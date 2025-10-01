@@ -3,7 +3,9 @@ package net.alminoris.wildfields.entity.custom;
 import net.alminoris.wildfields.entity.ModEntities;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.sound.ModSounds;
+import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.control.FlightMoveControl;
 import net.minecraft.entity.ai.goal.*;
@@ -19,6 +21,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -26,6 +29,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -97,30 +101,7 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
         }
     }
 
-    @Override
-    protected void tickControlled(PlayerEntity controllingPlayer, Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            this.setVelocity(Vec3d.ZERO);
-        }
-        else
-        {
-            super.tickControlled(controllingPlayer, movementInput);
-        }
-    }
-
-    @Override
-    public void travel(Vec3d movementInput)
-    {
-        if (this.isOnGround())
-        {
-            return;
-        }
-        super.travel(movementInput);
-    }
-
-    private void dropFeather()
+    protected void dropFeather()
     {
         if (this.isAlive() && !this.isInsideWaterOrBubbleColumn())
         {
@@ -129,7 +110,7 @@ public class BlackBilledMagpieEntity extends AnimalEntity implements GeoEntity, 
                     this.getX(),
                     this.getY(),
                     this.getZ(),
-                    new ItemStack(Items.FEATHER)
+                    new ItemStack(ModItems.BLACK_BILLED_MAGPIE_FEATHER)
             ));
         }
     }

@@ -98,19 +98,19 @@
         "type": "wildfields:western_meadowlark",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 65
+        "weight": 95
       },
       {
         "type": "wildfields:coyote",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 50
+        "weight": 100
       },
       {
         "type": "wildfields:ferruginous_hawk",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 60
+        "weight": 80
       },
       {
         "type": "wildfields:pallid_winged_grasshopper",
@@ -122,13 +122,13 @@
         "type": "wildfields:white_tailed_jackrabbit",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 80
+        "weight": 130
       },
       {
         "type": "wildfields:black_billed_magpie",
         "maxCount": 3,
         "minCount": 2,
-        "weight": 65
+        "weight": 95
       }
     ],
     "misc": [],
