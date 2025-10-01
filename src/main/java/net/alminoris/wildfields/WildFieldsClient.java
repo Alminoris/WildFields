@@ -112,6 +112,14 @@ public class WildFieldsClient implements ClientModInitializer
                 spriteProvider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) ->
                         new LeavesParticle(world, x, y, z, spriteProvider, 12));
 
+        ParticleFactoryRegistry.getInstance().register(ModParticles.TREMBLING_ASPEN_LEAVES,
+                spriteProvider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) ->
+                        new LeavesParticle(world, x, y, z, spriteProvider, 12));
+
+        ParticleFactoryRegistry.getInstance().register(ModParticles.COTTONWOOD_LEAVES,
+                spriteProvider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) ->
+                        new LeavesParticle(world, x, y, z, spriteProvider, 12));
+
         EntityRendererRegistry.register(ModEntities.MARMOT, MarmotRenderer::new);
         EntityRendererRegistry.register(ModEntities.STEPPE_VIPER, SteppeViperRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARKLING_BEETLE, DarklingBeetleRenderer::new);

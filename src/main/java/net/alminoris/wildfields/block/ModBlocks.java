@@ -429,6 +429,14 @@ public class ModBlocks
             return registerBlock(name+"_leaves",
                     new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.OLIVE_LEAVES, 30));
 
+        if (name.equals("trembling_aspen"))
+            return registerBlock(name+"_leaves",
+                    new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.TREMBLING_ASPEN_LEAVES, 50));
+
+        if (name.equals("cottonwood"))
+            return registerBlock(name+"_leaves",
+                    new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.COTTONWOOD_LEAVES, 70));
+
         return registerBlock(name+"_leaves",
                 new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     }
