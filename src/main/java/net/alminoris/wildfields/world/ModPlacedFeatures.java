@@ -79,6 +79,10 @@ public class ModPlacedFeatures
 
     public static RegistryKey<PlacedFeature> WILD_WHEAT_PLACED_KEY = registerKey("wild_wheat_placed");
 
+    public static RegistryKey<PlacedFeature> WILD_BARLEY_PLACED_KEY = registerKey("wild_barley_placed");
+
+    public static RegistryKey<PlacedFeature> WILD_OAT_PLACED_KEY = registerKey("wild_oat_placed");
+
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -195,7 +199,27 @@ public class ModPlacedFeatures
         register(context, WILD_WHEAT_PLACED_KEY,
                 configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_WHEAT_KEY),
                 List.of(
-                        RarityFilterPlacementModifier.of(64),
+                        RarityFilterPlacementModifier.of(256),
+                        SquarePlacementModifier.of(),
+                        CountPlacementModifier.of(1),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
+
+        register(context, WILD_BARLEY_PLACED_KEY,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_BARLEY_KEY),
+                List.of(
+                        RarityFilterPlacementModifier.of(256),
+                        SquarePlacementModifier.of(),
+                        CountPlacementModifier.of(1),
+                        PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                        BiomePlacementModifier.of(),
+                        BlockFilterPlacementModifier.of(BlockPredicate.matchingBlocks(Direction.DOWN.getVector(), Blocks.GRASS_BLOCK))));
+
+        register(context, WILD_OAT_PLACED_KEY,
+                configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_OAT_KEY),
+                List.of(
+                        RarityFilterPlacementModifier.of(128),
                         SquarePlacementModifier.of(),
                         CountPlacementModifier.of(1),
                         PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,

@@ -120,8 +120,8 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerWallPlant(ModBlocks.GREEN_LICHEN);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BARLEY_HAY_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OAT_HAY_BLOCK);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.OAT_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.BARLEY_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
 
         blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_WHEAT);
         blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_BARLEY);
@@ -241,6 +241,7 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerParentedItemModel(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
         blockStateModelGenerator.registerCrop(ModBlocks.OAT, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        blockStateModelGenerator.registerCrop(ModBlocks.BARLEY, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
         blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLA);
     }

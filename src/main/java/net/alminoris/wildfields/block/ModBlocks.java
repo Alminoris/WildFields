@@ -321,9 +321,9 @@ public class ModBlocks
 
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
 
-    public static final Block WILD_WHEAT = registerBlock("wild_wheat", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
-    public static final Block WILD_OAT = registerBlock("wild_oat", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
-    public static final Block WILD_BARLEY = registerBlock("wild_barley", new ShortPlantBlock(AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block WILD_WHEAT = registerBlock("wild_wheat", new FlowerBlock(StatusEffects.HASTE, 0.35F, AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block WILD_OAT = registerBlock("wild_oat", new FlowerBlock(StatusEffects.HASTE, 0.35F, AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
+    public static final Block WILD_BARLEY = registerBlock("wild_barley", new FlowerBlock(StatusEffects.HASTE, 0.35F, AbstractBlock.Settings.copy(Blocks.SHORT_GRASS)));
 
     public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings.create()
             .mapColor(MapColor.GREEN)
@@ -347,7 +347,7 @@ public class ModBlocks
                     .mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block BARLEY_HAY_BLOCK = registerBlock(
-            "oat_barley_block",
+            "barley_hay_block",
             new HayBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 

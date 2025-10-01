@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "wildfields:oat_barley_block"
+            "items": "wildfields:barley_hay_block"
           }
         ]
       },

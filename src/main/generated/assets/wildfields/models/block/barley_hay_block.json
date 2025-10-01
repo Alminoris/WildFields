@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "wildfields:block/barley_hay_block_top",
+    "side": "wildfields:block/barley_hay_block_side"
+  }
+}

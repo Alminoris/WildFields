@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "wildfields:oat_barley_block"
+          "name": "wildfields:barley_hay_block"
         }
       ],
       "rolls": 1.0

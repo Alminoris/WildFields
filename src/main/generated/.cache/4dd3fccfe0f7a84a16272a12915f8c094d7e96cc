@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-30T15:21:25.7876802	Wild Fields/Block Loot Tables
+// 1.21.1	2025-10-01T08:55:28.1567295	Wild Fields/Block Loot Tables
 edf32b0e64944eef18cbbeadd116614a2b4e02e1 data\wildfields\loot_table\blocks\spider_milkweed.json
 4adfd41c4073a77164399e86647699601480b2b7 data\wildfields\loot_table\blocks\stripped_tamarisk_log.json
 09c6af05f5a5eb992ccc8b10a6dd4e2fa1869e91 data\wildfields\loot_table\blocks\saltmarsh_cobbled_stairs.json
@@ -103,6 +103,7 @@ e24a136b71089b5008ed26441c1407e07359b2e7 data\wildfields\loot_table\blocks\saltm
 c2fdd8ca4d409b396c7eea732987ada0f9a63a55 data\wildfields\loot_table\blocks\olive_log.json
 302805d140540e68d8e029ad6efe1d01cc07598f data\wildfields\loot_table\blocks\loessic_marl_polished_stairs.json
 74a8c6a2eb781c2f2fa40c8d85cfc0f9e3f10772 data\wildfields\loot_table\blocks\loamy_marl_polished_stairs.json
+bbf1fd6710d36a04392ea7eb00e61859fb59c1e8 data\wildfields\loot_table\blocks\barley_hay_block.json
 dbe8de4db34bfc9b8e3831f2adeb22bd91ef4e07 data\wildfields\loot_table\blocks\olive_fence.json
 96d4a79629c9b8c93cb904ca966c2932eb24c901 data\wildfields\loot_table\blocks\loessic_marl_slab.json
 ffae41b47ff942e65ae83db07516fa05cb3ea965 data\wildfields\loot_table\blocks\loamy_marl_cobbled.json
@@ -183,7 +184,6 @@ ffa6e6e16ff0fc2644956989d6b1f413f4ce53e9 data\wildfields\loot_table\blocks\limes
 fc6cb73b3580d13ef45ead62060d8b5d622848c9 data\wildfields\loot_table\blocks\fossil_marlstone_cobbled.json
 5aabea2b64390d8e76205ff6e2fc49fa92dae79b data\wildfields\loot_table\blocks\tamarisk_fence_gate.json
 b98f707feed27f53792d3f4c23f24aac50918d11 data\wildfields\loot_table\blocks\smooth_aster.json
-b1c281810cce9014b3aea2cd814207cff54d58d7 data\wildfields\loot_table\blocks\oat_barley_block.json
 406d59c9f71b6317a0fc08bfe902715309b24d9e data\wildfields\loot_table\blocks\stripped_trembling_aspen_log.json
 229af54009d8930085e4483157d47414d06de597 data\wildfields\loot_table\blocks\dolomite_cobbled_slab.json
 7e53ba05ac2b0dc41aed69a53d4a96790feae77c data\wildfields\loot_table\blocks\tamarisk_planks.json

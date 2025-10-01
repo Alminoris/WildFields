@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wildfields:oat_barley_block"
+        "recipe": "wildfields:barley_hay_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "wildfields:oat_barley_block"
+      "wildfields:barley_hay_block"
     ]
   }
 }
