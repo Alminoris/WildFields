@@ -123,10 +123,10 @@ public class ModItems
     public static final Item STEPPE_ARROW = registerItem("steppe_arrow", new SteppeArrowItem(new Item.Settings()));
 
     public static final Item OAT_SEEDS = registerItem("oat_seeds", new AliasedBlockItem(ModBlocks.OAT, new Item.Settings()));
-    public static final Item OAT = registerItem("oat", new Item(new Item.Settings()));
+    public static final Item OAT = registerItem("oat_item", new Item(new Item.Settings()));
 
     public static final Item BARLEY_SEEDS = registerItem("barley_seeds", new AliasedBlockItem(ModBlocks.BARLEY, new Item.Settings()));
-    public static final Item BARLEY = registerItem("barley", new Item(new Item.Settings()));
+    public static final Item BARLEY = registerItem("barley_item", new Item(new Item.Settings()));
 
     public static final Item DARKLING_BEETLE_CHESTPLATE = registerItem("darkling_beetle_chestplate",
             new ArmorItem(

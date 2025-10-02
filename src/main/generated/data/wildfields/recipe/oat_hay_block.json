@@ -3,31 +3,31 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     }
   ],
   "result": {

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_oat_hay_block": {
+    "has_barley_hay_block": {
       "conditions": {
         "items": [
           {
-            "items": "wildfields:oat_hay_block"
+            "items": "wildfields:barley_hay_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wildfields:oat"
+        "recipe": "wildfields:barley_item"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_oat_hay_block"
+      "has_barley_hay_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "wildfields:oat"
+      "wildfields:barley_item"
     ]
   }
 }

@@ -310,5 +310,20 @@
   "item.wildfields.ferruginous_hawk_feather": "Feder des Rostbussards",
   "item.wildfields.black_billed_magpie_feather": "Feder der Schwarzschnabel-Elster",
   "item.wildfields.western_meadowlark_feather": "Feder der westlichen Wiesenlerche",
-  "item.wildfields.prairies_talisman": "Prärietalismann"
+  "item.wildfields.prairies_talisman": "Prärietalismann",
+  "block.wildfields.wild_wheat": "Wilder Weizen",
+  "block.wildfields.wild_oat": "Wilder Hafer",
+  "block.wildfields.wild_barley": "Wilde Gerste",
+  "block.wildfields.oat": "Hafer",
+  "block.wildfields.barley": "Gerste",
+  "block.wildfields.oat_hay_block": "Heublock aus Hafer",
+  "block.wildfields.barley_hay_block": "Heublock aus Gerste",
+  "item.wildfields.oat_item": "Hafer",
+  "item.wildfields.barley_item": "Gerste",
+  "item.wildfields.oat_seeds": "Haferkörner",
+  "item.wildfields.barley_seeds": "Gerstenkörner",
+  "item.wildfields.oat_cookie": "Haferkeks",
+  "item.wildfields.barley_bread": "Gerstenbrot",
+  "item.wildfields.oatmeal": "Haferbrei",
+  "item.wildfields.barley_stew": "Gersteneintopf mit Gemüse"
 }

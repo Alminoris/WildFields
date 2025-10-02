@@ -310,5 +310,20 @@
   "item.wildfields.ferruginous_hawk_feather": "Pluma de busardo ferruginoso",
   "item.wildfields.black_billed_magpie_feather": "Pluma de urraca de pico negro",
   "item.wildfields.western_meadowlark_feather": "Pluma de pradero occidental",
-  "item.wildfields.prairies_talisman": "Talismán de las praderas"
+  "item.wildfields.prairies_talisman": "Talismán de las praderas",
+  "block.wildfields.wild_wheat": "Trigo salvaje",
+  "block.wildfields.wild_oat": "Avena salvaje",
+  "block.wildfields.wild_barley": "Cebada salvaje",
+  "block.wildfields.oat": "Avena",
+  "block.wildfields.barley": "Cebada",
+  "block.wildfields.oat_hay_block": "Bloque de heno de avena",
+  "block.wildfields.barley_hay_block": "Bloque de heno de cebada",
+  "item.wildfields.oat_item": "Avena",
+  "item.wildfields.barley_item": "Cebada",
+  "item.wildfields.oat_seeds": "Semillas de avena",
+  "item.wildfields.barley_seeds": "Semillas de cebada",
+  "item.wildfields.oat_cookie": "Galleta de avena",
+  "item.wildfields.barley_bread": "Pan de cebada",
+  "item.wildfields.oatmeal": "Gachas de avena",
+  "item.wildfields.barley_stew": "Estofado de cebada con verduras"
 }

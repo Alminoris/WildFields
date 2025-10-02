@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_barley": {
+    "has_barley_item": {
       "conditions": {
         "items": [
           {
-            "items": "wildfields:barley"
+            "items": "wildfields:barley_item"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_barley"
+      "has_barley_item"
     ]
   ],
   "rewards": {

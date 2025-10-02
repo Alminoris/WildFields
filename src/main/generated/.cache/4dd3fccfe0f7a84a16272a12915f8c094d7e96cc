@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-01T17:29:21.5596826	Wild Fields/Block Loot Tables
+// 1.21.1	2025-10-02T15:38:14.5977621	Wild Fields/Block Loot Tables
 edf32b0e64944eef18cbbeadd116614a2b4e02e1 data\wildfields\loot_table\blocks\spider_milkweed.json
 4adfd41c4073a77164399e86647699601480b2b7 data\wildfields\loot_table\blocks\stripped_tamarisk_log.json
 09c6af05f5a5eb992ccc8b10a6dd4e2fa1869e91 data\wildfields\loot_table\blocks\saltmarsh_cobbled_stairs.json
@@ -133,7 +133,7 @@ a159f6733ed732e50c33de94d9cf2db7ccca8c37 data\wildfields\loot_table\blocks\dolom
 d44f382bb849db43b0f159da6e10d55b925fc853 data\wildfields\loot_table\blocks\tamarisk_trapdoor.json
 686e49adffa440c61b9cc274009d19912731c130 data\wildfields\loot_table\blocks\limestone_cobbled_stairs.json
 fb1f91358f905ca8918189e5606a06647d837ff3 data\wildfields\loot_table\blocks\limestone_block.json
-b74a4fbb1107a4de9720f017666b7c2a411fef33 data\wildfields\loot_table\blocks\barley.json
+381c439c98819b70c467bb0898334527de8f1cbd data\wildfields\loot_table\blocks\barley.json
 84c62f09d8b323ce0e12a577eb0db7c0fa8f3b86 data\wildfields\loot_table\blocks\saltmarsh_stairs.json
 903b503932fe1faad3a03cf32c1fcf88d9f44f5a data\wildfields\loot_table\blocks\fossil_marlstone_chiseled.json
 011ada99fc7f0f7d94b57e046e1d48fcac32cd5d data\wildfields\loot_table\blocks\loamy_marl_bricks_stairs.json
@@ -175,7 +175,7 @@ a65b0eefc1a106ec49060e47e22a70a4d476962e data\wildfields\loot_table\blocks\feath
 ed7a1caf43698b2d049cd09005db2a481c5348b6 data\wildfields\loot_table\blocks\limestone_chiseled.json
 0cffd7cfe7663cf96c93961293ffeaa1caa7fa5c data\wildfields\loot_table\blocks\cottonwood_wood.json
 de793488957ecb06f7ba6115350f7b19a398b94d data\wildfields\loot_table\blocks\dolomite_cobbled_wall.json
-c08c026cb5ec8b75a258870dd955e58a247e26ea data\wildfields\loot_table\blocks\oat.json
+fbaa50a5bf8f5de94b7d8943c04f75bccf5326a9 data\wildfields\loot_table\blocks\oat.json
 98642313babe31c7e51a1a97c45119b622ddfebc data\wildfields\loot_table\blocks\limestone_cobbled_slab.json
 a3558035e62ffdb7d476273fdbce6bf91db69bef data\wildfields\loot_table\blocks\prairie_rose.json
 a922e7327a640f16a4ee94daa1c152e2b8630b88 data\wildfields\loot_table\blocks\stripped_olive_log.json

@@ -3,31 +3,31 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     }
   ],
   "result": {

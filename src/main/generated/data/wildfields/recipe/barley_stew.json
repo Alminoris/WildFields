@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "wildfields:barley"
+      "item": "wildfields:barley_item"
     },
     {
       "item": "minecraft:carrot"

@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_oat": {
+    "has_oat_item": {
       "conditions": {
         "items": [
           {
-            "items": "wildfields:oat"
+            "items": "wildfields:oat_item"
           }
         ]
       },
@@ -31,7 +31,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_oat",
+      "has_oat_item",
       "has_cocoa_beans"
     ]
   ],

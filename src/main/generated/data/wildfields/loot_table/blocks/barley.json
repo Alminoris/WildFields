@@ -23,7 +23,7 @@
                   }
                 }
               ],
-              "name": "wildfields:barley"
+              "name": "wildfields:barley_item"
             },
             {
               "type": "minecraft:item",

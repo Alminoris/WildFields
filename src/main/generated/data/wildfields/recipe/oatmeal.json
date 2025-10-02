@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
-      "item": "wildfields:oat"
+      "item": "wildfields:oat_item"
     },
     {
       "item": "minecraft:milk_bucket"

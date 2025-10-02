@@ -23,7 +23,7 @@
                   }
                 }
               ],
-              "name": "wildfields:oat"
+              "name": "wildfields:oat_item"
             },
             {
               "type": "minecraft:item",
