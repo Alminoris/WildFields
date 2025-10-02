@@ -28,5 +28,6 @@
     "recipes": [
       "wildfields:western_serviceberry_chest_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

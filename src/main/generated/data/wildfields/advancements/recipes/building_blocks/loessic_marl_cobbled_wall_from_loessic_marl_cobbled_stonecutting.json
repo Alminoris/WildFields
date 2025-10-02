@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:loessic_marl_cobbled_wall_from_loessic_marl_cobbled_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

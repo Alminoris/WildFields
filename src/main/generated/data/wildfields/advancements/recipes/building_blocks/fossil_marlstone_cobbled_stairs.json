@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:fossil_marlstone_cobbled_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

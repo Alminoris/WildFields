@@ -11,12 +11,28 @@ public class ModParticles
 {
     public static final DefaultParticleType OLIVE_LEAVES = FabricParticleTypes.simple();
 
+    public static final DefaultParticleType TREMBLING_ASPEN_LEAVES = FabricParticleTypes.simple();
+
+    public static final DefaultParticleType COTTONWOOD_LEAVES = FabricParticleTypes.simple();
+
     public static void registerParticles()
     {
         Registry.register(
                 Registries.PARTICLE_TYPE,
                 Identifier.of(WildFields.MOD_ID, "olive_leaves"),
                 OLIVE_LEAVES
+        );
+
+        Registry.register(
+                Registries.PARTICLE_TYPE,
+                Identifier.of(WildFields.MOD_ID, "trembling_aspen_leaves"),
+                TREMBLING_ASPEN_LEAVES
+        );
+
+        Registry.register(
+                Registries.PARTICLE_TYPE,
+                Identifier.of(WildFields.MOD_ID, "cottonwood_leaves"),
+                COTTONWOOD_LEAVES
         );
     }
 }

@@ -56,5 +56,6 @@
     "recipes": [
       "wildfields:steppe_arrow"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

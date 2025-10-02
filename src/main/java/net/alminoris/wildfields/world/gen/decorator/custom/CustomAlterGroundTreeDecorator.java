@@ -2,6 +2,7 @@ package net.alminoris.wildfields.world.gen.decorator.custom;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.alminoris.wildfields.world.gen.decorator.ModTreeDecorators;
 import net.minecraft.block.Blocks;

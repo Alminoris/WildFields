@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:western_serviceberry_button_from_western_serviceberry_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

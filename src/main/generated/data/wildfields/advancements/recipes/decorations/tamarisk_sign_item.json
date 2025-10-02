@@ -43,5 +43,6 @@
     "recipes": [
       "wildfields:tamarisk_sign_item"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

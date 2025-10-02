@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_pressure_plate",
     "wildfields:tamarisk_pressure_plate",
-    "wildfields:western_serviceberry_pressure_plate"
+    "wildfields:western_serviceberry_pressure_plate",
+    "wildfields:trembling_aspen_pressure_plate",
+    "wildfields:cottonwood_pressure_plate"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "wildfields:block/limestone_polished",
+    "side": "wildfields:block/limestone_polished",
+    "top": "wildfields:block/limestone_polished"
+  }
+}

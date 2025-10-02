@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_wall_sign",
     "wildfields:tamarisk_wall_sign",
-    "wildfields:western_serviceberry_wall_sign"
+    "wildfields:western_serviceberry_wall_sign",
+    "wildfields:trembling_aspen_wall_sign",
+    "wildfields:cottonwood_wall_sign"
   ]
 }

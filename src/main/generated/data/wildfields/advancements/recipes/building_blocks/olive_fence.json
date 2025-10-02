@@ -43,5 +43,6 @@
     "recipes": [
       "wildfields:olive_fence"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

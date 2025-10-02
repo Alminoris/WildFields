@@ -12,9 +12,9 @@ public class ModTerrablenderAPI implements TerraBlenderApi
     @Override
     public void onTerraBlenderInitialized()
     {
-        //Regions.register(new PrairiesRegion(Identifier.of(WildFields.MOD_ID, "prairies_region"), 4));
         //Regions.register(new PampasasRegion(Identifier.of(WildFields.MOD_ID, "pampasas_region"), 4));
         Regions.register(new SteppesRegion(Identifier.of(WildFields.MOD_ID, "steppes_region"), 10));
+        Regions.register(new PrairiesRegion(Identifier.of(WildFields.MOD_ID, "prairies_region"), 15));
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, WildFields.MOD_ID, ModMaterialRules.makeRules());
     }

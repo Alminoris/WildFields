@@ -1,0 +1,16 @@
+{
+  "structures":
+  [
+    {
+      "structure": "wildfields:hunting_campfire",
+      "weight": 1
+    }
+  ],
+  "placement":
+  {
+    "type": "minecraft:random_spread",
+    "salt": 18432421,
+    "spacing": 12,
+    "separation": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "wildfields:block/trembling_aspen_planks",
+    "side": "wildfields:block/trembling_aspen_planks",
+    "top": "wildfields:block/trembling_aspen_planks"
+  }
+}

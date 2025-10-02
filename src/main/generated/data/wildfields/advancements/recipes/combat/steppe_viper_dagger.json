@@ -43,5 +43,6 @@
     "recipes": [
       "wildfields:steppe_viper_dagger"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

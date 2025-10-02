@@ -97,11 +97,20 @@ public class ModModelProvider extends FabricModelProvider
                     BlockStateModelGenerator.TintType.NOT_TINTED, Properties.AGE_3, 0, 1, 2, 3);
         }
 
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.PRICKLY_PEAR_CACTUS,
+                BlockStateModelGenerator.TintType.NOT_TINTED, Properties.AGE_3, 0, 1, 2, 3);
+
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.BLUE_GRAMA_GRASS, BlockStateModelGenerator.TintType.TINTED);
+
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.THYME, ModBlocks.POTTED_THYME, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SPIDER_MILKWEED, ModBlocks.POTTED_SPIDER_MILKWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WORMWOOD, ModBlocks.POTTED_WORMWOOD, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PRAIRIE_ROSE, ModBlocks.POTTED_PRAIRIE_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.SMOOTH_ASTER, ModBlocks.POTTED_SMOOTH_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         blockStateModelGenerator.registerTintableCross(ModBlocks.FEATHER_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.THYME, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.SPIDER_MILKWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.WORMWOOD, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIMESTONE_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SALTMARSH_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE_CHISELED);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOESSIC_MARL_CHISELED);
@@ -110,15 +119,25 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerWallPlant(ModBlocks.GREEN_LICHEN);
 
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.OAT_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.BARLEY_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_WHEAT);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_BARLEY);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_OAT);
+
+        BlockStateModelGenerator.BlockTexturePool limestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BLOCK);
         BlockStateModelGenerator.BlockTexturePool saltmarshPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BLOCK);
         BlockStateModelGenerator.BlockTexturePool dolomitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BLOCK);
+        BlockStateModelGenerator.BlockTexturePool limestoneBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BRICKS);
         BlockStateModelGenerator.BlockTexturePool saltmarshBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BRICKS);
         BlockStateModelGenerator.BlockTexturePool dolomiteBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BRICKS);
+        BlockStateModelGenerator.BlockTexturePool limestonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_POLISHED);
         BlockStateModelGenerator.BlockTexturePool saltmarshPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_POLISHED);
         BlockStateModelGenerator.BlockTexturePool dolomitePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_POLISHED);
+        BlockStateModelGenerator.BlockTexturePool limestoneCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_COBBLED);
         BlockStateModelGenerator.BlockTexturePool saltmarshCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_COBBLED);
         BlockStateModelGenerator.BlockTexturePool dolomiteCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_COBBLED);
-
 
         BlockStateModelGenerator.BlockTexturePool loessicMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_BLOCK);
         BlockStateModelGenerator.BlockTexturePool loamyMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_BLOCK);
@@ -132,6 +151,18 @@ public class ModModelProvider extends FabricModelProvider
         BlockStateModelGenerator.BlockTexturePool loessicMarlPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_POLISHED);
         BlockStateModelGenerator.BlockTexturePool loamyMarlPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_POLISHED);
         BlockStateModelGenerator.BlockTexturePool fossilMarlstonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
+
+        limestonePool.slab(ModBlocks.LIMESTONE_SLAB);
+        limestonePool.stairs(ModBlocks.LIMESTONE_STAIRS);
+        limestoneCobbledPool.slab(ModBlocks.LIMESTONE_COBBLED_SLAB);
+        limestoneCobbledPool.stairs(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+        limestoneBricksPool.slab(ModBlocks.LIMESTONE_BRICKS_SLAB);
+        limestoneBricksPool.stairs(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+        limestonePolishedPool.slab(ModBlocks.LIMESTONE_POLISHED_SLAB);
+        limestonePolishedPool.stairs(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+        limestonePool.wall(ModBlocks.LIMESTONE_WALL);
+        limestoneCobbledPool.wall(ModBlocks.LIMESTONE_COBBLED_WALL);
+        limestoneBricksPool.wall(ModBlocks.LIMESTONE_BRICKS_WALL);
 
         saltmarshPool.slab(ModBlocks.SALTMARSH_SLAB);
         saltmarshPool.stairs(ModBlocks.SALTMARSH_STAIRS);
@@ -200,6 +231,16 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerParentedItemModel(ModItems.SAIGA_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.SERVAL_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.MOLE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.COYOTE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.BISON_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.FERRUGINOUS_HAWK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.WHITE_TAILED_JACKRABBIT_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.PALLID_WINGED_GRASSHOPPER_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+
+        blockStateModelGenerator.registerCrop(ModBlocks.OAT, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        blockStateModelGenerator.registerCrop(ModBlocks.BARLEY, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
         blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLA);
     }
@@ -270,6 +311,38 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.SAIGA_HORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_SAIGA, Models.GENERATED);
         itemModelGenerator.register(ModItems.SAIGA_SICKLE, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.COTTONWOOD_FLUFF.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModBlocks.WILD_WHEAT.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.WILD_BARLEY.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.WILD_OAT.asItem(), Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BARLEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OAT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BARLEY_BREAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BARLEY_STEW, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OAT_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OATMEAL, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.JACKRABBIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_JACKRABBIT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BISON_HORN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BISON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_BISON, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FERRUGINOUS_HAWK_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PALLID_WINGED_GRASSHOPPER_LEG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BLACK_BILLED_MAGPIE_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.WESTERN_MEADOWLARK_FEATHER, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PRAIRIES_TALISMAN, Models.GENERATED);
 
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.DARKLING_BEETLE_CHESTPLATE);
         registerArmor(itemModelGenerator, (ArmorItem) ModItems.FURRED_LEATHER_HELMET);

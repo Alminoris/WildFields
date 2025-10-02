@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wildfields:oat_hay_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "wildfields:oat_item"
+  }
+}

@@ -85,6 +85,6 @@ public class CustomVineLogDecorator extends TreeDecorator
      */
     private void placeVines(BlockPos pos, BooleanProperty faceProperty, Generator generator)
     {
-        generator.replace(pos, block.getDefaultState().with(faceProperty, Boolean.valueOf(true)));
+        generator.replace(pos, block.getDefaultState().with(faceProperty, Boolean.TRUE));
     }
 }

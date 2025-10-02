@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:western_serviceberry_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

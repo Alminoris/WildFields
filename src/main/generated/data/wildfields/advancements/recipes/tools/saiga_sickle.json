@@ -43,5 +43,6 @@
     "recipes": [
       "wildfields:saiga_sickle"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

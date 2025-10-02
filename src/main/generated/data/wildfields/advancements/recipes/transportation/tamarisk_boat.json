@@ -24,5 +24,6 @@
     "recipes": [
       "wildfields:tamarisk_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "wildfields:pallid_winged_grasshopper_leg"
+  },
+  "result": "wildfields:cooked_pallid_winged_grasshopper_leg"
+}

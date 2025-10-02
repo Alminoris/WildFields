@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "part=lower": { "model": "wildfields:block/prairie_sage_lower" },
+    "part=middle": { "model": "wildfields:block/prairie_sage_middle" },
+    "part=upper": { "model": "wildfields:block/prairie_sage_upper" }
+  }
+}

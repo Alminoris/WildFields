@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:saltmarsh_bricks_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:loamy_marl_chiseled"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

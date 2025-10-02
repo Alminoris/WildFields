@@ -75,9 +75,32 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.FROG_PREFER_JUMP_TO);
         getOrCreateTagBuilder(BlockTags.CLIMBABLE);*/
 
+        this.getOrCreateTagBuilder(BlockTags.CROPS)
+                .add(ModBlocks.BARLEY)
+                .add(ModBlocks.OAT);
+
+        this.getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND)
+                .add(ModBlocks.BARLEY)
+                .add(ModBlocks.OAT);
+
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.BARLEY)
+                .add(ModBlocks.OAT)
                 .add(ModBlocks.FEATHER_GRASS)
-                .add(ModBlocks.TINY_GRASS);
+                .add(ModBlocks.TINY_GRASS)
+                .add(ModBlocks.PRAIRIE_SAGE)
+                .add(ModBlocks.WILD_WHEAT)
+                .add(ModBlocks.WILD_BARLEY)
+                .add(ModBlocks.WILD_OAT)
+                .add(ModBlocks.BLUE_GRAMA_GRASS);
+        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlocks.FEATHER_GRASS)
+                .add(ModBlocks.TINY_GRASS)
+                .add(ModBlocks.PRAIRIE_SAGE)
+                .add(ModBlocks.BLUE_GRAMA_GRASS)
+                .add(ModBlocks.WILD_WHEAT)
+                .add(ModBlocks.WILD_BARLEY)
+                .add(ModBlocks.WILD_OAT);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.FOSSIL_MARLSTONE_BLOCK)
                 .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED)
@@ -108,9 +131,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.DOLOMITE_CHISELED)
                 .add(ModBlocks.DOLOMITE_BRICKS)
                 .add(ModBlocks.DOLOMITE_BRICKS_STAIRS)
-                .add(ModBlocks.DOLOMITE_BRICKS_SLAB);
+                .add(ModBlocks.DOLOMITE_BRICKS_SLAB)
+                .add(ModBlocks.LIMESTONE_BLOCK)
+                .add(ModBlocks.LIMESTONE_POLISHED)
+                .add(ModBlocks.LIMESTONE_CHISELED)
+                .add(ModBlocks.LIMESTONE_BRICKS)
+                .add(ModBlocks.LIMESTONE_BRICKS_STAIRS)
+                .add(ModBlocks.LIMESTONE_BRICKS_SLAB);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.LIMESTONE_WALL)
+                .add(ModBlocks.LIMESTONE_COBBLED_WALL)
+                .add(ModBlocks.LIMESTONE_BRICKS_WALL)
                 .add(ModBlocks.SALTMARSH_WALL)
                 .add(ModBlocks.SALTMARSH_COBBLED_WALL)
                 .add(ModBlocks.SALTMARSH_BRICKS_WALL)
@@ -147,7 +179,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.FOSSIL_MARLSTONE_SLAB)
                 .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB)
                 .add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB)
-                .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
+                .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB)
+                .add(ModBlocks.LIMESTONE_SLAB)
+                .add(ModBlocks.LIMESTONE_BRICKS_SLAB)
+                .add(ModBlocks.LIMESTONE_COBBLED_SLAB)
+                .add(ModBlocks.LIMESTONE_POLISHED_SLAB);
 
         getOrCreateTagBuilder(BlockTags.STAIRS)
                 .add(ModBlocks.DOLOMITE_COBBLED_STAIRS)
@@ -166,6 +202,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.LOAMY_MARL_STAIRS)
                 .add(ModBlocks.LOAMY_MARL_BRICKS_STAIRS)
                 .add(ModBlocks.LOAMY_MARL_POLISHED_STAIRS)
+                .add(ModBlocks.LIMESTONE_COBBLED_STAIRS)
+                .add(ModBlocks.LIMESTONE_STAIRS)
+                .add(ModBlocks.LIMESTONE_BRICKS_STAIRS)
+                .add(ModBlocks.LIMESTONE_POLISHED_STAIRS)
                 .add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS)
                 .add(ModBlocks.FOSSIL_MARLSTONE_STAIRS)
                 .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS)
@@ -175,12 +215,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.THYME)
                 .add(ModBlocks.WORMWOOD)
                 .add(ModBlocks.SPIDER_MILKWEED)
-                .add(ModBlocks.VIOLA);
+                .add(ModBlocks.VIOLA)
+                .add(ModBlocks.PRAIRIE_ROSE)
+                .add(ModBlocks.SMOOTH_ASTER);
 
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
                 .add(ModBlocks.POTTED_THYME)
                 .add(ModBlocks.POTTED_SPIDER_MILKWEED)
-                .add(ModBlocks.POTTED_WORMWOOD);
+                .add(ModBlocks.POTTED_WORMWOOD)
+                .add(ModBlocks.POTTED_PRAIRIE_ROSE)
+                .add(ModBlocks.POTTED_SMOOTH_ASTER);
 
         getOrCreateTagBuilder(ModTags.Blocks.STEPPE_VIPER_PLANTS)
                 .add(ModBlocks.FEATHER_GRASS)
@@ -190,5 +234,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(ModTags.Blocks.SAIGA_SPAWNABLE_ON)
                 .add(Blocks.GRASS_BLOCK)
                 .add(ModBlocks.SALTMARSH_BLOCK);
+
+        getOrCreateTagBuilder(ModTags.Blocks.BISON_SPAWNABLE_ON)
+                .add(Blocks.GRASS_BLOCK)
+                .add(Blocks.SAND);
     }
 }

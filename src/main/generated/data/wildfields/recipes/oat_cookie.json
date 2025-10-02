@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "wildfields:oat_item"
+    },
+    "X": {
+      "item": "minecraft:cocoa_beans"
+    }
+  },
+  "pattern": [
+    "#X#"
+  ],
+  "result": {
+    "item": "wildfields:oat_cookie"
+  },
+  "show_notification": true
+}

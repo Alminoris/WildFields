@@ -129,19 +129,14 @@ public class SteppeEagleEntity extends AnimalEntity implements GeoEntity, Flutte
     @Override
     protected void initGoals()
     {
-
         this.goalSelector.add(0, new HighAltitudeWanderGoal(this, 1.0, 200, 80, 0.05f));
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.05, Ingredient.ofItems(Items.RABBIT_FOOT), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.0D));
-        this.goalSelector.add(5, new EscapeDangerGoal(this, 1.2D));
-        this.goalSelector.add(6, new WanderAroundGoal(this, 1.0D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, LivingEntity.class, 5.0F));
 
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, MarmotEntity.class, true));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, RabbitEntity.class, true));
-        this.targetSelector.add(3, (new RevengeGoal(this)));
+        this.targetSelector.add(3, new RevengeGoal(this));
 
         super.initGoals();
     }

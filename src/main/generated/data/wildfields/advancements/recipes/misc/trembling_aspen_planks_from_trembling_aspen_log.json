@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:trembling_aspen_planks_from_trembling_aspen_log"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_trembling_aspen_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:trembling_aspen_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_trembling_aspen_log",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:trembling_aspen_planks_from_trembling_aspen_log"
+    ]
+  },
+  "sends_telemetry_event": false
+}

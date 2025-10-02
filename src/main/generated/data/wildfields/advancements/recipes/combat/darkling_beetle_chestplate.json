@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:darkling_beetle_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

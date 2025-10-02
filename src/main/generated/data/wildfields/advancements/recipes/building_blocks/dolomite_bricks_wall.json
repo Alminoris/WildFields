@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:dolomite_bricks_wall"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

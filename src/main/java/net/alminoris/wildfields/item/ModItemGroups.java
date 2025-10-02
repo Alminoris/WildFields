@@ -5,6 +5,8 @@ import net.alminoris.wildfields.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -12,8 +14,9 @@ import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModItemGroups
 {
-    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(new Identifier(WildFields.MOD_ID, "wildfieldstab"))
-            .displayName(Text.translatable("itemgroup.wildfieldstab"))
+    public static final ItemGroup WILDFIELDS_TAB = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(WildFields.MOD_ID, "wildfieldstab"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wildfieldstab"))
                     .icon(() -> new ItemStack(ModBlocks.FEATHER_GRASS)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.FEATHER_GRASS);
@@ -21,8 +24,22 @@ public class ModItemGroups
                         entries.add(ModBlocks.THYME);
                         entries.add(ModBlocks.SPIDER_MILKWEED);
                         entries.add(ModBlocks.WORMWOOD);
+                        entries.add(ModBlocks.PRAIRIE_ROSE);
+                        entries.add(ModBlocks.SMOOTH_ASTER);
+                        entries.add(ModBlocks.BLUE_GRAMA_GRASS);
+                        entries.add(ModBlocks.PRAIRIE_SAGE);
                         entries.add(ModBlocks.VIOLA);
+                        entries.add(ModBlocks.WILD_WHEAT);
+                        entries.add(ModItems.BARLEY_SEEDS);
+                        entries.add(ModItems.BARLEY);
+                        entries.add(ModBlocks.WILD_BARLEY);
+                        entries.add(ModBlocks.BARLEY_HAY_BLOCK);
+                        entries.add(ModItems.OAT_SEEDS);
+                        entries.add(ModItems.OAT);
+                        entries.add(ModBlocks.WILD_OAT);
+                        entries.add(ModBlocks.OAT_HAY_BLOCK);
                         entries.add(ModBlocks.GREEN_LICHEN);
+                        entries.add(ModBlocks.COTTONWOOD_FLUFF);
                         entries.add(ModBlocks.SALTMARSH_BLOCK);
                         entries.add(ModBlocks.SALTMARSH_STAIRS);
                         entries.add(ModBlocks.SALTMARSH_SLAB);
@@ -103,6 +120,22 @@ public class ModItemGroups
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
                         entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_BLOCK);
+                        entries.add(ModBlocks.LIMESTONE_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_WALL);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_COBBLED_WALL);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_POLISHED_SLAB);
+                        entries.add(ModBlocks.LIMESTONE_CHISELED);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_WALL);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+                        entries.add(ModBlocks.LIMESTONE_BRICKS_SLAB);
                         for (String name : WOOD_NAMES)
                         {
                             entries.add(WOODEN_SAPLINGS.get(name));
@@ -136,6 +169,7 @@ public class ModItemGroups
                         {
                             entries.add(BERRIES.get(name));
                         }
+                        entries.add(ModItems.PRICKLY_PEAR);
                         entries.add(ModItems.FURRED_LEATHER_HELMET);
                         entries.add(ModItems.FURRED_LEATHER_CHESTPLATE);
                         entries.add(ModItems.FURRED_LEATHER_LEGGINGS);
@@ -149,19 +183,41 @@ public class ModItemGroups
                         entries.add(ModItems.DARKLING_BEETLE_SHELL);
                         entries.add(ModItems.STEPPE_EAGLE_BEAK);
                         entries.add(ModItems.STEPPE_EAGLE_FEATHER);
+                        entries.add(ModItems.FERRUGINOUS_HAWK_FEATHER);
+                        entries.add(ModItems.BLACK_BILLED_MAGPIE_FEATHER);
+                        entries.add(ModItems.WESTERN_MEADOWLARK_FEATHER);
                         entries.add(ModItems.SAIGA_HORN);
+                        entries.add(ModItems.BISON_HORN);
                         entries.add(ModItems.EARTHWORM);
+                        entries.add(ModItems.PRAIRIES_TALISMAN);
                         entries.add(ModItems.STEPPE_VIPER_FANG);
                         entries.add(ModItems.SAIGA);
                         entries.add(ModItems.COOKED_SAIGA);
+                        entries.add(ModItems.BISON);
+                        entries.add(ModItems.COOKED_BISON);
+                        entries.add(ModItems.JACKRABBIT);
+                        entries.add(ModItems.COOKED_JACKRABBIT);
+                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_LEG);
+                        entries.add(ModItems.COOKED_PALLID_WINGED_GRASSHOPPER_LEG);
+                        entries.add(ModItems.BARLEY_BREAD);
+                        entries.add(ModItems.BARLEY_STEW);
+                        entries.add(ModItems.OAT_COOKIE);
+                        entries.add(ModItems.OATMEAL);
                         entries.add(ModItems.MARMOT_SPAWN_EGG);
                         entries.add(ModItems.DARKLING_BEETLE_SPAWN_EGG);
                         entries.add(ModItems.SERVAL_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_EAGLE_SPAWN_EGG);
                         entries.add(ModItems.SAIGA_SPAWN_EGG);
-                        entries.add(ModItems.MOLE_SPAWN_EGG);
                         entries.add(ModItems.STEPPE_VIPER_SPAWN_EGG);
-                    }).build();
+                        entries.add(ModItems.MOLE_SPAWN_EGG);
+                        entries.add(ModItems.COYOTE_SPAWN_EGG);
+                        entries.add(ModItems.BISON_SPAWN_EGG);
+                        entries.add(ModItems.FERRUGINOUS_HAWK_SPAWN_EGG);
+                        entries.add(ModItems.WHITE_TAILED_JACKRABBIT_SPAWN_EGG);
+                        entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_SPAWN_EGG);
+                        entries.add(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG);
+                        entries.add(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG);
+                    }).build());
 
     public static void registerItemGroups()
     {

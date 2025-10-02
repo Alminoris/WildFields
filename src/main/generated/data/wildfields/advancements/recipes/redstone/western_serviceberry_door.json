@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:western_serviceberry_door"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

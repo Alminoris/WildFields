@@ -30,5 +30,6 @@
     "recipes": [
       "wildfields:cooked_saiga"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

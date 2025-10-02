@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_sapling",
     "wildfields:tamarisk_sapling",
-    "wildfields:western_serviceberry_sapling"
+    "wildfields:western_serviceberry_sapling",
+    "wildfields:trembling_aspen_sapling",
+    "wildfields:cottonwood_sapling"
   ]
 }

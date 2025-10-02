@@ -1,0 +1,145 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bison",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "bison_body",
+					"parent": "bison",
+					"pivot": [5, 0, 5],
+					"rotation": [0, 90, 0]
+				},
+				{
+					"name": "head",
+					"parent": "bison_body",
+					"pivot": [21.5, 16, 0],
+					"cubes": [
+						{"origin": [19.5, 10, -6], "size": [10, 12, 12], "uv": [58, 60]}
+					]
+				},
+				{
+					"name": "horn1",
+					"parent": "head",
+					"pivot": [22.5, 21.125, 7.5],
+					"cubes": [
+						{"origin": [21.5, 19, 5], "size": [2, 2, 4], "uv": [98, 20]},
+						{"origin": [21.5, 21, 7], "size": [2, 2.5, 2], "uv": [98, 26]}
+					]
+				},
+				{
+					"name": "horn2",
+					"parent": "head",
+					"pivot": [22.5, 21.125, -7.5],
+					"cubes": [
+						{"origin": [21.5, 21, -9], "size": [2, 2.5, 2], "uv": [0, 100]},
+						{"origin": [21.5, 19, -9], "size": [2, 2, 4], "uv": [60, 99]}
+					]
+				},
+				{
+					"name": "chinup",
+					"parent": "head",
+					"pivot": [22, 7, 0],
+					"cubes": [
+						{"origin": [19.5, 8, -4], "size": [6, 2, 8], "uv": [70, 19]},
+						{"origin": [20.5, 6, -3], "size": [3, 2, 6], "uv": [38, 70]},
+						{"origin": [20.5, 4, -2], "size": [2, 2, 4], "uv": [72, 99]}
+					]
+				},
+				{
+					"name": "nose",
+					"parent": "head",
+					"pivot": [32.5, 16, 0],
+					"cubes": [
+						{"origin": [29.5, 11, -3], "size": [1, 5, 6], "uv": [-6, -4]}
+					]
+				},
+				{
+					"name": "neck",
+					"parent": "bison_body",
+					"pivot": [21, 16, 0],
+					"cubes": [
+						{"origin": [17, 10.5, -5.5], "size": [8, 11, 11], "uv": [0, 70]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "bison_body",
+					"pivot": [6.16667, 19.33333, 0],
+					"cubes": [
+						{"origin": [-10, 8, -7], "size": [21, 16, 14], "uv": [0, 0]},
+						{"origin": [8, 7, -9], "size": [11, 22, 18], "uv": [0, 30]}
+					]
+				},
+				{
+					"name": "hemp",
+					"parent": "body",
+					"pivot": [4.5, 24, 0],
+					"cubes": [
+						{"origin": [-2, 17, -8], "size": [13, 14, 16], "uv": [58, 30]}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "bison_body",
+					"pivot": [-11, 15.25, 0],
+					"cubes": [
+						{"origin": [-12, 13, -1], "size": [2, 9, 2], "uv": [28, 92]},
+						{"origin": [-12.25, 12, -1.25], "size": [2.5, 2, 2.5], "uv": [50, 78]}
+					]
+				},
+				{
+					"name": "frontleg1",
+					"parent": "bison_body",
+					"pivot": [12.83333, 6.33333, 7],
+					"cubes": [
+						{"origin": [9, 6, 4], "size": [6, 13, 6], "uv": [70, 0]},
+						{"origin": [11.5, 3, 4.75], "size": [3, 4, 4.5], "uv": [0, 92]},
+						{"origin": [12, 0, 5.25], "size": [3, 3, 3.5], "uv": [38, 78]}
+					]
+				},
+				{
+					"name": "frontleg2",
+					"parent": "bison_body",
+					"pivot": [12.83333, 6.33333, -7],
+					"cubes": [
+						{"origin": [9, 6, -10], "size": [6, 13, 6], "uv": [70, 0]},
+						{"origin": [11.5, 3, -9.25], "size": [3, 4, 4.5], "uv": [14, 92]},
+						{"origin": [12, 0, -8.75], "size": [3, 3, 3.5], "uv": [98, 14]}
+					]
+				},
+				{
+					"name": "leg1",
+					"parent": "bison_body",
+					"pivot": [-6.65, 5.33333, 5.5],
+					"cubes": [
+						{"origin": [-8.5, 2, 4], "size": [3, 4, 3], "uv": [94, 0]},
+						{"origin": [-8, 0, 4.75], "size": [3, 3, 2.5], "uv": [84, 99]},
+						{"origin": [-9.2, 6, 2], "size": [5.5, 9, 6], "uv": [60, 84]}
+					]
+				},
+				{
+					"name": "leg2",
+					"parent": "bison_body",
+					"pivot": [-6.65, 5.33333, -5.5],
+					"cubes": [
+						{"origin": [-8.5, 2, -7], "size": [3, 4, 3], "uv": [94, 7]},
+						{"origin": [-8, 0, -7.25], "size": [3, 3, 2.5], "uv": [94, 99]},
+						{"origin": [-9.2, 6, -8], "size": [5.5, 9, 6], "uv": [82, 84]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -12,6 +12,14 @@
     "wildfields:western_serviceberry_log",
     "wildfields:stripped_western_serviceberry_log",
     "wildfields:western_serviceberry_wood",
-    "wildfields:stripped_western_serviceberry_wood"
+    "wildfields:stripped_western_serviceberry_wood",
+    "wildfields:trembling_aspen_log",
+    "wildfields:stripped_trembling_aspen_log",
+    "wildfields:trembling_aspen_wood",
+    "wildfields:stripped_trembling_aspen_wood",
+    "wildfields:cottonwood_log",
+    "wildfields:stripped_cottonwood_log",
+    "wildfields:cottonwood_wood",
+    "wildfields:stripped_cottonwood_wood"
   ]
 }

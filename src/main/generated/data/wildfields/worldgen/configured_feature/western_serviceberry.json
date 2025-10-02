@@ -3,7 +3,7 @@
   "config": {
     "decorators": [
       {
-        "type": "minecraft:custom_vine_log_decorator",
+        "type": "wildfields:custom_vine_log_decorator",
         "block": "wildfields:green_lichen",
         "probability": 0.85
       }
