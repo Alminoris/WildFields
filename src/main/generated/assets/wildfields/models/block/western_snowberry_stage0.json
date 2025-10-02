@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "wildfields:block/western_snowberry_stage0"
+  }
+}

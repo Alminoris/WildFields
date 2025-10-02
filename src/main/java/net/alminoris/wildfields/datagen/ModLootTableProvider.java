@@ -1,18 +1,24 @@
 package net.alminoris.wildfields.datagen;
 
 import net.alminoris.wildfields.block.ModBlocks;
+import net.alminoris.wildfields.block.custom.BerryBushBlock;
+import net.alminoris.wildfields.block.custom.TripleTallPlantBlock;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.CropBlock;
 import net.minecraft.block.SweetBerryBushBlock;
+import net.minecraft.block.TallPlantBlock;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -84,9 +90,31 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
             );
         }
 
-
-        addDrop(ModBlockSetsHelper.LEAVES.get("olive"), leavesDrops(ModBlockSetsHelper.LEAVES.get("olive"),
-                ModBlockSetsHelper.WOODEN_SAPLINGS.get("olive"), 0.0025f));
+        addDrop(
+                ModBlocks.PRICKLY_PEAR_CACTUS,
+                block -> this.applyExplosionDecay(
+                        block,
+                        LootTable.builder()
+                                .pool(
+                                        LootPool.builder()
+                                                .conditionally(
+                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 3))
+                                                )
+                                                .with(ItemEntry.builder(ModItems.PRICKLY_PEAR))
+                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F)))
+                                                .apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE))
+                                )
+                                .pool(
+                                        LootPool.builder()
+                                                .conditionally(
+                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 2))
+                                                )
+                                                .with(ItemEntry.builder(ModItems.PRICKLY_PEAR))
+                                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)))
+                                                .apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE))
+                                )
+                )
+        );
 
         addDrop(ModBlockSetsHelper.LEAVES.get("tamarisk"), leavesDrops(ModBlockSetsHelper.LEAVES.get("tamarisk"),
                 ModBlockSetsHelper.WOODEN_SAPLINGS.get("tamarisk"), 0.0025f));
@@ -96,13 +124,49 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
 
         addDrop(ModBlocks.FEATHER_GRASS, this::grassDrops);
         addDrop(ModBlocks.TINY_GRASS, this::tinyPlantDrops);
+        addDrop(ModBlocks.BLUE_GRAMA_GRASS, block -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
+        addDrop(ModBlocks.PRAIRIE_SAGE, block -> this.dropsWithProperty(block, TripleTallPlantBlock.PART, TripleTallPlantBlock.PlantPart.LOWER));
         addDrop(ModBlocks.THYME);
         addDrop(ModBlocks.SPIDER_MILKWEED);
         addDrop(ModBlocks.WORMWOOD);
+        addDrop(ModBlocks.COTTONWOOD_FLUFF);
+        addDrop(ModBlocks.PRAIRIE_ROSE);
+        addDrop(ModBlocks.SMOOTH_ASTER);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));
+
+        addDrop(ModBlocks.WILD_WHEAT);
+        addDrop(ModBlocks.WILD_BARLEY);
+        addDrop(ModBlocks.WILD_OAT);
+
+        addDrop(ModBlocks.BARLEY_HAY_BLOCK);
+        addDrop(ModBlocks.OAT_HAY_BLOCK);
+
+        LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(ModBlocks.OAT)
+                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+        this.addDrop(ModBlocks.OAT, this.cropDrops(ModBlocks.OAT, ModItems.OAT, ModItems.OAT_SEEDS, builder1));
+
+        LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.BARLEY)
+                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+        this.addDrop(ModBlocks.BARLEY, this.cropDrops(ModBlocks.BARLEY, ModItems.BARLEY, ModItems.BARLEY_SEEDS, builder2));
 
         addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));
 
+        addDrop(ModBlocks.LIMESTONE_BLOCK, drops(ModBlocks.LIMESTONE_COBBLED));
+        addDrop(ModBlocks.LIMESTONE_WALL);
+        addDrop(ModBlocks.LIMESTONE_COBBLED);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_WALL);
+        addDrop(ModBlocks.LIMESTONE_POLISHED);
+        addDrop(ModBlocks.LIMESTONE_CHISELED);
+        addDrop(ModBlocks.LIMESTONE_BRICKS);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_WALL);
+        addDrop(ModBlocks.LIMESTONE_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_SLAB);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_COBBLED_SLAB);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_BRICKS_SLAB);
+        addDrop(ModBlocks.LIMESTONE_POLISHED_STAIRS);
+        addDrop(ModBlocks.LIMESTONE_POLISHED_SLAB);
         addDrop(ModBlocks.SALTMARSH_BLOCK, drops(ModBlocks.SALTMARSH_COBBLED));
         addDrop(ModBlocks.SALTMARSH_WALL);
         addDrop(ModBlocks.SALTMARSH_COBBLED);

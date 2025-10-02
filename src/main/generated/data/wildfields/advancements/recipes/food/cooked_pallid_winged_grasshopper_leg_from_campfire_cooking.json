@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pallid_winged_grasshopper_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:pallid_winged_grasshopper_leg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooked_pallid_winged_grasshopper_leg_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pallid_winged_grasshopper_leg",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_pallid_winged_grasshopper_leg_from_campfire_cooking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

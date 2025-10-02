@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_barley_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:barley_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:carrot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:potato"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:barley_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_barley_item",
+      "has_carrot",
+      "has_potato",
+      "has_bowl",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:barley_stew"
+    ]
+  },
+  "sends_telemetry_event": false
+}

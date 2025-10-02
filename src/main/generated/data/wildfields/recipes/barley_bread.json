@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "wildfields:barley_item"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "item": "wildfields:barley_bread"
+  },
+  "show_notification": true
+}

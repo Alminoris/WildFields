@@ -26,5 +26,4 @@ public class PrairiesRegion extends Region
             modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.SAVANNA, ModBiomes.PRAIRIES);
         });
     }
-
 }

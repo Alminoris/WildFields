@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_hanging_sign_item",
     "wildfields:tamarisk_hanging_sign_item",
-    "wildfields:western_serviceberry_hanging_sign_item"
+    "wildfields:western_serviceberry_hanging_sign_item",
+    "wildfields:trembling_aspen_hanging_sign_item",
+    "wildfields:cottonwood_hanging_sign_item"
   ]
 }

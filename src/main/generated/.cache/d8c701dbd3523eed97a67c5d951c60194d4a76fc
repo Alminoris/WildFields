@@ -1,8 +1,9 @@
-// 1.20.1	2025-08-05T22:13:17.0553294	Wild Fields/Tags for minecraft:item
-e2ca92c9a2f1f4fb3155e55d6b2cc56663e10848 data\minecraft\tags\items\signs.json
+// 1.20.1	2025-10-02T14:38:34.3551517	Wild Fields/Tags for minecraft:item
+6a0f9bf937b5773f339a9237799424ac66166aba data\wildfields\tags\items\bison_food.json
+75cddc97df07daf9baa201891e9e7959fda4fa20 data\minecraft\tags\items\signs.json
 0526b57ea9e76ae2f5bf7b4e892677f7975427db data\wildfields\tags\items\marmot_food.json
 02f341ae1555ab27130607dd99455c75a8db9ffa data\minecraft\tags\items\trimmable_armor.json
-af99aebf7bd0dc6882506754677a37cdd494fe5e data\minecraft\tags\items\hanging_signs.json
+28853fd9092be3b681d010dd65cc12bd35af7b1e data\minecraft\tags\items\hanging_signs.json
 e4c974286c2c35ca966eb37149e172cd29f698c0 data\minecraft\tags\items\freeze_immune_wearables.json
 d301d34ba776529e2cc275e57bacf6bed3cbe0b6 data\wildfields\tags\items\saiga_food.json
 70880522c2842b3fee18633717402feb6671bf86 data\minecraft\tags\items\arrows.json

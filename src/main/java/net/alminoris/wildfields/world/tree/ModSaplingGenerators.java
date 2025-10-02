@@ -14,15 +14,18 @@ public class ModSaplingGenerators
     {{
         put("olive", ModConfiguredFeatures.OLIVE_KEY);
         put("tamarisk", ModConfiguredFeatures.TAMARISK_KEY);
-        put("platanus", ModConfiguredFeatures.PLATANUS_KEY);
-        put("pink_lapacho", ModConfiguredFeatures.PINK_LAPACHO_KEY);
+        put("trembling_aspen", ModConfiguredFeatures.TREMBLING_ASPEN_KEY);
+        put("cottonwood", ModConfiguredFeatures.COTTONWOOD_KEY);
     }};
 
     public static final Dictionary<String, net.minecraft.block.sapling.SaplingGenerator> saplingGenerators = new Hashtable<>()
     {{
         for(String name : ModBlockSetsHelper.WOOD_NAMES)
         {
-            put(name, new CustomSaplingGenerator(keys.get(name)));
+            if (name.equals("cottonwood"))
+                put(name, new CustomLargeTreeSaplingGenerator(keys.get(name)));
+            else
+                put(name, new CustomSaplingGenerator(keys.get(name)));
         }
     }};
 }

@@ -5,13 +5,11 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.alminoris.wildfields.WildFields;
-import net.alminoris.wildfields.block.custom.AnimalHideBlock;
-import net.alminoris.wildfields.block.custom.BerryBushBlock;
-import net.alminoris.wildfields.block.custom.BushLeavesBlock;
-import net.alminoris.wildfields.block.custom.FallingLeavesBlock;
+import net.alminoris.wildfields.block.custom.*;
 import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
@@ -25,6 +23,54 @@ import net.minecraft.util.Identifier;
 public class ModBlocks
 {
     public static final Block FEATHER_GRASS = registerBlock("feather_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
+
+    public static final Block LIMESTONE_BLOCK = registerBlock("limestone_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_COBBLED = registerBlock("limestone_cobbled",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_POLISHED = registerBlock("limestone_polished",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_CHISELED = registerBlock("limestone_chiseled",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS = registerBlock("limestone_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS_SLAB = registerBlock("limestone_bricks_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_BRICKS_STAIRS = registerBlock("limestone_bricks_stairs",
+            new StairsBlock(LIMESTONE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_SLAB = registerBlock("limestone_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_STAIRS = registerBlock("limestone_stairs",
+            new StairsBlock(LIMESTONE_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_COBBLED_SLAB = registerBlock("limestone_cobbled_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_COBBLED_STAIRS = registerBlock("limestone_cobbled_stairs",
+            new StairsBlock(LIMESTONE_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_POLISHED_SLAB = registerBlock("limestone_polished_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
+
+    public static final Block LIMESTONE_POLISHED_STAIRS = registerBlock("limestone_polished_stairs",
+            new StairsBlock(LIMESTONE_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
+
+    public static final Block LIMESTONE_WALL = registerBlock("limestone_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_COBBLED_WALL = registerBlock("limestone_cobbled_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+
+    public static final Block LIMESTONE_BRICKS_WALL = registerBlock("limestone_bricks_wall",
+            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
 
     public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
             new FallingBlock(AbstractBlock.Settings.create()
@@ -275,6 +321,36 @@ public class ModBlocks
 
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
 
+    public static final Block WILD_WHEAT = registerBlock("wild_wheat", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
+    public static final Block WILD_OAT = registerBlock("wild_oat", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
+    public static final Block WILD_BARLEY = registerBlock("wild_barley", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
+
+    public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.GREEN)
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block BARLEY = registerBlock("barley", new CropBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.GREEN)
+            .noCollision()
+            .ticksRandomly()
+            .breakInstantly()
+            .sounds(BlockSoundGroup.CROP)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block OAT_HAY_BLOCK = registerBlock(
+            "oat_hay_block",
+            new HayBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+
+    public static final Block BARLEY_HAY_BLOCK = registerBlock(
+            "barley_hay_block",
+            new HayBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+
     public static final Block THYME = registerBlock("thyme",
             new FlowerBlock(StatusEffects.ABSORPTION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));
 
@@ -293,11 +369,33 @@ public class ModBlocks
     public static final Block POTTED_WORMWOOD = registerBlock("potted_wormwood",
             new FlowerPotBlock(WORMWOOD, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
 
+    public static final Block PRAIRIE_ROSE = registerBlock("prairie_rose",
+            new FlowerBlock(StatusEffects.REGENERATION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));
+
+    public static final Block POTTED_PRAIRIE_ROSE = registerBlock("potted_prairie_rose",
+            new FlowerPotBlock(PRAIRIE_ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
+
+    public static final Block SMOOTH_ASTER = registerBlock("smooth_aster",
+            new FlowerBlock(StatusEffects.REGENERATION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));
+
+    public static final Block POTTED_SMOOTH_ASTER = registerBlock("potted_smooth_aster",
+            new FlowerPotBlock(SMOOTH_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION)));
+
+    public static final Block BLUE_GRAMA_GRASS = registerBlock("blue_grama_grass",
+            new TallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
+
+    public static final Block PRAIRIE_SAGE = registerBlock("prairie_sage",
+            new TripleTallPlantBlock(AbstractBlock.Settings.copy(Blocks.TALL_GRASS)));
+
     public static final Block SERVAL_HIDE = registerBlock("serval_hide",
             new AnimalHideBlock(AbstractBlock.Settings.copy(Blocks.YELLOW_WOOL)));
 
     public static final Block VIOLA = registerBlock("viola",
             new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)));
+
+    public static final Block PRICKLY_PEAR_CACTUS = registerBlock("prickly_pear_cactus", new PricklyPearCactusBlock());
+
+    public static final Block COTTONWOOD_FLUFF = registerBlock("cottonwood_fluff", new CottonwoodFluffBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).noCollision()));
 
     private static Block registerBlock(String name, Block block)
     {
@@ -330,6 +428,14 @@ public class ModBlocks
         if (name.equals("olive"))
             return registerBlock(name+"_leaves",
                     new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.OLIVE_LEAVES, 30));
+
+        if (name.equals("trembling_aspen"))
+            return registerBlock(name+"_leaves",
+                    new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.TREMBLING_ASPEN_LEAVES, 50));
+
+        if (name.equals("cottonwood"))
+            return registerBlock(name+"_leaves",
+                    new FallingLeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES), ModParticles.COTTONWOOD_LEAVES, 70));
 
         return registerBlock(name+"_leaves",
                 new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));

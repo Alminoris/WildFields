@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "wildfields:block/oat_hay_block_top",
+    "side": "wildfields:block/oat_hay_block_side"
+  }
+}

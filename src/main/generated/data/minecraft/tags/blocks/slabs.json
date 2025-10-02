@@ -20,6 +20,10 @@
     "wildfields:fossil_marlstone_slab",
     "wildfields:fossil_marlstone_bricks_slab",
     "wildfields:fossil_marlstone_cobbled_slab",
-    "wildfields:fossil_marlstone_polished_slab"
+    "wildfields:fossil_marlstone_polished_slab",
+    "wildfields:limestone_slab",
+    "wildfields:limestone_bricks_slab",
+    "wildfields:limestone_cobbled_slab",
+    "wildfields:limestone_polished_slab"
   ]
 }

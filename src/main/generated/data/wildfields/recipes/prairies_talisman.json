@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "wildfields:ferruginous_hawk_feather"
+    },
+    "B": {
+      "item": "wildfields:black_billed_magpie_feather"
+    },
+    "C": {
+      "item": "wildfields:western_meadowlark_feather"
+    },
+    "R": {
+      "item": "wildfields:bison_horn"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " R ",
+    "ABC",
+    " S "
+  ],
+  "result": {
+    "item": "wildfields:prairies_talisman"
+  },
+  "show_notification": true
+}

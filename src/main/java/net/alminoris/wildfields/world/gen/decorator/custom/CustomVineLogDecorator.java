@@ -1,6 +1,7 @@
 package net.alminoris.wildfields.world.gen.decorator.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.alminoris.wildfields.world.gen.decorator.ModTreeDecorators;
 import net.minecraft.block.Block;
@@ -85,6 +86,6 @@ public class CustomVineLogDecorator extends TreeDecorator
      */
     private void placeVines(BlockPos pos, BooleanProperty faceProperty, Generator generator)
     {
-        generator.replace(pos, block.getDefaultState().with(faceProperty, Boolean.valueOf(true)));
+        generator.replace(pos, block.getDefaultState().with(faceProperty, Boolean.TRUE));
     }
 }

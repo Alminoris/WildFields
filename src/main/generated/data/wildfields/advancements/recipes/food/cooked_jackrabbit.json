@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jackrabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:jackrabbit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:cooked_jackrabbit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_jackrabbit",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:cooked_jackrabbit"
+    ]
+  },
+  "sends_telemetry_event": false
+}

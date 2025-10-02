@@ -38,6 +38,36 @@ public class ModSounds
     public static final SoundEvent SOUND_MOLE_HURT = registerSoundEvent("sound_mole_hurt");
     public static final SoundEvent SOUND_MOLE_DEATH = registerSoundEvent("sound_mole_death");
 
+    public static final SoundEvent SOUND_BISON_AMBIENT = registerSoundEvent("sound_bison_ambient");
+    public static final SoundEvent SOUND_BISON_HURT = registerSoundEvent("sound_bison_hurt");
+    public static final SoundEvent SOUND_BISON_DEATH = registerSoundEvent("sound_bison_death");
+
+    public static final SoundEvent SOUND_COYOTE_AMBIENT = registerSoundEvent("sound_coyote_ambient");
+    public static final SoundEvent SOUND_COYOTE_HURT = registerSoundEvent("sound_coyote_hurt");
+    public static final SoundEvent SOUND_COYOTE_DEATH = registerSoundEvent("sound_coyote_death");
+    public static final SoundEvent SOUND_COYOTE_WHINE = registerSoundEvent("sound_coyote_whine");
+    public static final SoundEvent SOUND_COYOTE_GROWL = registerSoundEvent("sound_coyote_growl");
+
+    public static final SoundEvent SOUND_FERRUGINOUS_HAWK_AMBIENT = registerSoundEvent("sound_ferruginous_hawk_ambient");
+    public static final SoundEvent SOUND_FERRUGINOUS_HAWK_HURT = registerSoundEvent("sound_ferruginous_hawk_hurt");
+    public static final SoundEvent SOUND_FERRUGINOUS_HAWK_DEATH = registerSoundEvent("sound_ferruginous_hawk_death");
+
+    public static final SoundEvent SOUND_PALLID_WINGED_GRASSHOPPER_AMBIENT = registerSoundEvent("sound_pallid_winged_grasshopper_ambient");
+    public static final SoundEvent SOUND_PALLID_WINGED_GRASSHOPPER_HURT = registerSoundEvent("sound_pallid_winged_grasshopper_hurt");
+    public static final SoundEvent SOUND_PALLID_WINGED_GRASSHOPPER_DEATH = registerSoundEvent("sound_pallid_winged_grasshopper_death");
+
+    public static final SoundEvent SOUND_WESTERN_MEADOWLARK_AMBIENT = registerSoundEvent("sound_western_meadowlark_ambient");
+    public static final SoundEvent SOUND_WESTERN_MEADOWLARK_HURT = registerSoundEvent("sound_western_meadowlark_hurt");
+    public static final SoundEvent SOUND_WESTERN_MEADOWLARK_DEATH = registerSoundEvent("sound_western_meadowlark_death");
+
+    public static final SoundEvent SOUND_BLACK_BILLED_MAGPIE_AMBIENT = registerSoundEvent("sound_black_billed_magpie_ambient");
+    public static final SoundEvent SOUND_BLACK_BILLED_MAGPIE_HURT = registerSoundEvent("sound_black_billed_magpie_hurt");
+    public static final SoundEvent SOUND_BLACK_BILLED_MAGPIE_DEATH = registerSoundEvent("sound_black_billed_magpie_death");
+
+    public static final SoundEvent SOUND_WHITE_TAILED_JACKRABBIT_AMBIENT = registerSoundEvent("sound_white_tailed_jackrabbit_ambient");
+    public static final SoundEvent SOUND_WHITE_TAILED_JACKRABBIT_HURT = registerSoundEvent("sound_white_tailed_jackrabbit_hurt");
+    public static final SoundEvent SOUND_WHITE_TAILED_JACKRABBIT_DEATH = registerSoundEvent("sound_white_tailed_jackrabbit_death");
+
     private static SoundEvent registerSoundEvent(String name)
     {
         Identifier id = Identifier.of(WildFields.MOD_ID, name);

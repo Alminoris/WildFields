@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/trembling_aspen_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/trembling_aspen_planks"
+    },
+    "type=top": {
+      "model": "wildfields:block/trembling_aspen_slab_top"
+    }
+  }
+}

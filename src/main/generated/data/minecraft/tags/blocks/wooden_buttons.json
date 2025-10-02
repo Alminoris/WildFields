@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_button",
     "wildfields:tamarisk_button",
-    "wildfields:western_serviceberry_button"
+    "wildfields:western_serviceberry_button",
+    "wildfields:trembling_aspen_button",
+    "wildfields:cottonwood_button"
   ]
 }

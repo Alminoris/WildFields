@@ -2,6 +2,7 @@ package net.alminoris.wildfields.world.gen.decorator.custom;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.alminoris.wildfields.world.gen.decorator.ModTreeDecorators;
 import net.minecraft.block.Blocks;
@@ -10,6 +11,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
+
 import java.util.List;
 import java.util.Random;
 

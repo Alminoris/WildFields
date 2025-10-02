@@ -38,6 +38,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
         getOrCreateTagBuilder(ModTags.Items.SAIGA_FOOD)
                 .add(ModBlocks.TINY_GRASS.asItem(), Items.GRASS, Items.WHEAT);
 
+        getOrCreateTagBuilder(ModTags.Items.BISON_FOOD)
+                .add(Items.TALL_GRASS, Items.GRASS, Items.WHEAT, ModBlocks.BLUE_GRAMA_GRASS.asItem());
+
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.DARKLING_BEETLE_CHESTPLATE)
                 .add(ModItems.FURRED_LEATHER_HELMET)

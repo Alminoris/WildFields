@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:milk_bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oat_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wildfields:oat_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:oatmeal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_oat_item",
+      "has_milk_bucket",
+      "has_bowl",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:oatmeal"
+    ]
+  },
+  "sends_telemetry_event": false
+}

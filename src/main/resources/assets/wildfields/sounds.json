@@ -113,5 +113,120 @@
   {
   "subtitle": "sounds.wildfields.sound_mole_death",
   "sounds": [ "wildfields:sound_mole_death" ]
+  },
+  "sound_ferruginous_hawk_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_ferruginous_hawk_ambient",
+    "sounds": [ "wildfields:sound_ferruginous_hawk_ambient" ]
+  },
+  "sound_ferruginous_hawk_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_ferruginous_hawk_hurt",
+    "sounds": [ "wildfields:sound_ferruginous_hawk_hurt" ]
+  },
+  "sound_ferruginous_hawk_death":
+  {
+    "subtitle": "sounds.wildfields.sound_ferruginous_hawk_death",
+    "sounds": [ "wildfields:sound_ferruginous_hawk_death" ]
+  },
+  "sound_bison_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_bison_ambient",
+    "sounds": [ "wildfields:sound_bison_ambient" ]
+  },
+  "sound_bison_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_bison_hurt",
+    "sounds": [ "wildfields:sound_bison_hurt" ]
+  },
+  "sound_bison_death":
+  {
+    "subtitle": "sounds.wildfields.sound_bison_death",
+    "sounds": [ "wildfields:sound_bison_death" ]
+  },
+  "sound_white_tailed_jackrabbit_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_white_tailed_jackrabbit_ambient",
+    "sounds": [ "wildfields:sound_white_tailed_jackrabbit_ambient" ]
+  },
+  "sound_white_tailed_jackrabbit_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_white_tailed_jackrabbit_hurt",
+    "sounds": [ "wildfields:sound_white_tailed_jackrabbit_hurt" ]
+  },
+  "sound_white_tailed_jackrabbit_death":
+  {
+    "subtitle": "sounds.wildfields.sound_white_tailed_jackrabbit_death",
+    "sounds": [ "wildfields:sound_white_tailed_jackrabbit_death" ]
+  },
+  "sound_western_meadowlark_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_western_meadowlark_ambient",
+    "sounds": [ "wildfields:sound_western_meadowlark_ambient" ]
+  },
+  "sound_western_meadowlark_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_western_meadowlark_hurt",
+    "sounds": [ "wildfields:sound_western_meadowlark_hurt" ]
+  },
+  "sound_western_meadowlark_death":
+  {
+    "subtitle": "sounds.wildfields.sound_western_meadowlark_death",
+    "sounds": [ "wildfields:sound_western_meadowlark_death" ]
+  },
+  "sound_black_billed_magpie_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_black_billed_magpie_ambient",
+    "sounds": [ "wildfields:sound_black_billed_magpie_ambient" ]
+  },
+  "sound_black_billed_magpie_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_black_billed_magpie_hurt",
+    "sounds": [ "wildfields:sound_black_billed_magpie_hurt" ]
+  },
+  "sound_black_billed_magpie_death":
+  {
+    "subtitle": "sounds.wildfields.sound_black_billed_magpie_death",
+    "sounds": [ "wildfields:sound_black_billed_magpie_death" ]
+  },
+  "sound_pallid_winged_grasshopper_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_pallid_winged_grasshopper_ambient",
+    "sounds": [ "wildfields:sound_pallid_winged_grasshopper_ambient" ]
+  },
+  "sound_pallid_winged_grasshopper_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_pallid_winged_grasshopper_hurt",
+    "sounds": [ "wildfields:sound_pallid_winged_grasshopper_hurt" ]
+  },
+  "sound_pallid_winged_grasshopper_death":
+  {
+    "subtitle": "sounds.wildfields.sound_pallid_winged_grasshopper_death",
+    "sounds": [ "wildfields:sound_pallid_winged_grasshopper_death" ]
+  },
+  "sound_coyote_ambient":
+  {
+    "subtitle": "sounds.wildfields.sound_coyote_ambient",
+    "sounds": [ "wildfields:sound_coyote_ambient" ]
+  },
+  "sound_coyote_hurt":
+  {
+    "subtitle": "sounds.wildfields.sound_coyote_hurt",
+    "sounds": [ "wildfields:sound_coyote_hurt" ]
+  },
+  "sound_coyote_death":
+  {
+    "subtitle": "sounds.wildfields.sound_coyote_death",
+    "sounds": [ "wildfields:sound_coyote_death" ]
+  },
+  "sound_coyote_whine":
+  {
+    "subtitle": "sounds.wildfields.sound_coyote_whine",
+    "sounds": [ "wildfields:sound_coyote_whine" ]
+  },
+  "sound_coyote_growl":
+  {
+    "subtitle": "sounds.wildfields.sound_coyote_growl",
+    "sounds": [ "wildfields:sound_coyote_growl" ]
   }
 }

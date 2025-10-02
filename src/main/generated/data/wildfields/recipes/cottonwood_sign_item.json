@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "wildfields:cottonwood_planks"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    " / "
+  ],
+  "result": {
+    "count": 3,
+    "item": "wildfields:cottonwood_sign_item"
+  },
+  "show_notification": true
+}

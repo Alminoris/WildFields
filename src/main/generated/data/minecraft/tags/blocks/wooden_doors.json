@@ -3,6 +3,8 @@
   "values": [
     "wildfields:olive_door",
     "wildfields:tamarisk_door",
-    "wildfields:western_serviceberry_door"
+    "wildfields:western_serviceberry_door",
+    "wildfields:trembling_aspen_door",
+    "wildfields:cottonwood_door"
   ]
 }

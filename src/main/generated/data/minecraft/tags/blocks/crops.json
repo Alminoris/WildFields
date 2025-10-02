@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:barley",
+    "wildfields:oat"
+  ]
+}
