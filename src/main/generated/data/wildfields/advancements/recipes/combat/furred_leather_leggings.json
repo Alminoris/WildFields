@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:furred_leather_leggings"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

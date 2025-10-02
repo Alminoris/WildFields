@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:tamarisk_planks_from_tamarisk_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

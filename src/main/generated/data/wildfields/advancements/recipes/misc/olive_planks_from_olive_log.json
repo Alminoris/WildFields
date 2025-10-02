@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:olive_planks_from_olive_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

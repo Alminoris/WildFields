@@ -73,9 +73,8 @@ public class ModBlocks
             new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
 
     public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
-            new FallingBlock(AbstractBlock.Settings.create()
+            new FallingBlock(AbstractBlock.Settings.of(Material.AGGREGATE)
                     .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
-                    .instrument(Instrument.BANJO)
                     .strength(0.6F, 0.5F)
                     .sounds(BlockSoundGroup.GRAVEL)
             ));
@@ -325,31 +324,19 @@ public class ModBlocks
     public static final Block WILD_OAT = registerBlock("wild_oat", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
     public static final Block WILD_BARLEY = registerBlock("wild_barley", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
 
-    public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.GREEN)
-            .noCollision()
-            .ticksRandomly()
-            .breakInstantly()
-            .sounds(BlockSoundGroup.CROP)
-            .pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings
+            .of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
-    public static final Block BARLEY = registerBlock("barley", new CropBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.GREEN)
-            .noCollision()
-            .ticksRandomly()
-            .breakInstantly()
-            .sounds(BlockSoundGroup.CROP)
-            .pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block BARLEY = registerBlock("barley", new CropBlock(AbstractBlock.Settings
+            .of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
     public static final Block OAT_HAY_BLOCK = registerBlock(
             "oat_hay_block",
-            new HayBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+            new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.YELLOW).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block BARLEY_HAY_BLOCK = registerBlock(
             "barley_hay_block",
-            new HayBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+            new HayBlock(AbstractBlock.Settings.of(Material.SOLID_ORGANIC, MapColor.YELLOW).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block THYME = registerBlock("thyme",
             new FlowerBlock(StatusEffects.ABSORPTION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));

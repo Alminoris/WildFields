@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:saltmarsh_polished_stairs_from_saltmarsh_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

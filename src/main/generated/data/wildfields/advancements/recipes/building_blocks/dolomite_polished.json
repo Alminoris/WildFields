@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:dolomite_polished"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

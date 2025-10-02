@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:oat_hay_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:tamarisk_fence"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:western_serviceberry_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

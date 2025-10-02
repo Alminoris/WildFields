@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:saltmarsh_bricks_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

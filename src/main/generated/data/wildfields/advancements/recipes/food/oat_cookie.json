@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:oat_cookie"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

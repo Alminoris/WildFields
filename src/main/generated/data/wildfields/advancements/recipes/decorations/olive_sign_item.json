@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:olive_sign_item"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

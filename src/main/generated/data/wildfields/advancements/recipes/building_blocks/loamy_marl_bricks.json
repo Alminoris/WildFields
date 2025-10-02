@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loamy_marl_bricks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:furred_leather_boots"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -82,6 +82,5 @@
     "recipes": [
       "wildfields:prairies_talisman"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:dolomite_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

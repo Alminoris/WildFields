@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:saltmarsh_chiseled"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

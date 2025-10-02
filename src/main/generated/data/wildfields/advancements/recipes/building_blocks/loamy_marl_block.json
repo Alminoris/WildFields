@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loamy_marl_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:trembling_aspen_button_from_trembling_aspen_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

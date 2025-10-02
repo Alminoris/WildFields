@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:fossil_marlstone_polished_stairs_from_fossil_marlstone_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

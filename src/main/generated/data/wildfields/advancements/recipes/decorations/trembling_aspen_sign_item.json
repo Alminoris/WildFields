@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:trembling_aspen_sign_item"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

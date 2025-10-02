@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cottonwood_planks_from_cottonwood_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

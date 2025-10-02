@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:oat_item"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

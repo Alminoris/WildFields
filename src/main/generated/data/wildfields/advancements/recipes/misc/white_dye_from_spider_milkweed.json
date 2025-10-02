@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:white_dye_from_spider_milkweed"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

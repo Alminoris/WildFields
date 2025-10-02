@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:cottonwood_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

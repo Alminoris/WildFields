@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:furred_leather_helmet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

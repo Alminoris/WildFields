@@ -14,9 +14,7 @@ import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModItemGroups
 {
-    public static final ItemGroup WILDFIELDS_TAB = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(WildFields.MOD_ID, "wildfieldstab"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wildfieldstab"))
+    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(Identifier.of(WildFields.MOD_ID, "wildfieldstab")).displayName(Text.translatable("itemgroup.wildfieldstab"))
                     .icon(() -> new ItemStack(ModBlocks.FEATHER_GRASS)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.FEATHER_GRASS);
@@ -217,7 +215,7 @@ public class ModItemGroups
                         entries.add(ModItems.PALLID_WINGED_GRASSHOPPER_SPAWN_EGG);
                         entries.add(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG);
                         entries.add(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG);
-                    }).build());
+                    }).build();
 
     public static void registerItemGroups()
     {

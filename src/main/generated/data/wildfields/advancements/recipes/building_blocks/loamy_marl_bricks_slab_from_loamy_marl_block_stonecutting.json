@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:loamy_marl_bricks_slab_from_loamy_marl_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

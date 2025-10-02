@@ -23,11 +23,6 @@ public class ModEntities
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MarmotEntity::new)
                     .dimensions(EntityDimensions.fixed(0.8f, 0.7f)).build());
 
-    public static final EntityType<MoleEntity> MOLE = Registry.register(
-            Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "mole"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MoleEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.8f, 0.7f)).build());
-
     public static final EntityType<SteppeViperEntity> STEPPE_VIPER = Registry.register(
             Registries.ENTITY_TYPE, Identifier.of(WildFields.MOD_ID, "steppe_viper"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, SteppeViperEntity::new)

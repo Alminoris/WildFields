@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:fossil_marlstone_cobbled_slab_from_fossil_marlstone_cobbled_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

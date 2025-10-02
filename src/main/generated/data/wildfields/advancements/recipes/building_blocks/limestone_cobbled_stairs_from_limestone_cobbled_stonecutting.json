@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:limestone_cobbled_stairs_from_limestone_cobbled_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

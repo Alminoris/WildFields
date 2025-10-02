@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:tamarisk_button_from_tamarisk_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

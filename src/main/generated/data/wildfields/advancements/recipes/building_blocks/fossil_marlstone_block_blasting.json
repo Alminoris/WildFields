@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:fossil_marlstone_block_blasting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

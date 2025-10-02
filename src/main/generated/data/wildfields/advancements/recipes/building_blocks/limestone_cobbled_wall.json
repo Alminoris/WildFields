@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:limestone_cobbled_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

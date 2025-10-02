@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loessic_marl_polished_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

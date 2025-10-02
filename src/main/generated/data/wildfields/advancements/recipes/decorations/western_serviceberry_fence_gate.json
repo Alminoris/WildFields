@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:western_serviceberry_fence_gate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

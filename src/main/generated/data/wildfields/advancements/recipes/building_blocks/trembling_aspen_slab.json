@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:trembling_aspen_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

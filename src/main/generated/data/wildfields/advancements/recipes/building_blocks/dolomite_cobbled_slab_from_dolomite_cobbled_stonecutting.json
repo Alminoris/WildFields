@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:dolomite_cobbled_slab_from_dolomite_cobbled_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

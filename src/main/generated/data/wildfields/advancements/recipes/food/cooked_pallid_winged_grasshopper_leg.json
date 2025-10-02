@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:cooked_pallid_winged_grasshopper_leg"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:dolomite_cobbled_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

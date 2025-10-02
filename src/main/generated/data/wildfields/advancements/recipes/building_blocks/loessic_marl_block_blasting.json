@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:loessic_marl_block_blasting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

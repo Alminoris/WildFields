@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:barley_bread"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "wildfields:western_serviceberry_sign_item"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

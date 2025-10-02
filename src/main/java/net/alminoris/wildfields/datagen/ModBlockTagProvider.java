@@ -79,10 +79,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.BARLEY)
                 .add(ModBlocks.OAT);
 
-        this.getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND)
-                .add(ModBlocks.BARLEY)
-                .add(ModBlocks.OAT);
-
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.BARLEY)
                 .add(ModBlocks.OAT)
@@ -93,14 +89,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.WILD_BARLEY)
                 .add(ModBlocks.WILD_OAT)
                 .add(ModBlocks.BLUE_GRAMA_GRASS);
-        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
-                .add(ModBlocks.FEATHER_GRASS)
-                .add(ModBlocks.TINY_GRASS)
-                .add(ModBlocks.PRAIRIE_SAGE)
-                .add(ModBlocks.BLUE_GRAMA_GRASS)
-                .add(ModBlocks.WILD_WHEAT)
-                .add(ModBlocks.WILD_BARLEY)
-                .add(ModBlocks.WILD_OAT);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.FOSSIL_MARLSTONE_BLOCK)
                 .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED)

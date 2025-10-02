@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loamy_marl_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

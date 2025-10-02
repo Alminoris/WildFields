@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:saltmarsh_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

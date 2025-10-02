@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:dolomite_chiseled"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

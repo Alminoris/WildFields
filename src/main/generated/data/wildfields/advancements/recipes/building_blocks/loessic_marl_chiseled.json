@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loessic_marl_chiseled"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

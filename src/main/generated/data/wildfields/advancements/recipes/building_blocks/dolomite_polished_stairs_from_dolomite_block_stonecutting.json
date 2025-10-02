@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:dolomite_polished_stairs_from_dolomite_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

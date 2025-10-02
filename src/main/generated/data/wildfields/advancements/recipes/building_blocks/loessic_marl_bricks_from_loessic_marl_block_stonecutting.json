@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:loessic_marl_bricks_from_loessic_marl_block_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

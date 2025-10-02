@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:loamy_marl_cobbled_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

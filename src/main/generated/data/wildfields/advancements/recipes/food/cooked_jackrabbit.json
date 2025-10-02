@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:cooked_jackrabbit"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

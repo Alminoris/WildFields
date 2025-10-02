@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:cooked_bison"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -34,6 +34,8 @@ import java.util.OptionalInt;
 import java.util.Set;
 import java.util.function.BiConsumer;
 
+import static net.minecraft.block.LeavesBlock.DISTANCE;
+
 public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
     public TreeGroupFeature(Codec<TreeFeatureConfig> codec) {
         super(codec);
@@ -52,7 +54,7 @@ public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
     }
 
     public static boolean canReplace(TestableWorld world, BlockPos pos) {
-        return world.testBlockState(pos, state -> state.isAir() || state.isIn(BlockTags.REPLACEABLE_BY_TREES));
+        return world.testBlockState(pos, state -> state.isAir() || state.isIn(BlockTags.REPLACEABLE_PLANTS));
     }
 
     private boolean generateSingle(
@@ -235,7 +237,10 @@ public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
                 if (box.contains(blockPos2)) {
                     if (k != 0) {
                         BlockState blockState = world.getBlockState(blockPos2);
-                        setBlockStateWithoutUpdatingNeighbors(world, blockPos2, blockState.with(Properties.DISTANCE_1_7, k));
+                        // only set the distance property on blocks that actually contain it (leaves)
+                        if (blockState.contains(Properties.DISTANCE_1_7)) {
+                            setBlockStateWithoutUpdatingNeighbors(world, blockPos2, blockState.with(Properties.DISTANCE_1_7, k));
+                        }
                     }
                     voxelSet.set(blockPos2.getX() - box.getMinX(), blockPos2.getY() - box.getMinY(), blockPos2.getZ() - box.getMinZ());
                     for (Direction direction : Direction.values()) {
@@ -246,9 +251,10 @@ public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
                             int n = mutable.getZ() - box.getMinZ();
                             if (!voxelSet.contains(l, m, n)) {
                                 BlockState blockState2 = world.getBlockState(mutable);
-                                OptionalInt optionalInt = LeavesBlock.getOptionalDistanceFromLog(blockState2);
-                                if (!optionalInt.isEmpty()) {
-                                    int o = Math.min(optionalInt.getAsInt(), k + 1);
+                                // only consider leaves or logs: if the block has the distance property use it
+                                int distance = getDistanceFromLog(blockState2);
+                                if (blockState2.contains(Properties.DISTANCE_1_7)) {
+                                    int o = Math.min(distance, k + 1);
                                     if (o < 7) {
                                         list.get(o).add(mutable.toImmutable());
                                         k = Math.min(k, o);
@@ -260,6 +266,14 @@ public class TreeGroupFeature extends Feature<TreeFeatureConfig> {
                 }
             }
             k++;
+        }
+    }
+
+    private static int getDistanceFromLog(BlockState state) {
+        if (state.isIn(BlockTags.LOGS)) {
+            return 0;
+        } else {
+            return state.getBlock() instanceof LeavesBlock ? state.get(DISTANCE) : 7;
         }
     }
 }

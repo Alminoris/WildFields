@@ -30,6 +30,5 @@
     "recipes": [
       "wildfields:cottonwood_door"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
