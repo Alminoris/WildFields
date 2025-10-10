@@ -19,8 +19,8 @@ public abstract class ModFeatures<FC extends FeatureConfig>
 
     public static void registerFeatures()
     {
-        Registry.register(Registries.FEATURE, Identifier.of(WildFields.MOD_ID, "triple_tall_plant"), TRIPLE_TALL_PLANT);
+       Registry.register(Registries.FEATURE, Identifier.of(WildFields.MOD_ID, "triple_tall_plant"), TRIPLE_TALL_PLANT);
 
-        Registry.register(Registries.FEATURE, Identifier.of(WildFields.MOD_ID, "tree_group"), TREE_GROUP);
+       Registry.register(Registries.FEATURE, Identifier.of(WildFields.MOD_ID, "tree_group"), TREE_GROUP);
     }
 }

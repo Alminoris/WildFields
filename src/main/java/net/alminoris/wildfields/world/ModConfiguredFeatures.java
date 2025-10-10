@@ -1,5 +1,6 @@
 package net.alminoris.wildfields.world;
 
+import com.google.common.collect.ImmutableList;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
@@ -34,9 +35,11 @@ import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
 import java.util.List;
+
+import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.STONE_BLOCKS;
+import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.WILD_CROPS;
 
 public class ModConfiguredFeatures
 {
@@ -110,14 +113,14 @@ public class ModConfiguredFeatures
         RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
         List<OreFeatureConfig.Target> overworldMarls =
-                List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.LOAMY_MARL_BLOCK.getDefaultState()),
-                        OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.FOSSIL_MARLSTONE_BLOCK.getDefaultState()));
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, STONE_BLOCKS.get("loamy_marl").get("block").getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplaceables, STONE_BLOCKS.get("fossil_marlstone").get("block").getDefaultState()));
 
         List<OreFeatureConfig.Target> overworldLoessicMarls =
-                List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.LOESSIC_MARL_BLOCK.getDefaultState()));
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, STONE_BLOCKS.get("loessic_marl").get("block").getDefaultState()));
 
         List<OreFeatureConfig.Target> overworldLimestone =
-                List.of(OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.LIMESTONE_BLOCK.getDefaultState()));
+                List.of(OreFeatureConfig.createTarget(stoneReplaceables, STONE_BLOCKS.get("limestone").get("block").getDefaultState()));
 
         register(context, MARL_KEY, Feature.ORE, new OreFeatureConfig(overworldMarls, 64));
 
@@ -163,18 +166,18 @@ public class ModConfiguredFeatures
                         new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1)
                 ).decorators(ImmutableList.of(
-                        new AttachedToLeavesTreeDecorator(
-                                0.35F,
-                                1,
-                                0,
-                                new RandomizedIntBlockStateProvider(
-                                        BlockStateProvider.of(ModBlocks.COTTONWOOD_FLUFF.getDefaultState()),
-                                        CottonwoodFluffBlock.AGE,
-                                        UniformIntProvider.create(0, 4)
-                                ),
-                                2,
-                                List.of(Direction.DOWN)
-                        )
+                    new AttachedToLeavesTreeDecorator(
+                            0.35F,
+                            1,
+                            0,
+                            new RandomizedIntBlockStateProvider(
+                                    BlockStateProvider.of(ModBlocks.COTTONWOOD_FLUFF.getDefaultState()),
+                                    CottonwoodFluffBlock.AGE,
+                                    UniformIntProvider.create(0, 4)
+                            ),
+                            2,
+                            List.of(Direction.DOWN)
+                    )
                 )).ignoreVines().build());
 
         register(context, TREMBLING_ASPEN_KEY, Feature.TREE,
@@ -222,9 +225,7 @@ public class ModConfiguredFeatures
                         Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.FEATHER_GRASS)),
                         List.of(Blocks.GRASS_BLOCK),
-                        4096
-                )
-        );
+                        4096));
 
         register(context, STEPPES_GRASS_1_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
@@ -278,19 +279,19 @@ public class ModConfiguredFeatures
         register(context, WILD_WHEAT_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_WHEAT)),
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(WILD_CROPS.get("wheat"))),
                         List.of(Blocks.GRASS_BLOCK), 12024));
 
         register(context, WILD_BARLEY_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_BARLEY)),
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(WILD_CROPS.get("barley"))),
                         List.of(Blocks.GRASS_BLOCK), 12024));
 
         register(context, WILD_OAT_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(
                         Feature.SIMPLE_BLOCK,
-                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_OAT)),
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(WILD_CROPS.get("oat"))),
                         List.of(Blocks.GRASS_BLOCK), 12024));
 
         context.register(
@@ -300,10 +301,10 @@ public class ModConfiguredFeatures
                         new OreFeatureConfig(
                                 List.of(OreFeatureConfig.createTarget(
                                         new BlockMatchRuleTest(Blocks.GRASS_BLOCK),
-                                        ModBlocks.SALTMARSH_BLOCK.getDefaultState()
+                                        STONE_BLOCKS.get("saltmarsh").get("block").getDefaultState()
                                 ),OreFeatureConfig.createTarget(
                                         new BlockMatchRuleTest(Blocks.DIRT),
-                                        ModBlocks.SALTMARSH_BLOCK.getDefaultState()
+                                        STONE_BLOCKS.get("saltmarsh").get("block").getDefaultState()
                                 )),
                                 39
                         )
@@ -366,7 +367,7 @@ public class ModConfiguredFeatures
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WORMWOOD)), List.of(Blocks.GRASS_BLOCK)));
 
-        register(context, DOLOMITE_KEY, Feature.FOREST_ROCK, new SingleStateFeatureConfig(ModBlocks.DOLOMITE_BLOCK.getDefaultState()));
+        register(context, DOLOMITE_KEY, Feature.FOREST_ROCK, new SingleStateFeatureConfig(STONE_BLOCKS.get("dolomite").get("block").getDefaultState()));
 
         DataPool.Builder<BlockState> builder = DataPool.builder();
         for (int i = 1; i <= 4; i++)

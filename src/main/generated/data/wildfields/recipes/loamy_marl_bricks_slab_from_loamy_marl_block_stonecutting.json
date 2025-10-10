@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "wildfields:loamy_marl_block"
-  },
-  "result": "wildfields:loamy_marl_bricks_slab"
-}

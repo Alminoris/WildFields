@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "wildfields:block/saltmarsh_chiseled",
+    "side": "wildfields:block/saltmarsh_chiseled",
+    "top": "wildfields:block/saltmarsh_chiseled"
+  }
+}

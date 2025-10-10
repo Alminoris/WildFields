@@ -2,16 +2,18 @@ package net.alminoris.wildfields.datagen;
 
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.block.custom.BerryBushBlock;
+import net.alminoris.wildfields.block.custom.PricklyPearCactusBlock;
 import net.alminoris.wildfields.block.custom.TripleTallPlantBlock;
 import net.alminoris.wildfields.item.ModItems;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
-import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -29,6 +31,10 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
@@ -71,7 +77,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                     .pool(
                                             LootPool.builder()
                                                     .conditionally(
-                                                            BlockStatePropertyLootCondition.builder(BUSHES.get(name)).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 3))
+                                                            BlockStatePropertyLootCondition.builder(BUSHES.get(name)).properties(StatePredicate.Builder.create().exactMatch(BerryBushBlock.AGE, 3))
                                                     )
                                                     .with(ItemEntry.builder(BERRIES.get(name)))
                                                     .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F)))
@@ -80,7 +86,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                     .pool(
                                             LootPool.builder()
                                                     .conditionally(
-                                                            BlockStatePropertyLootCondition.builder(BUSHES.get(name)).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 2))
+                                                            BlockStatePropertyLootCondition.builder(BUSHES.get(name)).properties(StatePredicate.Builder.create().exactMatch(BerryBushBlock.AGE, 2))
                                                     )
                                                     .with(ItemEntry.builder(BERRIES.get(name)))
                                                     .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)))
@@ -98,7 +104,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                 .pool(
                                         LootPool.builder()
                                                 .conditionally(
-                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 3))
+                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(PricklyPearCactusBlock.AGE, 3))
                                                 )
                                                 .with(ItemEntry.builder(ModItems.PRICKLY_PEAR))
                                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F)))
@@ -107,7 +113,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                 .pool(
                                         LootPool.builder()
                                                 .conditionally(
-                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 2))
+                                                        BlockStatePropertyLootCondition.builder(ModBlocks.PRICKLY_PEAR_CACTUS).properties(StatePredicate.Builder.create().exactMatch(PricklyPearCactusBlock.AGE, 2))
                                                 )
                                                 .with(ItemEntry.builder(ModItems.PRICKLY_PEAR))
                                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)))
@@ -115,6 +121,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
                                 )
                 )
         );
+
+
+        addDrop(ModBlockSetsHelper.LEAVES.get("olive"), leavesDrops(ModBlockSetsHelper.LEAVES.get("olive"),
+                ModBlockSetsHelper.WOODEN_SAPLINGS.get("olive"), 0.0025f));
 
         addDrop(ModBlockSetsHelper.LEAVES.get("tamarisk"), leavesDrops(ModBlockSetsHelper.LEAVES.get("tamarisk"),
                 ModBlockSetsHelper.WOODEN_SAPLINGS.get("tamarisk"), 0.0025f));
@@ -134,119 +144,33 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.SMOOTH_ASTER);
         addDrop(ModBlocks.SERVAL_HIDE, dropsWithSilkTouch(ModBlocks.SERVAL_HIDE));
 
-        addDrop(ModBlocks.WILD_WHEAT);
-        addDrop(ModBlocks.WILD_BARLEY);
-        addDrop(ModBlocks.WILD_OAT);
+        for (String name : WILD_CROP_NAMES)
+        {
+            addDrop(WILD_CROPS.get(name));
+        }
 
-        addDrop(ModBlocks.BARLEY_HAY_BLOCK);
-        addDrop(ModBlocks.OAT_HAY_BLOCK);
+        for (String name : CROP_NAMES)
+        {
+            addDrop(HAY_BLOCKS.get(name));
 
-        LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(ModBlocks.OAT)
-                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
-        this.addDrop(ModBlocks.OAT, this.cropDrops(ModBlocks.OAT, ModItems.OAT, ModItems.OAT_SEEDS, builder1));
-
-        LootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.BARLEY)
-                .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
-        this.addDrop(ModBlocks.BARLEY, this.cropDrops(ModBlocks.BARLEY, ModItems.BARLEY, ModItems.BARLEY_SEEDS, builder2));
+            LootCondition.Builder builder1 = BlockStatePropertyLootCondition.builder(CROPS.get(name))
+                    .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+            this.addDrop(CROPS.get(name), this.cropDrops(CROPS.get(name), CROP_ITEMS.get(name), CROP_SEEDS.get(name), builder1));
+        }
 
         addDrop(ModBlocks.GREEN_LICHEN, dropsWithSilkTouch(ModBlocks.GREEN_LICHEN));
 
-        addDrop(ModBlocks.LIMESTONE_BLOCK, drops(ModBlocks.LIMESTONE_COBBLED));
-        addDrop(ModBlocks.LIMESTONE_WALL);
-        addDrop(ModBlocks.LIMESTONE_COBBLED);
-        addDrop(ModBlocks.LIMESTONE_COBBLED_WALL);
-        addDrop(ModBlocks.LIMESTONE_POLISHED);
-        addDrop(ModBlocks.LIMESTONE_CHISELED);
-        addDrop(ModBlocks.LIMESTONE_BRICKS);
-        addDrop(ModBlocks.LIMESTONE_BRICKS_WALL);
-        addDrop(ModBlocks.LIMESTONE_STAIRS);
-        addDrop(ModBlocks.LIMESTONE_SLAB);
-        addDrop(ModBlocks.LIMESTONE_COBBLED_STAIRS);
-        addDrop(ModBlocks.LIMESTONE_COBBLED_SLAB);
-        addDrop(ModBlocks.LIMESTONE_BRICKS_STAIRS);
-        addDrop(ModBlocks.LIMESTONE_BRICKS_SLAB);
-        addDrop(ModBlocks.LIMESTONE_POLISHED_STAIRS);
-        addDrop(ModBlocks.LIMESTONE_POLISHED_SLAB);
-        addDrop(ModBlocks.SALTMARSH_BLOCK, drops(ModBlocks.SALTMARSH_COBBLED));
-        addDrop(ModBlocks.SALTMARSH_WALL);
-        addDrop(ModBlocks.SALTMARSH_COBBLED);
-        addDrop(ModBlocks.SALTMARSH_COBBLED_WALL);
-        addDrop(ModBlocks.SALTMARSH_POLISHED);
-        addDrop(ModBlocks.SALTMARSH_CHISELED);
-        addDrop(ModBlocks.SALTMARSH_BRICKS);
-        addDrop(ModBlocks.SALTMARSH_BRICKS_WALL);
-        addDrop(ModBlocks.SALTMARSH_STAIRS);
-        addDrop(ModBlocks.SALTMARSH_SLAB);
-        addDrop(ModBlocks.SALTMARSH_COBBLED_STAIRS);
-        addDrop(ModBlocks.SALTMARSH_COBBLED_SLAB);
-        addDrop(ModBlocks.SALTMARSH_POLISHED_STAIRS);
-        addDrop(ModBlocks.SALTMARSH_POLISHED_SLAB);
-        addDrop(ModBlocks.SALTMARSH_BRICKS_STAIRS);
-        addDrop(ModBlocks.SALTMARSH_BRICKS_SLAB);
-        addDrop(ModBlocks.DOLOMITE_BLOCK, drops(ModBlocks.DOLOMITE_COBBLED));
-        addDrop(ModBlocks.DOLOMITE_WALL);
-        addDrop(ModBlocks.DOLOMITE_COBBLED);
-        addDrop(ModBlocks.DOLOMITE_COBBLED_WALL);
-        addDrop(ModBlocks.DOLOMITE_POLISHED);
-        addDrop(ModBlocks.DOLOMITE_CHISELED);
-        addDrop(ModBlocks.DOLOMITE_BRICKS);
-        addDrop(ModBlocks.DOLOMITE_BRICKS_WALL);
-        addDrop(ModBlocks.DOLOMITE_STAIRS);
-        addDrop(ModBlocks.DOLOMITE_SLAB);
-        addDrop(ModBlocks.DOLOMITE_COBBLED_STAIRS);
-        addDrop(ModBlocks.DOLOMITE_COBBLED_SLAB);
-        addDrop(ModBlocks.DOLOMITE_BRICKS_STAIRS);
-        addDrop(ModBlocks.DOLOMITE_BRICKS_SLAB);
-        addDrop(ModBlocks.DOLOMITE_POLISHED_STAIRS);
-        addDrop(ModBlocks.DOLOMITE_POLISHED_SLAB);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_BLOCK, drops(ModBlocks.FOSSIL_MARLSTONE_COBBLED));
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_WALL);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_CHISELED);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_STAIRS);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_SLAB);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
-        addDrop(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
-        addDrop(ModBlocks.LOAMY_MARL_BLOCK, drops(ModBlocks.LOAMY_MARL_COBBLED));
-        addDrop(ModBlocks.LOAMY_MARL_WALL);
-        addDrop(ModBlocks.LOAMY_MARL_COBBLED);
-        addDrop(ModBlocks.LOAMY_MARL_COBBLED_WALL);
-        addDrop(ModBlocks.LOAMY_MARL_POLISHED);
-        addDrop(ModBlocks.LOAMY_MARL_CHISELED);
-        addDrop(ModBlocks.LOAMY_MARL_BRICKS);
-        addDrop(ModBlocks.LOAMY_MARL_BRICKS_WALL);
-        addDrop(ModBlocks.LOAMY_MARL_STAIRS);
-        addDrop(ModBlocks.LOAMY_MARL_SLAB);
-        addDrop(ModBlocks.LOAMY_MARL_COBBLED_STAIRS);
-        addDrop(ModBlocks.LOAMY_MARL_COBBLED_SLAB);
-        addDrop(ModBlocks.LOAMY_MARL_POLISHED_STAIRS);
-        addDrop(ModBlocks.LOAMY_MARL_POLISHED_SLAB);
-        addDrop(ModBlocks.LOAMY_MARL_BRICKS_STAIRS);
-        addDrop(ModBlocks.LOAMY_MARL_BRICKS_SLAB);
-        addDrop(ModBlocks.LOESSIC_MARL_BLOCK, drops(ModBlocks.LOESSIC_MARL_COBBLED));
-        addDrop(ModBlocks.LOESSIC_MARL_WALL);
-        addDrop(ModBlocks.LOESSIC_MARL_COBBLED);
-        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_WALL);
-        addDrop(ModBlocks.LOESSIC_MARL_POLISHED);
-        addDrop(ModBlocks.LOESSIC_MARL_CHISELED);
-        addDrop(ModBlocks.LOESSIC_MARL_BRICKS);
-        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_WALL);
-        addDrop(ModBlocks.LOESSIC_MARL_STAIRS);
-        addDrop(ModBlocks.LOESSIC_MARL_SLAB);
-        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS);
-        addDrop(ModBlocks.LOESSIC_MARL_COBBLED_SLAB);
-        addDrop(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS);
-        addDrop(ModBlocks.LOESSIC_MARL_POLISHED_SLAB);
-        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS);
-        addDrop(ModBlocks.LOESSIC_MARL_BRICKS_SLAB);
+        for (String name : STONE_NAMES)
+        {
+            addDrop(STONE_BLOCKS.get(name).get("block"), drops(STONE_BLOCKS.get(name).get("cobbled")));
+            for (String type : STONE_TYPES)
+            {
+                if (!type.equals("block")) addDrop(STONE_BLOCKS.get(name).get(type));
+                addDrop(STONE_SLABS.get(name).get(type));
+                addDrop(STONE_STAIRS.get(name).get(type));
+                addDrop(STONE_WALLS.get(name).get(type));
+            }
+        }
 
         addDrop(ModBlocks.VIOLA);
 

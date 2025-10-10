@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:limestone_block_blasting"
+        "recipe": "wildfields:limestone_block_blasting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:limestone_block_blasting"
+      "wildfields:limestone_block_blasting"
     ]
   },
   "sends_telemetry_event": false

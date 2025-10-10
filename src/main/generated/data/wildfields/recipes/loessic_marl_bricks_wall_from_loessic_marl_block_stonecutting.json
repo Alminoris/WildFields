@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "wildfields:loessic_marl_block"
-  },
-  "result": "wildfields:loessic_marl_bricks_wall"
-}

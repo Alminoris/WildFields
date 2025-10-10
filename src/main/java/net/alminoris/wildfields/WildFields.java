@@ -19,6 +19,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
@@ -74,12 +75,15 @@ public class WildFields implements ModInitializer
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_GRAMA_GRASS, 20, 90);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PRAIRIE_SAGE, 20, 90);
 
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.OAT_HAY_BLOCK, 60, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BARLEY_HAY_BLOCK, 60, 20);
+		for (String name : CROP_NAMES)
+		{
+			FlammableBlockRegistry.getDefaultInstance().add(HAY_BLOCKS.get(name), 60, 20);
+		}
 
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_WHEAT, 30, 40);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_BARLEY, 30, 40);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_OAT, 30, 40);
+		for (String name : WILD_CROP_NAMES)
+		{
+			FlammableBlockRegistry.getDefaultInstance().add(WILD_CROPS.get(name), 30, 40);
+		}
 
 		ModBoats.registerBoats();
 
@@ -176,5 +180,6 @@ public class WildFields implements ModInitializer
 				LAST_POS.put(player.getUuid(), currPos);
 			}
 		});
+
 	}
 }

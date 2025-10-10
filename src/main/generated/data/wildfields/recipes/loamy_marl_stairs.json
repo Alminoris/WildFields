@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "loamy_marl",
   "key": {
     "#": {
       "item": "wildfields:loamy_marl_block"

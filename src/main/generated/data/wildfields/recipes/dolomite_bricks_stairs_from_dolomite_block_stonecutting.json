@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "wildfields:dolomite_block"
-  },
-  "result": "wildfields:dolomite_bricks_stairs"
-}

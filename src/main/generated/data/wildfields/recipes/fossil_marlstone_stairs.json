@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "fossil_marlstone",
   "key": {
     "#": {
       "item": "wildfields:fossil_marlstone_block"

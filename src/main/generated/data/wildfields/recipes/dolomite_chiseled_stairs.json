@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dolomite",
+  "key": {
+    "#": {
+      "item": "wildfields:dolomite_chiseled"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "wildfields:dolomite_chiseled_stairs"
+  },
+  "show_notification": true
+}

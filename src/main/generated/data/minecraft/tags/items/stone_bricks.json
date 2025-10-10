@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:dolomite_bricks",
+    "wildfields:saltmarsh_bricks",
+    "wildfields:loessic_marl_bricks",
+    "wildfields:loamy_marl_bricks",
+    "wildfields:fossil_marlstone_bricks",
+    "wildfields:limestone_bricks"
+  ]
+}

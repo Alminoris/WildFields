@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "wildfields:dolomite_polished"
+  },
+  "result": "wildfields:dolomite_polished_slab"
+}

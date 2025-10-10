@@ -9,7 +9,6 @@ import net.alminoris.wildfields.block.custom.*;
 import net.alminoris.wildfields.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
@@ -24,332 +23,9 @@ public class ModBlocks
 {
     public static final Block FEATHER_GRASS = registerBlock("feather_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
 
-    public static final Block LIMESTONE_BLOCK = registerBlock("limestone_block",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_COBBLED = registerBlock("limestone_cobbled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_POLISHED = registerBlock("limestone_polished",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_CHISELED = registerBlock("limestone_chiseled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_BRICKS = registerBlock("limestone_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_BRICKS_SLAB = registerBlock("limestone_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LIMESTONE_BRICKS_STAIRS = registerBlock("limestone_bricks_stairs",
-            new StairsBlock(LIMESTONE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LIMESTONE_SLAB = registerBlock("limestone_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LIMESTONE_STAIRS = registerBlock("limestone_stairs",
-            new StairsBlock(LIMESTONE_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LIMESTONE_COBBLED_SLAB = registerBlock("limestone_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LIMESTONE_COBBLED_STAIRS = registerBlock("limestone_cobbled_stairs",
-            new StairsBlock(LIMESTONE_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LIMESTONE_POLISHED_SLAB = registerBlock("limestone_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LIMESTONE_POLISHED_STAIRS = registerBlock("limestone_polished_stairs",
-            new StairsBlock(LIMESTONE_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LIMESTONE_WALL = registerBlock("limestone_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_COBBLED_WALL = registerBlock("limestone_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LIMESTONE_BRICKS_WALL = registerBlock("limestone_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block SALTMARSH_BLOCK = registerBlock("saltmarsh_block",
-            new FallingBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
-                    .instrument(Instrument.BANJO)
-                    .strength(0.6F, 0.5F)
-                    .sounds(BlockSoundGroup.GRAVEL)
-            ));
-
-    public static final Block SALTMARSH_COBBLED = registerBlock("saltmarsh_cobbled",
-            new Block(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_POLISHED = registerBlock("saltmarsh_polished",
-            new Block(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_CHISELED = registerBlock("saltmarsh_chiseled",
-            new Block(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_BRICKS = registerBlock("saltmarsh_bricks",
-            new Block(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_BRICKS_SLAB = registerBlock("saltmarsh_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_BRICKS_STAIRS = registerBlock("saltmarsh_bricks_stairs",
-            new StairsBlock(SALTMARSH_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_SLAB = registerBlock("saltmarsh_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_STAIRS = registerBlock("saltmarsh_stairs",
-            new StairsBlock(SALTMARSH_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_COBBLED_SLAB = registerBlock("saltmarsh_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_COBBLED_STAIRS = registerBlock("saltmarsh_cobbled_stairs",
-            new StairsBlock(SALTMARSH_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_POLISHED_SLAB = registerBlock("saltmarsh_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_POLISHED_STAIRS = registerBlock("saltmarsh_polished_stairs",
-            new StairsBlock(SALTMARSH_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_WALL = registerBlock("saltmarsh_wall",
-            new WallBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_COBBLED_WALL = registerBlock("saltmarsh_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block SALTMARSH_BRICKS_WALL = registerBlock("saltmarsh_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(SALTMARSH_BLOCK)));
-
-    public static final Block DOLOMITE_BLOCK = registerBlock("dolomite_block",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_COBBLED = registerBlock("dolomite_cobbled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_POLISHED = registerBlock("dolomite_polished",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_CHISELED = registerBlock("dolomite_chiseled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_BRICKS = registerBlock("dolomite_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_BRICKS_SLAB = registerBlock("dolomite_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block DOLOMITE_BRICKS_STAIRS = registerBlock("dolomite_bricks_stairs",
-            new StairsBlock(DOLOMITE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block DOLOMITE_SLAB = registerBlock("dolomite_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block DOLOMITE_STAIRS = registerBlock("dolomite_stairs",
-            new StairsBlock(DOLOMITE_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block DOLOMITE_COBBLED_SLAB = registerBlock("dolomite_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block DOLOMITE_COBBLED_STAIRS = registerBlock("dolomite_cobbled_stairs",
-            new StairsBlock(DOLOMITE_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block DOLOMITE_POLISHED_SLAB = registerBlock("dolomite_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block DOLOMITE_POLISHED_STAIRS = registerBlock("dolomite_polished_stairs",
-            new StairsBlock(DOLOMITE_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block DOLOMITE_WALL = registerBlock("dolomite_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_COBBLED_WALL = registerBlock("dolomite_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block DOLOMITE_BRICKS_WALL = registerBlock("dolomite_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_BLOCK = registerBlock("loessic_marl_block",
-            new Block(AbstractBlock.Settings.copy(Blocks.SAND)));
-
-    public static final Block LOESSIC_MARL_COBBLED = registerBlock("loessic_marl_cobbled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_POLISHED = registerBlock("loessic_marl_polished",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_CHISELED = registerBlock("loessic_marl_chiseled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_BRICKS = registerBlock("loessic_marl_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_BRICKS_SLAB = registerBlock("loessic_marl_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOESSIC_MARL_BRICKS_STAIRS = registerBlock("loessic_marl_bricks_stairs",
-            new StairsBlock(LOESSIC_MARL_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOESSIC_MARL_SLAB = registerBlock("loessic_marl_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOESSIC_MARL_STAIRS = registerBlock("loessic_marl_stairs",
-            new StairsBlock(LOESSIC_MARL_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOESSIC_MARL_COBBLED_SLAB = registerBlock("loessic_marl_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOESSIC_MARL_COBBLED_STAIRS = registerBlock("loessic_marl_cobbled_stairs",
-            new StairsBlock(LOESSIC_MARL_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOESSIC_MARL_POLISHED_SLAB = registerBlock("loessic_marl_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOESSIC_MARL_POLISHED_STAIRS = registerBlock("loessic_marl_polished_stairs",
-            new StairsBlock(LOESSIC_MARL_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOESSIC_MARL_WALL = registerBlock("loessic_marl_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_COBBLED_WALL = registerBlock("loessic_marl_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOESSIC_MARL_BRICKS_WALL = registerBlock("loessic_marl_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_BLOCK = registerBlock("loamy_marl_block",
-            new Block(AbstractBlock.Settings.copy(Blocks.CLAY)));
-
-    public static final Block LOAMY_MARL_COBBLED = registerBlock("loamy_marl_cobbled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_POLISHED = registerBlock("loamy_marl_polished",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_CHISELED = registerBlock("loamy_marl_chiseled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_BRICKS = registerBlock("loamy_marl_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_BRICKS_SLAB = registerBlock("loamy_marl_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOAMY_MARL_BRICKS_STAIRS = registerBlock("loamy_marl_bricks_stairs",
-            new StairsBlock(LOAMY_MARL_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOAMY_MARL_SLAB = registerBlock("loamy_marl_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOAMY_MARL_STAIRS = registerBlock("loamy_marl_stairs",
-            new StairsBlock(LOAMY_MARL_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOAMY_MARL_COBBLED_SLAB = registerBlock("loamy_marl_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOAMY_MARL_COBBLED_STAIRS = registerBlock("loamy_marl_cobbled_stairs",
-            new StairsBlock(LOAMY_MARL_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOAMY_MARL_POLISHED_SLAB = registerBlock("loamy_marl_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block LOAMY_MARL_POLISHED_STAIRS = registerBlock("loamy_marl_polished_stairs",
-            new StairsBlock(LOAMY_MARL_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block LOAMY_MARL_WALL = registerBlock("loamy_marl_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_COBBLED_WALL = registerBlock("loamy_marl_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block LOAMY_MARL_BRICKS_WALL = registerBlock("loamy_marl_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_BLOCK = registerBlock("fossil_marlstone_block",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_COBBLED = registerBlock("fossil_marlstone_cobbled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_POLISHED = registerBlock("fossil_marlstone_polished",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_CHISELED = registerBlock("fossil_marlstone_chiseled",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_BRICKS = registerBlock("fossil_marlstone_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_BRICKS_SLAB = registerBlock("fossil_marlstone_bricks_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block FOSSIL_MARLSTONE_BRICKS_STAIRS = registerBlock("fossil_marlstone_bricks_stairs",
-            new StairsBlock(FOSSIL_MARLSTONE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block FOSSIL_MARLSTONE_SLAB = registerBlock("fossil_marlstone_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block FOSSIL_MARLSTONE_STAIRS = registerBlock("fossil_marlstone_stairs",
-            new StairsBlock(FOSSIL_MARLSTONE_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block FOSSIL_MARLSTONE_COBBLED_SLAB = registerBlock("fossil_marlstone_cobbled_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block FOSSIL_MARLSTONE_COBBLED_STAIRS = registerBlock("fossil_marlstone_cobbled_stairs",
-            new StairsBlock(FOSSIL_MARLSTONE_COBBLED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block FOSSIL_MARLSTONE_POLISHED_SLAB = registerBlock("fossil_marlstone_polished_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE_SLAB)));
-
-    public static final Block FOSSIL_MARLSTONE_POLISHED_STAIRS = registerBlock("fossil_marlstone_polished_stairs",
-            new StairsBlock(FOSSIL_MARLSTONE_POLISHED.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE_STAIRS)));
-
-    public static final Block FOSSIL_MARLSTONE_WALL = registerBlock("fossil_marlstone_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_COBBLED_WALL = registerBlock("fossil_marlstone_cobbled_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
-    public static final Block FOSSIL_MARLSTONE_BRICKS_WALL = registerBlock("fossil_marlstone_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
-
     public static final Block GREEN_LICHEN = registerBlock("green_lichen", new VineBlock(AbstractBlock.Settings.copy(Blocks.VINE)));
 
     public static final Block TINY_GRASS = registerBlock("tiny_grass", new FernBlock(AbstractBlock.Settings.copy(Blocks.GRASS)));
-
-    public static final Block WILD_WHEAT = registerBlock("wild_wheat", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
-    public static final Block WILD_OAT = registerBlock("wild_oat", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
-    public static final Block WILD_BARLEY = registerBlock("wild_barley", new FlowerBlock(StatusEffects.HASTE, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
-
-    public static final Block OAT = registerBlock("oat", new CropBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.GREEN)
-            .noCollision()
-            .ticksRandomly()
-            .breakInstantly()
-            .sounds(BlockSoundGroup.CROP)
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block BARLEY = registerBlock("barley", new CropBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.GREEN)
-            .noCollision()
-            .ticksRandomly()
-            .breakInstantly()
-            .sounds(BlockSoundGroup.CROP)
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block OAT_HAY_BLOCK = registerBlock(
-            "oat_hay_block",
-            new HayBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
-
-    public static final Block BARLEY_HAY_BLOCK = registerBlock(
-            "barley_hay_block",
-            new HayBlock(AbstractBlock.Settings.create()
-                    .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block THYME = registerBlock("thyme",
             new FlowerBlock(StatusEffects.ABSORPTION, 12, AbstractBlock.Settings.copy(Blocks.PEONY)));
@@ -417,6 +93,47 @@ public class ModBlocks
     public static Block registerBushBlock(String name)
     {
         return registerBlock(name, new BerryBushBlock(name));
+    }
+
+    public static Block registerHayBlock(String name)
+    {
+        return registerBlock(name+"_hay_block", new HayBlock(AbstractBlock.Settings.create()
+                .mapColor(MapColor.YELLOW).instrument(Instrument.BANJO).strength(0.5F).sounds(BlockSoundGroup.GRASS)));
+    }
+
+    public static Block registerWildCropBlock(String name)
+    {
+        return registerBlock("wild_"+name,
+                new FlowerBlock(StatusEffects.LUCK, 12, AbstractBlock.Settings.copy(Blocks.GRASS)));
+    }
+
+    public static Block registerCropBlock(String name)
+    {
+        return registerBlock(name, new CustomCropBlock(name));
+    }
+
+    public static Block registerStoneBlock(String name, String type)
+    {
+        return registerBlock(name+"_"+type,
+                new Block(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+    }
+
+    public static Block registerStoneSlab(String name, String type)
+    {
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_slab",
+                new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
+    }
+
+    public static Block registerStoneStairs(String name, String type, Block block)
+    {
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_stairs",
+                new StairsBlock(block.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE)));
+    }
+
+    public static Block registerStoneWall(String name, String type)
+    {
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_wall",
+                new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
     }
 
     public static Block registerLeavesBlock(String name)

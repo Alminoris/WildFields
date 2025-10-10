@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "limestone",
   "key": {
     "#": {
       "item": "wildfields:limestone_block"

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:olive_planks",
+    "wildfields:tamarisk_planks",
+    "wildfields:western_serviceberry_planks",
+    "wildfields:trembling_aspen_planks",
+    "wildfields:cottonwood_planks"
+  ]
+}

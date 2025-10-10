@@ -55,3 +55,4 @@ public class TripleTallPlantFeature extends Feature<TripleTallPlantConfig>
         return true;
     }
 }
+

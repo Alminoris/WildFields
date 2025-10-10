@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "wildfields:limestone_polished"
+  },
+  "result": "wildfields:limestone_polished_wall"
+}

@@ -1,10 +1,7 @@
 package net.alminoris.wildfields.world.gen.decorator;
 
 import net.alminoris.wildfields.WildFields;
-import net.alminoris.wildfields.world.gen.decorator.custom.CustomAlterGroundTreeDecorator;
-import net.alminoris.wildfields.world.gen.decorator.custom.CustomVineDecorator;
-import net.alminoris.wildfields.world.gen.decorator.custom.CustomVineLogDecorator;
-import net.alminoris.wildfields.world.gen.decorator.custom.LeafCarpetDecorator;
+import net.alminoris.wildfields.world.gen.decorator.custom.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

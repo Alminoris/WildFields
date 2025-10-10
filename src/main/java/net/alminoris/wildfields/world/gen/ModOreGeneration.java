@@ -11,7 +11,6 @@ public class ModOreGeneration {
     {
         //BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.MARL_PLACED_KEY);
 
-        // Example for individual Bioms
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
                 GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.MARL_PLACED_KEY);
 

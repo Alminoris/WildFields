@@ -15,10 +15,7 @@ import net.minecraft.item.ArmorMaterials;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 
 import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
@@ -110,119 +107,19 @@ public class ModModelProvider extends FabricModelProvider
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.FEATHER_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.TINY_GRASS, BlockStateModelGenerator.TintType.TINTED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIMESTONE_CHISELED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SALTMARSH_CHISELED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DOLOMITE_CHISELED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOESSIC_MARL_CHISELED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOAMY_MARL_CHISELED);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FOSSIL_MARLSTONE_CHISELED);
-
         blockStateModelGenerator.registerWallPlant(ModBlocks.GREEN_LICHEN);
 
-        blockStateModelGenerator.registerAxisRotated(ModBlocks.OAT_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
-        blockStateModelGenerator.registerAxisRotated(ModBlocks.BARLEY_HAY_BLOCK, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        for (String name : STONE_NAMES)
+        {
+            for (String type : STONE_TYPES)
+            {
+                BlockStateModelGenerator.BlockTexturePool stonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(STONE_BLOCKS.get(name).get(type));
 
-        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_WHEAT);
-        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_BARLEY);
-        blockStateModelGenerator.registerSimpleState(ModBlocks.WILD_OAT);
-
-        BlockStateModelGenerator.BlockTexturePool limestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool saltmarshPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool dolomitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool limestoneBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool saltmarshBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool dolomiteBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool limestonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_POLISHED);
-        BlockStateModelGenerator.BlockTexturePool saltmarshPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_POLISHED);
-        BlockStateModelGenerator.BlockTexturePool dolomitePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_POLISHED);
-        BlockStateModelGenerator.BlockTexturePool limestoneCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIMESTONE_COBBLED);
-        BlockStateModelGenerator.BlockTexturePool saltmarshCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SALTMARSH_COBBLED);
-        BlockStateModelGenerator.BlockTexturePool dolomiteCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DOLOMITE_COBBLED);
-
-        BlockStateModelGenerator.BlockTexturePool loessicMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool loamyMarlPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool fossilMarlstonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool loessicMarlBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool loamyMarlBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool fossilMarlstoneBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool loessicMarlCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_COBBLED);
-        BlockStateModelGenerator.BlockTexturePool loamyMarlCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_COBBLED);
-        BlockStateModelGenerator.BlockTexturePool fossilMarlstoneCobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        BlockStateModelGenerator.BlockTexturePool loessicMarlPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOESSIC_MARL_POLISHED);
-        BlockStateModelGenerator.BlockTexturePool loamyMarlPolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LOAMY_MARL_POLISHED);
-        BlockStateModelGenerator.BlockTexturePool fossilMarlstonePolishedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
-
-        limestonePool.slab(ModBlocks.LIMESTONE_SLAB);
-        limestonePool.stairs(ModBlocks.LIMESTONE_STAIRS);
-        limestoneCobbledPool.slab(ModBlocks.LIMESTONE_COBBLED_SLAB);
-        limestoneCobbledPool.stairs(ModBlocks.LIMESTONE_COBBLED_STAIRS);
-        limestoneBricksPool.slab(ModBlocks.LIMESTONE_BRICKS_SLAB);
-        limestoneBricksPool.stairs(ModBlocks.LIMESTONE_BRICKS_STAIRS);
-        limestonePolishedPool.slab(ModBlocks.LIMESTONE_POLISHED_SLAB);
-        limestonePolishedPool.stairs(ModBlocks.LIMESTONE_POLISHED_STAIRS);
-        limestonePool.wall(ModBlocks.LIMESTONE_WALL);
-        limestoneCobbledPool.wall(ModBlocks.LIMESTONE_COBBLED_WALL);
-        limestoneBricksPool.wall(ModBlocks.LIMESTONE_BRICKS_WALL);
-
-        saltmarshPool.slab(ModBlocks.SALTMARSH_SLAB);
-        saltmarshPool.stairs(ModBlocks.SALTMARSH_STAIRS);
-        saltmarshCobbledPool.slab(ModBlocks.SALTMARSH_COBBLED_SLAB);
-        saltmarshCobbledPool.stairs(ModBlocks.SALTMARSH_COBBLED_STAIRS);
-        saltmarshBricksPool.slab(ModBlocks.SALTMARSH_BRICKS_SLAB);
-        saltmarshBricksPool.stairs(ModBlocks.SALTMARSH_BRICKS_STAIRS);
-        saltmarshPolishedPool.slab(ModBlocks.SALTMARSH_POLISHED_SLAB);
-        saltmarshPolishedPool.stairs(ModBlocks.SALTMARSH_POLISHED_STAIRS);
-        saltmarshPool.wall(ModBlocks.SALTMARSH_WALL);
-        saltmarshCobbledPool.wall(ModBlocks.SALTMARSH_COBBLED_WALL);
-        saltmarshBricksPool.wall(ModBlocks.SALTMARSH_BRICKS_WALL);
-
-        dolomitePool.slab(ModBlocks.DOLOMITE_SLAB);
-        dolomitePool.stairs(ModBlocks.DOLOMITE_STAIRS);
-        dolomiteCobbledPool.slab(ModBlocks.DOLOMITE_COBBLED_SLAB);
-        dolomiteCobbledPool.stairs(ModBlocks.DOLOMITE_COBBLED_STAIRS);
-        dolomiteBricksPool.slab(ModBlocks.DOLOMITE_BRICKS_SLAB);
-        dolomiteBricksPool.stairs(ModBlocks.DOLOMITE_BRICKS_STAIRS);
-        dolomitePolishedPool.slab(ModBlocks.DOLOMITE_POLISHED_SLAB);
-        dolomitePolishedPool.stairs(ModBlocks.DOLOMITE_POLISHED_STAIRS);
-        dolomitePool.wall(ModBlocks.DOLOMITE_WALL);
-        dolomiteCobbledPool.wall(ModBlocks.DOLOMITE_COBBLED_WALL);
-        dolomiteBricksPool.wall(ModBlocks.DOLOMITE_BRICKS_WALL);
-
-        loamyMarlPool.slab(ModBlocks.LOAMY_MARL_SLAB);
-        loamyMarlPool.stairs(ModBlocks.LOAMY_MARL_STAIRS);
-        loamyMarlCobbledPool.slab(ModBlocks.LOAMY_MARL_COBBLED_SLAB);
-        loamyMarlCobbledPool.stairs(ModBlocks.LOAMY_MARL_COBBLED_STAIRS);
-        loamyMarlBricksPool.slab(ModBlocks.LOAMY_MARL_BRICKS_SLAB);
-        loamyMarlBricksPool.stairs(ModBlocks.LOAMY_MARL_BRICKS_STAIRS);
-        loamyMarlPolishedPool.slab(ModBlocks.LOAMY_MARL_POLISHED_SLAB);
-        loamyMarlPolishedPool.stairs(ModBlocks.LOAMY_MARL_POLISHED_STAIRS);
-        loamyMarlPool.wall(ModBlocks.LOAMY_MARL_WALL);
-        loamyMarlCobbledPool.wall(ModBlocks.LOAMY_MARL_COBBLED_WALL);
-        loamyMarlBricksPool.wall(ModBlocks.LOAMY_MARL_BRICKS_WALL);
-
-        loessicMarlPool.slab(ModBlocks.LOESSIC_MARL_SLAB);
-        loessicMarlPool.stairs(ModBlocks.LOESSIC_MARL_STAIRS);
-        loessicMarlCobbledPool.slab(ModBlocks.LOESSIC_MARL_COBBLED_SLAB);
-        loessicMarlCobbledPool.stairs(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS);
-        loessicMarlBricksPool.slab(ModBlocks.LOESSIC_MARL_BRICKS_SLAB);
-        loessicMarlBricksPool.stairs(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS);
-        loessicMarlPolishedPool.slab(ModBlocks.LOESSIC_MARL_POLISHED_SLAB);
-        loessicMarlPolishedPool.stairs(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS);
-        loessicMarlPool.wall(ModBlocks.LOESSIC_MARL_WALL);
-        loessicMarlCobbledPool.wall(ModBlocks.LOESSIC_MARL_COBBLED_WALL);
-        loessicMarlBricksPool.wall(ModBlocks.LOESSIC_MARL_BRICKS_WALL);
-
-        fossilMarlstonePool.slab(ModBlocks.FOSSIL_MARLSTONE_SLAB);
-        fossilMarlstonePool.stairs(ModBlocks.FOSSIL_MARLSTONE_STAIRS);
-        fossilMarlstoneCobbledPool.slab(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB);
-        fossilMarlstoneCobbledPool.stairs(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS);
-        fossilMarlstoneBricksPool.slab(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
-        fossilMarlstoneBricksPool.stairs(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
-        fossilMarlstonePolishedPool.slab(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
-        fossilMarlstonePolishedPool.stairs(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
-        fossilMarlstonePool.wall(ModBlocks.FOSSIL_MARLSTONE_WALL);
-        fossilMarlstoneCobbledPool.wall(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL);
-        fossilMarlstoneBricksPool.wall(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
+                stonePool.slab(STONE_SLABS.get(name).get(type));
+                stonePool.stairs(STONE_STAIRS.get(name).get(type));
+                stonePool.wall(STONE_WALLS.get(name).get(type));
+            }
+        }
 
         blockStateModelGenerator.registerParentedItemModel(ModItems.MARMOT_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.STEPPE_EAGLE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
@@ -239,8 +136,16 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerParentedItemModel(ModItems.BLACK_BILLED_MAGPIE_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.WESTERN_MEADOWLARK_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
-        blockStateModelGenerator.registerCrop(ModBlocks.OAT, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
-        blockStateModelGenerator.registerCrop(ModBlocks.BARLEY, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        for (String name : WILD_CROP_NAMES)
+        {
+            blockStateModelGenerator.registerSimpleState(WILD_CROPS.get(name));
+        }
+
+        for (String name : CROP_NAMES)
+        {
+            blockStateModelGenerator.registerAxisRotated(HAY_BLOCKS.get(name), TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+            blockStateModelGenerator.registerCrop(CROPS.get(name), Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        }
 
         blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLA);
     }
@@ -314,12 +219,15 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModBlocks.PRAIRIE_SAGE.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks.COTTONWOOD_FLUFF.asItem(), Models.GENERATED);
 
-        itemModelGenerator.register(ModBlocks.WILD_WHEAT.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.WILD_BARLEY.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.WILD_OAT.asItem(), Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.BARLEY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.OAT, Models.GENERATED);
+        for (String name : WILD_CROP_NAMES)
+        {
+             itemModelGenerator.register(WILD_CROPS.get(name).asItem(), Models.GENERATED);
+        }
+        
+        for (String name : CROP_NAMES)
+        {
+             itemModelGenerator.register(CROP_ITEMS.get(name), Models.GENERATED);
+        }
 
         itemModelGenerator.register(ModItems.BARLEY_BREAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.BARLEY_STEW, Models.GENERATED);

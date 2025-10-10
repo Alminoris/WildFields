@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "dolomite",
   "key": {
     "#": {
       "item": "wildfields:dolomite_polished"

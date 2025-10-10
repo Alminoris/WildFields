@@ -1,18 +1,24 @@
 package net.alminoris.wildfields.datagen;
 
+import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.block.ModBlocks;
 import net.alminoris.wildfields.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.HayBlock;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -113,53 +119,14 @@ public class ModRecipeProvider extends FabricRecipeProvider
         offerSingleOutputShapelessRecipe(recipeExporter, Items.PURPLE_DYE, ModBlocks.VIOLA, String.valueOf(RecipeCategory.MISC));
         offerSingleOutputShapelessRecipe(recipeExporter, Items.LIGHT_GRAY_DYE, ModBlocks.FEATHER_GRASS, String.valueOf(RecipeCategory.MISC));
 
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_SLAB, ModBlocks.LIMESTONE_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_SLAB, ModBlocks.LIMESTONE_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_SLAB, ModBlocks.LIMESTONE_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED_SLAB, ModBlocks.LIMESTONE_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_WALL, ModBlocks.LIMESTONE_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_WALL, ModBlocks.LIMESTONE_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_WALL, ModBlocks.LIMESTONE_BRICKS);
-
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_SLAB, ModBlocks.SALTMARSH_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_SLAB, ModBlocks.SALTMARSH_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_SLAB, ModBlocks.SALTMARSH_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED_SLAB, ModBlocks.SALTMARSH_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_WALL, ModBlocks.SALTMARSH_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_WALL, ModBlocks.SALTMARSH_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_WALL, ModBlocks.SALTMARSH_BRICKS);
-
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_SLAB, ModBlocks.DOLOMITE_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_SLAB, ModBlocks.DOLOMITE_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_SLAB, ModBlocks.DOLOMITE_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED_SLAB, ModBlocks.DOLOMITE_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_WALL, ModBlocks.DOLOMITE_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_WALL, ModBlocks.DOLOMITE_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_WALL, ModBlocks.DOLOMITE_BRICKS);
-
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_SLAB, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_SLAB, ModBlocks.LOESSIC_MARL_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_SLAB, ModBlocks.LOESSIC_MARL_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED_SLAB, ModBlocks.LOESSIC_MARL_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_WALL, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_WALL, ModBlocks.LOESSIC_MARL_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_WALL, ModBlocks.LOESSIC_MARL_BRICKS);
-
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_SLAB, ModBlocks.LOAMY_MARL_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_SLAB, ModBlocks.LOAMY_MARL_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_SLAB, ModBlocks.LOAMY_MARL_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED_SLAB, ModBlocks.LOAMY_MARL_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_WALL, ModBlocks.LOAMY_MARL_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_WALL, ModBlocks.LOAMY_MARL_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_WALL, ModBlocks.LOAMY_MARL_BRICKS);
-
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_SLAB, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB, ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB, ModBlocks.FOSSIL_MARLSTONE_BRICKS);
-        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB, ModBlocks.FOSSIL_MARLSTONE_POLISHED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_WALL, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL, ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        offerWallRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL, ModBlocks.FOSSIL_MARLSTONE_BRICKS);
+        for (String name : STONE_NAMES)
+        {
+            offerStoneSetRecipes(recipeExporter, name);
+            for (String type : STONE_TYPES)
+            {
+                offerStoneSetRecipes(recipeExporter, name, type);
+            }
+        }
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STEPPE_VIPER_DAGGER, 1)
                 .pattern(" #")
@@ -251,386 +218,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.LEATHER_BOOTS), conditionsFromItem(Items.LEATHER_BOOTS))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.DOLOMITE_BLOCK)
-                .criterion(hasItem(ModBlocks.DOLOMITE_BLOCK), conditionsFromItem(ModBlocks.DOLOMITE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.DOLOMITE_BRICKS)
-                .criterion(hasItem(ModBlocks.DOLOMITE_BRICKS), conditionsFromItem(ModBlocks.DOLOMITE_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.DOLOMITE_COBBLED)
-                .criterion(hasItem(ModBlocks.DOLOMITE_COBBLED), conditionsFromItem(ModBlocks.DOLOMITE_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.DOLOMITE_POLISHED)
-                .criterion(hasItem(ModBlocks.DOLOMITE_POLISHED), conditionsFromItem(ModBlocks.DOLOMITE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.DOLOMITE_BLOCK)
-                .criterion(hasItem(ModBlocks.DOLOMITE_BLOCK), conditionsFromItem(ModBlocks.DOLOMITE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.DOLOMITE_POLISHED)
-                .criterion(hasItem(ModBlocks.DOLOMITE_POLISHED), conditionsFromItem(ModBlocks.DOLOMITE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.DOLOMITE_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.DOLOMITE_BRICKS_SLAB), conditionsFromItem(ModBlocks.DOLOMITE_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.DOLOMITE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.DOLOMITE_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.DOLOMITE_COBBLED), conditionsFromItem(ModBlocks.DOLOMITE_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.DOLOMITE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.DOLOMITE_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.DOLOMITE_COBBLED), conditionsFromItem(ModBlocks.DOLOMITE_COBBLED))
-                .offerTo(recipeExporter, "dolomite_block_blasting");
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.SALTMARSH_BLOCK)
-                .criterion(hasItem(ModBlocks.SALTMARSH_BLOCK), conditionsFromItem(ModBlocks.SALTMARSH_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.SALTMARSH_BRICKS)
-                .criterion(hasItem(ModBlocks.SALTMARSH_BRICKS), conditionsFromItem(ModBlocks.SALTMARSH_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.SALTMARSH_POLISHED)
-                .criterion(hasItem(ModBlocks.SALTMARSH_POLISHED), conditionsFromItem(ModBlocks.SALTMARSH_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.SALTMARSH_COBBLED)
-                .criterion(hasItem(ModBlocks.SALTMARSH_COBBLED), conditionsFromItem(ModBlocks.SALTMARSH_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.SALTMARSH_BLOCK)
-                .criterion(hasItem(ModBlocks.SALTMARSH_BLOCK), conditionsFromItem(ModBlocks.SALTMARSH_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.SALTMARSH_POLISHED)
-                .criterion(hasItem(ModBlocks.SALTMARSH_POLISHED), conditionsFromItem(ModBlocks.SALTMARSH_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.SALTMARSH_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.SALTMARSH_BRICKS_SLAB), conditionsFromItem(ModBlocks.SALTMARSH_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.SALTMARSH_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.SALTMARSH_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.SALTMARSH_COBBLED), conditionsFromItem(ModBlocks.SALTMARSH_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.SALTMARSH_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.SALTMARSH_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.SALTMARSH_COBBLED), conditionsFromItem(ModBlocks.SALTMARSH_COBBLED))
-                .offerTo(recipeExporter, "saltmarsh_block_blasting");
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LIMESTONE_BLOCK)
-                .criterion(hasItem(ModBlocks.LIMESTONE_BLOCK), conditionsFromItem(ModBlocks.LIMESTONE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LIMESTONE_BRICKS)
-                .criterion(hasItem(ModBlocks.LIMESTONE_BRICKS), conditionsFromItem(ModBlocks.LIMESTONE_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LIMESTONE_COBBLED)
-                .criterion(hasItem(ModBlocks.LIMESTONE_COBBLED), conditionsFromItem(ModBlocks.LIMESTONE_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LIMESTONE_POLISHED)
-                .criterion(hasItem(ModBlocks.LIMESTONE_POLISHED), conditionsFromItem(ModBlocks.LIMESTONE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LIMESTONE_BLOCK)
-                .criterion(hasItem(ModBlocks.LIMESTONE_BLOCK), conditionsFromItem(ModBlocks.LIMESTONE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LIMESTONE_POLISHED)
-                .criterion(hasItem(ModBlocks.LIMESTONE_POLISHED), conditionsFromItem(ModBlocks.LIMESTONE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.LIMESTONE_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.LIMESTONE_BRICKS_SLAB), conditionsFromItem(ModBlocks.LIMESTONE_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.LIMESTONE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LIMESTONE_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.LIMESTONE_COBBLED), conditionsFromItem(ModBlocks.LIMESTONE_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.LIMESTONE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LIMESTONE_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.LIMESTONE_COBBLED), conditionsFromItem(ModBlocks.LIMESTONE_COBBLED))
-                .offerTo(recipeExporter, "limestone_block_blasting");
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_BLOCK)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_BLOCK), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_BRICKS)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_BRICKS), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_POLISHED)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_POLISHED), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_COBBLED)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_BLOCK)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_BLOCK), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_POLISHED)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_POLISHED), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.FOSSIL_MARLSTONE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.FOSSIL_MARLSTONE_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.FOSSIL_MARLSTONE_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.FOSSIL_MARLSTONE_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED), conditionsFromItem(ModBlocks.FOSSIL_MARLSTONE_COBBLED))
-                .offerTo(recipeExporter, "fossil_marlstone_block_blasting");
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOAMY_MARL_BLOCK)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_BLOCK), conditionsFromItem(ModBlocks.LOAMY_MARL_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOAMY_MARL_BRICKS)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_BRICKS), conditionsFromItem(ModBlocks.LOAMY_MARL_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOAMY_MARL_POLISHED)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_POLISHED), conditionsFromItem(ModBlocks.LOAMY_MARL_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOAMY_MARL_COBBLED)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_COBBLED), conditionsFromItem(ModBlocks.LOAMY_MARL_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LOAMY_MARL_BLOCK)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_BLOCK), conditionsFromItem(ModBlocks.LOAMY_MARL_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LOAMY_MARL_POLISHED)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_POLISHED), conditionsFromItem(ModBlocks.LOAMY_MARL_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.LOAMY_MARL_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_BRICKS_SLAB), conditionsFromItem(ModBlocks.LOAMY_MARL_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.LOAMY_MARL_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LOAMY_MARL_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_COBBLED), conditionsFromItem(ModBlocks.LOAMY_MARL_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.LOAMY_MARL_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LOAMY_MARL_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.LOAMY_MARL_COBBLED), conditionsFromItem(ModBlocks.LOAMY_MARL_COBBLED))
-                .offerTo(recipeExporter, "loamy_marl_block_blasting");
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOESSIC_MARL_BLOCK)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_BLOCK), conditionsFromItem(ModBlocks.LOESSIC_MARL_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOESSIC_MARL_BRICKS)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_BRICKS), conditionsFromItem(ModBlocks.LOESSIC_MARL_BRICKS))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOESSIC_MARL_POLISHED)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_POLISHED), conditionsFromItem(ModBlocks.LOESSIC_MARL_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_STAIRS, 4)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .input('#', ModBlocks.LOESSIC_MARL_COBBLED)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_COBBLED), conditionsFromItem(ModBlocks.LOESSIC_MARL_COBBLED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LOESSIC_MARL_BLOCK)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_BLOCK), conditionsFromItem(ModBlocks.LOESSIC_MARL_BLOCK))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS, 4)
-                .pattern("##")
-                .pattern("##")
-                .input('#', ModBlocks.LOESSIC_MARL_POLISHED)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_POLISHED), conditionsFromItem(ModBlocks.LOESSIC_MARL_POLISHED))
-                .offerTo(recipeExporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_CHISELED, 1)
-                .pattern("#")
-                .pattern("#")
-                .input('#', ModBlocks.LOESSIC_MARL_BRICKS_SLAB)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_BRICKS_SLAB), conditionsFromItem(ModBlocks.LOESSIC_MARL_BRICKS_SLAB))
-                .offerTo(recipeExporter);
-
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BARLEY_BREAD)
                 .pattern("###")
-                .input('#', ModItems.BARLEY)
-                .criterion(hasItem(ModItems.BARLEY), conditionsFromItem(ModItems.BARLEY))
+                .input('#', CROP_ITEMS.get("barley"))
+                .criterion(hasItem(CROP_ITEMS.get("barley")), conditionsFromItem(CROP_ITEMS.get("barley")))
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BARLEY_STEW)
-                .input(ModItems.BARLEY)
+                .input(CROP_ITEMS.get("barley"))
                 .input(Items.CARROT)
                 .input(Items.POTATO)
                 .input(Items.BOWL)
-                .criterion(hasItem(ModItems.BARLEY), conditionsFromItem(ModItems.BARLEY))
+                .criterion(hasItem(CROP_ITEMS.get("barley")), conditionsFromItem(CROP_ITEMS.get("barley")))
                 .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
                 .criterion(hasItem(Items.POTATO), conditionsFromItem(Items.POTATO))
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
@@ -638,114 +237,21 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.OAT_COOKIE)
                 .pattern("#X#")
-                .input('#', ModItems.OAT)
+                .input('#', CROP_ITEMS.get("oat"))
                 .input('X', Items.COCOA_BEANS)
-                .criterion(hasItem(ModItems.OAT), conditionsFromItem(ModItems.OAT))
+                .criterion(hasItem(CROP_ITEMS.get("oat")), conditionsFromItem(CROP_ITEMS.get("oat")))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
                 .offerTo(recipeExporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.OATMEAL)
-                .input(ModItems.OAT, 2)
+                .input(CROP_ITEMS.get("oat"), 2)
                 .input(Items.MILK_BUCKET)
                 .input(Items.BOWL)
-                .criterion(hasItem(ModItems.OAT), conditionsFromItem(ModItems.OAT))
+                .criterion(hasItem(CROP_ITEMS.get("oat")), conditionsFromItem(CROP_ITEMS.get("oat")))
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
                 .offerTo(recipeExporter);
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.LOESSIC_MARL_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LOESSIC_MARL_BLOCK.asItem(), 0.1F, 200)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_COBBLED), conditionsFromItem(ModBlocks.LOESSIC_MARL_COBBLED))
-                .offerTo(recipeExporter);
-
-        CookingRecipeJsonBuilder.createBlasting(Ingredient.ofItems(ModBlocks.LOESSIC_MARL_COBBLED), RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.LOESSIC_MARL_BLOCK.asItem(), 0.1F, 100)
-                .criterion(hasItem(ModBlocks.LOESSIC_MARL_COBBLED), conditionsFromItem(ModBlocks.LOESSIC_MARL_COBBLED))
-                .offerTo(recipeExporter, "loessic_marl_block_blasting");
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_SLAB, ModBlocks.SALTMARSH_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_STAIRS, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_WALL, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_SLAB, ModBlocks.SALTMARSH_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_STAIRS, ModBlocks.SALTMARSH_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_COBBLED_WALL, ModBlocks.SALTMARSH_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED_SLAB, ModBlocks.SALTMARSH_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_POLISHED_STAIRS, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_SLAB, ModBlocks.SALTMARSH_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_STAIRS, ModBlocks.SALTMARSH_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALTMARSH_BRICKS_WALL, ModBlocks.SALTMARSH_BLOCK);
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_SLAB, ModBlocks.DOLOMITE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_STAIRS, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_WALL, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_SLAB, ModBlocks.DOLOMITE_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_STAIRS, ModBlocks.DOLOMITE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_COBBLED_WALL, ModBlocks.DOLOMITE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED_SLAB, ModBlocks.DOLOMITE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_POLISHED_STAIRS, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_SLAB, ModBlocks.DOLOMITE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_STAIRS, ModBlocks.DOLOMITE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOLOMITE_BRICKS_WALL, ModBlocks.DOLOMITE_BLOCK);
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_SLAB, ModBlocks.FOSSIL_MARLSTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_STAIRS, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_WALL, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB, ModBlocks.FOSSIL_MARLSTONE_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS, ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL, ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB, ModBlocks.FOSSIL_MARLSTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB, ModBlocks.FOSSIL_MARLSTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL, ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_SLAB, ModBlocks.LIMESTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_STAIRS, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_WALL, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_SLAB, ModBlocks.LIMESTONE_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_STAIRS, ModBlocks.LIMESTONE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_COBBLED_WALL, ModBlocks.LIMESTONE_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED_SLAB, ModBlocks.LIMESTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_POLISHED_STAIRS, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_SLAB, ModBlocks.LIMESTONE_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_STAIRS, ModBlocks.LIMESTONE_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIMESTONE_BRICKS_WALL, ModBlocks.LIMESTONE_BLOCK);
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_SLAB, ModBlocks.LOAMY_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_STAIRS, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_WALL, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_SLAB, ModBlocks.LOAMY_MARL_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_STAIRS, ModBlocks.LOAMY_MARL_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_COBBLED_WALL, ModBlocks.LOAMY_MARL_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED_SLAB, ModBlocks.LOAMY_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_POLISHED_STAIRS, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_SLAB, ModBlocks.LOAMY_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_STAIRS, ModBlocks.LOAMY_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOAMY_MARL_BRICKS_WALL, ModBlocks.LOAMY_MARL_BLOCK);
-
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_SLAB, ModBlocks.LOESSIC_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_STAIRS, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_WALL, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_SLAB, ModBlocks.LOESSIC_MARL_COBBLED, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_STAIRS, ModBlocks.LOESSIC_MARL_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_COBBLED_WALL, ModBlocks.LOESSIC_MARL_COBBLED);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED_SLAB, ModBlocks.LOESSIC_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_POLISHED_STAIRS, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_SLAB, ModBlocks.LOESSIC_MARL_BLOCK, 2);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_STAIRS, ModBlocks.LOESSIC_MARL_BLOCK);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOESSIC_MARL_BRICKS_WALL, ModBlocks.LOESSIC_MARL_BLOCK);
 
         offerFoodCookingRecipe(recipeExporter, "smoking", RecipeSerializer.SMOKING,
                 100, ModItems.SAIGA, ModItems.COOKED_SAIGA, 0.35f);
@@ -791,17 +297,69 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion("has_pallid_winged_grasshopper_leg", conditionsFromItem(ModItems.PALLID_WINGED_GRASSHOPPER_LEG))
                 .offerTo(recipeExporter);
 
-        offerCompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BARLEY_HAY_BLOCK, ModItems.BARLEY);
-        offerCompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OAT_HAY_BLOCK, ModItems.OAT);
+        for (String name : CROP_NAMES)
+        {
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, CROP_ITEMS.get(name), 9)
+                    .input(HAY_BLOCKS.get(name))
+                    .criterion(hasItem(HAY_BLOCKS.get(name)), conditionsFromItem(HAY_BLOCKS.get(name)))
+                    .offerTo(recipeExporter);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.OAT, 9)
-                .input(ModBlocks.OAT_HAY_BLOCK)
-                .criterion("has_oat_hay_block", conditionsFromItem(ModBlocks.OAT_HAY_BLOCK))
-                .offerTo(recipeExporter);
+            offerCompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, HAY_BLOCKS.get(name), CROP_ITEMS.get(name));
+        }
+    }
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BARLEY, 9)
-                .input(ModBlocks.BARLEY_HAY_BLOCK)
-                .criterion("has_barley_hay_block", conditionsFromItem(ModBlocks.BARLEY_HAY_BLOCK))
-                .offerTo(recipeExporter);
+    private void offerStoneSetRecipes(java.util.function.Consumer<RecipeJsonProvider> recipeOutput, String name)
+    {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, STONE_BLOCKS.get(name).get("polished"), 4)
+                .pattern("##")
+                .pattern("##")
+                .input('#', STONE_BLOCKS.get(name).get("block"))
+                .criterion("has_" + name + "_block", conditionsFromItem(STONE_BLOCKS.get(name).get("block")))
+                .offerTo(recipeOutput);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, STONE_BLOCKS.get(name).get("bricks"), 4)
+                .pattern("##")
+                .pattern("##")
+                .input('#', STONE_BLOCKS.get(name).get("polished"))
+                .criterion("has_" + name + "_polished", conditionsFromItem(STONE_BLOCKS.get(name).get("polished")))
+                .offerTo(recipeOutput);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, STONE_BLOCKS.get(name).get("chiseled"), 1)
+                .pattern("#")
+                .pattern("#")
+                .input('#', STONE_SLABS.get(name).get("bricks"))
+                .criterion("has_" + name + "_bricks_slab", conditionsFromItem(STONE_SLABS.get(name).get("bricks")))
+                .offerTo(recipeOutput);
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(STONE_BLOCKS.get(name).get("cobbled")),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        STONE_BLOCKS.get(name).get("block").asItem(),
+                        0.1F,
+                        200)
+                .criterion("has_" + name + "_cobbled", conditionsFromItem(STONE_BLOCKS.get(name).get("cobbled")))
+                .offerTo(recipeOutput, Identifier.of(WildFields.MOD_ID, name + "_block_from_smelting"));
+        CookingRecipeJsonBuilder.createBlasting(
+                        Ingredient.ofItems(STONE_BLOCKS.get(name).get("cobbled")),
+                        RecipeCategory.BUILDING_BLOCKS,
+                        STONE_BLOCKS.get(name).get("block").asItem(),
+                        0.1F,
+                        100)
+                .criterion("has_" + name + "_cobbled", conditionsFromItem(STONE_BLOCKS.get(name).get("cobbled")))
+                .offerTo(recipeOutput, Identifier.of(WildFields.MOD_ID, name + "_block_blasting"));
+    }
+
+    private void offerStoneSetRecipes(Consumer<RecipeJsonProvider> recipeOutput, String name, String type)
+    {
+        offerSlabRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_SLABS.get(name).get(type), STONE_BLOCKS.get(name).get(type));
+        offerWallRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_WALLS.get(name).get(type), STONE_BLOCKS.get(name).get(type));
+        createStairsRecipe(STONE_STAIRS.get(name).get(type), Ingredient.ofItems(STONE_BLOCKS.get(name).get(type)))
+                .group(name)
+                .criterion(hasItem(STONE_BLOCKS.get(name).get(type)), conditionsFromItem(STONE_BLOCKS.get(name).get(type)))
+                .offerTo(recipeOutput);
+
+
+        offerStonecuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_SLABS.get(name).get(type), STONE_BLOCKS.get(name).get(type), 2);
+        offerStonecuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_STAIRS.get(name).get(type), STONE_BLOCKS.get(name).get(type));
+        offerStonecuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_WALLS.get(name).get(type), STONE_BLOCKS.get(name).get(type));
+        if (!type.equals("block"))
+            offerStonecuttingRecipe(recipeOutput, RecipeCategory.BUILDING_BLOCKS, STONE_BLOCKS.get(name).get(type), STONE_BLOCKS.get(name).get("block"));
     }
 }
