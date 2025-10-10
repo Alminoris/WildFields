@@ -1,6 +1,5 @@
 package net.alminoris.wildfields.world;
 
-import com.google.common.collect.ImmutableList;
 import net.alminoris.wildfields.WildFields;
 import net.alminoris.wildfields.util.helper.ModBlockSetsHelper;
 import net.minecraft.block.Blocks;
@@ -18,6 +17,7 @@ import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
@@ -365,3 +365,4 @@ public class ModPlacedFeatures
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }
+

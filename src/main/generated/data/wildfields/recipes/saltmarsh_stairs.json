@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "saltmarsh",
   "key": {
     "#": {
       "item": "wildfields:saltmarsh_block"

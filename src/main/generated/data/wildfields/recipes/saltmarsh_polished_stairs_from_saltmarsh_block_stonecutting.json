@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "wildfields:saltmarsh_block"
-  },
-  "result": "wildfields:saltmarsh_polished_stairs"
-}

@@ -14,7 +14,8 @@ import static net.alminoris.wildfields.util.helper.ModBlockSetsHelper.*;
 
 public class ModItemGroups
 {
-    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(Identifier.of(WildFields.MOD_ID, "wildfieldstab")).displayName(Text.translatable("itemgroup.wildfieldstab"))
+    public static final ItemGroup WILDFIELDS_TAB = FabricItemGroup.builder(Identifier.of(WildFields.MOD_ID, "wildfieldstab"))
+            .displayName(Text.translatable("itemgroup.wildfieldstab"))
                     .icon(() -> new ItemStack(ModBlocks.FEATHER_GRASS)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.FEATHER_GRASS);
@@ -27,113 +28,29 @@ public class ModItemGroups
                         entries.add(ModBlocks.BLUE_GRAMA_GRASS);
                         entries.add(ModBlocks.PRAIRIE_SAGE);
                         entries.add(ModBlocks.VIOLA);
-                        entries.add(ModBlocks.WILD_WHEAT);
-                        entries.add(ModItems.BARLEY_SEEDS);
-                        entries.add(ModItems.BARLEY);
-                        entries.add(ModBlocks.WILD_BARLEY);
-                        entries.add(ModBlocks.BARLEY_HAY_BLOCK);
-                        entries.add(ModItems.OAT_SEEDS);
-                        entries.add(ModItems.OAT);
-                        entries.add(ModBlocks.WILD_OAT);
-                        entries.add(ModBlocks.OAT_HAY_BLOCK);
+                        for (String name : WILD_CROP_NAMES)
+                        {
+                            entries.add(WILD_CROPS.get(name));
+                        }
+                        for (String name : CROP_NAMES)
+                        {
+                            entries.add(CROP_SEEDS.get(name));
+                            entries.add(HAY_BLOCKS.get(name));
+                            entries.add(CROP_ITEMS.get(name));
+                        }
                         entries.add(ModBlocks.GREEN_LICHEN);
                         entries.add(ModBlocks.COTTONWOOD_FLUFF);
-                        entries.add(ModBlocks.SALTMARSH_BLOCK);
-                        entries.add(ModBlocks.SALTMARSH_STAIRS);
-                        entries.add(ModBlocks.SALTMARSH_SLAB);
-                        entries.add(ModBlocks.SALTMARSH_WALL);
-                        entries.add(ModBlocks.SALTMARSH_COBBLED);
-                        entries.add(ModBlocks.SALTMARSH_COBBLED_STAIRS);
-                        entries.add(ModBlocks.SALTMARSH_COBBLED_SLAB);
-                        entries.add(ModBlocks.SALTMARSH_COBBLED_WALL);
-                        entries.add(ModBlocks.SALTMARSH_POLISHED);
-                        entries.add(ModBlocks.SALTMARSH_POLISHED_STAIRS);
-                        entries.add(ModBlocks.SALTMARSH_POLISHED_SLAB);
-                        entries.add(ModBlocks.SALTMARSH_CHISELED);
-                        entries.add(ModBlocks.SALTMARSH_BRICKS);
-                        entries.add(ModBlocks.SALTMARSH_BRICKS_WALL);
-                        entries.add(ModBlocks.SALTMARSH_BRICKS_STAIRS);
-                        entries.add(ModBlocks.SALTMARSH_BRICKS_SLAB);
-                        entries.add(ModBlocks.DOLOMITE_BLOCK);
-                        entries.add(ModBlocks.DOLOMITE_STAIRS);
-                        entries.add(ModBlocks.DOLOMITE_SLAB);
-                        entries.add(ModBlocks.DOLOMITE_WALL);
-                        entries.add(ModBlocks.DOLOMITE_COBBLED);
-                        entries.add(ModBlocks.DOLOMITE_COBBLED_STAIRS);
-                        entries.add(ModBlocks.DOLOMITE_COBBLED_SLAB);
-                        entries.add(ModBlocks.DOLOMITE_COBBLED_WALL);
-                        entries.add(ModBlocks.DOLOMITE_POLISHED);
-                        entries.add(ModBlocks.DOLOMITE_POLISHED_STAIRS);
-                        entries.add(ModBlocks.DOLOMITE_POLISHED_SLAB);
-                        entries.add(ModBlocks.DOLOMITE_CHISELED);
-                        entries.add(ModBlocks.DOLOMITE_BRICKS);
-                        entries.add(ModBlocks.DOLOMITE_BRICKS_WALL);
-                        entries.add(ModBlocks.DOLOMITE_BRICKS_STAIRS);
-                        entries.add(ModBlocks.DOLOMITE_BRICKS_SLAB);
-                        entries.add(ModBlocks.LOESSIC_MARL_BLOCK);
-                        entries.add(ModBlocks.LOESSIC_MARL_STAIRS);
-                        entries.add(ModBlocks.LOESSIC_MARL_SLAB);
-                        entries.add(ModBlocks.LOESSIC_MARL_WALL);
-                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED);
-                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS);
-                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_SLAB);
-                        entries.add(ModBlocks.LOESSIC_MARL_COBBLED_WALL);
-                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED);
-                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS);
-                        entries.add(ModBlocks.LOESSIC_MARL_POLISHED_SLAB);
-                        entries.add(ModBlocks.LOESSIC_MARL_CHISELED);
-                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS);
-                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_WALL);
-                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS);
-                        entries.add(ModBlocks.LOESSIC_MARL_BRICKS_SLAB);
-                        entries.add(ModBlocks.LOAMY_MARL_BLOCK);
-                        entries.add(ModBlocks.LOAMY_MARL_STAIRS);
-                        entries.add(ModBlocks.LOAMY_MARL_SLAB);
-                        entries.add(ModBlocks.LOAMY_MARL_WALL);
-                        entries.add(ModBlocks.LOAMY_MARL_COBBLED);
-                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_STAIRS);
-                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_SLAB);
-                        entries.add(ModBlocks.LOAMY_MARL_COBBLED_WALL);
-                        entries.add(ModBlocks.LOAMY_MARL_POLISHED);
-                        entries.add(ModBlocks.LOAMY_MARL_POLISHED_STAIRS);
-                        entries.add(ModBlocks.LOAMY_MARL_POLISHED_SLAB);
-                        entries.add(ModBlocks.LOAMY_MARL_CHISELED);
-                        entries.add(ModBlocks.LOAMY_MARL_BRICKS);
-                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_WALL);
-                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_STAIRS);
-                        entries.add(ModBlocks.LOAMY_MARL_BRICKS_SLAB);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BLOCK);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_STAIRS);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_SLAB);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_WALL);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_CHISELED);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS);
-                        entries.add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB);
-                        entries.add(ModBlocks.LIMESTONE_BLOCK);
-                        entries.add(ModBlocks.LIMESTONE_STAIRS);
-                        entries.add(ModBlocks.LIMESTONE_SLAB);
-                        entries.add(ModBlocks.LIMESTONE_WALL);
-                        entries.add(ModBlocks.LIMESTONE_COBBLED);
-                        entries.add(ModBlocks.LIMESTONE_COBBLED_STAIRS);
-                        entries.add(ModBlocks.LIMESTONE_COBBLED_SLAB);
-                        entries.add(ModBlocks.LIMESTONE_COBBLED_WALL);
-                        entries.add(ModBlocks.LIMESTONE_POLISHED);
-                        entries.add(ModBlocks.LIMESTONE_POLISHED_STAIRS);
-                        entries.add(ModBlocks.LIMESTONE_POLISHED_SLAB);
-                        entries.add(ModBlocks.LIMESTONE_CHISELED);
-                        entries.add(ModBlocks.LIMESTONE_BRICKS);
-                        entries.add(ModBlocks.LIMESTONE_BRICKS_WALL);
-                        entries.add(ModBlocks.LIMESTONE_BRICKS_STAIRS);
-                        entries.add(ModBlocks.LIMESTONE_BRICKS_SLAB);
+                        for (String name : STONE_NAMES)
+                        {
+                            for (String type : STONE_TYPES)
+                            {
+                                entries.add(STONE_BLOCKS.get(name).get(type));
+                                entries.add(STONE_SLABS.get(name).get(type));
+                                entries.add(STONE_STAIRS.get(name).get(type));
+                                entries.add(STONE_WALLS.get(name).get(type));
+                            }
+                        }
+
                         for (String name : WOOD_NAMES)
                         {
                             entries.add(WOODEN_SAPLINGS.get(name));

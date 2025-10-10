@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "wildfields:dolomite_chiseled"
+  },
+  "result": "wildfields:dolomite_chiseled_wall"
+}

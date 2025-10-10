@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:saltmarsh_block_blasting"
+        "recipe": "wildfields:saltmarsh_block_blasting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:saltmarsh_block_blasting"
+      "wildfields:saltmarsh_block_blasting"
     ]
   }
 }

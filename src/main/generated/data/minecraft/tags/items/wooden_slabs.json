@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:olive_slab",
+    "wildfields:tamarisk_slab",
+    "wildfields:western_serviceberry_slab",
+    "wildfields:trembling_aspen_slab",
+    "wildfields:cottonwood_slab"
+  ]
+}

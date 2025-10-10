@@ -7,26 +7,61 @@ import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
 
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 
 import static net.alminoris.wildfields.block.ModBlocks.*;
+import static net.alminoris.wildfields.block.ModBlocks.registerStoneWall;
 import static net.alminoris.wildfields.item.ModItems.*;
 
 public class ModBlockSetsHelper
 {
-    //"platanus", "pink_lapacho"
     public static final String[] WOOD_NAMES = new String[] { "olive", "tamarisk", "western_serviceberry", "trembling_aspen", "cottonwood" };
+
+    public static final String[] STONE_NAMES = new String[] { "dolomite", "saltmarsh", "loessic_marl", "loamy_marl",
+            "fossil_marlstone", "limestone" };
+
+    public static final String[] STONE_TYPES = new String[] { "block", "cobbled", "polished", "bricks", "chiseled"};
 
     public static final String[] BUSHES_NAMES = new String[] { "western_snowberry" };
 
     public static final Dictionary<String, Block> BUSHES = new Hashtable<>();
     public static final Dictionary<String, Item> BERRIES = new Hashtable<>();
+
+    public static final String[] CROP_NAMES = new String[] { "oat", "barley" };
+    public static final String[] WILD_CROP_NAMES = new String[] { "wheat", "oat", "barley" };
+
+    public static final Dictionary<String, Block> WILD_CROPS = new Hashtable<>();
+    public static final Dictionary<String, Block> HAY_BLOCKS = new Hashtable<>();
+    public static final Dictionary<String, Block> CROPS = new Hashtable<>();
+    public static final Dictionary<String, Item> CROP_ITEMS = new Hashtable<>();
+    public static final Dictionary<String, Item> CROP_SEEDS = new Hashtable<>();
+
+    public static final Map<String, Map<String , Block>> STONE_BLOCKS = new HashMap<>();
+    public static final Map<String, Map<String , Block>> STONE_SLABS = new HashMap<>();
+    public static final Map<String, Map<String , Block>> STONE_STAIRS = new HashMap<>();
+    public static final Map<String, Map<String , Block>> STONE_WALLS = new HashMap<>();
+
     static
     {
         for (String name : BUSHES_NAMES)
         {
             BUSHES.put(name, registerBushBlock(name));
             BERRIES.put(name, registerBerryItem(name, 2, 0.4f, BUSHES.get(name)));
+        }
+
+        for (String name : WILD_CROP_NAMES)
+        {
+            WILD_CROPS.put(name, registerWildCropBlock(name));
+        }
+
+        for (String name : CROP_NAMES)
+        {
+            CROP_ITEMS.put(name, registerCropItem(name));
+            HAY_BLOCKS.put(name, registerHayBlock(name));
+            CROPS.put(name, registerCropBlock(name));
+            CROP_SEEDS.put(name, registerSeedsItem(name, CROPS.get(name)));
         }
     }
 
@@ -131,6 +166,36 @@ public class ModBlockSetsHelper
             WOODEN_WALL_HANGING_SIGNS.put(name, registerWallHangingSignBlock(name));
             WOODEN_SIGN_ITEMS.put(name, registerSignItem(name, WOODEN_SIGNS.get(name), WOODEN_WALL_SIGNS.get(name)));
             WOODEN_HANGING_SIGN_ITEMS.put(name, registerHangingSignItem(name, WOODEN_HANGING_SIGNS.get(name), WOODEN_WALL_HANGING_SIGNS.get(name)));
+        }
+
+        for (String name : STONE_NAMES)
+        {
+            Map<String, Block> typeMap1 = new HashMap<>();
+            Map<String, Block> typeMap2 = new HashMap<>();
+            Map<String, Block> typeMap3 = new HashMap<>();
+
+            for (String type : STONE_TYPES)
+            {
+                typeMap1.put(type, registerStoneBlock(name, type));
+                typeMap2.put(type, registerStoneSlab(name, type));
+                typeMap3.put(type, registerStoneWall(name, type));
+            }
+
+            STONE_BLOCKS.put(name, typeMap1);
+            STONE_SLABS.put(name, typeMap2);
+            STONE_WALLS.put(name, typeMap3);
+        }
+
+        for (String name : STONE_NAMES)
+        {
+            Map<String, Block> typeMap1 = new HashMap<>();
+
+            for (String type : STONE_TYPES)
+            {
+                typeMap1.put(type, registerStoneStairs(name, type, STONE_BLOCKS.get(name).get(type)));
+            }
+
+            STONE_STAIRS.put(name, typeMap1);
         }
     }
 

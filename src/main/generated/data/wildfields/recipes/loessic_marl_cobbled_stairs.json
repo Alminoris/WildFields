@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
+  "group": "loessic_marl",
   "key": {
     "#": {
       "item": "wildfields:loessic_marl_cobbled"

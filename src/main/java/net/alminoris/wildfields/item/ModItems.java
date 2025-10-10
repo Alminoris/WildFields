@@ -30,14 +30,14 @@ public class ModItems
     public static final Item STEPPE_EAGLE_SPAWN_EGG = registerItem("steppe_eagle_spawn_egg", new SpawnEggItem(
             ModEntities.STEPPE_EAGLE, 0x694e3e, 0X9c7c5f, new Item.Settings()));
 
-    public static final Item MOLE_SPAWN_EGG = registerItem("mole_spawn_egg", new SpawnEggItem(
-            ModEntities.MOLE, 0x131112, 0Xa28081, new Item.Settings()));
-
     public static final Item SAIGA_SPAWN_EGG = registerItem("saiga_spawn_egg", new SpawnEggItem(
             ModEntities.SAIGA, 0xf4b765, 0Xdba96f, new Item.Settings()));
 
     public static final Item SERVAL_SPAWN_EGG = registerItem("serval_spawn_egg", new SpawnEggItem(
             ModEntities.SERVAL, 0xd39c51, 0X55351d, new Item.Settings()));
+
+    public static final Item MOLE_SPAWN_EGG = registerItem("mole_spawn_egg", new SpawnEggItem(
+            ModEntities.MOLE, 0x131112, 0Xa28081, new Item.Settings()));
 
     public static final Item COYOTE_SPAWN_EGG = registerItem("coyote_spawn_egg", new SpawnEggItem(
             ModEntities.COYOTE, 0xa69f95, 0Xb9a583, new Item.Settings()));
@@ -120,12 +120,6 @@ public class ModItems
 
     public static final Item STEPPE_ARROW = registerItem("steppe_arrow", new SteppeArrowItem(new Item.Settings()));
 
-    public static final Item OAT_SEEDS = registerItem("oat_seeds", new AliasedBlockItem(ModBlocks.OAT, new Item.Settings()));
-    public static final Item OAT = registerItem("oat_item", new Item(new Item.Settings()));
-
-    public static final Item BARLEY_SEEDS = registerItem("barley_seeds", new AliasedBlockItem(ModBlocks.BARLEY, new Item.Settings()));
-    public static final Item BARLEY = registerItem("barley_item", new Item(new Item.Settings()));
-
     public static final Item DARKLING_BEETLE_CHESTPLATE = registerItem("darkling_beetle_chestplate",
             new ArmorItem(
                     ModArmorMaterials.DARKLING_BEETLE_SHELL,
@@ -159,6 +153,7 @@ public class ModItems
     public static final Item STEPPE_VIPER_DAGGER = registerItem("steppe_viper_dagger", new SteppeViperDagger(
             ToolMaterials.STONE, 2, -1f, new Item.Settings().maxCount(1)));
 
+
     public static final Item SAIGA_SICKLE = registerItem("saiga_sickle", new SaigaSickle(
             ToolMaterials.STONE, new Item.Settings().maxCount(1)));
 
@@ -177,7 +172,18 @@ public class ModItems
 
     public static Item registerBerryItem(String name, int nutrition, float saturation, Block block)
     {
-        return registerItem(name+"_item", new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
+        return registerItem(name+"_item",
+                new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
+    }
+
+    public static Item registerCropItem(String name)
+    {
+        return registerItem(name+"_item", new Item(new Item.Settings()));
+    }
+
+    public static Item registerSeedsItem(String name, Block block)
+    {
+        return registerItem(name + "_seeds", new AliasedBlockItem(block, new Item.Settings()));
     }
 
     public static Item registerBoatItem(Identifier boatID,  RegistryKey<TerraformBoatType> boatKey)

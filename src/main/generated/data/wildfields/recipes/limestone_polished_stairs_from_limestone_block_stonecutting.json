@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "wildfields:limestone_block"
-  },
-  "result": "wildfields:limestone_polished_stairs"
-}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "wildfields:block/loessic_marl_chiseled"
+  }
+}

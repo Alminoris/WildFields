@@ -1,9 +1,23 @@
-// 1.19.4	2025-10-02T20:18:13.1402597	Wild Fields/Tags for minecraft:item
+// 1.19.4	2025-10-10T21:47:16.0401612	Wild Fields/Tags for minecraft:item
 6a0f9bf937b5773f339a9237799424ac66166aba data\wildfields\tags\items\bison_food.json
+6875fc269a7f56f0b984ea9b616944dfa373b551 data\minecraft\tags\items\saplings.json
+a709cd8b42a842e648aa21aaeab82a3a0ec2f533 data\minecraft\tags\items\wooden_buttons.json
+39228f8d595225e3efa96cbe4e984bb5df720c14 data\minecraft\tags\items\wooden_doors.json
+2d94580aeacd5812443c84e03888f2b5b1c56d71 data\minecraft\tags\items\stone_bricks.json
+02f341ae1555ab27130607dd99455c75a8db9ffa data\minecraft\tags\items\trimmable_armor.json
+2aae571ba496c0fe98c0feec52538e0ede415d44 data\minecraft\tags\items\wooden_fences.json
+28853fd9092be3b681d010dd65cc12bd35af7b1e data\minecraft\tags\items\hanging_signs.json
+6519e7c54fb8f7de1edb3413fc2984e1a12ed55d data\minecraft\tags\items\walls.json
+4f1f6e198a06208353394e30bb11067664caf6f9 data\minecraft\tags\items\wooden_slabs.json
+70880522c2842b3fee18633717402feb6671bf86 data\minecraft\tags\items\arrows.json
+094d18674a4c6e940b56ef02b1c81e80b80e7a4e data\minecraft\tags\items\wooden_pressure_plates.json
+bf8143cbcdd85f68239d67445b4085c4c72b0522 data\minecraft\tags\items\logs_that_burn.json
+8f54ccd24b0308aa1b9dd211e453835f668fe4bf data\minecraft\tags\items\stairs.json
+c000e1b69e4a73a1ddec674d6a5f5dfadd8d298a data\minecraft\tags\items\wooden_stairs.json
 75cddc97df07daf9baa201891e9e7959fda4fa20 data\minecraft\tags\items\signs.json
 0526b57ea9e76ae2f5bf7b4e892677f7975427db data\wildfields\tags\items\marmot_food.json
-02f341ae1555ab27130607dd99455c75a8db9ffa data\minecraft\tags\items\trimmable_armor.json
-28853fd9092be3b681d010dd65cc12bd35af7b1e data\minecraft\tags\items\hanging_signs.json
 e4c974286c2c35ca966eb37149e172cd29f698c0 data\minecraft\tags\items\freeze_immune_wearables.json
+d6d64aba1fecdb177cd78fc9fd5a902360cdfcb5 data\minecraft\tags\items\slabs.json
+b90a2dcc72974153c29be064e306e6fd8d3d55fb data\minecraft\tags\items\wooden_trapdoors.json
+ad6a984042bcf4a48cf3734b4153acbc08dcfdc6 data\minecraft\tags\items\planks.json
 d301d34ba776529e2cc275e57bacf6bed3cbe0b6 data\wildfields\tags\items\saiga_food.json
-70880522c2842b3fee18633717402feb6671bf86 data\minecraft\tags\items\arrows.json

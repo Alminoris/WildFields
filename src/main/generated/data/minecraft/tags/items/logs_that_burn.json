@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "wildfields:olive_log",
+    "wildfields:stripped_olive_log",
+    "wildfields:olive_wood",
+    "wildfields:stripped_olive_wood",
+    "wildfields:tamarisk_log",
+    "wildfields:stripped_tamarisk_log",
+    "wildfields:tamarisk_wood",
+    "wildfields:stripped_tamarisk_wood",
+    "wildfields:western_serviceberry_log",
+    "wildfields:stripped_western_serviceberry_log",
+    "wildfields:western_serviceberry_wood",
+    "wildfields:stripped_western_serviceberry_wood",
+    "wildfields:trembling_aspen_log",
+    "wildfields:stripped_trembling_aspen_log",
+    "wildfields:trembling_aspen_wood",
+    "wildfields:stripped_trembling_aspen_wood",
+    "wildfields:cottonwood_log",
+    "wildfields:stripped_cottonwood_log",
+    "wildfields:cottonwood_wood",
+    "wildfields:stripped_cottonwood_wood"
+  ]
+}
