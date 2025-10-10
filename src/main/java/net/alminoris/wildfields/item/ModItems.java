@@ -122,12 +122,6 @@ public class ModItems
 
     public static final Item STEPPE_ARROW = registerItem("steppe_arrow", new SteppeArrowItem(new Item.Settings()));
 
-    public static final Item OAT_SEEDS = registerItem("oat_seeds", new AliasedBlockItem(ModBlocks.OAT, new Item.Settings()));
-    public static final Item OAT = registerItem("oat_item", new Item(new Item.Settings()));
-
-    public static final Item BARLEY_SEEDS = registerItem("barley_seeds", new AliasedBlockItem(ModBlocks.BARLEY, new Item.Settings()));
-    public static final Item BARLEY = registerItem("barley_item", new Item(new Item.Settings()));
-
     public static final Item DARKLING_BEETLE_CHESTPLATE = registerItem("darkling_beetle_chestplate",
             new ArmorItem(
                     ModArmorMaterials.DARKLING_BEETLE_SHELL,
@@ -180,7 +174,18 @@ public class ModItems
 
     public static Item registerBerryItem(String name, int nutrition, float saturation, Block block)
     {
-        return registerItem(name+"_item", new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
+        return registerItem(name+"_item",
+                new AliasedBlockItem(block, new Item.Settings().maxCount(16).food(ModFoodComponents.registerFood(nutrition, saturation))));
+    }
+
+    public static Item registerCropItem(String name)
+    {
+        return registerItem(name+"_item", new Item(new Item.Settings()));
+    }
+
+    public static Item registerSeedsItem(String name, Block block)
+    {
+        return registerItem(name + "_seeds", new AliasedBlockItem(block, new Item.Settings()));
     }
 
     public static Item registerBoatItem(Identifier boatID,  RegistryKey<TerraformBoatType> boatKey)

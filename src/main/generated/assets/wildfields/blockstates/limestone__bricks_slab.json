@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/limestone__bricks_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/limestone_bricks"
+    },
+    "type=top": {
+      "model": "wildfields:block/limestone__bricks_slab_top"
+    }
+  }
+}

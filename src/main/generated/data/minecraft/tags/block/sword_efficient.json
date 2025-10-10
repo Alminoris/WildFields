@@ -1,11 +1,13 @@
 {
   "values": [
+    "wildfields:oat",
+    "wildfields:barley",
+    "wildfields:wild_wheat",
+    "wildfields:wild_oat",
+    "wildfields:wild_barley",
     "wildfields:feather_grass",
     "wildfields:tiny_grass",
     "wildfields:prairie_sage",
-    "wildfields:blue_grama_grass",
-    "wildfields:wild_wheat",
-    "wildfields:wild_barley",
-    "wildfields:wild_oat"
+    "wildfields:blue_grama_grass"
   ]
 }

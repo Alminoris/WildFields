@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:fossil_marlstone_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:fossil_marlstone__stairs"
+  }
+}

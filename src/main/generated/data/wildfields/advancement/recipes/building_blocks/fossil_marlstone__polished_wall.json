@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fossil_marlstone_polished": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:fossil_marlstone_polished"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:fossil_marlstone__polished_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fossil_marlstone_polished"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:fossil_marlstone__polished_wall"
+    ]
+  }
+}

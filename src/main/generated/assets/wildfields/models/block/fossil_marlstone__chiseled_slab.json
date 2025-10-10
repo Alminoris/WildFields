@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "wildfields:block/fossil_marlstone_chiseled",
+    "side": "wildfields:block/fossil_marlstone_chiseled",
+    "top": "wildfields:block/fossil_marlstone_chiseled"
+  }
+}

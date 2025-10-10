@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:loessic_marl_cobbled"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:loessic_marl__cobbled_wall"
+  }
+}

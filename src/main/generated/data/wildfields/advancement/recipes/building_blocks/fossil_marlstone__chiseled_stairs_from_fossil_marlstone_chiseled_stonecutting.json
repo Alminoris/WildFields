@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fossil_marlstone_chiseled": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wildfields:fossil_marlstone_chiseled"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wildfields:fossil_marlstone__chiseled_stairs_from_fossil_marlstone_chiseled_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fossil_marlstone_chiseled"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wildfields:fossil_marlstone__chiseled_stairs_from_fossil_marlstone_chiseled_stonecutting"
+    ]
+  }
+}

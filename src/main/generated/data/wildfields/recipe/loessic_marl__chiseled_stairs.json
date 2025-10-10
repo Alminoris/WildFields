@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "loessic_marl",
+  "key": {
+    "#": {
+      "item": "wildfields:loessic_marl_chiseled"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wildfields:loessic_marl__chiseled_stairs"
+  }
+}

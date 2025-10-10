@@ -75,141 +75,61 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.FROG_PREFER_JUMP_TO);
         getOrCreateTagBuilder(BlockTags.CLIMBABLE);*/
 
-        this.getOrCreateTagBuilder(BlockTags.CROPS)
-                .add(ModBlocks.BARLEY)
-                .add(ModBlocks.OAT);
+        for (String name : CROP_NAMES)
+        {
+            getOrCreateTagBuilder(BlockTags.CROPS)
+                    .add(CROPS.get(name));
 
-        this.getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND)
-                .add(ModBlocks.BARLEY)
-                .add(ModBlocks.OAT);
+            getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND)
+                    .add(CROPS.get(name));
+
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                    .add(CROPS.get(name));
+
+            getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                    .add(CROPS.get(name));
+        }
+
+        for (String name : WILD_CROP_NAMES)
+        {
+            getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                    .add(WILD_CROPS.get(name));
+
+            getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                    .add(WILD_CROPS.get(name));
+        }
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.BARLEY)
-                .add(ModBlocks.OAT)
                 .add(ModBlocks.FEATHER_GRASS)
                 .add(ModBlocks.TINY_GRASS)
                 .add(ModBlocks.PRAIRIE_SAGE)
-                .add(ModBlocks.WILD_WHEAT)
-                .add(ModBlocks.WILD_BARLEY)
-                .add(ModBlocks.WILD_OAT)
                 .add(ModBlocks.BLUE_GRAMA_GRASS);
         getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(ModBlocks.FEATHER_GRASS)
                 .add(ModBlocks.TINY_GRASS)
                 .add(ModBlocks.PRAIRIE_SAGE)
-                .add(ModBlocks.BLUE_GRAMA_GRASS)
-                .add(ModBlocks.WILD_WHEAT)
-                .add(ModBlocks.WILD_BARLEY)
-                .add(ModBlocks.WILD_OAT);
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BLOCK)
-                .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED)
-                .add(ModBlocks.FOSSIL_MARLSTONE_CHISELED)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB)
-                .add(ModBlocks.LOAMY_MARL_BLOCK)
-                .add(ModBlocks.LOAMY_MARL_POLISHED)
-                .add(ModBlocks.LOAMY_MARL_CHISELED)
-                .add(ModBlocks.LOAMY_MARL_BRICKS)
-                .add(ModBlocks.LOAMY_MARL_BRICKS_STAIRS)
-                .add(ModBlocks.LOAMY_MARL_BRICKS_SLAB)
-                .add(ModBlocks.LOESSIC_MARL_BLOCK)
-                .add(ModBlocks.LOESSIC_MARL_POLISHED)
-                .add(ModBlocks.LOESSIC_MARL_CHISELED)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS_SLAB)
-                .add(ModBlocks.SALTMARSH_BLOCK)
-                .add(ModBlocks.SALTMARSH_POLISHED)
-                .add(ModBlocks.SALTMARSH_CHISELED)
-                .add(ModBlocks.SALTMARSH_BRICKS)
-                .add(ModBlocks.SALTMARSH_BRICKS_STAIRS)
-                .add(ModBlocks.SALTMARSH_BRICKS_SLAB)
-                .add(ModBlocks.DOLOMITE_BLOCK)
-                .add(ModBlocks.DOLOMITE_POLISHED)
-                .add(ModBlocks.DOLOMITE_CHISELED)
-                .add(ModBlocks.DOLOMITE_BRICKS)
-                .add(ModBlocks.DOLOMITE_BRICKS_STAIRS)
-                .add(ModBlocks.DOLOMITE_BRICKS_SLAB)
-                .add(ModBlocks.LIMESTONE_BLOCK)
-                .add(ModBlocks.LIMESTONE_POLISHED)
-                .add(ModBlocks.LIMESTONE_CHISELED)
-                .add(ModBlocks.LIMESTONE_BRICKS)
-                .add(ModBlocks.LIMESTONE_BRICKS_STAIRS)
-                .add(ModBlocks.LIMESTONE_BRICKS_SLAB);
+                .add(ModBlocks.BLUE_GRAMA_GRASS);
 
-        getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.LIMESTONE_WALL)
-                .add(ModBlocks.LIMESTONE_COBBLED_WALL)
-                .add(ModBlocks.LIMESTONE_BRICKS_WALL)
-                .add(ModBlocks.SALTMARSH_WALL)
-                .add(ModBlocks.SALTMARSH_COBBLED_WALL)
-                .add(ModBlocks.SALTMARSH_BRICKS_WALL)
-                .add(ModBlocks.DOLOMITE_WALL)
-                .add(ModBlocks.DOLOMITE_COBBLED_WALL)
-                .add(ModBlocks.DOLOMITE_BRICKS_WALL)
-                .add(ModBlocks.LOESSIC_MARL_WALL)
-                .add(ModBlocks.LOESSIC_MARL_COBBLED_WALL)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS_WALL)
-                .add(ModBlocks.LOAMY_MARL_WALL)
-                .add(ModBlocks.LOAMY_MARL_COBBLED_WALL)
-                .add(ModBlocks.LOAMY_MARL_BRICKS_WALL)
-                .add(ModBlocks.FOSSIL_MARLSTONE_WALL)
-                .add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_WALL)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_WALL);
+        for (String name : STONE_NAMES)
+        {
+            for (String type : STONE_TYPES)
+            {
+                getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                        .add(STONE_BLOCKS.get(name).get(type))
+                        .add(STONE_SLABS.get(name).get(type))
+                        .add(STONE_STAIRS.get(name).get(type))
+                        .add(STONE_WALLS.get(name).get(type));
 
-        getOrCreateTagBuilder(BlockTags.SLABS)
-                .add(ModBlocks.SALTMARSH_SLAB)
-                .add(ModBlocks.SALTMARSH_COBBLED_SLAB)
-                .add(ModBlocks.SALTMARSH_BRICKS_SLAB)
-                .add(ModBlocks.SALTMARSH_POLISHED_SLAB)
-                .add(ModBlocks.DOLOMITE_SLAB)
-                .add(ModBlocks.DOLOMITE_BRICKS_SLAB)
-                .add(ModBlocks.DOLOMITE_COBBLED_SLAB)
-                .add(ModBlocks.DOLOMITE_POLISHED_SLAB)
-                .add(ModBlocks.LOESSIC_MARL_SLAB)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS_SLAB)
-                .add(ModBlocks.LOESSIC_MARL_COBBLED_SLAB)
-                .add(ModBlocks.LOESSIC_MARL_POLISHED_SLAB)
-                .add(ModBlocks.LOAMY_MARL_SLAB)
-                .add(ModBlocks.LOAMY_MARL_BRICKS_SLAB)
-                .add(ModBlocks.LOAMY_MARL_COBBLED_SLAB)
-                .add(ModBlocks.LOAMY_MARL_POLISHED_SLAB)
-                .add(ModBlocks.FOSSIL_MARLSTONE_SLAB)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_SLAB)
-                .add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_SLAB)
-                .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_SLAB)
-                .add(ModBlocks.LIMESTONE_SLAB)
-                .add(ModBlocks.LIMESTONE_BRICKS_SLAB)
-                .add(ModBlocks.LIMESTONE_COBBLED_SLAB)
-                .add(ModBlocks.LIMESTONE_POLISHED_SLAB);
+                getOrCreateTagBuilder(BlockTags.SLABS)
+                        .add(STONE_SLABS.get(name).get(type));
 
-        getOrCreateTagBuilder(BlockTags.STAIRS)
-                .add(ModBlocks.DOLOMITE_COBBLED_STAIRS)
-                .add(ModBlocks.DOLOMITE_STAIRS)
-                .add(ModBlocks.DOLOMITE_BRICKS_STAIRS)
-                .add(ModBlocks.DOLOMITE_POLISHED_STAIRS)
-                .add(ModBlocks.SALTMARSH_STAIRS)
-                .add(ModBlocks.SALTMARSH_COBBLED_STAIRS)
-                .add(ModBlocks.SALTMARSH_BRICKS_STAIRS)
-                .add(ModBlocks.SALTMARSH_POLISHED_STAIRS)
-                .add(ModBlocks.LOESSIC_MARL_COBBLED_STAIRS)
-                .add(ModBlocks.LOESSIC_MARL_STAIRS)
-                .add(ModBlocks.LOESSIC_MARL_BRICKS_STAIRS)
-                .add(ModBlocks.LOESSIC_MARL_POLISHED_STAIRS)
-                .add(ModBlocks.LOAMY_MARL_COBBLED_STAIRS)
-                .add(ModBlocks.LOAMY_MARL_STAIRS)
-                .add(ModBlocks.LOAMY_MARL_BRICKS_STAIRS)
-                .add(ModBlocks.LOAMY_MARL_POLISHED_STAIRS)
-                .add(ModBlocks.LIMESTONE_COBBLED_STAIRS)
-                .add(ModBlocks.LIMESTONE_STAIRS)
-                .add(ModBlocks.LIMESTONE_BRICKS_STAIRS)
-                .add(ModBlocks.LIMESTONE_POLISHED_STAIRS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_COBBLED_STAIRS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_STAIRS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_BRICKS_STAIRS)
-                .add(ModBlocks.FOSSIL_MARLSTONE_POLISHED_STAIRS);
+                getOrCreateTagBuilder(BlockTags.STAIRS)
+                        .add(STONE_STAIRS.get(name).get(type));
+
+                getOrCreateTagBuilder(BlockTags.WALLS)
+                        .add(STONE_WALLS.get(name).get(type));
+            }
+        }
 
         getOrCreateTagBuilder(BlockTags.FLOWERS)
                 .add(ModBlocks.THYME)
@@ -233,7 +153,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
 
         getOrCreateTagBuilder(ModTags.Blocks.SAIGA_SPAWNABLE_ON)
                 .add(Blocks.GRASS_BLOCK)
-                .add(ModBlocks.SALTMARSH_BLOCK);
+                .add(STONE_BLOCKS.get("saltmarsh").get("block"));
 
         getOrCreateTagBuilder(ModTags.Blocks.BISON_SPAWNABLE_ON)
                 .add(Blocks.GRASS_BLOCK)

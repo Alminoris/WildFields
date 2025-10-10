@@ -69,6 +69,23 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                     .add(WOODEN_DOORS.get(name).asItem());
         }
 
+        for (String name : STONE_NAMES)
+        {
+            getOrCreateTagBuilder(ItemTags.STONE_BRICKS)
+                    .add(STONE_BLOCKS.get(name).get("bricks").asItem());
+            for (String type : STONE_TYPES)
+            {
+                getOrCreateTagBuilder(ItemTags.SLABS)
+                        .add(STONE_SLABS.get(name).get(type).asItem());
+
+                getOrCreateTagBuilder(ItemTags.STAIRS)
+                        .add(STONE_STAIRS.get(name).get(type).asItem());
+
+                getOrCreateTagBuilder(ItemTags.WALLS)
+                        .add(STONE_WALLS.get(name).get(type).asItem());
+            }
+        }
+
         getOrCreateTagBuilder(ModTags.Items.MARMOT_FOOD)
                 .add(ModBlocks.TINY_GRASS.asItem(), Items.SHORT_GRASS, Items.SWEET_BERRIES, Items.WHEAT_SEEDS);
 

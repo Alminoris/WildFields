@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:loamy_marl_chiseled"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:loamy_marl__chiseled_wall"
+  }
+}

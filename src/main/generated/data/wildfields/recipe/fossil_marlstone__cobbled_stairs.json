@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "fossil_marlstone",
+  "key": {
+    "#": {
+      "item": "wildfields:fossil_marlstone_cobbled"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wildfields:fossil_marlstone__cobbled_stairs"
+  }
+}

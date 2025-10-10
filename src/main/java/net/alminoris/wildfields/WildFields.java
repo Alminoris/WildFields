@@ -25,7 +25,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
@@ -75,12 +74,15 @@ public class WildFields implements ModInitializer
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_GRAMA_GRASS, 20, 90);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PRAIRIE_SAGE, 20, 90);
 
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.OAT_HAY_BLOCK, 60, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BARLEY_HAY_BLOCK, 60, 20);
+		for (String name : CROP_NAMES)
+		{
+			FlammableBlockRegistry.getDefaultInstance().add(HAY_BLOCKS.get(name), 60, 20);
+		}
 
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_WHEAT, 30, 40);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_BARLEY, 30, 40);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WILD_OAT, 30, 40);
+		for (String name : WILD_CROP_NAMES)
+		{
+			FlammableBlockRegistry.getDefaultInstance().add(WILD_CROPS.get(name), 30, 40);
+		}
 
 		ModBoats.registerBoats();
 
