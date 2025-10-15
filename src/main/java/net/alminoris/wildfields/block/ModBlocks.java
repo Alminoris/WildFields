@@ -121,19 +121,19 @@ public class ModBlocks
 
     public static Block registerStoneSlab(String name, String type)
     {
-        return registerBlock(name+"_"+(type.equals("block") ? "" : "_"+type)+"_slab",
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_slab",
                 new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
     }
 
     public static Block registerStoneStairs(String name, String type, Block block)
     {
-        return registerBlock(name+"_"+(type.equals("block") ? "" : "_"+type)+"_stairs",
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_stairs",
                 new StairsBlock(block.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRANITE)));
     }
 
     public static Block registerStoneWall(String name, String type)
     {
-        return registerBlock(name+"_"+(type.equals("block") ? "" : "_"+type)+"_wall",
+        return registerBlock(name+(type.equals("block") ? "" : "_"+type)+"_wall",
                 new WallBlock(AbstractBlock.Settings.copy(Blocks.GRANITE)));
     }
 
