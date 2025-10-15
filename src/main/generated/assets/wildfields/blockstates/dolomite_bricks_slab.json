@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/dolomite_bricks_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/dolomite_bricks"
+    },
+    "type=top": {
+      "model": "wildfields:block/dolomite_bricks_slab_top"
+    }
+  }
+}

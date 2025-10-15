@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/loessic_marl_cobbled_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/loessic_marl_cobbled"
+    },
+    "type=top": {
+      "model": "wildfields:block/loessic_marl_cobbled_slab_top"
+    }
+  }
+}

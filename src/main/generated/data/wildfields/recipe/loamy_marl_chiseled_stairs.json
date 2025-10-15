@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "loamy_marl",
+  "key": {
+    "#": {
+      "item": "wildfields:loamy_marl_chiseled"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wildfields:loamy_marl_chiseled_stairs"
+  }
+}

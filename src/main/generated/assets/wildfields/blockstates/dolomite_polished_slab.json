@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/dolomite_polished_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/dolomite_polished"
+    },
+    "type=top": {
+      "model": "wildfields:block/dolomite_polished_slab_top"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:limestone_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:limestone_bricks_stairs"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "limestone",
+  "key": {
+    "#": {
+      "item": "wildfields:limestone_polished"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "wildfields:limestone_polished_stairs"
+  }
+}

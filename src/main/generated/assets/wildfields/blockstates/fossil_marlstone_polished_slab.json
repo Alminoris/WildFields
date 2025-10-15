@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/fossil_marlstone_polished_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/fossil_marlstone_polished"
+    },
+    "type=top": {
+      "model": "wildfields:block/fossil_marlstone_polished_slab_top"
+    }
+  }
+}

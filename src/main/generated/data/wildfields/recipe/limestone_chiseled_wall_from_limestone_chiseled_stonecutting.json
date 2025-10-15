@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "wildfields:limestone_chiseled"
+  },
+  "result": {
+    "count": 1,
+    "id": "wildfields:limestone_chiseled_wall"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wildfields:block/saltmarsh_bricks_slab"
+    },
+    "type=double": {
+      "model": "wildfields:block/saltmarsh_bricks"
+    },
+    "type=top": {
+      "model": "wildfields:block/saltmarsh_bricks_slab_top"
+    }
+  }
+}
